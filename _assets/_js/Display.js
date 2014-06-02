@@ -119,9 +119,9 @@
 			{
 				if(!game_levelChange)
 				{
-					if(portalScreenDisplayed)
+					if(PortalScreen.displayed)
 					{
-						portalScreenDisplayed = false;
+						PortalScreen.displayed = false;
 						
 						exitFrame = setTimeout(mapPlayer_entry, 100);
 					}
@@ -169,9 +169,9 @@
 		{
 			if(!game_levelChange)
 			{
-				if(portalScreenDisplayed)
+				if(PortalScreen.displayed)
 				{
-					portalScreenDisplayed = false;
+					PortalScreen.displayed = false;
 					
 					exitFrame = setTimeout(mapPlayer_entry, 100);
 				}

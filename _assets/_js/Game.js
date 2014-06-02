@@ -102,7 +102,15 @@
 		
 		trace(MAP_PLAYER);
 		
-		// level_init();
-	
+		level_init();
+		
+		controlSignal_init();
+		
+		mapPlayer_entry();
+		
+		portalScreen_init();
+		
+		screenUpdateInit(true);
+		
 		// newLevel();	
 	}

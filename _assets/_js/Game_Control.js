@@ -1,25 +1,23 @@
+	
 	/* --- CONTROL */
-	
-	/* --- PLAYER */
-	
-	/* --- PORTAL_SCREEN */
-	
-	/* --- PORTAL */
-	
-	/* --- HITTEST */
-	
-	
-	var MAP_PLAYER;
 	
 	var CONTROL_SIGNAL;
 	
-	var HIT_TEST;
-
 	var track_touchScreen_UI = false;
 	
-	var game_levelChange = false;
+	/* --- PLAYER */
 	
-	var game_introEntrance = true;
+	var MAP_PLAYER;
+	
+	/* --- PORTAL_SCREEN */
+	
+	var PortalScreen;
+	
+	// var protalScreenHTML = "";
+	// var portalScreenDelay;
+	// var portalScreenDisplayed = false;
+	
+	/* --- PORTAL */
 	
 	var portalData_ARR = new Array();
 	
@@ -29,7 +27,17 @@
 	
 	var PORTAL_TRAVEL;
 	
-	var html_lib;
+	/* --- HITTEST */
+	
+	var HIT_TEST;
+	
+	
+	
+	var game_levelChange = false;
+	
+	var game_introEntrance = true;
+	
+	// var html_lib;
 	
 	function mapPlayer_init(playerMover, playerTween, playerWalkTweenX, playerWalkTweenY, playerWalkStop, playerWalkLoop, playerFadeTarget, hitTestArea)
 	{
@@ -735,23 +743,33 @@
 	
 	///////////////////////////////// --- PORTAL_SCREEN
 	
-	function testPortalScreenInit()
+	function portalScreen_init()
 	{
-		protalScreenHTML = $("#portalScreen").html();
+		PortalScreen = {};
+		PortalScreen.html = "";
+		PortalScreen.displayed = false;
+		PortalScreen.delay = null;
+		
+		PortalScreen.html = $("#portalScreen").html();
+		
+		// protalScreenHTML = $("#portalScreen").html();
+		
 		$("#portalScreen").html("");
 	}
 
-	function testPortalScreen_0()
+	function portalScreen_request()
 	{
-		portalScreenDisplayed = true;
+		// portalScreenDisplayed = true;
 		
-		$("#portalScreen").html(protalScreenHTML);
+		PortalScreen.displayed = true;
+		
+		$("#portalScreen").html(PortalScreen.html);
 		
 		// EXIT FRAME
-		portalScreenDelay = setTimeout(testPortalScreenRun, 20);
+		PortalScreen.delay = setTimeout(portalScreen_run, 20);
 	}
 	
-	function testPortalScreenRun()
+	function portalScreen_run()
 	{
 		var css;
 		
@@ -762,25 +780,25 @@
 				
 		$("#portalScreen .portalScreen_wrapper").css(css);
 		
-		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", testPortalScreen_1, false);
-		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", testPortalScreen_1, false);		
+		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_screen0, false);
+		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_screen0, false);		
 	}
 	
-	function testPortalScreen_1(event)
+	function portalScreen_screen0(event)
 	{
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", testPortalScreen_1, false);
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", testPortalScreen_1, false);		
+		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen0, false);
+		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_screen0, false);		
 	
 		$("#portalScreen .portalScreen_fade").css("opacity", 0);
 		
-		portalScreenDelay = setTimeout(testPortalScreen_2, 2 * 1000);
+		PortalScreen.delay = setTimeout(portalScreen_screen1, 2 * 1000);
 		
 		level_clear();
 		
 		level_init();
 	}
 	
-	function testPortalScreen_2()
+	function portalScreen_screen1()
 	{
 		var css;
 		
@@ -791,14 +809,14 @@
 				
 		$("#portalScreen .portalScreen_green").css(css);
 	
-		$(".tween-portalScreen_green")[0].addEventListener("webkitTransitionEnd", testPortalScreen_3, false);
-		$(".tween-portalScreen_green")[0].addEventListener("transitionend", testPortalScreen_3, false);
+		$(".tween-portalScreen_green")[0].addEventListener("webkitTransitionEnd", portalScreen_screen2, false);
+		$(".tween-portalScreen_green")[0].addEventListener("transitionend", portalScreen_screen2, false);
 	}
 	
-	function testPortalScreen_3(event)
+	function portalScreen_screen2(event)
 	{
-		$(".tween-portalScreen_green")[0].removeEventListener("webkitTransitionEnd", testPortalScreen_3, false);
-		$(".tween-portalScreen_green")[0].removeEventListener("transitionend", testPortalScreen_3, false);
+		$(".tween-portalScreen_green")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen2, false);
+		$(".tween-portalScreen_green")[0].removeEventListener("transitionend", portalScreen_screen2, false);
 		
 		$("#portalScreen .portalScreen_map-goat .player-sprite").removeClass("tween-player-walkX");
 		$("#portalScreen .portalScreen_map-goat .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
@@ -807,20 +825,20 @@
 		$("#portalScreen .portalScreen_header").css("opacity", 1);
 		
 		
-		$(".tween-portalScreen_header")[0].addEventListener("webkitTransitionEnd", testPortalScreen_4, false);
-		$(".tween-portalScreen_header")[0].addEventListener("transitionend", testPortalScreen_4, false);
+		$(".tween-portalScreen_header")[0].addEventListener("webkitTransitionEnd", portalScreen_screen3, false);
+		$(".tween-portalScreen_header")[0].addEventListener("transitionend", portalScreen_screen3, false);
 	}
 	
-	function testPortalScreen_4(event)
+	function portalScreen_screen3(event)
 	{
-		$(".tween-portalScreen_header")[0].removeEventListener("webkitTransitionEnd", testPortalScreen_4, false);
-		$(".tween-portalScreen_header")[0].removeEventListener("transitionend", testPortalScreen_4, false);		
+		$(".tween-portalScreen_header")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen3, false);
+		$(".tween-portalScreen_header")[0].removeEventListener("transitionend", portalScreen_screen3, false);		
 		
 	
-		portalScreenDelay = setTimeout(testPortalScreen_5, 2 * 1000);
+		PortalScreen.delay = setTimeout(portalScreen_screen4, 2 * 1000);
 	}
 	
-	function testPortalScreen_5()
+	function portalScreen_screen4()
 	{
 		var css;
 		
@@ -831,14 +849,14 @@
 				
 		$("#portalScreen .portalScreen_wrapper").css(css);
 		
-		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", testPortalScreen_6, false);
-		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", testPortalScreen_6, false);		
+		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_remove, false);		
 	}
 	
-	function testPortalScreen_6(event)
+	function portalScreen_remove(event)
 	{
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", testPortalScreen_6, false);
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", testPortalScreen_6, false);
+		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_remove, false);
 		
 		$("#portalScreen").html("");
 		
@@ -974,7 +992,7 @@
 								
 								// level_init();
 								
-								testPortalScreen_0();
+								portalScreen_request();
 								
 								// portalExit();
 								

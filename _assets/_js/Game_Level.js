@@ -204,7 +204,7 @@
 		var i;
 		
 		
-		if(ext_html_data)
+		if(Graphics.html.data)
 		{
 			html_lib_reuse();
 		}
