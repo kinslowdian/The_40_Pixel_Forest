@@ -1,29 +1,52 @@
 	
-	/* --- JSON */
+	/* --- TOUCH */
 	
-	/* --- HTML */
+	var deviceTest;
+	
+	/* --- JSON */
 	
 	var Logic;
 	
+	var json_local_root = "_assets/_data/";
+	
+	/* --- HTML */
+	
+	var Graphics;
+	
 	var ext_html_path;
 	
-	var ext_html_data;
-	
-	var json_local_root = "_assets/_data/";
+	// var ext_html_data; - REPLACED IN Graphics obj
 	
 	var event_htmlLoaded = document.createEvent("Event");
 	
 	event_htmlLoaded.initEvent("EVENT_HTML_LOADED", true, true);
 	
+	
+	// --------------------------------------------- TOUCH
+	
+	function checkDevice()
+	{
+		deviceTest = deviceTouchTest();
+	}
+	
+	function deviceTouchTest()
+	{
+		return typeof window.ontouchstart;
+	}
+	
+	// --------------------------------------------- TOUCH
+	
+	
 	// --------------------------------------------- JSON
 	
-	function gameData_get()
+	function gameData_get(callBack)
 	{
-		Logic = new Object();
+		Logic = {};
 		
 		Logic.dat_FILE = "setup.json";
 		Logic.dat_ROM;
 		Logic.dat_COMPLETE = gameData_get_loaded;
+		Logic.dat_CALL_BACK = callBack;
 		
 		get_JSON(Logic);
 	}
@@ -41,24 +64,22 @@
 		{
 			obj.dat_ROM = JSON.parse(this.responseText);
 				
-			obj.dat_COMPLETE();
+			obj.dat_COMPLETE(obj);
 		};
 			
 		json_request.send();
 	}
 		
-	function gameData_get_loaded()
+	function gameData_get_loaded(obj)
 	{
-		// var save_ARR = new Array();
-		
 		if(!ext_html_path)
 		{
 			ext_html_path = Logic.dat_ROM["_HTML-EXT"]["file_path"]["url"];
 		}
 		
-		// HACK
-		temp_callback_json();
-		// HACK
+		obj.dat_CALL_BACK();
+		
+		trace(obj);
 	}	
 	
 	// --------------------------------------------- JSON
@@ -87,12 +108,19 @@
 		});				
 	}	
 	
-	function html_lib_init()
+	function html_lib_init(callBack)
 	{
+		Graphics = {};
+		Graphics.html = {};
+		Graphics.gfx_CALL_BACK = callBack;
+		
 		$(document).get(0).addEventListener("EVENT_HTML_LOADED", html_lib_loaded, false);
 		
-		var lf = Logic.dat_ROM["_HTML-EXT"]["file_lib"]["file"];
-		var lh = new load_HTML(lf, $("#memory"));		
+		Graphics.html.file = Logic.dat_ROM["_HTML-EXT"]["file_lib"]["file"];
+		Graphics.html.save = new load_HTML(Graphics.html.file, $("#memory"));
+		
+		// var lf = Logic.dat_ROM["_HTML-EXT"]["file_lib"]["file"];
+		//var lh = new load_HTML(lf, $("#memory"));		
 	}
 	
 	function html_lib_loaded(event)
@@ -104,9 +132,15 @@
 	
 	function html_lib_store()
 	{	
-		ext_html_data = $("#memory").html();
+		// ext_html_data = $("#memory").html();
 		
-		temp_callback_html();
+		Graphics.html.data = $("#memory").html();
+		
+		// temp_callback_html();
+	
+		Graphics.gfx_CALL_BACK();
+		
+		html_lib_empty();
 	}
 	
 	function html_lib_use(html_class)
@@ -125,7 +159,7 @@
 	
 	function html_lib_reuse()
 	{
-		$("#memory").html(ext_html_data);
+		$("#memory").html(Graphics.html.data);
 	}	
 	
 	// --------------------------------------------- HTML

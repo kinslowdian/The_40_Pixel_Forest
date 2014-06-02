@@ -1,10 +1,7 @@
 	
 	$(document).ready( function(){ gameFirstInit(); } );
 	
-	function gameFirstInit()
-	{
-		alert("READY");
-	}
+	var ROM;
 	
 	function phoneRotate(event)
 	{
@@ -42,4 +39,70 @@
 		}
 		
 		$("#displayErrorWrapper .displayError-base").css(base_css);
+	}
+	
+	function gameFirstInit()
+	{
+		ROM = {};
+		
+		ROM.mapLevel = 0;
+		
+		checkDevice();
+		
+		gameData_get(gameData_found);
+	}
+	
+	function gameData_found()
+	{
+		html_lib_init(gameHTML_found);
+	}
+	
+	function gameHTML_found()
+	{
+		display_init();
+		
+		init_startScreen();
+	}
+	
+	function init_startScreen()
+	{
+		// HACK
+		plug_intro();
+	}
+	
+	function plug_intro()
+	{
+		// HACK
+		init_intro();
+	}
+	
+	function init_intro()
+	{
+		// HACK
+		plug_mainGame();
+	}
+	
+	function plug_mainGame()
+	{
+		var html_gameLevel;
+		
+		html_lib_reuse();
+		
+		html_gameLevel = html_lib_use("_level_game");
+		
+		
+		$("#display_wrapper").html(html_gameLevel);
+		
+		init_mainGame();
+	}
+	
+	function init_mainGame()
+	{
+		mapPlayer_init("player-block", "tween-player-block", "tween-player-walkX", "tween-player-walkY", "tween-mapPlayerWalk_stop", "tween-mapPlayerWalk_loop", "map-goat", "preHitTest");
+		
+		trace(MAP_PLAYER);
+		
+		// level_init();
+	
+		// newLevel();	
 	}
