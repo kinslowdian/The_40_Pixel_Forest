@@ -6,129 +6,11 @@
 			"url" 		: "_assets/_data/" 
 		},
 		
-		"file_battles":
-		{
-			"file"		: "battles.html"	
-		},
-		
-		"file_intro":
-		{
-			"file"		: "intro.html"
-		},
-		
-		"file_notice":
-		{
-			"file"		: "notice.html"
-		},
-		
-		"file_roam":
-		{
-			"file"		: "roam.html"	
-		},
-		
-		"file_battle_arena":
-		{
-			"file"		: "battle_arena.html"	
-		},
-		
 		"file_lib":
 		{
 			"file"		: "game_lib.html"
 		}
 	},
-	
-	"_MESSAGES":
-	{
-		"notice0" : 	
-		{
-			"noticeMess_text" :	"AFTER THE FALL YOU LAND ON THE EDGE OF A VAST FIELD IN A FOREST",
-														
-			"noticeMess_time" :	3,
-														
-			"charArms_both" :	true,
-														
-			"charArms_0_LR" :	
-			{
-				"l" : "UP",
-				"r" : "UP"
-			},
-														
-			"charArms_1_LR" :	
-			{
-				"dir" 	: "DOWN",
-				"both" 	: true,
-				"arm" 	: ""
-			},
-																			
-			"mess_function"	:	"noticeFadeOut",
-														
-			"fade_function"	:	"introNoticeFullyFinished"
-		},
-		
-		"notice1" : 	
-		{
-			"noticeMess_text" :	"A PLANET SMASHES INTO THIS ONE",
-														
-			"noticeMess_time" :	4,
-														
-			"charArms_both" :	false,
-														
-			"charArms_0_LR" :	
-			{
-				"l" : "DOWN",
-				"r" : "UP"
-			},
-														
-			"charArms_1_LR" :	
-			{
-				"dir" 	: "DOWN",
-				"both" 	: false,
-				"arm" 	: "RIGHT"
-			},
-																			
-			"mess_function"	:	"noticeFadeOut",
-														
-			"fade_function"	:	""
-		},
-		
-		"notice2" : 	
-		{
-			"noticeMess_text" :	"SAD FILMS MAKE YOU THINK OF THE LOVELY PAST",
-														
-			"noticeMess_time" :	2,
-														
-			"charArms_both" :	false,
-														
-			"charArms_0_LR" :	
-			{
-				"l" : "UP",
-				"r" : "DOWN"
-			},
-														
-			"charArms_1_LR" :	
-			{
-				"dir" 	: "UP",
-				"both" 	: false,
-				"arm" 	: "RIGHT"
-			},
-																			
-			"mess_function"	:	"noticeFadeOut",
-														
-			"fade_function"	:	""
-		}
-	},
-	
-	
-	"_NOTICE_AFT_INTRO":
-	{
-		"btnID" 		: "noticeBtn",
-		"btnText_ARR"	: ["SLEEP", "GET UP"],
-		"btnHandler"	: "NoticeAction(event);",
-		"noticeText0"	: "AFTER THE FALL YOU LAND ON THE EDGE OF A VAST FIELD.",
-		"noticeText1"	: "WHAT DO YOU DO?",
-		"noticeID"		: "notice_aftIntro"		
-	},
-	
 	
 	"_LOGIC":
 	{
@@ -184,9 +66,7 @@
 				"fall_y": -0.5,
 				"fall_d": "DOWN",
 				"title_top": "level number 0",
-				"title_btm": "zomg!!!",
-				"act": "act i",
-				"title": "level a"
+				"title_btm": "zomg!!!"
 			},
 			
 			"texture":
@@ -700,9 +580,7 @@
 				"fall_y": 0,
 				"fall_d": "DOWN",
 				"title_top": "level number 1",
-				"title_btm": "zomg!!!",
-				"act": "act ii",
-				"title": "level b" 
+				"title_btm": "zomg!!!"
 			},
 			
 			"texture":
@@ -1245,9 +1123,7 @@
 				"fall_y": 0,
 				"fall_d": "DOWN",
 				"title_top": "level number 2",
-				"title_btm": "zomg!!!",
-				"act": "act iii",
-				"title": "level c"  
+				"title_btm": "zomg!!!" 
 			},
 			
 			"texture":
@@ -1508,9 +1384,7 @@
 				"fall_y": 0,
 				"fall_d": "DOWN",
 				"title_top": "level number 3",
-				"title_btm": "zomg!!!",
-				"act": "act iv",
-				"title": "level d"  
+				"title_btm": "zomg!!!"
 			},
 			
 			"texture":

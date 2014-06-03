@@ -942,6 +942,102 @@
 		75%		{transform: translateY(2px);}
 		100% 	{transform: translateY(0px);}
 	}
+	
+	.actionCloud
+	{
+		width: 40px;
+		height: 40px;
+		
+		position: absolute;
+		
+		z-index: 4;
+	}
+	
+	.actionCloudMain
+	{
+		width: 120px;
+		height: 120px;
+		
+		visibility: hidden;
+		
+		position: absolute;
+		
+		-webkit-transform: translate(-40px, -40px);
+		transform: translate(-40px, -40px);
+		
+		z-index: 0;
+	}
+	
+	.actionCloudSprite-outer
+	{
+		width: inherit;
+		height: inherit;
+		
+		visibility: hidden;
+		
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		opacity: 0;
+		
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	
+	.actionCloudSprite-inner
+	{
+		width: inherit;
+		height: inherit;
+		
+		visibility: hidden;
+		
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;		
+	}
+	
+	.tween-actionCloudSpriteOuter
+	{
+		visibility: visible;
+		
+		-webkit-animation: tweenActionCloudSpriteOuterFrames 0.3s ease-in-out forwards;
+		animation: tweenActionCloudSpriteOuterFrames 0.3s ease-in-out forwards;
+	}
+	
+	@-webkit-keyframes tweenActionCloudSpriteOuterFrames
+	{
+		0%		{-webkit-transform: scale(0); opacity: 0;}
+		50%		{-webkit-transform: scale(4); opacity: 1;}
+		100%	{-webkit-transform: scale(1); opacity: 1;}
+	}
+	
+	@keyframes tweenActionCloudSpriteOuterFrames
+	{
+		0%		{transform: scale(0); opacity: 0;}
+		50%		{transform: scale(4); opacity: 1;}
+		100%	{transform: scale(1); opacity: 1;}
+	}
+	
+	.tween-actionCloudSpriteInner
+	{
+		visibility: visible;
+		
+		-webkit-animation: tweenActionCloudSpriteInnerFrames 0.2s ease-in-out infinite;
+		animation: tweenActionCloudSpriteInnerFrames 0.2s ease-in-out inherit;
+	}
+	
+	@-webkit-keyframes tweenActionCloudSpriteInnerFrames
+	{
+		0%		{-webkit-transform: scale(0.8);}
+		50%		{-webkit-transform: scale(1);}
+		100%	{-webkit-transform: scale(0.8);}
+	}
+	
+	@keyframes tweenActionCloudSpriteInnerFrames
+	{
+		0%		{transform: scale(0.8);}
+		50%		{transform: scale(1);}
+		100%	{transform: scale(0.8);}
+	}
 
 /* ----------------------------------------------------------------------- PLAYER */
 

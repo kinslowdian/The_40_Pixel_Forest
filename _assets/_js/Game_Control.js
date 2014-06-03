@@ -23,6 +23,8 @@
 	
 	var PORTAL_TRAVEL;
 	
+	/* --- ENEMY */
+	
 	/* --- HITTEST */
 	
 	var HIT_TEST;
@@ -727,7 +729,7 @@
 		
 		if(gotoState === "ENEMY")
 		{
-			
+			enemyEntry(); // ADD ID
 		}
 	}
 	
@@ -1026,6 +1028,22 @@
 	
 	
 	
+	///////////////////////////////// --- ENEMY
+	
+	function enemyEntry()
+	{
+		$(".actionCloudMain").css("visibility", "visible");
+		
+		$(".actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuter");
+		
+		$(".actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");	
+	}
+	
+	///////////////////////////////// --- ENEMY
+	
+	
+	
+	
 	///////////////////////////////// --- HITTEST
 	
 	function hitTest()
@@ -1052,7 +1070,7 @@
 			
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "edge")
 			{
-				HIT_TEST.hit_edge = true;	
+				HIT_TEST.hit_edge = true;		
 			}
 			
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "portal")
@@ -1066,7 +1084,7 @@
 			{
 				HIT_TEST.hit_enemy = true;
 				
-				HIT_TEST.hit_enemy_id = hit_id;	
+				HIT_TEST.hit_enemy_id = hit_id;
 			}
 		}
 	}	
