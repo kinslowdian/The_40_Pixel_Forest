@@ -51,9 +51,11 @@
 					
 		-webkit-user-select: none;
 		user-select: none;
-					
+
+/*
 		-webkit-backface-visibility	: hidden;
 		backface-visibility			: hidden;
+*/
 	}
 	
 /* ----------------------------------------------------------------------- EXTRA RESET */
@@ -65,7 +67,10 @@
 	.font-dosis
 	{
 		font-family: 'Dosis', sans-serif;
+		
 		font-weight: lighter;
+		font-variant: normal;
+		font-style: normal;
 		
 		-webkit-font-smoothing	: antialiased;
 		font-smoothing			: antialiased;
@@ -1745,6 +1750,40 @@
 		
 		z-index: 1;
 	}
+	
+	.battleCute-eyes-wolf-norm
+	{
+		background-position: -70px -70px;
+	}
+	
+	.battleCute-eyes-wolf-happy
+	{
+		background-position: -56px -70px;
+	}
+	
+	.tween-notice-wolf-looking
+	{
+		-webkit-animation	: tweenNoticeWolfLookingFrames 1.8s ease-in-out infinite;
+		animation			: tweenNoticeWolfLookingFrames 1.8s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenNoticeWolfLookingFrames
+	{
+		0%		{ -webkit-transform	: translate(1px, 2px); } /* CENTER */
+		25%		{ -webkit-transform	: translate(1px, 2px); } /* CENTER DELAY */
+		50%		{ -webkit-transform	: translate(-1px, 2px); } /* LEFT */
+		75%		{ -webkit-transform	: translate(-1px, 2px); } /* LEFT DELAY */
+		100%	{ -webkit-transform	: translate(1px, 2px); } /* CENTER */
+	}
+	
+	@keyframes tweenNoticeWolfLookingFrames
+	{
+		0%		{ transform	: translate(1px, 2px); } /* CENTER */
+		25%		{ transform	: translate(1px, 2px); } /* CENTER DELAY */
+		50%		{ transform	: translate(-1px, 2px); } /* LEFT */
+		75%		{ transform	: translate(-1px, 2px); } /* LEFT DELAY */
+		100%	{ transform	: translate(1px, 2px); } /* CENTER */
+	}
 
 /* ----------------------------------------------------------------------- CLEARING */
 
@@ -1760,6 +1799,14 @@
 				
 		position: absolute;				
 	}
+	
+/*
+	.portal div
+	{
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;
+	}
+*/
 			
 	.portal .portal_top
 	{

@@ -183,6 +183,8 @@
 				"fall_x": 2,
 				"fall_y": -0.5,
 				"fall_d": "DOWN",
+				"title_top": "level number 0",
+				"title_btm": "zomg!!!",
 				"act": "act i",
 				"title": "level a"
 			},
@@ -697,6 +699,8 @@
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
+				"title_top": "level number 1",
+				"title_btm": "zomg!!!",
 				"act": "act ii",
 				"title": "level b" 
 			},
@@ -1240,6 +1244,8 @@
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
+				"title_top": "level number 2",
+				"title_btm": "zomg!!!",
 				"act": "act iii",
 				"title": "level c"  
 			},
@@ -1501,6 +1507,8 @@
 				"fall_x": 0,
 				"fall_y": 0,
 				"fall_d": "DOWN",
+				"title_top": "level number 3",
+				"title_btm": "zomg!!!",
 				"act": "act iv",
 				"title": "level d"  
 			},

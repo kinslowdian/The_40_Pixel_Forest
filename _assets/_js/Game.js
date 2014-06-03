@@ -106,11 +106,15 @@
 		
 		controlSignal_init();
 		
-		mapPlayer_entry();
-		
-		portalScreen_init();
-		
 		screenUpdateInit(true);
 		
+		var temp = setTimeout(start_mainGame, 1000);
+		
 		// newLevel();	
+	}
+	
+	function start_mainGame()
+	{
+		mapPlayer_entry();
+		portalScreen_init();
 	}

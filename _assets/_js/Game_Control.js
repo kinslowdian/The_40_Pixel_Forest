@@ -13,10 +13,6 @@
 	
 	var PortalScreen;
 	
-	// var protalScreenHTML = "";
-	// var portalScreenDelay;
-	// var portalScreenDisplayed = false;
-	
 	/* --- PORTAL */
 	
 	var portalData_ARR = new Array();
@@ -37,7 +33,6 @@
 	
 	var game_introEntrance = true;
 	
-	// var html_lib;
 	
 	function mapPlayer_init(playerMover, playerTween, playerWalkTweenX, playerWalkTweenY, playerWalkStop, playerWalkLoop, playerFadeTarget, hitTestArea)
 	{
@@ -796,6 +791,9 @@
 		level_clear();
 		
 		level_init();
+		
+		$("#portalScreen h1").text(LEVEL_MAIN.titleData.top);
+		$("#portalScreen h2").text(LEVEL_MAIN.titleData.btm);
 	}
 	
 	function portalScreen_screen1()
@@ -850,7 +848,7 @@
 		$("#portalScreen .portalScreen_wrapper").css(css);
 		
 		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
-		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_remove, false);		
+		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_remove, false);	
 	}
 	
 	function portalScreen_remove(event)

@@ -8,6 +8,12 @@
 
 /* 2 PIXEL DEPTH */
 
+	.tweenFlickerFix div
+	{
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;		
+	}
+
 
 /* ----------------------------------------------------------------------- GENERAL */
 
@@ -145,14 +151,14 @@
 		background-size: 320px 320px;		
 	}
 	
-	.startPixels
+	.pixels_start
 	{
 		background-image: url(../_img/startSprite_1x.png);
 		background-repeat: no-repeat;
 		background-size: 240px 203px;
 	}
 	
-	.colour-navPink-Pixels
+	.pixels_colour-navPink
 	{
 		background-image: url(../_img/col_nav-pink_1x.png);
 		background-repeat: repeat;
@@ -167,12 +173,13 @@
 		background-size: 320px 120px;
 	}
 	
-	.battleFlowPixels
+	.pixels_battleFlow
 	{
 		background-image: url(../_img/battleNavSprite_1x.png);
 		background-repeat: no-repeat;
 		background-size: 371px 400px;				
 	}
+	
 	
 	.pixels_map_enemy40x40
 	{
@@ -473,12 +480,12 @@
 			background-image: url(../_img/wind_2_1x.png);		
 		}
 		
-		.startPixels
+		.pixels_start
 		{
 			background-image: url(../_img/startSprite_1x.png);
 		}
 		
-		.colour-navPink-Pixels
+		.pixels_colour-navPink
 		{
 			background-image: url(../_img/col_nav-pink_1x.png);
 		}
@@ -488,7 +495,7 @@
 			background-image: url(../_img/map_playerSprite_1x.png);
 		}
 		
-		.battleFlowPixels
+		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_1x.png);				
 		}
@@ -700,12 +707,12 @@
 			background-image: url(../_img/wind_2_2x.png);		
 		}
 		
-		.startPixels
+		.pixels_start
 		{
 			background-image: url(../_img/startSprite_2x.png);
 		}
 		
-		.colour-navPink-Pixels
+		.pixels_colour-navPink
 		{
 			background-image: url(../_img/col_nav-pink_2x.png);
 		}
@@ -715,7 +722,7 @@
 			background-image: url(../_img/map_playerSprite_2x.png);
 		}
 		
-		.battleFlowPixels
+		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_2x.png);				
 		}

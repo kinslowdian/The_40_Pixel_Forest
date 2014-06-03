@@ -24,8 +24,8 @@
 		this.buildData.fall_y		= this.settings.fall_y;
 		this.buildData.direction	= this.settings.fall_d;
 		
-		this.titleData.act			= this.settings.act;
-		this.titleData.title		= this.settings.title;
+		this.titleData.top			= this.settings.title_top;
+		this.titleData.btm			= this.settings.title_btm;
 	
 		delete this.settings;
 	}	
