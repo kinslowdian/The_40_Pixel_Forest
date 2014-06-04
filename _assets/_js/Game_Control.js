@@ -729,7 +729,7 @@
 		
 		if(gotoState === "ENEMY")
 		{
-			enemyEntry(); // ADD ID
+			enemyEntry(HIT_TEST.hit_enemy_id);
 		}
 	}
 	
@@ -1030,13 +1030,49 @@
 	
 	///////////////////////////////// --- ENEMY
 	
-	function enemyEntry()
+	function enemyEntry(enemy_hit)
 	{
-		$(".actionCloudMain").css("visibility", "visible");
+		ROM.enemy = {};
 		
-		$(".actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuter");
+		for(var attacker in enemies_ARR)
+		{
+			if(enemies_ARR[attacker].id === enemy_hit)
+			{
+				ROM.enemy.character = enemies_ARR[attacker];
+			}
+		}
 		
-		$(".actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");	
+		trace("-------------- enemyEntry();");
+		
+		trace(ROM.enemy);
+		
+		trace("-------------- enemyEntry();");
+		
+		attackCloud_0();
+	}
+	
+	function attackCloud_0()
+	{
+		var delay_sequence;
+		
+		$(".player-sprite .actionCloudMain-1").css("visibility", "visible");
+		
+		$(".player-sprite .actionCloudMain-1 .actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuterAlt");
+		
+		$(".player-sprite .actionCloudMain-1 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");	
+		
+		$("#roam_wrapper").addClass("tween-fieldSmash");
+		
+		delay_sequence = setTimeout(attackCloud_1, 0.2 * 1000);
+	}
+	
+	function attackCloud_1()
+	{
+		$(".player-sprite .actionCloudMain-0").css("visibility", "visible");
+		
+		$(".player-sprite .actionCloudMain-0 .actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuter");
+		
+		$(".player-sprite .actionCloudMain-0 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");			
 	}
 	
 	///////////////////////////////// --- ENEMY

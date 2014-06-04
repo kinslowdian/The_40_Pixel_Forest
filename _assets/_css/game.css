@@ -3,6 +3,12 @@
 @import url(reset.css);
 @import url(pixels.css);
 
+/* DELETE THIS */
+@import url(temp.css);
+/* DELETE THIS */
+
+
+
 /* EXTRA RESET */
 
 /* FONT */
@@ -104,7 +110,7 @@
 		
 		z-index: 0;
 		
-		background: #FFBE40;
+		/* background: #FFBE40; */
 	}
 
 	#memory
@@ -964,7 +970,15 @@
 		
 		-webkit-transform: translate(-40px, -40px);
 		transform: translate(-40px, -40px);
-		
+	}
+	
+	.actionCloudMain-0
+	{
+		z-index: 1;
+	}
+	
+	.actionCloudMain-1
+	{
 		z-index: 0;
 	}
 	
@@ -1017,6 +1031,28 @@
 		100%	{transform: scale(1); opacity: 1;}
 	}
 	
+	.tween-actionCloudSpriteOuterAlt
+	{
+		visibility: visible;
+		
+		-webkit-animation: tweenActionCloudSpriteOuterAltFrames 0.6s ease-in-out forwards;
+		animation: tweenActionCloudSpriteOuterAltFrames 0.6s ease-in-out forwards;
+	}
+	
+	@-webkit-keyframes tweenActionCloudSpriteOuterAltFrames
+	{
+		0%		{-webkit-transform: scale(0) rotate(0deg); opacity: 0;}
+		50%		{-webkit-transform: scale(8) rotate(180deg); opacity: 1;}
+		100%	{-webkit-transform: scale(0) rotate(360deg); opacity: 0;}
+	}
+	
+	@keyframes tweenActionCloudSpriteOuterAltFrames
+	{
+		0%		{transform: scale(0) rotate(0deg); opacity: 0;}
+		50%		{transform: scale(8) rotate(180deg); opacity: 1;}
+		100%	{transform: scale(0) rotate(360deg); opacity: 0;}
+	}
+	
 	.tween-actionCloudSpriteInner
 	{
 		visibility: visible;
@@ -1037,6 +1073,16 @@
 		0%		{transform: scale(0.8);}
 		50%		{transform: scale(1);}
 		100%	{transform: scale(0.8);}
+	}
+	
+	.actionCloud-color
+	{
+		background-position: 0 0;
+	}
+	
+	.actionCloud-white
+	{
+		background-position: -120px 0;
 	}
 
 /* ----------------------------------------------------------------------- PLAYER */
@@ -1301,7 +1347,7 @@
 		width: 100%;
 		height: 100%;
 				
-		overflow: hidden;
+		/* overflow: hidden; */
 				
 		position: absolute;
 				
