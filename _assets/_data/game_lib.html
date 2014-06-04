@@ -161,245 +161,1067 @@
 <!-- LEVEL_GAME -->
 
 <div class="_level_game">
-		<div id="portalScreen">
+<div id="portalScreen">
 			
-			<div class="portalScreen_wrapper tween-portalScreen_wrapper">
+	<div class="portalScreen_wrapper tween-portalScreen_wrapper">
 			
-				<div class="portalScreen_fade tween-portalScreen_fade"></div>
+		<div class="portalScreen_fade tween-portalScreen_fade"></div>
 				
-				<div class="portalScreen_header font-dosis tween-portalScreen_header">
+		<div class="portalScreen_header font-dosis tween-portalScreen_header">
 					
-					<h1>empty fields</h1>
-					<h2>get ready</h2>
+			<h1>empty fields</h1>
+			<h2>get ready</h2>
 					
-				</div>
+		</div>
 				
-				<div class="portalScreen_field">
+		<div class="portalScreen_field">
 					
-					<div class="portalScreen_player tweenFlickerFix">
+			<div class="portalScreen_player tweenFlickerFix">
 									
-						<div class="portalScreen_map-goat">
+				<div class="portalScreen_map-goat">
 										
-							<div class="player-sprite tween-player-walkX">
+					<div class="player-sprite tween-player-walkX">
 											
-								<div class="map-goat-head pixels_map_player tween-map-goat-head mapPlayer_head_default"></div>
+						<div class="map-goat-head pixels_map_player tween-map-goat-head mapPlayer_head_default"></div>
 											
+						<div class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
+						<div class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
+											
+						<div class="map-goat-body pixels_map_player"></div>
+											
+						<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_loop"></div>
+											
+					</div>
+									
+				</div>
+									
+			</div>
+					
+		</div>
+				
+		<div class="portalScreen_green tween-portalScreen_green"></div>
+				
+		<div class="portalScreen_bg">
+					
+			<div class="portalScreen_field"></div>
+			<div class="portalScreen_weird pixels_portalScreen tween-portalScreen_weird"></div>
+					
+		</div>
+			
+	</div>
+			
+</div> <!-- #portalScreen -->
+		
+		
+
+<div id="touchPad">
+	
+	<div id="touchPad_C">
+		
+		<div id="touchPad-full"></div>
+		
+		<div class="touchPad-cont">
+			
+			<div class="touchPad-inner">
+				
+				<div class="touchPad-base vectors_touch-ui"></div>
+				
+				<div id="touchPad-U-ind" class="touchPad-feedback"></div>
+				<div id="touchPad-D-ind" class="touchPad-feedback"></div>
+				<div id="touchPad-L-ind" class="touchPad-feedback"></div>
+				<div id="touchPad-R-ind" class="touchPad-feedback"></div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</div> <!-- #touchPad -->
+		
+<div id="space">
+		
+	<div class="weather-snow">
+			
+	</div>
+		
+			
+	<div class="weather-rain">
+				
+	</div>
+			
+			
+	<div class="weather-wind">
+			
+	</div>
+		
+</div> <!-- #space -->
+		
+<div id="roam_wrapper" class="stage-main edgeBleed-forest">
+			
+	<div class="stage-view-y">
+			
+		<div id="roam_content" class="stage-view-x pixels_forestMass">
+					
+			<div class="field">
+						
+				<div class="fieldEdge">
+							
+					<div class="fieldEdge-T collideCheck-field" data-npc="edge"></div>
+					<div class="fieldEdge-B collideCheck-field" data-npc="edge"></div>
+					<div class="fieldEdge-L collideCheck-field" data-npc="edge"></div>
+					<div class="fieldEdge-R collideCheck-field" data-npc="edge"></div>
+						
+				</div> <!-- .fieldEdge -->
+						
+				<div class="player-area">
+							
+					<div id="preHitTest" class="collideCheck-player"></div>
+							
+					<div id="player-block" class="tweenFlickerFix"> <!-- class="tween-bot" -->
+								
+						<div class="map-goat">
+									
+							<div class="player-sprite">
+										
+								<div class="actionCloud">
+											
+									<div class="actionCloudMain-0 actionCloudMain">
+												
+										<div class="actionCloudSprite-outer">
+													
+											<div class="actionCloudSprite-inner actionCloud-color vectors_clash_cloud"></div>
+													
+										</div>
+												
+									</div>
+											
+									<div class="actionCloudMain-1 actionCloudMain">
+												
+										<div class="actionCloudSprite-outer">
+													
+											<div class="actionCloudSprite-inner actionCloud-white vectors_clash_cloud"></div>
+													
+										</div>
+												
+									</div>
+											
+								</div>
+										
+								<div class="map-goat-head pixels_map_player tween-map-goat-head"></div>
+										
 								<div class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
 								<div class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
-											
+										
 								<div class="map-goat-body pixels_map_player"></div>
-											
-								<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_loop"></div>
-											
+										
+								<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_stop"></div>
+										
 							</div>
-									
+								
 						</div>
-									
-					</div>
-					
-				</div>
-				
-				<div class="portalScreen_green tween-portalScreen_green"></div>
-				
-				<div class="portalScreen_bg">
-					
-					<div class="portalScreen_field"></div>
-					<div class="portalScreen_weird pixels_portalScreen tween-portalScreen_weird"></div>
-					
-				</div>
-			
-			</div>
-			
-		</div> <!-- #portalScreen -->
-		
-		
-
-		<div id="touchPad">
-					
-			<div id="touchPad_C">
-							
-				<div id="touchPad-full"></div>
-							
-				<div class="touchPad-cont">
-								
-					<div class="touchPad-inner">
-								
-						<div class="touchPad-base vectors_touch-ui"></div>
-									
-						<div id="touchPad-U-ind" class="touchPad-feedback"></div>
-						<div id="touchPad-D-ind" class="touchPad-feedback"></div>
-						<div id="touchPad-L-ind" class="touchPad-feedback"></div>
-						<div id="touchPad-R-ind" class="touchPad-feedback"></div>
 								
 					</div>
 							
-				</div>
+				</div> <!-- .player-area -->
+						
+						
+				<div class="enemy-area">					
+					
+				</div> <!-- .enemy-area -->
+						
+						
+				<div class="portal-area">
 							
-				<div class="touchPad-min vectors_touch-mini"></div>
-									
-			</div>
-										
-		</div>
-		
-		<div id="space">
-		
-			<div class="weather-snow">
-			
-			</div>
-		
-			
-			<div class="weather-rain">
+				</div> <!-- .portal-area -->
+						
 				
-			</div>
-			
-			
-			<div class="weather-wind">
-			
-			</div>
-		
-		</div>
-		
-		<div id="roam_wrapper" class="stage-main edgeBleed-forest">
-			
-			<div class="stage-view-y">
-			
-				<div id="roam_content" class="stage-view-x pixels_forestMass">
+				<div class="field-area">
+							
+							
+				</div> <!-- .field-area -->
+						
+						
+				<div class="field-floor">
+							
+					<div></div>
+							
+				</div>	
+						
+			</div> <!-- .field -->
 					
-					<div class="field">
+			<div class="woodland">
 						
-						<div class="fieldEdge">
+				<div class="woodland-darkness-left woodland-darkness">
 							
-							<div class="fieldEdge-T collideCheck-field" data-npc="edge"></div>
-							<div class="fieldEdge-B collideCheck-field" data-npc="edge"></div>
-							<div class="fieldEdge-L collideCheck-field" data-npc="edge"></div>
-							<div class="fieldEdge-R collideCheck-field" data-npc="edge"></div>
+					<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+							
+				</div>
 						
-						</div> <!-- .fieldEdge -->
+				<div class="woodland-darkness-right woodland-darkness">
+							
+					<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+					<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+							
+				</div>
 						
-						<div class="player-area">
-							
-							<div id="preHitTest" class="collideCheck-player"></div>
-							
-							<div id="player-block" class="tweenFlickerFix"> <!-- class="tween-bot" -->
-								
-								<div class="map-goat">
-									
-									<div class="player-sprite">
-										
-										<div class="actionCloud">
-											
-											<div class="actionCloudMain-0 actionCloudMain">
-												
-												<div class="actionCloudSprite-outer">
-													
-													<div class="actionCloudSprite-inner actionCloud-color vectors_clash_cloud"></div>
-													
-												</div>
-												
-											</div>
-											
-											<div class="actionCloudMain-1 actionCloudMain">
-												
-												<div class="actionCloudSprite-outer">
-													
-													<div class="actionCloudSprite-inner actionCloud-white vectors_clash_cloud"></div>
-													
-												</div>
-												
-											</div>
-											
-										</div>
-										
-										<div class="map-goat-head pixels_map_player tween-map-goat-head"></div>
-										
-										<div class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
-										<div class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
-										
-										<div class="map-goat-body pixels_map_player"></div>
-										
-										<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_stop"></div>
-										
-									</div>
-								
-								</div>
-								
-							</div>
-							
-						</div> <!-- .player-area -->
+				<div class="woodland-bottom pixels_woodlandBottom"></div>			
 						
-						
-						<div class="enemy-area">					
-							
-						
-							
-						</div> <!-- .enemy-area -->
-						
-						<div class="portal-area">
-							
-							
-							
-						</div> <!-- .portal-area -->
-						
-						<div class="field-area">
-							
-							
-						</div> <!-- .field-area -->
-						
-						<div class="field-floor">
-							
-							<div></div>
-							
-						</div>	
-						
-					</div> <!-- .field -->
+			</div> <!-- .woodland -->
+			
 					
-					<div class="woodland">
-						
-						<div class="woodland-darkness-left woodland-darkness">
-							
-							<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							
-						</div>
-						
-						<div class="woodland-darkness-right woodland-darkness">
-							
-							<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-							
-						</div>
-						
-						<div class="woodland-bottom pixels_woodlandBottom"></div>			
-						
-					</div>
-					
-					<div class="woodland-areas">
+			<div class="woodland-areas">
 								
-					</div> <!-- .woodland-areas -->
+			</div> <!-- .woodland-areas -->
 			
-				</div> <!-- #content -->
+		</div> <!-- #roam_content -->
 			
-			</div> <!-- .stage-view-y -->
+	</div> <!-- .stage-view-y -->
 			
-		</div> <!-- #roam_wrapper -->
-
-</div>
+</div> <!-- #roam_wrapper -->
+</div> <!-- LIB_WRAPPER!!! ._level_game -->
 
 <!-- LEVEL_GAME -->
 
 <!-- LEVEL_BATTLE -->
 
 <div class="_level_battle">
-
+<div id="microBattle_nav_wrapper">
+		
+	<div id="battle-cloud" class="pixels_battleCloud tween-battle-cloud"> 
+			
+		<div id="battle-cloud-cover" class="pixels_battleCloud"></div>
+	
+		<div id="info-cloud" class="font-dosis tween-info-cloud">
+				
+			<p>test</p>
+				
+		</div>
+	
+		<div id="battle-hint">
+			
+			<div id="battle-hint-0" class="battle-hint-sprite vectors_battleHint tween-battle-hint"></div>
+			
+			<div id="battle-hint-1" class="battle-hint-sprite vectors_battleHint tween-battle-hint"></div>
+			
+			<div id="battle-hint-2" class="battle-hint-sprite vectors_battleHint tween-battle-hint"></div>
+			
+		</div>
+			
+			
+		<div id="battle-nav" class="battle-nav-show tween-battle-nav">
+					
+			<div id="battle-stone" class="vectors_battleNav battleNavButton">
+						
+				<div class="battleNavShock vectors_battleNav"></div>
+				<div class="battleNavSprite-stone vectors_battleNav battleNavSprite-mouseEvents"></div>
+					
+			</div>
+					
+			<div id="battle-paper" class="vectors_battleNav battleNavButton">
+						
+				<div class="battleNavShock vectors_battleNav"></div>
+				<div class="battleNavSprite-paper vectors_battleNav battleNavSprite-mouseEvents"></div>
+					
+			</div>
+					
+			<div id="battle-scissors" class="vectors_battleNav battleNavButton">
+						
+				<div class="battleNavShock vectors_battleNav"></div>
+				<div class="battleNavSprite-scissors vectors_battleNav battleNavSprite-mouseEvents"></div>
+					
+			</div>
+				
+		</div> <!-- battle-nav -->
+			
+		<div id="battle-nav-fight"> <!-- class="battle-nav-hide" -->
+					
+			<div id="battle-nav-player1" class="battleCute-warrior-battleMode">
+					
+			 	<div class="battleCute-warrior-left">
+			 		 		
+			 		<div class="battleCute-warrior-head pixels_battleFlow tween-battleCute-warrior-head"> <!-- battleCute-warrior-head-goat -->
+			 		 			
+			 		 	<div class="battleCute-tears pixels_battleFlow"></div>
+			 		 			
+			 		 	<div class="battleCute-eyes">
+							 		 			
+							 <div class="battleCute-eyes-sprite battleCute-eyes-norm pixels_battleFlow"></div> <!-- battleCute-eyes-look-C -->	
+							 		 			
+						</div>
+			 		 			
+			 		 	<div class="battleCute-cloud pixels_battleFlow tween-battleCute-Cloud"></div>
+			 		 			
+			 		 		<div class="battleCute-speak-left pixels_battleFlow">
+			 		 				
+			 		 			<div class="battleCute-speak-icon pixels_battleFlow"> <!-- battleCute-stone --> <!-- battleCute-paper --> <!-- battleCute-scissors -->
+				 		 				
+			 		 				<div class="battleCute-eyes">
+							 		 			
+							 			<div class="battleCute-eyes-sprite battleCute-eyes-norm pixels_battleFlow battleCute-eyes-look-C"></div>	
+							 		 			
+							 		</div>
+				 		 				
+			 		 			</div>
+			 		 				
+			 		 		</div>
+			 		 			
+			 		 	</div>
+			 		 		
+			 		 	<div class="battleCute-warrior-body">
+			 		 			
+			 		 		<div class="battleCute-warrior-bodyMain-left pixels_battleFlow"></div>
+			 		 			
+			 		 		<div class="battleCute-warrior-arms">
+			 		 				
+			 		 			<div class="battleCute-warrior-arm battleCute-warrior-arm-left">
+				 		 				
+				 		 			<div class="battleCute-warrior-arm-sprite pixels_battleFlow"></div>
+				 		 				
+			 		 			</div>
+			 		 				
+			 		 			<div class="battleCute-warrior-arm battleCute-warrior-arm-right">
+				 		 				
+				 		 			<div class="battleCute-warrior-arm-sprite pixels_battleFlow battleCute-warrior-armsDown"></div>
+				 		 				
+			 		 			</div>
+			 		 				
+			 		 		</div>
+			 		 			
+			 		 	</div>
+			 		 		
+			 		 </div> 
+	
+				</div> <!-- #battle-nav-player1 -->
+					
+					
+				<div id="battle-nav-playerBird" class="battleCute-bird-battleMode">
+					
+		 		 	<div class="battleCute-bird">
+		 		 			
+		 		 		<div class="battleCute-bird-body tween-battleCute-bird-body">
+		 		 				
+		 		 			<div class="battleCute-bird-head pixels_battleFlow">
+		 		 					
+		 		 				<div class="battleCute-eyes">
+						 		 			
+						 		 	<div class="battleCute-eyes-sprite battleCute-eyes-norm pixels_battleFlow battleCute-eyes-look-C"></div>	
+						 		 			
+					 		 	</div>
+		 		 					
+		 		 			</div>
+		 		 				
+		 		 			<div class="battleCute-bird-arm battleCute-bird-arm-left">
+		 		 					
+		 		 				<div class="battleCute-bird-arm-main"> <!-- tween-battleCute-bird-arm-main -->
+		 		 						
+		 		 					<div class="battleCute-bird-arm-inner pixels_battleFlow">
+		 		 						
+		 		 						<div class="battleCute-bird-board pixels_battleFlow"></div>
+		 		 						
+		 		 					</div>
+		 		 						
+		 		 				</div>
+		 		 					
+		 		 			</div>
+		 		 				
+		 		 			<div class="battleCute-bird-arm battleCute-bird-arm-right">
+		 		 					
+		 		 				<div class="battleCute-bird-arm-main"> <!-- tween-battleCute-bird-arm-main -->
+		 		 					
+		 		 					<div class="battleCute-bird-arm-inner pixels_battleFlow">
+		 		 						
+		 		 						<div class="battleCute-bird-board pixels_battleFlow"></div>
+		 		 						
+		 		 					</div>
+		 		 					
+		 		 				</div>
+		 		 				
+		 		 			</div>
+		 		 				
+		 		 		</div>
+		 		 			
+		 		 		<div class="battleCute-bird-legs pixels_battleFlow"></div>
+		 		 		
+		 		 	</div>
+					
+				</div> <!-- #battle-nav-playerBird -->
+					
+					
+				<div id="battle-nav-player2" class="battleCute-warrior-battleMode">
+					
+			 		 <div class="battleCute-warrior-right">
+			 		 		
+			 		 	<div class="battleCute-warrior-head pixels_battleFlow tween-battleCute-warrior-head"> <!-- battleCute-warrior-head-boss -->
+			 		 			
+			 		 		<div class="battleCute-tears pixels_battleFlow"></div>
+			 		 			
+		 		 			<div class="battleCute-eyes">
+						 		 			
+						 		<div class="battleCute-eyes-sprite battleCute-eyes-norm pixels_battleFlow"></div> <!-- battleCute-eyes-look-C -->	
+						 		 			
+					 		</div>
+			 		 			
+			 		 		<div class="battleCute-cloud pixels_battleFlow"></div>
+			 		 			
+			 		 		<div class="battleCute-speak-right pixels_battleFlow">
+			 		 				
+			 		 			<div class="battleCute-speak-icon pixels_battleFlow"> <!-- battleCute-stone --> <!-- battleCute-paper --> <!-- battleCute-scissors -->
+				 		 				
+			 		 				<div class="battleCute-eyes">
+							 		 			
+							 		 	<div class="battleCute-eyes-sprite battleCute-eyes-norm pixels_battleFlow battleCute-eyes-look-C"></div>	
+							 		 			
+						 		 	</div>
+				 		 				
+			 		 			</div>
+			 		 				
+			 		 		</div>
+			 		 			
+			 		 	</div>
+			 		 		
+			 		 	<div class="battleCute-warrior-body">
+			 		 			
+			 		 		<div class="battleCute-warrior-bodyMain-right pixels_battleFlow"></div>
+			 		 			
+			 		 		<div class="battleCute-warrior-arms">
+			 		 				
+			 		 		<div class="battleCute-warrior-arm battleCute-warrior-arm-left">
+				 		 				
+				 		 		<div class="battleCute-warrior-arm-sprite pixels_battleFlow"></div>
+				 		 				
+			 		 		</div>
+			 		 				
+			 		 		<div class="battleCute-warrior-arm battleCute-warrior-arm-right">
+				 		 				
+				 		 		<div class="battleCute-warrior-arm-sprite pixels_battleFlow battleCute-warrior-armsDown"></div>
+				 		 				
+			 		 		</div>
+			 		 				
+			 		 	</div>
+			 		 			
+			 		</div>
+			 		 		
+			 	</div> 
+					
+			</div> <!-- #battle-nav-player2 -->
+					
+		</div> <!-- battle-nav-fight -->
+		
+	</div> <!-- #battle-cloud -->		
+		
+</div> <!-- #microBattle_nav_wrapper -->
+	
+<div id="microBattle_space_wrapper">
+		
+	<div class="microBattle_weather tween-microBattleWeatherFade">
+			
+		<div class="rain-0 rain tween-rain pixels_rain0"></div>
+		<div class="rain-1 rain tween-rain pixels_rain1"></div>
+		<div class="rain-2 rain tween-rain pixels_rain2"></div>
+				
+	</div>
+		
 </div>
+		
+<div id="microBattle_player_wrapper" class="stage-main">
+			
+	<div class="stage-view-y">
+				
+		<div id="microBattlePlayer_content" class="stage-view-x">
+					
+			<div class="field">
+						
+				<div class="match-area">
+							
+					<div id="player1" class="match-player">
+							
+						<div class="player-sprite">
+										
+							<div class="map-goat-head pixels_map_player tween-map-goat-head mapPlayer_head_default"></div>
+										
+							<div class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
+							<div class="map-goat-hand-R pixels_map_player tween-map-goat-hand-R"></div>
+										
+							<div class="map-goat-body pixels_map_player"></div>
+										
+							<div class="map-goat-legs pixels_map_player tween-mapPlayerWalk_stop"></div>
+										
+						</div>
+							
+					</div> <!-- #player1 -->
+							
+					<div id="player2" class="match-player enemy_bird">
+								
+						<div class="enemy-sprite">
+																
+							<div class="map-enemy_40x40-head pixels_map_enemy40x40 tween-map-enemy_40x40-head map-enemy_40x40_head_default"></div>
+																
+							<div class="map-enemy_40x40-hand-L pixels_map_enemy40x40 tween-map-enemy_40x40-hand-L"></div>
+							<div class="map-enemy_40x40-hand-R pixels_map_enemy40x40 tween-map-enemy_40x40-hand-R"></div>
+																
+							<div class="map-enemy_40x40-body pixels_map_enemy40x40"></div>
+																
+							<div class="map-enemy_40x40-legs pixels_map_enemy40x40 tween-map-enemy_40x40_stop"></div>
+																
+						</div>
+								
+					</div> <!-- #player2 -->
+							
+				</div> <!-- .match-area -->
+						
+			</div> <!-- .field -->
+					
+		</div> <!-- .stage-view-x -->
+				
+	</div> <!-- .stage-view-y -->
+			
+</div> <!-- #microBattle_player_wrapper -->
+		
+<div id="microBattle_resultWipe_wrapper">
+			
+	<div id="microBattle_resultWipe_content" class="tween-microBattle_resultWipe_content">
+				
+		<div class="microBattle-resultWipe_crowd">
+					
+			<div class="tween-microBattle-resultWipe_crowd"></div>
+						
+		</div>
+				
+		<div class="microBattle-resultWipe_boss">
+								
+			<div class="bossCont">
+													
+				<div class="boss">
+														
+					<div class="boss-top tween-boss-top">
+														
+						<div class="boss-head pixels_boss tween-boss-head">
+																
+							<div class="boss-face boss-face-happy pixels_boss"></div>
+																
+						</div>
+															
+						<div class="boss-body pixels_boss"></div>
+															
+						<div class="boss-armL-Cont">
+																
+							<div class="boss-armL tween-boss-armL">
+																	
+								<div class="boss-upperArmL pixels_boss"></div>
+								<div class="boss-lowerArmL pixels_boss tween-boss-lowArmL"></div>
+																	
+							</div>
+															
+						</div>
+											
+						<div class="boss-armR-Cont">				
+												
+							<div class="boss-armR tween-boss-armR">
+																	
+								<div class="boss-upperArmR pixels_boss"></div>
+								<div class="boss-lowerArmR pixels_boss tween-boss-lowArmR"></div>
+																	
+							</div>
+											
+						</div>
+														
+					</div>
+														
+					<div class="boss-legs">
+															
+						<div class="boss-legL pixels_boss"></div>
+						<div class="boss-legR pixels_boss"></div>
+															
+					</div>
+														
+														
+				</div> <!-- .boss -->		
+												
+			</div> <!-- .bossCont --> 								
+								
+		</div> <!-- #bossWatching -->
+				
+		<div class="microBattle_resultWipe_fill">
+					
+			<div class="microBattle_endSky">
+						
+				<div class="microBattle_endSky_mountains pixels_battleCrowd_sky"></div>
+						
+				<div class="microBattle_endSky_sunMoon">
+							
+					<div class="microBattle_endSky_sunMoon_sprite pixels_battleCrowd_sky tween-microBattle_endSky"></div>	
+							
+				</div>
+						
+			</div>
+					
+		</div>
+				
+	</div>
+			
+</div>
+		
+<div id="microBattle_fade_wrapper">
+			
+			
+	<div class="microBattle_fade_main tween-microBattleFade">
+				
+				
+		<div id="microBattle_fade_content" class="stage-view-x">
+					
+			<div class="spaceSquids">
+						
+				<div id="spaceSquid0" class="spaceSquidMain">
+							
+					<div class="spaceSquid">
+								
+						<div class="spaceSquid_face">
+									
+							<div class="spaceSquid_faceSprite pixels_spaceSquid tween-spaceSquidFace"></div>
+									
+						</div>
+								
+						<div class="spaceSquid_hands">
+									
+							<div class="spaceSquid_handL pixels_spaceSquid tween-map-goat-hand-L"></div>
+							<div class="spaceSquid_handR pixels_spaceSquid tween-map-goat-hand-R"></div>
+									
+						</div>
+								
+						<div class="spaceSquid_legs">
+									
+							<div class="spaceSquid_legs0 pixels_spaceSquid tween-SpaceSquid_legs0"></div>
+							<div class="spaceSquid_legs1 pixels_spaceSquid tween-SpaceSquid_legs1"></div>
+									
+						</div>
+								
+						<div class="spaceSquid_body pixels_spaceSquid tween-SpaceSquidBody"></div>
+								
+					</div>
+							
+				</div> <!-- #spaceSquid0 -->
+						
+				<div id="spaceSquid1" class="spaceSquidMain">
+							
+					<div class="spaceSquid">
+								
+						<div class="spaceSquid_face">
+									
+							<div class="spaceSquid_faceSprite pixels_spaceSquid tween-spaceSquidFace"></div>
+									
+						</div>
+								
+						<div class="spaceSquid_hands">
+									
+							<div class="spaceSquid_handL pixels_spaceSquid tween-map-goat-hand-L"></div>
+							<div class="spaceSquid_handR pixels_spaceSquid tween-map-goat-hand-R"></div>
+									
+						</div>
+								
+						<div class="spaceSquid_legs">
+									
+							<div class="spaceSquid_legs0 pixels_spaceSquid tween-SpaceSquid_legs0"></div>
+							<div class="spaceSquid_legs1 pixels_spaceSquid tween-SpaceSquid_legs1"></div>
+									
+						</div>
+											
+						<div class="spaceSquid_body pixels_spaceSquid tween-SpaceSquidBody"></div>
+								
+					</div>
+							
+				</div> <!-- #spaceSquid1 -->
+					
+			</div> <!-- .spaceSquids -->
+					
+					
+			<div class="microBattle_fade_floor pixels_microBattleFloor"></div>
+					
+		</div> <!-- #microBattle_fade_content -->
+				
+		<div class="microBattle_fade_stars">
+					
+			<div class="microBattle_fade_stars0 pixels_spaceStars_0 tween-microBattle_fade_stars0"></div>
+			<div class="microBattle_fade_stars1 pixels_spaceStars_1 tween-microBattle_fade_stars1"></div>
+				
+		</div>
+				
+	</div>
+			
+</div>
+		
+		
+<div id="microBattle_wrapper" class="stage-main edgeBleed-forest">
+		
+	<div class="stage-view-y">
+			
+		<div id="microBattle_content" class="stage-view-x pixels_warCrabs pixel_warCrabsTarget edgeBleed-evil">
+				
+			<div class="field">
+						
+				<div class="enemy-area">
+							
+					<div id="bossWatching">
+								
+						<div class="bossCont">
+													
+							<div class="boss">
+														
+								<div class="boss-top tween-boss-top">
+														
+									<div class="boss-head pixels_boss tween-boss-head">
+																
+										<div class="boss-face boss-face-default pixels_boss"></div>
+																
+									</div>
+															
+									<div class="boss-body pixels_boss"></div>
+															
+									<div class="boss-armL-Cont">
+																
+										<div class="boss-armL tween-boss-armL">
+																	
+											<div class="boss-upperArmL pixels_boss"></div>
+											<div class="boss-lowerArmL pixels_boss tween-boss-lowArmL"></div>
+																	
+										</div>
+															
+									</div>
+											
+									<div class="boss-armR-Cont">				
+												
+										<div class="boss-armR tween-boss-armR">
+																	
+											<div class="boss-upperArmR pixels_boss"></div>
+											<div class="boss-lowerArmR pixels_boss tween-boss-lowArmR"></div>
+																	
+										</div>
+											
+									</div>
+														
+								</div>
+														
+								<div class="boss-legs">
+															
+									<div class="boss-legL pixels_boss"></div>
+									<div class="boss-legR pixels_boss"></div>
+															
+								</div>
+														
+														
+							</div> <!-- .boss -->		
+												
+						</div> <!-- .bossCont --> 								
+								
+					</div> <!-- #bossWatching -->
+							
+				</div> <!-- .enemy-area -->
+						
+				<div class="field-area">
+							
+					<div class="warCrab_160x80 warCrabMass_0 pixels_warCrabs pixel_warCrabsTarget"></div>
+					<div class="warCrab_320x1360 warCrabMass_1 pixels_warCrabs pixel_warCrabsTarget"></div>
+					<div class="warCrab_320x80 warCrabMass_2 pixels_warCrabs pixel_warCrabsTarget"></div>
+					<div class="warCrab_80x200 warCrabMass_3 pixels_warCrabs pixel_warCrabsTarget"></div>
+					<div class="warCrab_80x200 warCrabMass_4 pixels_warCrabs pixel_warCrabsTarget"></div>
+							
+							
+					<div class="fireTriangle_x_0 fireLine_2x1 edgeBleed-evil">
+							
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+							
+					</div>
+							
+					<div class="fireTriangle_x_1 fireLine_4x1 edgeBleed-evil">
+							
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>							
+							
+					</div>
+							
+					<div class="fireTriangle_x_2 fireLine_6x1 edgeBleed-evil">
+							
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+							
+					</div>
+							
+							
+					<div class="fireLine_x_0 fireLine_4x1">
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+									
+					</div>
+							
+					<div class="fireLine_x_1 fireLine_4x1">
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>								
+								
+					</div>
+							
+					<div class="fireLine_y_0 fireLine_1x3">
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>								
+								
+					</div>
+							
+					<div class="fireLine_y_1 fireLine_1x3">
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+								
+						<div class="fire">
+								
+							<div class="fireFlame_0 pixels_fire tween-fireFlame_0"></div>
+							<div class="fireFlame_1 pixels_fire tween-fireFlame_1"></div>
+							<div class="fireFlame_2 pixels_fire tween-fireFlame_2"></div>
+								
+						</div>
+									
+					</div>
+							
+					<div class="neonGrass0 neonGrass pixels_tileNeonGrass"></div>
+					<div class="neonGrass1 neonGrass pixels_tileNeonGrass"></div>
+
+
+							
+				</div> <!-- .field-area -->
+						
+				<div class="field-floor">
+							
+					<div class="edgeBleed-evil"></div>
+							
+				</div> <!-- .field-floor -->
+						
+				</div class="woodland"> 
+						
+					<div class="woodland-darkness-left woodland-darkness">
+								
+						<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_4"></div>
+						<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_3"></div>
+						<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_2"></div>
+						<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_1"></div>
+						<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+						<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_4"></div>
+								
+					</div>
+							
+					<div class="woodland-darkness-right woodland-darkness">
+								
+						<div class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_r_2"></div>
+						<div class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_r_1"></div>
+						<div class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_r_0"></div>
+						<div class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_r_4"></div>
+						<div class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_r_3"></div>
+						<div class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_r_2"></div>
+								
+					</div>
+							
+					<div class="woodland-bottom pixels_woodlandBottom"></div>
+						
+						
+				<div> <!-- .woodland -->	
+					
+			</div> <!-- .field -->
+				
+		</div> <!-- #microBattle_content -->
+			
+	</div> <!-- .stage-view-y -->
+		
+</div> <!-- #microBattle_wrapper -->
+</div> <!-- LIB_WRAPPER!!! ._level_battle -->
 
 <!-- LEVEL_BATTLE -->
 
