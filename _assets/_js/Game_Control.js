@@ -654,6 +654,13 @@
 		
 		else
 		{
+			if(HIT_TEST.hit_enemy)
+			{
+				// Temp.js
+				preBattleOptions_init();
+				// Temp.js
+			}
+			
 			$("#" + MAP_PLAYER.playerMover + " .player-sprite").addClass(MAP_PLAYER.playerWalkTween);
 			
 			if(HIT_TEST.hit_portal)
@@ -1048,6 +1055,10 @@
 		
 		trace("-------------- enemyEntry();");
 		
+		// Temp.js
+		preBattleOptions_build();
+		// Temp.js
+		
 		attackCloud_0();
 	}
 	
@@ -1068,11 +1079,22 @@
 	
 	function attackCloud_1()
 	{
+		var delay_sequence;
+		
 		$(".player-sprite .actionCloudMain-0").css("visibility", "visible");
 		
 		$(".player-sprite .actionCloudMain-0 .actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuter");
 		
 		$(".player-sprite .actionCloudMain-0 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");			
+		
+		// Temp.js
+		delay_sequence = setTimeout(preBattleOptions_show, 1.2 * 1000);
+		// Temp.js
+	}
+	
+	function attackCloud_end()
+	{
+		
 	}
 	
 	///////////////////////////////// --- ENEMY

@@ -1,48 +1,17 @@
 @charset "UTF-8";
 
-	.tween-fieldSmash
-	{
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-		
-		-webkit-animation: tweenFieldSmashFrames 0.2s linear forwards;
-		animation: tweenFieldSmashFrames 0.2s linear forwards;
-	}
+	/* STAGE FX HIT TEST STUFF */
+	
 
-/*
-	@-webkit-keyframes tweenFieldSmashFrames
-	{
-		0%		{-webkit-transform: translateX(0px);}
-		25%		{-webkit-transform: translateX(-40px);}
-		50%		{-webkit-transform: translateX(0px);}
-		75%		{-webkit-transform: translateX(40px);}
-		100%	{-webkit-transform: translateX(0px);}
-	}
 	
-	@keyframes tweenFieldSmashFrames
-	{
-		0%		{transform: translateX(0px);}
-		25%		{transform: translateX(-40px);}
-		50%		{transform: translateX(0px);}
-		75%		{transform: translateX(40px);}
-		100%	{transform: translateX(0px);}
-	}
-*/
+	/* PREBATTLE STUFF */
 	
-	@-webkit-keyframes tweenFieldSmashFrames
-	{
-		0%		{-webkit-transform: translateX(0px) rotate(0deg);}
-		25%		{-webkit-transform: translateX(-40px) rotate(-6deg);}
-		50%		{-webkit-transform: translateX(0px) rotate(0deg);}
-		75%		{-webkit-transform: translateX(40px) rotate(6deg);}
-		100%	{-webkit-transform: translateX(0px) rotate(0deg);}
-	}
 	
-	@keyframes tweenFieldSmashFrames
-	{
-		0%		{transform: translateX(0px) rotate(0deg);}
-		25%		{transform: translateX(-40px) rotate(-6deg);}
-		50%		{transform: translateX(0px) rotate(0deg);}
-		75%		{transform: translateX(40px) rotate(6deg);}
-		100%	{transform: translateX(0px) rotate(0deg);}
-	}
+	
+	
+	
+
+	
+	
+	
+	

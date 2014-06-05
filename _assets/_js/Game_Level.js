@@ -120,6 +120,7 @@
 		this.enemyType 			= this.settings.t;
 		this.spawn				= this.settings.spawn;
 		this.rating				= this.settings.l;
+		this.name				= this.settings.known;
 		
 		this.buildData.block_x 	= this.settings.x;
 		this.buildData.block_y 	= this.settings.y;

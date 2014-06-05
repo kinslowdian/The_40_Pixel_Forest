@@ -440,6 +440,7 @@
 						"n": "level0_bird0",
 						"t": "bird",
 						"l": 5,
+						"known" : "some mystic bird",
 						"spawn": 0,
 						"head": "BIRD"
 					},
@@ -453,6 +454,7 @@
 						"n": "level0_rabbit1",
 						"t": "rabbit",
 						"l": 0,
+						"known" : "some mystic rabbit",
 						"spawn": 0,
 						"head": "RABBIT"
 					}		
@@ -944,6 +946,7 @@
 						"n": "level1_bird0",
 						"t": "bird",
 						"l": 0,
+						"known" : "some mystic bird",
 						"spawn": 1,
 						"head": "BIRD"
 					},
@@ -957,6 +960,7 @@
 						"n": "level1_rabbit1",
 						"t": "rabbit",
 						"l": 0,
+						"known" : "some mystic rabbit",
 						"spawn": 1,
 						"head": "RABBIT"
 					}		
@@ -1270,6 +1274,7 @@
 						"n": "level2_bird0",
 						"t": "bird",
 						"l": 0,
+						"known" : "some mystic bird",
 						"spawn": 2,
 						"head": "BIRD"
 					},
@@ -1283,6 +1288,7 @@
 						"n": "level2_rabbit1",
 						"t": "rabbit",
 						"l": 0,
+						"known" : "some mystic rabbit",
 						"spawn": 2,
 						"head": "RABBIT"
 					}			
@@ -1621,6 +1627,7 @@
 						"n": "level3_bird0",
 						"t": "bird",
 						"l": 0,
+						"known" : "some mystic bird",
 						"spawn": 3,
 						"head": "BIRD"
 					},
@@ -1634,6 +1641,7 @@
 						"n": "level3_rabbit1",
 						"t": "rabbit",
 						"l": 0,
+						"known" : "some mystic rabbit",
 						"spawn": 3,
 						"head": "RABBIT"
 					}			
