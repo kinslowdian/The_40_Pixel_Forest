@@ -79,13 +79,17 @@
 		if(CONTROL_SIGNAL.enableTouch)
 		{
 			$("#preBattle_attack")[0].addEventListener("touchend", preBattleOptions_action, false);
-			$("#preBattle_run")[0].addEventListener("touchend", preBattleOptions_action, false);	
+			$("#preBattle_run")[0].addEventListener("touchend", preBattleOptions_action, false);
+			
+			$(".preBattle_enemy")[0].addEventListener("touchend", preBattleOptions_action, false);	
 		}
 		
 		else
 		{
 			$("#preBattle_attack")[0].addEventListener("click", preBattleOptions_action, false);
-			$("#preBattle_run")[0].addEventListener("click", preBattleOptions_action, false);			
+			$("#preBattle_run")[0].addEventListener("click", preBattleOptions_action, false);
+			
+			$(".preBattle_enemy")[0].addEventListener("click", preBattleOptions_action, false);			
 		}
 	}
 	
@@ -93,16 +97,22 @@
 	{
 		var css;
 		
+		trace(event);
+		
 		if(CONTROL_SIGNAL.enableTouch)
 		{
 			$("#preBattle_attack")[0].removeEventListener("touchend", preBattleOptions_action, false);
-			$("#preBattle_run")[0].removeEventListener("touchend", preBattleOptions_action, false);	
+			$("#preBattle_run")[0].removeEventListener("touchend", preBattleOptions_action, false);
+			
+			$(".preBattle_enemy")[0].removeEventListener("touchend", preBattleOptions_action, false);	
 		}
 		
 		else
 		{
 			$("#preBattle_attack")[0].removeEventListener("click", preBattleOptions_action, false);
-			$("#preBattle_run")[0].removeEventListener("click", preBattleOptions_action, false);			
+			$("#preBattle_run")[0].removeEventListener("click", preBattleOptions_action, false);
+			
+			$(".preBattle_enemy")[0].removeEventListener("click", preBattleOptions_action, false);			
 		}
 		
 		css = 	{
@@ -113,18 +123,15 @@
 		$("#preBattle_attack").css(css);
 		$("#preBattle_run").css(css);
 		
+		$(".preBattle_enemy").css(css);
+		
 		switch(event.target.id)
 		{
 			case "preBattle_attack":
 			{
 				trace("ATTACK");
 				
-				$("#enemyScreen .preBattle_enemy .map-enemy_40x40-head").addClass("map-enemy_40x40_head_fear");
-				
-				$("#enemyScreen .preBattle_title_enemy .preBattle_title_name").css("opacity", "0");
-				$("#enemyScreen .preBattle_title_enemy .preBattle_title_level").css("opacity", "0");
-				
-				$("#enemyScreen .preBattle_title_player").css("opacity", "0");
+				preBattleOptions_actionAttack();
 				
 				break;
 			}
@@ -133,16 +140,38 @@
 			{
 				trace("RUN");
 				
-				$("#enemyScreen .preBattle_enemy .map-enemy_40x40-head").addClass("map-enemy_40x40_head_happy");
-				
-				$("#enemyScreen .preBattle_title_player .preBattle_title_name").css("opacity", "0");
-				$("#enemyScreen .preBattle_title_player .preBattle_title_level").css("opacity", "0");
-				
-				$("#enemyScreen .preBattle_title_enemy").css("opacity", "0");
+				preBattleOptions_actionRun();
 				
 				break;
 			}
+			
+			default:
+			{
+				trace("ATTACK-DEFAULT");
+				
+				preBattleOptions_actionAttack();
+			}
 		}
+	}
+	
+	function preBattleOptions_actionAttack()
+	{
+		$("#enemyScreen .preBattle_enemy .map-enemy_40x40-head").addClass("map-enemy_40x40_head_fear");
+				
+		$("#enemyScreen .preBattle_title_enemy .preBattle_title_name").css("opacity", "0");
+		$("#enemyScreen .preBattle_title_enemy .preBattle_title_level").css("opacity", "0");
+				
+		$("#enemyScreen .preBattle_title_player").css("opacity", "0");		
+	}
+	
+	function preBattleOptions_actionRun()
+	{
+		$("#enemyScreen .preBattle_enemy .map-enemy_40x40-head").addClass("map-enemy_40x40_head_happy");
+				
+		$("#enemyScreen .preBattle_title_player .preBattle_title_name").css("opacity", "0");
+		$("#enemyScreen .preBattle_title_player .preBattle_title_level").css("opacity", "0");
+				
+		$("#enemyScreen .preBattle_title_enemy").css("opacity", "0");		
 	}
 	
 	function test_refreshAfter()

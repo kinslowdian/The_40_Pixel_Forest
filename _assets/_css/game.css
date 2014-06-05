@@ -2598,6 +2598,10 @@
 	
 	.preBattle_enemy
 	{
+		cursor: pointer;
+		
+		pointer-events: auto;
+		
 		position: absolute;
 		
 		left: 0; top: 0; right: 0; bottom: 0;
