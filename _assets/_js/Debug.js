@@ -4,3 +4,5 @@
 				{ 
 					console.log(str); 
 				};
+				
+	var NO_HIT_TEST = false;

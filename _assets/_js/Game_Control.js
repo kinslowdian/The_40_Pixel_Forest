@@ -77,12 +77,16 @@
 	{
 		CONTROL_SIGNAL = {};
 		
+		CONTROL_SIGNAL.html = {};
+		
 		if(deviceTest.toString() === "object")
 		{
 			CONTROL_SIGNAL.enableTouch = true;
 
 			$(window)[0].addEventListener("touchstart", screenTouchMainListen, false);
 			$(window)[0].addEventListener("touchend", screenTouchMainListen, false);
+			
+			CONTROL_SIGNAL.html.touchNav = $("#touchPad").html();
 			
 			phoneRotate(null);
 
@@ -1117,9 +1121,10 @@
 		HIT_TEST.hit_portal_id = "";
 		HIT_TEST.hit_enemy_id = "";
 		
-		
 		if(HIT_TEST.hits[0] != undefined || HIT_TEST.hits[0] != null)
 		{
+			trace(HIT_TEST);
+			
 			if($(HIT_TEST.hits[0]).attr("id"))
 			{
 				hit_id = $(HIT_TEST.hits[0]).attr("id");
@@ -1128,14 +1133,18 @@
 			
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "edge")
 			{
-				HIT_TEST.hit_edge = true;		
+				HIT_TEST.hit_edge = true;
+				
+				// alert("HIT! - EG #" + hit_id + " " + $(HIT_TEST.hits[0]).html());		
 			}
 			
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "portal")
 			{
 				HIT_TEST.hit_portal = true;
 				
-				HIT_TEST.hit_portal_id = hit_id;	
+				HIT_TEST.hit_portal_id = hit_id;
+				
+				// alert("HIT! - PO #" + hit_id + " " + $(HIT_TEST.hits[0]).html());	
 			}
 			
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "enemy")
@@ -1143,7 +1152,11 @@
 				HIT_TEST.hit_enemy = true;
 				
 				HIT_TEST.hit_enemy_id = hit_id;
+			
+				// alert("HIT! - EN #" + hit_id + " " + $(HIT_TEST.hits[0]).html());
 			}
+			
+			// alert("HIT!");
 		}
 	}	
 	
