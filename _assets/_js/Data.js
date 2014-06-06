@@ -143,11 +143,41 @@
 		html_lib_empty();
 	}
 	
+/*
 	function html_lib_use(html_class)
 	{
 		var html;
 		
 		html = $("#memory ." + html_class).html();
+		
+		return html;
+	}
+*/
+
+	function html_lib_use(html_class, extend_ids)
+	{
+		var html;
+		
+		if(extend_ids)
+		{
+			$("#memory ." + html_class + " *").each(function(i, div)
+			{
+				if($(div).attr("data-static-id"))
+				{
+					var set_id = $(div).attr("data-static-id");
+				
+					$(div).attr("id", set_id);
+					$("#" + set_id).removeAttr("data-static-id");
+				}
+			});
+			
+			html = $("#memory ." + html_class).html();
+		}
+		
+		else
+		{
+			html = $("#memory ." + html_class).html();	
+		}
 		
 		return html;
 	}

@@ -1,5 +1,23 @@
 	trace("Temp.js being used -- remove from final build / release");
 	
+	
+	function test_EXT_HTML()
+	{
+		var hh;
+		
+		html_lib_reuse();
+		
+		hh = html_lib_use("_test", true);
+		
+		trace(hh);
+	}
+	
+	
+	
+	
+	
+	
+	
 	var preBattleOptions;
 	
 	function preBattleOptions_init()
@@ -23,7 +41,7 @@
 		
 		html_lib_reuse();
 		
-		html = html_lib_use("_preBattle_options");
+		html = html_lib_use("_preBattle_options", true);
 		
 		$("#enemyScreen").html(html);
 		

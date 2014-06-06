@@ -77,7 +77,7 @@
 		this.settings 				= settings;
 		this.buildData				= {};
 		this.buildData.artType		= this.settings.t;
-		this.buildData.html			= html_lib_use("_" + this.buildData.artType);
+		this.buildData.html			= html_lib_use("_" + this.buildData.artType, false);
 		this.buildData.container 	= container; 
 	};
 	
@@ -129,7 +129,7 @@
 		this.buildData.w 		= this.settings.w * 80;
 		this.buildData.h 		= this.settings.h * 80;
 		
-		this.buildData.html		= html_lib_use("_enemy_" + this.enemyType);
+		this.buildData.html		= html_lib_use("_enemy_" + this.enemyType, false);
 		
 		this.buildData.css		=	{
 										"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
@@ -309,19 +309,19 @@
 		{
 			if(LEVEL_MAIN.weather === "SNOW")
 			{
-				html_data = html_lib_use("_weather_data_SNOW");	
+				html_data = html_lib_use("_weather_data_SNOW", false);	
 				html_cont = ".weather-snow";
 			}
 			
 			if(LEVEL_MAIN.weather === "RAIN")
 			{
-				html_data = html_lib_use("_weather_data_RAIN");	
+				html_data = html_lib_use("_weather_data_RAIN", false);	
 				html_cont = ".weather-rain";				
 			}
 			
 			if(LEVEL_MAIN.weather === "WIND")
 			{
-				html_data = html_lib_use("_weather_data_WIND");	
+				html_data = html_lib_use("_weather_data_WIND", false);	
 				html_cont = ".weather-wind";				
 			}
 		}

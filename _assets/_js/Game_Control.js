@@ -885,7 +885,7 @@
 	{
 		this.settings 				= settings;
 		this.buildData				= {};
-		this.buildData.html			= html_lib_use("_portal");
+		this.buildData.html			= html_lib_use("_portal", false);
 		this.buildData.container 	= container;
 		
 		trace(this);
