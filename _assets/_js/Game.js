@@ -88,7 +88,7 @@
 		
 		html_lib_reuse();
 		
-		html_gameLevel = html_lib_use("_level_game", true);
+		html_gameLevel = html_lib_use("_level_game", true, true);
 		
 		
 		$("#display_wrapper").html(html_gameLevel);

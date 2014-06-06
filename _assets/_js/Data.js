@@ -154,7 +154,7 @@
 	}
 */
 
-	function html_lib_use(html_class, extend_ids)
+	function html_lib_use(html_class, extend_ids, extend_classes)
 	{
 		var html;
 		
@@ -170,14 +170,24 @@
 					$("#" + set_id).removeAttr("data-static-id");
 				}
 			});
-			
-			html = $("#memory ." + html_class).html();
 		}
 		
-		else
+		if(extend_classes)
 		{
-			html = $("#memory ." + html_class).html();	
+			$("#memory ." + html_class + " *").each(function(i, div)
+			{
+				if($(div).attr("data-static-class"))
+				{
+					var set_class = $(div).attr("data-static-class");
+				
+					$(div).attr("class", set_class);
+					$(div).removeAttr("data-static-class");
+				}
+			});			
 		}
+		
+		
+		html = $("#memory ." + html_class).html();
 		
 		return html;
 	}

@@ -7,7 +7,7 @@
 		
 		html_lib_reuse();
 		
-		hh = html_lib_use("_test", true);
+		hh = html_lib_use("_test", true, true);
 		
 		trace(hh);
 	}
@@ -41,7 +41,7 @@
 		
 		html_lib_reuse();
 		
-		html = html_lib_use("_preBattle_options", true);
+		html = html_lib_use("_preBattle_options", true, true);
 		
 		$("#enemyScreen").html(html);
 		
