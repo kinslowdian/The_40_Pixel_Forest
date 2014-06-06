@@ -230,6 +230,14 @@
 		background-size: 120px 120px;
 	}
 	
+	.pixels_warCrabsAlt
+	{
+		background-image: url(../_img/tile_microBattle_Alt_bg_1x.png);
+		background-repeat: repeat;
+		background-position: left top;
+		background-size: 120px 120px;
+	}
+	
 	.pixels_fire
 	{
 		background-image: url(../_img/flameSprite_1x.png);
@@ -542,6 +550,11 @@
 		{
 			background-image: url(../_img/tile_microBattle_bg_1x.png);
 		}
+
+		.pixels_warCrabsAlt
+		{
+			background-image: url(../_img/tile_microBattle_Alt_bg_1x.png);
+		}
 		
 		.pixels_fire
 		{
@@ -768,6 +781,11 @@
 		.pixels_warCrabs
 		{
 			background-image: url(../_img/tile_microBattle_bg_2x.png);
+		}
+		
+		.pixels_warCrabsAlt
+		{
+			background-image: url(../_img/tile_microBattle_Alt_bg_2x.png);
 		}
 		
 		.pixels_fire

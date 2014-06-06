@@ -2125,7 +2125,7 @@
 
 /* ----------------------------------------------------------------------- PORTAL SCREEN */
 
-	#portalScreen, #enemyScreen
+	#portalScreen, #enemyScreen, #battleScreen
 	{
 		width: 100%;
 		height: 100%;
@@ -2136,8 +2136,24 @@
 		
 		pointer-events: none;
 		
-		z-index: 200;
+		/* z-index: 200; */
 	}
+	
+	#portalScreen
+	{
+		z-index: 0;
+	}
+	
+	#battleScreen
+	{
+		z-index: 1;
+	}
+	
+	#enemyScreen
+	{
+		z-index: 2;
+	}
+	
 	
 	#portalScreen .portalScreen_wrapper
 	{
@@ -2807,21 +2823,21 @@
 	
 	#battle-hint-0
 	{
-		left: 0;
+		left: 0px;
 		
 		background-position: 0 0;
 	}
 	
 	#battle-hint-1
 	{
-		left: 90;
+		left: 90px;
 		
 		background-position: -90px 0;
 	}
 	
 	#battle-hint-2
 	{
-		left: 180;
+		left: 180px;
 		
 		background-position: -180px 0;
 	}	
@@ -4805,6 +4821,24 @@
 		transform: translateY(306px);
 		
 		z-index: 1;
+	}
+	
+	.extra_flooring_wrapper
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		z-index: 0;
+	}
+	
+	.extra_flooring_content
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
 	}
 
 /* ----------------------------------------------------------------------- LEVEL_BATTLE */
