@@ -134,6 +134,21 @@
 					PORTAL_TRAVEL = null;	
 				}
 			}
+			
+			if(BATTLE_NAV != null || BATTLE_NAV != undefined)
+			{
+				if(BATTLE_NAV.game.result === "LOSE")
+				{
+					// SET UP CONTROLS + HITTEST
+					hitTest_init();
+					
+					MAP_PLAYER.listen = true;
+					
+					control_switch(true);
+					
+					BATTLE_NAV = null;				
+				}			
+			}
 		}
 	}
 	
@@ -183,5 +198,20 @@
 				
 				PORTAL_TRAVEL = null;	
 			}
+		}
+		
+		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
+		{
+			if(BATTLE_NAV.game.result === "LOSE")
+			{
+				// SET UP CONTROLS + HITTEST
+				hitTest_init();
+				
+				MAP_PLAYER.listen = true;
+				
+				control_switch(true);
+				
+				BATTLE_NAV = null;				
+			}			
 		}
 	}	

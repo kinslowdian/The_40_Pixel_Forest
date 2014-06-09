@@ -538,7 +538,6 @@
 		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = map_y;
 		
 		
-		
 		css = 	{
 					"-webkit-transform"	: "translate(" + MAP_PLAYER.pos_x + "px, " + MAP_PLAYER.pos_y + "px)",
 					"transform"			: "translate(" + MAP_PLAYER.pos_x + "px, " + MAP_PLAYER.pos_y + "px)"
@@ -705,6 +704,8 @@
 			{
 				MAP_PLAYER.move = 40;	
 			}
+			
+			mapPlayer_storeEntry(MAP_PLAYER.cur_x, MAP_PLAYER.cur_y);
 			
 			mapPlayer_ready();
 		}

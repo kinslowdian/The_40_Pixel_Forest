@@ -15,7 +15,11 @@
 		outline: 1px solid white;
 	}
 */
-	
+	.tween-battleScreen
+	{
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+		transition: transform 1s ease-in-out;
+	}
 	
 	
 	

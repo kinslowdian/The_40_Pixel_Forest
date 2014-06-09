@@ -222,7 +222,7 @@
 				
 		$("#enemyScreen .preBattle_title_enemy").css("opacity", "0");
 		
-		preBattleOptions_showOption("RUN");		
+		preBattleOptions_showOption();		
 	}
 	
 	function preBattleOptions_showOption()
@@ -500,7 +500,7 @@
 		
 		BATTLE_NAV.game = {};
 		
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 		
 		BATTLE_NAV.html = {};
 		
@@ -1082,6 +1082,7 @@
 		
 		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
 		
+		
 		if(BATTLE_NAV.game.result === "WIN")
 		{
 			$("#microBattle_resultWipe_wrapper .microBattle-resultWipe_boss").remove();
@@ -1103,6 +1104,9 @@
 			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_mountains").addClass("microBattle_endSky_mountains_lose");
 			
 			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_lose");
+		
+			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("webkitTransitionEnd", battleOver_delay, false);
+			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("transitionend", battleOver_delay, false);
 		}
 		
 		if(spaceSquidsUse)
@@ -1265,3 +1269,7 @@
 	}
 	
 	///////////////////////////////// --- SPACE_SQUID */
+	
+	
+	
+	
