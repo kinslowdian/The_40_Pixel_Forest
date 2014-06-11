@@ -196,7 +196,8 @@
 	{
 		background-image: url(../_img/map_enemySprite40x40_1x.png);
 		background-repeat: no-repeat;
-		background-size: 320px 240px;		
+		/* background-size: 320px 240px; */
+		background-size: 320px 360px;		
 	}
 	
 	.pixels_portalScreen

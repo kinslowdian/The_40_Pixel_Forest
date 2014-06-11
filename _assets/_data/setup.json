@@ -457,6 +457,20 @@
 						"known" : "some mystic rabbit 0",
 						"spawn": 0,
 						"head": "RABBIT"
+					},
+					
+					"ENEMY_2":
+					{
+						"x": 0,
+						"y": 0,
+						"w": 0.5,
+						"h": 0.5,
+						"n": "level0_zombie0",
+						"t": "zombie",
+						"l": 0,
+						"known" : "some zombie test",
+						"spawn": 0,
+						"head": "GOAT"
 					}		
 				}
 			},

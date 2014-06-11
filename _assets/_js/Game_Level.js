@@ -111,7 +111,11 @@
 		this.settings				= settings;
 		this.buildData				= {};
 		this.buildData.container	= container;
-		this.alive					= true;	
+		this.alive					= true;
+		
+		trace("<var enemy!>");
+		trace(typeof settings);	
+		trace("</var enemy!>")
 	};
 	
 	enemy.prototype.create = function()

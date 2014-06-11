@@ -29,6 +29,8 @@
 	
 	var HIT_TEST;
 	
+	var actionCloud_html = "";
+	
 	
 	
 	var game_levelChange = false;
@@ -71,6 +73,14 @@
 		
 		// MAP_PLAYER link to CONTROL_SIGNAL if false comms is broken
 		MAP_PLAYER.listen = false;
+		
+		if(!actionCloud_html)
+		{
+			actionCloud_html = $(".actionCloud").html();
+			
+			$(".actionCloud").html("");
+			
+		}
 	}
 	
 	function controlSignal_init()
@@ -1064,7 +1074,14 @@
 		preBattleOptions_build();
 		// Temp.js
 		
-		attackCloud_0();
+		attackCloud_init();
+	}
+	
+	function attackCloud_init()
+	{
+		$(".actionCloud").html(actionCloud_html);
+		
+		attackCloud_0();		
 	}
 	
 	function attackCloud_0()

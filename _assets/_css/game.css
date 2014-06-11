@@ -966,6 +966,12 @@
 		z-index: 4;
 	}
 	
+	.tween-actionCloud
+	{
+		-webkit-transition: opacity 0.2s linear;
+		transition: opacity 0.2s linear;
+	}
+	
 	.actionCloudMain
 	{
 		width: 120px;
@@ -1349,6 +1355,38 @@
 	{
 		background-position-y: -200px;
 	}
+	
+	
+	.enemy_zombie .enemy-sprite .map-enemy_40x40-head
+	{
+		background-position-y: -240px;
+	}
+	
+	.enemy_zombie .enemy-sprite .map-enemy_40x40-hand-L
+	{
+		background-position-y: -280px;
+	}
+	
+	.enemy_zombie .enemy-sprite .map-enemy_40x40-hand-R
+	{
+		background-position-y: -280px;
+	}
+	
+	.enemy_zombie .enemy-sprite .map-enemy_40x40-body
+	{
+		background-position-y: -240px;
+	}
+	
+	.enemy_zombie .enemy-sprite .map-enemy_40x40-legs
+	{
+		background-position-y: -320px;
+	}	
+	
+	
+	
+	
+	
+	
 	
 	.map-enemy_40x40_head_default
 	{
@@ -4589,19 +4627,23 @@
 		
 		position: absolute;
 		
-		z-index: 1;
+		/* z-index: 1; */
 	}
 	
 	#player1
 	{
 		-webkit-transform: translate(120px, 1800px);
 		transform: translate(120px, 1800px);
+		
+		z-index: 1;
 	}
 	
 	#player2
 	{
 		-webkit-transform: translate(160px, 1800px);
 		transform: translate(160px, 1800px);		
+		
+		z-index: 0;
 	}
 			
 	.tween-microBattleFade
@@ -4673,7 +4715,9 @@
 		
 		z-index: 0;
 		
-		background: #e5ffb2;
+		/* background: #e5ffb2; */
+		
+		background: #1a004d;
 	}
 	
 	.microBattle_endSky_mountains

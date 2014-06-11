@@ -86,6 +86,7 @@
 		$("#enemyScreen .preBattle_enemy").css(css);
 		
 		$("#enemyScreen .preBattle_enemy").html(ROM.enemy.character.buildData.html);
+		
 	}
 	
 	function preBattleOptions_show()
@@ -286,7 +287,8 @@
 		}
 		
 		// FLUSH OBJECT
-		preBattleOptions = {};		
+		// NEEDED FOR ZOMBIE PLACEMENT
+		// preBattleOptions = {};		
 	}	
 	
 	///////////////////////////////// --- THE_BATTLE
@@ -343,7 +345,9 @@
 		
 		$("#microBattle_nav_wrapper").html("");
 		$("#microBattle_fade_wrapper").html("");
-		$("#microBattle_resultWipe_wrapper").html("");		
+		$("#microBattle_resultWipe_wrapper").html("");
+		
+		$("#microBattle_player_wrapper #player2").addClass("enemy_" + ROM.enemy.character.enemyType);	
 	}
 	
 	function microBattleSequence_init()
@@ -392,7 +396,7 @@
 		$("#microBattle_wrapper .stage-view-y")[0].removeEventListener("transitionend", microBattleSequence_inView, false);	
 		
 		
-		$(".pixel_warCrabsTarget").removeClass("pixels_warCrabs").addClass("pixels_warCrabsAlt");
+		// $(".pixel_warCrabsTarget").removeClass("pixels_warCrabs").addClass("pixels_warCrabsAlt");
 		
 		microBattleSequence_addData();
 	}

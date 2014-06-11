@@ -22,6 +22,14 @@
 	}
 	
 	
+	.pixels_playerZombie
+	{
+		background-image: url(../_img/map_zombieSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 320px 120px;
+	}
+	
+	
 	
 	
 

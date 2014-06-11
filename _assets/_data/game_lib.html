@@ -138,6 +138,31 @@
 </div>
 <!-- BIRD -->
 
+<!-- ZOMBIE -->
+<div class="_enemy_zombie">
+<div id="_enemy_zombie" class="" data-npc="enemy" data-static-class="enemy_zombie map-enemy_40x40 collideCheck-field tweenFlickerFix">
+								
+	<div class="" data-static-class="map-enemy">
+									
+		<div class="" data-static-class="enemy-sprite">
+										
+			<div class="" data-static-class="map-enemy_40x40-head pixels_map_enemy40x40 tween-map-enemy_40x40-head"></div>
+										
+			<div class="" data-static-class="map-enemy_40x40-hand-L pixels_map_enemy40x40 tween-map-enemy_40x40-hand-L"></div>
+			<div class="" data-static-class="map-enemy_40x40-hand-R pixels_map_enemy40x40 tween-map-enemy_40x40-hand-R"></div>
+										
+			<div class="" data-static-class="map-enemy_40x40-body pixels_map_enemy40x40"></div>
+										
+			<div class="" data-static-class="map-enemy_40x40-legs pixels_map_enemy40x40 tween-map-enemy_40x40_stop"></div>
+										
+		</div>
+								
+	</div>
+								
+</div>
+</div>
+<!-- ZOMBIE -->
+
 <!-- ------------------------------ ENEMY -->
 
 <!-- LEVEL_GAME -->
@@ -666,6 +691,10 @@
 							
 						<div class="" data-static-class="player-sprite">
 										
+							<div class="" data-static-class="actionCloud tween-actionCloud">
+							
+							</div>
+							
 							<div class="" data-static-class="map-goat-head pixels_map_player tween-map-goat-head mapPlayer_head_default"></div>
 										
 							<div class="" data-static-class="map-goat-hand-L pixels_map_player tween-map-goat-hand-L"></div>
@@ -679,7 +708,7 @@
 							
 					</div> <!-- #player1 -->
 							
-					<div id="" class="" data-static-id="player2" data-static-class="match-player enemy_bird">
+					<div id="" class="" data-static-id="player2" data-static-class="match-player"> <!-- enemy_bird -->
 								
 						<div class="" data-static-class="enemy-sprite">
 																
@@ -947,14 +976,14 @@
 						
 				<div class="" data-static-class="field-area">
 							
-					<div class="" data-static-class="warCrab_160x80 warCrabMass_0 pixels_warCrabs pixel_warCrabsTarget"></div>
-					<div class="" data-static-class="warCrab_320x1360 warCrabMass_1 pixels_warCrabs pixel_warCrabsTarget"></div>
-					<div class="" data-static-class="warCrab_320x80 warCrabMass_2 pixels_warCrabs pixel_warCrabsTarget"></div>
-					<div class="" data-static-class="warCrab_80x200 warCrabMass_3 pixels_warCrabs pixel_warCrabsTarget"></div>
-					<div class="" data-static-class="warCrab_80x200 warCrabMass_4 pixels_warCrabs pixel_warCrabsTarget"></div>
+					<div class="" data-static-class="warCrab_160x80 warCrabMass_0 pixels_forestMass pixel_warCrabsTarget"></div>
+					<div class="" data-static-class="warCrab_320x1360 warCrabMass_1 pixels_forestMass pixel_warCrabsTarget"></div>
+					<div class="" data-static-class="warCrab_320x80 warCrabMass_2 pixels_forestMass pixel_warCrabsTarget"></div>
+					<div class="" data-static-class="warCrab_80x200 warCrabMass_3 pixels_forestMass pixel_warCrabsTarget"></div>
+					<div class="" data-static-class="warCrab_80x200 warCrabMass_4 pixels_forestMass pixel_warCrabsTarget"></div>
 							
 							
-					<div class="" data-static-class="fireTriangle_x_0 fireLine_2x1 edgeBleed-evil">
+					<div class="" data-static-class="fireTriangle_x_0 fireLine_2x1 field-floor-default"> <!-- edgeBleed-evil -->
 							
 						<div class="" data-static-class="fire">
 								
@@ -974,7 +1003,7 @@
 							
 					</div>
 							
-					<div class="" data-static-class="fireTriangle_x_1 fireLine_4x1 edgeBleed-evil">
+					<div class="" data-static-class="fireTriangle_x_1 fireLine_4x1 field-floor-default"> <!-- edgeBleed-evil -->
 							
 						<div class="" data-static-class="fire">
 								
@@ -1010,7 +1039,7 @@
 							
 					</div>
 							
-					<div class="" data-static-class="fireTriangle_x_2 fireLine_6x1 edgeBleed-evil">
+					<div class="" data-static-class="fireTriangle_x_2 fireLine_6x1 field-floor-default"> <!-- edgeBleed-evil -->
 							
 						<div class="" data-static-class="fire">
 								
@@ -1200,7 +1229,7 @@
 						
 				<div class="" data-static-class="field-floor">
 							
-					<div class="" data-static-class="edgeBleed-evil"></div>
+					<div class="" data-static-class="field-floor-default"></div> <!-- edgeBleed-evil -->
 							
 				</div> <!-- .field-floor -->
 						
@@ -1208,22 +1237,22 @@
 						
 					<div class="" data-static-class="woodland-darkness-left woodland-darkness">
 								
-						<div class="" data-static-class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_4"></div>
-						<div class="" data-static-class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_3"></div>
+						<div class="" data-static-class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_l_0"></div>
+						<div class="" data-static-class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_l_1"></div>
 						<div class="" data-static-class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_l_2"></div>
-						<div class="" data-static-class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_1"></div>
-						<div class="" data-static-class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_0"></div>
-						<div class="" data-static-class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_4"></div>
+						<div class="" data-static-class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_l_3"></div>
+						<div class="" data-static-class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_l_4"></div>
+						<div class="" data-static-class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_l_2"></div>
 								
 					</div>
 							
 					<div class="" data-static-class="woodland-darkness-right woodland-darkness">
 								
-						<div class="" data-static-class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_r_2"></div>
+						<div class="" data-static-class="landDecayBlock_0 landDecayBlock pixels_landDecay landDecay_r_0"></div>
 						<div class="" data-static-class="landDecayBlock_1 landDecayBlock pixels_landDecay landDecay_r_1"></div>
-						<div class="" data-static-class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_r_0"></div>
-						<div class="" data-static-class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_r_4"></div>
-						<div class="" data-static-class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_r_3"></div>
+						<div class="" data-static-class="landDecayBlock_2 landDecayBlock pixels_landDecay landDecay_r_2"></div>
+						<div class="" data-static-class="landDecayBlock_3 landDecayBlock pixels_landDecay landDecay_r_3"></div>
+						<div class="" data-static-class="landDecayBlock_4 landDecayBlock pixels_landDecay landDecay_r_4"></div>
 						<div class="" data-static-class="landDecayBlock_5 landDecayBlock pixels_landDecay landDecay_r_2"></div>
 								
 					</div>
@@ -1237,7 +1266,7 @@
 			
 			<div class="" data-static-class="extra_flooring_wrapper edgeBleed-evil">
 				
-				<div class="" data-static-class="extra_flooring_content pixels_warCrabs pixel_warCrabsTarget"></div>
+				<div class="" data-static-class="extra_flooring_content pixels_forestMass pixel_warCrabsTarget"></div>
 				
 			</div>
 				

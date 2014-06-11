@@ -18,11 +18,180 @@
 		
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
+			zombie_cloudInit();
+			
 			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].removeEventListener("webkitTransitionEnd", battleOver_delay, false);
 			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].removeEventListener("transitionend", battleOver_delay, false);			
 		}
 		
-		delay_return = setTimeout(battleOver_delayEnd, 2 * 1000);
+		// delay_return = setTimeout(battleOver_delayEnd, 2 * 1000);
+	}
+	
+	function zombie_cloudInit()
+	{
+		$("#microBattle_player_wrapper .actionCloud").html(actionCloud_html);
+		
+		zombie_cloud_0();		
+	}
+	
+	function zombie_cloud_0()
+	{
+		var delay_sequence;
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-1").css("visibility", "visible");
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-1 .actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuterAlt");
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-1 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");
+		
+		delay_sequence = setTimeout(zombie_cloud_1, 0.2 * 1000);
+	}
+	
+	function zombie_cloud_1()
+	{
+		var delay_sequence;
+		
+		zombie_mode();
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-0").css("visibility", "visible");
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-0 .actionCloudSprite-outer").addClass("tween-actionCloudSpriteOuter");
+		
+		$("#microBattle_player_wrapper .player-sprite .actionCloudMain-0 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");			
+		
+		// Temp.js
+		delay_sequence = setTimeout(zombie_cloud_2, 1 * 1000);
+		// Temp.js
+	}
+	
+	function zombie_mode()
+	{
+		var livingForm = "pixels_map_player";
+		
+		var undeadForm = "pixels_playerZombie";
+		
+		$("#microBattle_player_wrapper #player1 div").each(function(i, div)
+		{
+			if($(div).attr("class"))
+			{
+				var search_pixels = $(div).attr("class");
+				
+				if(search_pixels.search(livingForm) >= 0)
+				{
+					$(div).removeClass(livingForm).addClass(undeadForm);
+				}	
+			}
+		});
+	}
+	
+	function zombie_cloud_2()
+	{
+		$("#microBattle_player_wrapper .actionCloud").css("opacity", "0");
+		
+		$("#microBattle_player_wrapper .tween-actionCloud")[0].addEventListener("webkitTransitionEnd", zombie_cloudEnd, false);
+		$("#microBattle_player_wrapper .tween-actionCloud")[0].addEventListener("transitionend", zombie_cloudEnd, false);
+	}
+	
+	function zombie_cloudEnd(event)
+	{
+		var delay_sequence;
+		
+		$("#microBattle_player_wrapper .tween-actionCloud")[0].removeEventListener("webkitTransitionEnd", zombie_cloudEnd, false);
+		$("#microBattle_player_wrapper .tween-actionCloud")[0].removeEventListener("transitionend", zombie_cloudEnd, false);		
+	
+		$("#microBattle_player_wrapper .actionCloud").remove();
+		
+		delay_sequence = setTimeout(zombie_face, 1 * 1000);
+	}
+	
+	function zombie_face()
+	{
+		var delay_sequence;
+		
+		$("#player1 .map-goat-head").removeClass("mapPlayer_head_dead").addClass("mapPlayer_head_default");
+	
+		delay_sequence = setTimeout(battleOver_delayEnd, 2 * 1000);
+		
+		zombie_objectCreate();
+	}
+	
+	function zombie_objectCreate()
+	{
+		var new_zombie = new Object();
+		
+		var count_zombie = 0;
+		
+		for(var enemyObj in enemies_ARR)
+		{
+			if(enemies_ARR[enemyObj].spawn === ROM.mapLevel)
+			{
+				if(enemies_ARR[enemyObj].enemyType === "zombie")
+				{
+					count_zombie++;					
+				}
+				
+				else
+				{
+					count_zombie = 0;
+				}	
+			}
+		}
+		
+		
+		new_zombie = 	{
+							x		: theBattle.playerStore.x_return / 80,
+							y		: theBattle.playerStore.y_return / 80,
+							w		: 0.5,
+							h		: 0.5,
+							n		: "level" + ROM.mapLevel + "_zombie" + count_zombie,
+							t		: "zombie",
+							l		: 0, // DEFAULT EASY ATM
+							known	: "an undead you",
+							spawn	: ROM.mapLevel,
+							head	: "GOAT"
+							
+						};
+						
+		html_lib_reuse();
+		
+		var nz = new enemy(new_zombie, ".enemy-area");
+		
+		nz.create();
+		
+		enemies_ARR.push(nz);
+		
+		html_lib_empty();
+		
+		trace(enemies_ARR);
+						
+		// enemies_ARR.push(new_zombie);
+		
+/*
+						"x": 0,
+						"y": 9,
+						"w": 0.5,
+						"h": 0.5,
+						"n": "level0_bird0",
+						"t": "bird",
+						"l": 5,
+						"known" : "some mystic bird 0",
+						"spawn": 0,
+						"head": "BIRD"	
+*/	
+		
+		// html_lib_reuse();
+		
+		// FAIL - MISSING CLASS
+		//var e = new enemy(new_zombie, ".enemy-area");
+			
+		// e.create();
+			
+		// enemies_ARR.push(e);
+		
+		// html_lib_empty();
+		
+		// trace("WHY????");
+		// trace(typeof enemy);
 	}
 	
 	function battleOver_delayEnd()
@@ -47,8 +216,15 @@
 	{
 		var css;
 		
+		var exitFrame;
+		
 		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
-			
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			$("#display_wrapper #display_inner_world .enemy-area").html("");	
+		}
+		
 		if(CONTROL_SIGNAL.enableTouch)
 		{
 			// TOUCH UI DISPLAY FIX
@@ -84,6 +260,13 @@
 					"-webkit-transform" : "translateX(-100%)",
 					"transform" 		: "translateX(-100%)"
 				};
+				
+		
+		
+
+		
+		
+		
 		
 		$("#display_inner_info #battleScreen").css(css);
 		
@@ -99,5 +282,20 @@
 		$("#display_inner_info #battleScreen").html("");
 		$("#display_inner_info #battleScreen").removeAttr("style");
 		
-		moveStageTest();		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			for(var object_enemy in enemies_ARR)
+			{
+				if(ROM.mapLevel == enemies_ARR[object_enemy].spawn)
+				{
+					if(enemies_ARR[object_enemy].alive)
+					{
+						enemies_ARR[object_enemy].build();
+					}	
+				}	
+			}				
+		}
+		
+		moveStageTest();			
 	}
+	
