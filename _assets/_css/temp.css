@@ -29,6 +29,32 @@
 		background-size: 320px 120px;
 	}
 	
+	.pixels_grave40x40
+	{
+		background-image: url(../_img/grave40x40_1x.png);
+		background-repeat: no-repeat;
+		background-size: 40px 40px;
+	}
+	
+	
+	.enemy_grave40x40
+	{
+		width: 40px;
+		height: 40px;
+		
+		position: absolute;
+		
+		z-index: 0;
+	}
+	
+	.enemy_grave_sprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
 	
 	
 	

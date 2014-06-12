@@ -112,10 +112,7 @@
 		this.buildData				= {};
 		this.buildData.container	= container;
 		this.alive					= true;
-		
-		trace("<var enemy!>");
-		trace(typeof settings);	
-		trace("</var enemy!>")
+		this.rendered				= false;
 	};
 	
 	enemy.prototype.create = function()
@@ -148,7 +145,12 @@
 		$(this.buildData.container).append(this.buildData.html);
 		$(this.buildData.container + " #_enemy_" + this.enemyType).attr("id", this.id);
 			
-		$("#" + this.id).css(this.buildData.css);		
+		$("#" + this.id).css(this.buildData.css);
+		
+		trace("RENDER ISSUE :: " + "#" + this.id);
+		trace(this.buildData.css);
+		
+		this.rendered = true;		
 	};
 	
 	function enemyRead()
@@ -173,6 +175,15 @@
 		trace(enemies_ARR);
 		
 		enemiesBorn = true;				
+	}
+	
+	function enemy_forcePosition(obj)
+	{
+		var css_data;
+		
+		css_data = obj.buildData.css;
+		
+		return css_data;
 	}
 			
 	function level_init()
@@ -289,7 +300,15 @@
 			{
 				if(enemies_ARR[object_enemy].alive)
 				{
-					enemies_ARR[object_enemy].build();
+					if(!enemies_ARR[object_enemy].rendered)
+					{
+						enemies_ARR[object_enemy].build();	
+					}
+				}
+				
+				else
+				{
+					
 				}	
 			}	
 		}		
@@ -385,4 +404,12 @@
 		$("#space .weather-snow").html("");
 		$("#space .weather-rain").html("");
 		$("#space .weather-wind").html("");
+		
+		for(var object_enemy in enemies_ARR)
+		{
+			if(enemies_ARR[object_enemy].rendered)
+			{
+				enemies_ARR[object_enemy].rendered = false;
+			}	
+		}
 	}

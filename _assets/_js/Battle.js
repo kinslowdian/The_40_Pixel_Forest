@@ -452,6 +452,8 @@
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_startBattle, false);
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("transitionend", microBattleSequence_startBattle, false);
 		
+		$("#microBattle_wrapper").html("");
+		
 		battleNav_init();
 		
 		battleNav_show();

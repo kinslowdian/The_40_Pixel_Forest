@@ -106,17 +106,15 @@
 	
 	function zombie_face()
 	{
-		var delay_sequence;
-		
 		$("#player1 .map-goat-head").removeClass("mapPlayer_head_dead").addClass("mapPlayer_head_default");
-	
-		delay_sequence = setTimeout(battleOver_delayEnd, 2 * 1000);
 		
 		zombie_objectCreate();
 	}
 	
 	function zombie_objectCreate()
 	{
+		var delay_sequence;
+		
 		var new_zombie = new Object();
 		
 		var count_zombie = 0;
@@ -145,7 +143,7 @@
 							h		: 0.5,
 							n		: "level" + ROM.mapLevel + "_zombie" + count_zombie,
 							t		: "zombie",
-							l		: 0, // DEFAULT EASY ATM
+							l		: 0, // DEFAULT EASY?
 							known	: "an undead you",
 							spawn	: ROM.mapLevel,
 							head	: "GOAT"
@@ -162,40 +160,13 @@
 		
 		html_lib_empty();
 		
-		trace(enemies_ARR);
-						
-		// enemies_ARR.push(new_zombie);
-		
-/*
-						"x": 0,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level0_bird0",
-						"t": "bird",
-						"l": 5,
-						"known" : "some mystic bird 0",
-						"spawn": 0,
-						"head": "BIRD"	
-*/	
-		
-		// html_lib_reuse();
-		
-		// FAIL - MISSING CLASS
-		//var e = new enemy(new_zombie, ".enemy-area");
-			
-		// e.create();
-			
-		// enemies_ARR.push(e);
-		
-		// html_lib_empty();
-		
-		// trace("WHY????");
-		// trace(typeof enemy);
+		delay_sequence = setTimeout(battleOver_delayEnd, 2 * 1000);
 	}
 	
 	function battleOver_delayEnd()
 	{
+		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+		
 		if(BATTLE_NAV.game.result === "WIN")
 		{
 			battleOver_win();
@@ -215,15 +186,6 @@
 	function battleOver_lose()
 	{
 		var css;
-		
-		var exitFrame;
-		
-		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
-		
-		if(BATTLE_NAV.game.result === "LOSE")
-		{
-			$("#display_wrapper #display_inner_world .enemy-area").html("");	
-		}
 		
 		if(CONTROL_SIGNAL.enableTouch)
 		{
@@ -248,6 +210,26 @@
 		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = MAP_PLAYER.storeEntryPos.y;
 		
 		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
+				
+	
+		battleOver_add_additionals();
+	}
+	
+	function battleOver_add_additionals()
+	{
+		for(var object_enemy in enemies_ARR)
+		{
+			if(ROM.mapLevel == enemies_ARR[object_enemy].spawn)
+			{
+				if(enemies_ARR[object_enemy].alive)
+				{
+					if(!enemies_ARR[object_enemy].rendered)
+					{
+						enemies_ARR[object_enemy].build();
+					}
+				}
+			}				
+		}
 		
 		battleOver_returnToMapInit();		
 	}
@@ -261,12 +243,26 @@
 					"transform" 		: "translateX(-100%)"
 				};
 				
-		
-		
-
-		
-		
-		
+		// ENEMY POSITION CHECK USING DATA ATTRIBUTE ("data-npc")
+		$('#display_wrapper #display_inner_world #roam_wrapper .enemy-area [data-npc *= "enemy"]').each(function(i, div)
+		{
+			// NO CSS ADDED (translate(x, y))
+			if(!$(div).attr("style"))
+			{
+				var faulty = $(div).attr("id");
+				
+				for(var object_enemy in enemies_ARR)
+				{
+					// FIND OBJECT TO MATCH FAULTY ID
+					if(enemies_ARR[object_enemy].id === faulty)
+					{
+						// FORCE CSS POSITIONING
+						$(div).css(enemy_forcePosition(enemies_ARR[object_enemy]));
+					}
+				} 	
+			}
+			
+		});
 		
 		$("#display_inner_info #battleScreen").css(css);
 		
@@ -281,20 +277,6 @@
 		
 		$("#display_inner_info #battleScreen").html("");
 		$("#display_inner_info #battleScreen").removeAttr("style");
-		
-		if(BATTLE_NAV.game.result === "LOSE")
-		{
-			for(var object_enemy in enemies_ARR)
-			{
-				if(ROM.mapLevel == enemies_ARR[object_enemy].spawn)
-				{
-					if(enemies_ARR[object_enemy].alive)
-					{
-						enemies_ARR[object_enemy].build();
-					}	
-				}	
-			}				
-		}
 		
 		moveStageTest();			
 	}
