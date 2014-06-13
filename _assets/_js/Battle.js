@@ -304,6 +304,15 @@
 		theBattle.html.fadeWrapper = "";
 		theBattle.html.wipeWrapper = "";
 		
+		// UNTESTED
+		theBattle.grave = {};
+		theBattle.grave.w = ROM.enemy.character.buildData.w;
+		theBattle.grave.h = ROM.enemy.character.buildData.h;
+		theBattle.grave.ref = "_enemy_grave" + theBattle.grave.w + "x" + theBattle.grave.h;
+		theBattle.grave.html = "";
+		// theBattle.html.grave = "";
+		// UNTESTED
+		
 		theBattle.playerStore = {};
 		
 		theBattle.playerStore.x_return = obj.playerStore.x_return;
@@ -314,11 +323,23 @@
 	{
 		var html;
 		
+		// UNTESTED
+		// var grave_w = ROM.enemy.character.buildData.w;
+		// var grave_h = ROM.enemy.character.buildData.h;
+		
+		// var grave_asset = "_enemy_grave" + grave_w + "x" + grave_h;
+		// UNTESTED
+		
 		html_lib_reuse();
 		
 		html = html_lib_use("_level_battle", true, true);
 		
 		$("#display_wrapper #display_inner_info #battleScreen").html(html);
+		
+		// UNTESTED
+		// theBattle.html.grave = html_lib_use(grave_asset, false, true);
+		theBattle.grave.html = html_lib_use(theBattle.grave.ref, false, true);
+		// UNTESTED
 		
 		html_lib_empty();
 		
@@ -506,7 +527,7 @@
 		
 		BATTLE_NAV.game = {};
 		
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 		
 		BATTLE_NAV.html = {};
 		
@@ -1098,7 +1119,10 @@
 			
 			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_mountains").addClass("microBattle_endSky_mountains_win");
 			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_win");	
+			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_win");
+			
+			 // $("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_win")[0].addEventListener("webkitTransitionEnd", battleOver_delay, false);
+			// $("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_win")[0].addEventListener("transitionend", battleOver_delay, false);	
 		}
 		
 		else
@@ -1111,9 +1135,11 @@
 			
 			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_lose");
 		
-			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("webkitTransitionEnd", battleOver_delay, false);
-			$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("transitionend", battleOver_delay, false);
+			// $("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("webkitTransitionEnd", battleOver_delay, false);
+			// $("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite_lose")[0].addEventListener("transitionend", battleOver_delay, false);
 		}
+		
+		// $("#microBattle_resultWipe_wrapper")[0].addEventListener("transitionend", battleOver_delay, false);
 		
 		if(spaceSquidsUse)
 		{
@@ -1136,9 +1162,13 @@
 		trace(event);
 		
 		var css;
-				
+		
+		// EVENT ISSUE		
 		$(".tween-battle-cloud")[0].removeEventListener("webkitTransitionEnd", battleNav_outView, false);
 		$(".tween-battle-cloud")[0].removeEventListener("transitionend", battleNav_outView, false);		
+		// $(event.target)[0].removeEventListener("webkitTransitionEnd", battleNav_outView, false);
+		// $(event.target)[0].removeEventListener("transitionend", battleNav_outView, false);		
+		// EVENT ISSUE
 		
 		$(".tween-microBattle_resultWipe_content")[0].addEventListener("webkitTransitionEnd", battleNav_memorySave, false);
 		$(".tween-microBattle_resultWipe_content")[0].addEventListener("transitionend", battleNav_memorySave, false);
@@ -1156,8 +1186,12 @@
 	{
 		var css;
 		
+		// EVENT ISSUE
 		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
 		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("transitionend", battleNav_memorySave, false);
+		// $(event.target)[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
+		// $(event.target)[0].removeEventListener("transitionend", battleNav_memorySave, false);
+		// EVENT ISSUE
 		
 		$("#microBattle_nav_wrapper").html("");
 		$("#microBattle_fade_wrapper").html("");		
@@ -1167,7 +1201,18 @@
 					"transform"			: "translateY(10px)"
 				};
 				
+		$(".tween-microBattle_endSky")[0].addEventListener("webkitTransitionEnd", battleOver_skySet, false);
+		$(".tween-microBattle_endSky")[0].addEventListener("transitionend", battleOver_skySet, false);
+		
+		
 		$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite").css(css);
+		
+		// var safe = setTimeout(battleOver_delay, 1000, null);
+		
+		// BUG?
+		// $(".tween-microBattle_endSky")[0].addEventListener("webkitTransitionEnd", battleOver_delay, false);
+		// $(".tween-microBattle_endSky")[0].addEventListener("transitionend", battleOver_delay, false);
+		// BUG
 	}
 	
 	///////////////////////////////// --- BATTLE_NAV */

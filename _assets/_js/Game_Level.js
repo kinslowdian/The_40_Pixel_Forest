@@ -106,13 +106,14 @@
 		delete this.settings;
 	};
 	
-	var enemy = function(settings, container)
+	var enemy = function(settings, container, num)
 	{
 		this.settings				= settings;
 		this.buildData				= {};
 		this.buildData.container	= container;
 		this.alive					= true;
 		this.rendered				= false;
+		this.array_index			= num;
 	};
 	
 	enemy.prototype.create = function()
@@ -163,13 +164,17 @@
 			}
 		}
 		
+		var enemy_count = 0;
+		
 		for(var j in enemyData_ARR)
 		{
-			var e = new enemy(enemyData_ARR[j], ".enemy-area");
+			var e = new enemy(enemyData_ARR[j], ".enemy-area", enemy_count);
 			
 			e.create();
 			
 			enemies_ARR.push(e);
+			
+			enemy_count++;
 		}
 		
 		trace(enemies_ARR);
@@ -308,7 +313,7 @@
 				
 				else
 				{
-					
+					digGrave(enemies_ARR[object_enemy]);
 				}	
 			}	
 		}		

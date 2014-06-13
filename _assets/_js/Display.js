@@ -137,7 +137,7 @@
 			
 			if(BATTLE_NAV != null || BATTLE_NAV != undefined)
 			{
-				if(BATTLE_NAV.game.result === "LOSE")
+				if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
 				{
 					// SET UP CONTROLS + HITTEST
 					hitTest_init();
@@ -202,7 +202,7 @@
 		
 		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
 		{
-			if(BATTLE_NAV.game.result === "LOSE")
+			if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
 			{
 				// SET UP CONTROLS + HITTEST
 				hitTest_init();
