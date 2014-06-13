@@ -44,12 +44,12 @@
 		
 		"messages":
 		{
-			"txt_BEG"	:	"ATTACK",
-			"txt_STR"	:	"FIGHT",
-			"txt_LOSE"	:	"FUDGE NO!",
-			"txt_DRAW"	:	"A DRAW!",
-			"txt_WIN"	:	"FUDGE YES!",
-			"txt_AGN"	:	"TRY AGAIN"
+			"txt_BEG"	:	"attack",
+			"txt_STR"	:	"fight",
+			"txt_LOSE"	:	"fudge no!",
+			"txt_DRAW"	:	"a draw!",
+			"txt_WIN"	:	"fudge yes!",
+			"txt_AGN"	:	"try again"
 		}
 	},
 

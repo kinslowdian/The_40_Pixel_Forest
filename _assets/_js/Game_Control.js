@@ -738,6 +738,13 @@
 		moveStageTest();
 	}
 	
+	function mapPlayer_storeEntry(x, y)
+	{
+		MAP_PLAYER.storeEntryPos = {};
+		MAP_PLAYER.storeEntryPos.x = x;
+		MAP_PLAYER.storeEntryPos.y = y;
+	}
+	
 	function gameStateChange(gotoState)
 	{
 		MAP_PLAYER.listen = false;

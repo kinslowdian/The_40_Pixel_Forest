@@ -85,6 +85,13 @@
 	
 	function moveStageTest()
 	{
+/*
+		if(BATTLE_NAV)
+		{
+			trace("moveStageTest();");
+		}
+*/
+		
 		var exitFrame;
 		
 		var triggered = false;
@@ -103,8 +110,8 @@
 						
 						i * DISPLAY.screenSections === 0 ? DISPLAY.y = 0 : DISPLAY.y = -(i * DISPLAY.screenSections - 80);
 						
-						triggered = true;
 						
+						triggered = true;
 						moveStageScreen();
 					}
 				}
@@ -115,6 +122,14 @@
 		
 		if(!triggered)
 		{				
+/*
+			if(BATTLE_NAV)
+			{
+				trace("moveStageTest(); not triggered!!!");
+			}
+*/
+			
+/*
 			if(PORTAL_TRAVEL != null || PORTAL_TRAVEL != undefined)
 			{
 				if(!game_levelChange)
@@ -134,7 +149,9 @@
 					PORTAL_TRAVEL = null;	
 				}
 			}
+*/
 			
+/*
 			if(BATTLE_NAV != null || BATTLE_NAV != undefined)
 			{
 				if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
@@ -149,6 +166,11 @@
 					BATTLE_NAV = null;				
 				}			
 			}
+*/
+			
+			// controlsAfterBattleExit();
+		
+			moveStageScreenTerminal();
 		}
 	}
 	
@@ -156,6 +178,37 @@
 	{
 		var css;
 		
+		// ALLOWS CONTROL SHOULD EVENT LISTENERS NOT FIRE IN THIS FUCTION
+		// FIX TO SOLVE ISSUE OF SCREEN MOVE ON IMPACT WITH ENEMY
+				
+		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
+		{
+			controlsAfterBattleExit();			
+		}
+		
+		// DEFAULT
+		
+		/*
+else
+		{
+*/
+			css =	{
+						"-webkit-transform"		: "translateY(" + DISPLAY.y + "px)",
+						"transform"				: "translateY(" + DISPLAY.y + "px)",
+						"-webkit-transition"	: "-webkit-transform 1s ease-in-out",
+						"transition"			: "transform 6s ease-in-out" 
+					};
+				
+			$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", moveStageScreenEnd, false);
+			$(".stage-view-y")[0].addEventListener("transitionend", moveStageScreenEnd, false);
+						
+			$(".stage-view-y").css(css);			
+		/* } */
+		
+		// UNSAFE----------
+		// UNSAFE----------
+		
+/*
 		css =	{
 					"-webkit-transform"		: "translateY(" + DISPLAY.y + "px)",
 					"transform"				: "translateY(" + DISPLAY.y + "px)",
@@ -166,7 +219,27 @@
 		$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", moveStageScreenEnd, false);
 		$(".stage-view-y")[0].addEventListener("transitionend", moveStageScreenEnd, false);
 					
-		$(".stage-view-y").css(css);			
+		$(".stage-view-y").css(css);
+*/
+		
+		// ALLOWS CONTROL SHOULD EVENT LISTENERS NOT FIRE IN THIS FUCTION
+		// FIX TO SOLVE ISSUE OF SCREEN MOVE ON IMPACT WITH ENEMY
+		// controlsAfterBattleExit();		
+		
+		// UNSAFE----------
+		// UNSAFE----------
+		
+		
+		// ALLOWS CONTROL SHOULD EVENT LISTENERS NOT FIRE IN THIS FUCTION
+		// FIX TO SOLVE ISSUE OF SCREEN MOVE ON IMPACT WITH ENEMY
+		// controlsAfterBattleExit();			
+	
+/*
+		if(BATTLE_NAV)
+		{
+			trace("MATCH?? ::: " + DISPLAY.current_y + " " + DISPLAY.y);
+		}
+*/
 	}
 	
 	function moveStageScreenEnd(event)
@@ -180,6 +253,9 @@
 		
 		DISPLAY.screenSectionMove = false;
 		
+		DISPLAY.current_y = DISPLAY.y;
+		
+/*
 		if(PORTAL_TRAVEL != null || PORTAL_TRAVEL != undefined)
 		{
 			if(!game_levelChange)
@@ -199,7 +275,9 @@
 				PORTAL_TRAVEL = null;	
 			}
 		}
+*/
 		
+/*
 		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
 		{
 			if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
@@ -214,4 +292,55 @@
 				BATTLE_NAV = null;				
 			}			
 		}
+*/
+		
+		moveStageScreenTerminal();
+	}
+	
+	function moveStageScreenTerminal()
+	{
+		appearFromPortal();
+		
+		controlsAfterBattleExit();		
+	}
+	
+	function appearFromPortal()
+	{
+		if(PORTAL_TRAVEL != null || PORTAL_TRAVEL != undefined)
+		{
+			if(!game_levelChange)
+			{
+				if(PortalScreen.displayed)
+				{
+					PortalScreen.displayed = false;
+						
+					exitFrame = setTimeout(mapPlayer_entry, 100);
+				}
+						
+				else
+				{
+					exitFrame = setTimeout(mapPlayer_entry, 1000);	
+				}
+					
+				PORTAL_TRAVEL = null;	
+			}
+		}		
+	}
+	
+	function controlsAfterBattleExit()
+	{
+		if(BATTLE_NAV != null || BATTLE_NAV != undefined)
+		{
+			if(BATTLE_NAV.game.result === "LOSE" || BATTLE_NAV.game.result === "WIN")
+			{
+				// SET UP CONTROLS + HITTEST
+				hitTest_init();
+				
+				MAP_PLAYER.listen = true;
+				
+				control_switch(true);
+				
+				BATTLE_NAV = null;				
+			}			
+		}		
 	}	

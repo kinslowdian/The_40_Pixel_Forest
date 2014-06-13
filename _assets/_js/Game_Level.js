@@ -321,6 +321,25 @@
 		html_lib_empty();	
 	}
 	
+	function digGrave(dead_obj)
+	{
+		var grave = {};
+		
+		grave.w = dead_obj.buildData.w;
+		grave.h = dead_obj.buildData.h;
+		grave.ref = "_enemy_grave" + grave.w + "x" + grave.h;
+		grave.html = html_lib_use(grave.ref, false, true);
+		
+		$(dead_obj.buildData.container).append(grave.html);
+		$(dead_obj.buildData.container + " #" + grave.ref).attr("id", dead_obj.id);
+		
+		$("#" + dead_obj.id).css(dead_obj.buildData.css);
+		
+		enemies_ARR[dead_obj.array_index].rendered = true;
+				
+		delete grave;
+	}
+	
 	function level_weather()
 	{
 		var weather_use = true;

@@ -1329,8 +1329,6 @@
 	}
 
 
-
-
 	.enemy_bird .enemy-sprite .map-enemy_40x40-head
 	{
 		background-position-y: -120px;
@@ -1383,11 +1381,6 @@
 	}	
 	
 	
-	
-	
-	
-	
-	
 	.map-enemy_40x40_head_default
 	{
 		background-position-x: 0;
@@ -1406,6 +1399,31 @@
 	.map-enemy_40x40_head_fear
 	{
 		background-position-x: -120px;
+	}
+	
+	/* GRAVE */
+	
+	.enemy_grave40x40
+	{
+		width: 40px;
+		height: 40px;
+		
+		position: absolute;
+		
+		z-index: 0;
+	}
+	
+	.enemy_grave_sprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.enemy_grave40x40 .enemy_grave_sprite
+	{
+		background-position: -280px 0;
 	}	
 
 /* ----------------------------------------------------------------------- ENEMY */
@@ -4883,6 +4901,12 @@
 		height: inherit;
 		
 		position: relative;
+	}
+	
+	.tween-battleScreen
+	{
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+		transition: transform 1s ease-in-out;
 	}
 
 /* ----------------------------------------------------------------------- LEVEL_BATTLE */
