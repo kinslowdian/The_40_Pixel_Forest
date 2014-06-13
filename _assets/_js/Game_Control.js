@@ -1148,7 +1148,7 @@
 		
 		if(HIT_TEST.hits[0] != undefined || HIT_TEST.hits[0] != null)
 		{
-			trace(HIT_TEST);
+			// trace(HIT_TEST);
 			
 			if($(HIT_TEST.hits[0]).attr("id"))
 			{

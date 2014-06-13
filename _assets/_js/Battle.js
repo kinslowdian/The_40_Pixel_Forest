@@ -534,7 +534,6 @@
 		BATTLE_NAV.navText.txt_WIN		= Logic.dat_ROM["_LOGIC"]["messages"].txt_WIN;
 		BATTLE_NAV.navText.txt_AGAIN 	= Logic.dat_ROM["_LOGIC"]["messages"].txt_AGN;
 		
-		trace(BATTLE_NAV);
 		
 		battleNav_getValues();
 	}
@@ -551,7 +550,7 @@
 	
 	function battleNav_show()
 	{
-		$("#info-cloud p").text(BATTLE_NAV.navText.txt_BEGIN);
+		$("#info-cloud p").text(BATTLE_NAV.navText.txt_BEGIN.toUpperCase());
 		
 		$(".tween-battle-cloud")[0].addEventListener("webkitTransitionEnd", battleNav_inView, false);
 		$(".tween-battle-cloud")[0].addEventListener("transitionend", battleNav_inView, false);
@@ -940,7 +939,7 @@
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].addEventListener("webkitAnimationEnd", battleNav_clearStageForFightInit, false);
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].addEventListener("animationend", battleNav_clearStageForFightInit, false);
 	 	
-	 	$("#info-cloud p").text(BATTLE_NAV.navText.txt_START);
+	 	$("#info-cloud p").text(BATTLE_NAV.navText.txt_START.toUpperCase());
 	 	
 	 	$("#info-cloud").css("opacity", "1");		
 	}
@@ -973,9 +972,7 @@
 	{
 		var winLoseDisplay;
 		
-		// ADD BACK IN WITH LOGIC
-	 	$("#info-cloud p").text(BATTLE_NAV.navText["txt_" + BATTLE_NAV.game.result]);
-	 	// ADD BACK IN WITH LOGIC
+	 	$("#info-cloud p").text(BATTLE_NAV.navText["txt_" + BATTLE_NAV.game.result].toUpperCase());
 	 	
 	 	$("#battle-nav-playerBird")[0].removeEventListener("webkitAnimationEnd", battleNav_clearedStage, false);
 	 	$("#battle-nav-playerBird")[0].removeEventListener("animationend", battleNav_clearedStage, false);		
@@ -1092,10 +1089,7 @@
 		
 		battleNav_getValues();
 		
-		// ADD BACK IN WHEN LOGIC READY
-		// $("#info-cloud p").text(Logic.dat_ROM["_LOGIC"]["messages"]["txt_AGN"]);
 		$("#info-cloud p").text(BATTLE_NAV.navText.txt_AGAIN);
-		// ADD BACK IN WHEN LOGIC READY
 		
 		$("#battle-nav").removeClass("battle-nav-hide").addClass("battle-nav-show");
 		
