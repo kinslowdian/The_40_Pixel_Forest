@@ -118,7 +118,11 @@
 		
 			$("#touchPad").remove();
 			
-			$("#displayErrorWrapper").remove();
+			// $("#displayErrorWrapper").remove();
+			
+			$("#displayErrorWrapper .message p").text("COME BACK NOW");
+			
+			focusBlur_add();
 		}
 		
 		CONTROL_SIGNAL.data = {};
@@ -131,6 +135,51 @@
 			// CONTROL_SIGNAL.ui_ready = false;
 			CONTROL_SIGNAL.firstTouch = true;
 		}
+	}
+	
+	function focusBlur_add()
+	{
+		// CONTROL_SIGNAL.userMissing = false;
+		
+		$(window)[0].addEventListener("blur", focusBlur_event, false);
+		$(window)[0].addEventListener("focus", focusBlur_event, false);	
+	}
+	
+	function focusBlur_event(event)
+	{
+		var base_css;
+		
+		if(event.type === "blur")
+		{
+			$(window)[0].removeEventListener("blur", focusBlur_event, false);
+			$(window)[0].addEventListener("focus", focusBlur_event, false);
+			
+			$("#displayErrorWrapper .displayError").removeClass("displayErrorHide").addClass("displayErrorShow");
+						
+			base_css = 	{
+							"-webkit-transition-delay"	: "0s",
+							"transition-delay" 			: "0s",
+							"opacity"					: "1"
+						};			
+		}
+		
+		if(event.type === "focus")
+		{
+			$(window)[0].removeEventListener("focus", focusBlur_event, false);
+			$(window)[0].addEventListener("blur", focusBlur_event, false);
+			
+			$("#displayErrorWrapper .displayError").removeClass("displayErrorShow").addClass("displayErrorHide");
+			
+			base_css = 	{
+							"-webkit-transition-delay"	: "0.6s",
+							"transition-delay" 			: "0.6s",
+							"opacity"					: "0"
+						};
+		}
+		
+		$("#displayErrorWrapper .displayError-base").css(base_css);
+		
+		trace("focusBlur_event(); " + event.type);
 	}
 	
 	function hitTest_init()
@@ -830,8 +879,8 @@
 		
 		level_init();
 		
-		$("#portalScreen h1").text(LEVEL_MAIN.titleData.top);
-		$("#portalScreen h2").text(LEVEL_MAIN.titleData.btm);
+		$("#portalScreen h1").text(LEVEL_MAIN.titleData.top.toUpperCase());
+		$("#portalScreen h2").text(LEVEL_MAIN.titleData.btm.toUpperCase());
 	}
 	
 	function portalScreen_screen1()

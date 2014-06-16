@@ -158,7 +158,9 @@
 		
 		position: absolute;
 		
-		background: #20202a;
+		/* background: #20202a; */
+		
+		background: #17e69d;
 		
 		z-index: 1;
 	}
@@ -214,7 +216,9 @@
 		font-size: 40px;
 		text-align: center;
 		
-		color: #e5ffb2;
+		/* color: #e5ffb2; */
+		
+		color: #fff;
 		
 		position: absolute;
 	}
@@ -317,6 +321,11 @@
 	{
 		-webkit-animation	: tweenBossHeadStartFrames 1s ease-in-out infinite;
 		animation			: tweenBossHeadStartFrames 1s ease-in-out infinite;
+	}
+	
+	.#displayErrorWrapper .bossFullBleed
+	{
+		background: #1a004d;
 	}
 	
 /* ----------------------------------------------------------------------- DISPLAY ERROR */	
@@ -1490,7 +1499,8 @@
 			
 	.edgeBleed-forest
 	{
-		background: #17e69d;				
+		/* background: #17e69d; */
+		background: #000;				
 	}
 			
 	
@@ -2263,7 +2273,7 @@
 		margin: 0 auto;
 		
 		text-align: center;
-		color: #fff;
+		color: #ffff66;
 		
 		opacity: 0;
 		
@@ -2280,8 +2290,8 @@
 	{
 		width: 100%;
 		
-		font-weight: 600;
-		font-size: 3em;
+		font-weight: 400;
+		font-size: 2.2em;
 		line-height: 1.2em;
 		
 		position: absolute;
@@ -2295,7 +2305,7 @@
 	{
 		width: 100%;
 		
-		font-weight: 600;
+		font-weight: 400;
 		font-size: 1.2em;
 		line-height: 1.2em;
 		
@@ -2343,7 +2353,9 @@
 		
 		position: absolute;
 		
-		background: #17e69d;
+		/* background: #17e69d; */
+		
+		background: #20202a;
 		
 		-webkit-transform: translateY(100%);
 		transform: translateY(100%);

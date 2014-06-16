@@ -171,9 +171,13 @@
 	
 	.pixels_colour-navPink
 	{
+/*
 		background-image: url(../_img/col_nav-pink_1x.png);
 		background-repeat: repeat;
 		background-size: 100px 100px;
+*/
+		background-color: #1a004d;
+		background-repeat: repeat;
 	}
 	
 	.pixels_map_player
@@ -512,10 +516,12 @@
 			background-image: url(../_img/startSprite_1x.png);
 		}
 		
+/*
 		.pixels_colour-navPink
 		{
 			background-image: url(../_img/col_nav-pink_1x.png);
 		}
+*/
 		
 		.pixels_map_player
 		{
@@ -744,10 +750,12 @@
 			background-image: url(../_img/startSprite_2x.png);
 		}
 		
+/*
 		.pixels_colour-navPink
 		{
 			background-image: url(../_img/col_nav-pink_2x.png);
 		}
+*/
 		
 		.pixels_map_player
 		{
