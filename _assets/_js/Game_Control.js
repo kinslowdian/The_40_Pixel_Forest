@@ -74,6 +74,13 @@
 		// MAP_PLAYER link to CONTROL_SIGNAL if false comms is broken
 		MAP_PLAYER.listen = false;
 		
+		MAP_PLAYER.rating = 0;
+		
+		battleEngine.playerLevelSort(MAP_PLAYER);
+		
+		trace("battleEngine!!!");
+		trace(MAP_PLAYER);
+		
 		if(!actionCloud_html)
 		{
 			actionCloud_html = $(".actionCloud").html();

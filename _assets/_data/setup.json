@@ -14,6 +14,14 @@
 	
 	"_LOGIC":
 	{
+		"difficulty":
+		{
+			"easy"		: 0,
+			"medium"	: 40,
+			"hard"		: 80,
+			"max"		: 120	
+		},
+		
 		"player2_Level_0":
 		{
 			"rangeL"	: [0, 9],
@@ -453,7 +461,7 @@
 						"h": 0.5,
 						"n": "level0_rabbit1",
 						"t": "rabbit",
-						"l": 0,
+						"l": 23,
 						"known" : "some mystic rabbit 0",
 						"spawn": 0,
 						"head": "RABBIT"
@@ -945,7 +953,7 @@
 						"h": 0.5,
 						"n": "level1_bird0",
 						"t": "bird",
-						"l": 0,
+						"l": 10,
 						"known" : "some mystic bird 1",
 						"spawn": 1,
 						"head": "BIRD"
@@ -959,7 +967,7 @@
 						"h": 0.5,
 						"n": "level1_rabbit1",
 						"t": "rabbit",
-						"l": 0,
+						"l": 44,
 						"known" : "some mystic rabbit 1",
 						"spawn": 1,
 						"head": "RABBIT"
@@ -1273,7 +1281,7 @@
 						"h": 0.5,
 						"n": "level2_bird0",
 						"t": "bird",
-						"l": 0,
+						"l": 30,
 						"known" : "some mystic bird 2",
 						"spawn": 2,
 						"head": "BIRD"
@@ -1287,7 +1295,7 @@
 						"h": 0.5,
 						"n": "level2_rabbit1",
 						"t": "rabbit",
-						"l": 0,
+						"l": 18,
 						"known" : "some mystic rabbit 2",
 						"spawn": 2,
 						"head": "RABBIT"
@@ -1626,7 +1634,7 @@
 						"h": 0.5,
 						"n": "level3_bird0",
 						"t": "bird",
-						"l": 0,
+						"l": 79,
 						"known" : "some mystic bird 3",
 						"spawn": 3,
 						"head": "BIRD"
@@ -1640,7 +1648,7 @@
 						"h": 0.5,
 						"n": "level3_rabbit1",
 						"t": "rabbit",
-						"l": 0,
+						"l": 22,
 						"known" : "some mystic rabbit 3",
 						"spawn": 3,
 						"head": "RABBIT"

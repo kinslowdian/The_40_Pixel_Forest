@@ -137,6 +137,8 @@
 										"-webkit-transform"	: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)",
 										"transform"			: "translate(" + this.buildData.x + "px, " + this.buildData.y + "px)"
 									};
+		
+		battleEngine.playerLevelSort(this);
 									
 		delete this.settings;	
 	};

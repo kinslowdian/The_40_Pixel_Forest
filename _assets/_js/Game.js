@@ -47,6 +47,8 @@
 		
 		ROM.mapLevel = 0;
 		
+		ROM.game = {};
+		
 		checkDevice();
 		
 		gameData_get(gameData_found);
@@ -54,6 +56,18 @@
 	
 	function gameData_found()
 	{
+		var diff = Logic.dat_ROM._LOGIC.difficulty;
+		
+		var levelCount = 0;
+		
+		for(var levelData in Logic.dat_ROM._LEVELS)
+		{
+			levelCount++;
+		}
+		
+		battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
+		
+		
 		html_lib_init(gameHTML_found);
 	}
 	

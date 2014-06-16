@@ -67,7 +67,7 @@
 		var title_player_level = "";
 		
 		title_enemy_name = ROM.enemy.character.name;
-		title_enemy_level = "level " + ROM.enemy.character.rating;
+		title_enemy_level = ROM.enemy.character.sword.skill.toUpperCase() + " " + "level " + ROM.enemy.character.rating;
 		
 		css = 	{
 					"width"		: ROM.enemy.character.buildData.w + "px",
@@ -77,7 +77,7 @@
 		// UPDATE WITH LOGIC... MAINLY LEVEL
 		
 		title_player_name = "you as a goat";
-		title_player_level = "level " + 0;
+		title_player_level = MAP_PLAYER.sword.skill.toUpperCase() + " " + "level " + MAP_PLAYER.rating;
 		
 		$("#enemyScreen .preBattle_title_enemy .preBattle_title_name").text(title_enemy_name.toUpperCase());
 		$("#enemyScreen .preBattle_title_enemy .preBattle_title_level").text(title_enemy_level.toUpperCase());
@@ -518,7 +518,7 @@
 		
 		BATTLE_NAV.game = {};
 		
-		BATTLE_NAV.game.result = "WIN";
+		// BATTLE_NAV.game.result = "WIN";
 		
 		BATTLE_NAV.html = {};
 		
@@ -765,14 +765,20 @@
 		$("#" + selected + " .battleNavShock").css("opacity", 1);
 		$("#" + selected + " div[class*='battleNavSprite-']").addClass("tween-battle-selected");
 		
-		// AFTER LOGIC DECIDED!!!
-		battleNav_logicDisplay();
-		// AFTER LOGIC DECIDED!!!
+		// LOGIC
+		battleNav_logicRequest();
 		
 		selectionDelay = new AnimationTimer();
 		
 		timerList_add(selectionDelay);
 		selectionDelay.time(1, battleNav_removeSelection);
+	}
+	
+	function battleNav_logicRequest()
+	{
+		BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
+		
+		battleNav_logicDisplay();
 	}
 	
 	function battleNav_logicDisplay()
@@ -1317,6 +1323,11 @@
 		{
 			enemies_ARR[ROM.enemy.character.array_index].alive = false;
 			
+			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
+		
+			trace("ROM.game!!! ::");
+			trace(ROM.game);
+			
 			battleOver_returnWin();
 		}
 		
@@ -1353,58 +1364,78 @@
 		
 		var count_zombie = 0;
 		
+		var graveOverlap = false;
+		
 		for(var enemyObj in enemies_ARR)
 		{
 			if(enemies_ARR[enemyObj].spawn === ROM.mapLevel)
 			{
-				if(enemies_ARR[enemyObj].enemyType === "zombie")
+				var e_x = enemies_ARR[enemyObj].buildData.x;
+				var e_y = enemies_ARR[enemyObj].buildData.y;
+				
+				if(theBattle.playerStore.x_return == e_x && theBattle.playerStore.y_return == e_y)
 				{
-					count_zombie++;					
+					graveOverlap = true;
+					
+					break;
 				}
 				
 				else
 				{
-					count_zombie = 0;
-				}	
+					graveOverlap = false;
+					
+					if(enemies_ARR[enemyObj].enemyType === "zombie")
+					{
+						count_zombie++;					
+					}
+				
+					else
+					{
+						count_zombie = 0;
+					}
+				}
 			}
 		}
 		
 		
-		new_zombie = 	{
-							x		: theBattle.playerStore.x_return / 80,
-							y		: theBattle.playerStore.y_return / 80,
-							w		: 0.5,
-							h		: 0.5,
-							n		: "level" + ROM.mapLevel + "_zombie" + count_zombie,
-							t		: "zombie",
-							l		: 0, // DEFAULT EASY?
-							known	: "an undead you",
-							spawn	: ROM.mapLevel,
-							head	: "GOAT"
-							
-						};
-						
-		html_lib_reuse();
-		
-		var nz = new enemy(new_zombie, ".enemy-area", enemies_ARR.length);
-		
-		nz.create();
-		
-		enemies_ARR.push(nz);
-		
-		html_lib_empty();
-		
-		// CREATE LATEST ON MAP
-		if(enemies_ARR[(enemies_ARR.length - 1)].spawn == ROM.mapLevel)
+		if(!graveOverlap)
 		{
-			if(enemies_ARR[(enemies_ARR.length - 1)].alive)
+			new_zombie = 	{
+								x		: theBattle.playerStore.x_return / 80,
+								y		: theBattle.playerStore.y_return / 80,
+								w		: 0.5,
+								h		: 0.5,
+								n		: "level" + ROM.mapLevel + "_zombie" + count_zombie,
+								t		: "zombie",
+								l		: 0, // DEFAULT EASY?
+								known	: "an undead you",
+								spawn	: ROM.mapLevel,
+								head	: "GOAT"
+								
+							};
+							
+			html_lib_reuse();
+			
+			var nz = new enemy(new_zombie, ".enemy-area", enemies_ARR.length);
+			
+			nz.create();
+			
+			enemies_ARR.push(nz);
+			
+			html_lib_empty();
+			
+			// CREATE LATEST ON MAP
+			if(enemies_ARR[(enemies_ARR.length - 1)].spawn == ROM.mapLevel)
 			{
-				if(!enemies_ARR[(enemies_ARR.length - 1)].rendered)
+				if(enemies_ARR[(enemies_ARR.length - 1)].alive)
 				{
-					enemies_ARR[(enemies_ARR.length - 1)].build();	
+					if(!enemies_ARR[(enemies_ARR.length - 1)].rendered)
+					{
+						enemies_ARR[(enemies_ARR.length - 1)].build();	
+					}
+					
 				}
-				
-			}
+			}			
 		}
 		
 		battleOver_prepareForReturn();	
