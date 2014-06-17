@@ -1,5 +1,132 @@
 	trace("Temp.js being used -- remove from final build / release");
 	
+	
+	var keyboardBattleNav;
+	
+	function keyboardBattleNav_init()
+	{
+		keyboardBattleNav = {};
+		
+		keyboardBattleNav.countTap = "DEFAULT";
+		
+		keyboardBattleNav.signal = {};
+		
+		keyboardBattleNav.signal.signal0 = BATTLE_NAV.options.stone;
+		keyboardBattleNav.signal.signal1 = BATTLE_NAV.options.paper;
+		keyboardBattleNav.signal.signal2 = BATTLE_NAV.options.scissors;
+		
+		keyboardBattleNav.currentFocus = "";
+		
+		keyboardBattleNav.css = {};
+		
+		keyboardBattleNav.css.def	= 	{
+											"-webkit-transform"	: "scale(1)",
+											"transform" 		: "scale(1)"			
+										};
+										
+		keyboardBattleNav.css.hit	= 	{
+											"-webkit-transform"	: "scale(1.2)",
+											"transform" 		: "scale(1.2)"			
+										};
+		
+		
+		$(window)[0].addEventListener("keyup", keyboardBattleNav_event, false);
+	}
+	
+	function keyboardBattleNav_event(event)
+	{
+		// LEFT + DOWN
+		if(event.keyCode == 37 || event.keyCode == 40)
+		{
+			if(keyboardBattleNav.countTap === "DEFAULT")
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardBattleNav.countTap --;
+			}
+			
+			if(keyboardBattleNav.countTap < 0)
+			{
+				keyboardBattleNav.countTap = 2;
+			}
+			
+			keyboardBattleNav_highLight();
+		}
+		
+		// RIGHT + UP
+		if(event.keyCode == 39 || event.keyCode == 38)
+		{
+			if(keyboardBattleNav.countTap === "DEFAULT")
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardBattleNav.countTap ++;
+			}
+			
+			if(keyboardBattleNav.countTap > 2)
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			keyboardBattleNav_highLight();			
+		}
+		
+		if(event.keyCode == 13 || event.keyCode == 32)
+		{
+			if(keyboardBattleNav.countTap !== "DEFAULT")
+			{
+				keyboardBattleNav_select();
+			}
+		}
+	}
+	
+	function keyboardBattleNav_highLight()
+	{
+		var keyboardSelect = keyboardBattleNav.signal["signal" + keyboardBattleNav.countTap];
+		
+		var keyboardSelect_id = keyboardSelect[0].id;
+		
+		
+		if(!keyboardBattleNav.currentFocus)
+		{
+			keyboardBattleNav.currentFocus = keyboardSelect_id;
+			
+			// $("#" + keyboardSelect_id + " .battleNavSprite-mouseEvents").css("opacity", "0.5");
+			
+			$("#" + keyboardSelect_id).css(keyboardBattleNav.css.hit);
+		}
+		
+		else
+		{
+			// $("#" + keyboardSelect_id  + " .battleNavSprite-mouseEvents").css("opacity", "0.5");
+			// $("#" + keyboardBattleNav.currentFocus + " .battleNavSprite-mouseEvents").css("opacity", "1");
+			
+			$("#" + keyboardSelect_id).css(keyboardBattleNav.css.hit);
+			$("#" + keyboardBattleNav.currentFocus).css(keyboardBattleNav.css.def);
+			
+			keyboardBattleNav.currentFocus = keyboardSelect_id;
+		}
+	}
+	
+	function keyboardBattleNav_select()
+	{
+		$(window)[0].removeEventListener("keyup", keyboardBattleNav_event, false);
+		
+		$("#" + keyboardBattleNav.currentFocus).css(keyboardBattleNav.css.def);
+		
+		battleNav_selection(keyboardBattleNav.currentFocus);
+		
+		// $("#" + keyboardBattleNav.currentFocus + " .battleNavSprite-mouseEvents").css("opacity", "1");		
+	}
+	
+	
+	
 	var battleEngine = 	{
 							gameStats : null,
 							

@@ -650,7 +650,10 @@
 	function battleNav_normalInit()
 	{
 		$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
-		$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_fear");		
+		$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_fear");
+		
+		$("#microBattle_darkness").css("visibility", "visible");	
+		$("#microBattle_darkness").css("opacity", "1");		
 		
 		battleNav_control(true);			
 	}
@@ -674,7 +677,9 @@
 					
 					$(BATTLE_NAV.options[optionItem])[0].addEventListener("mouseover", battleNav_controlEvent, false);	
 					$(BATTLE_NAV.options[optionItem])[0].addEventListener("mouseout", battleNav_controlEvent, false);	
-					$(BATTLE_NAV.options[optionItem])[0].addEventListener("click", battleNav_controlEvent, false);		
+					$(BATTLE_NAV.options[optionItem])[0].addEventListener("click", battleNav_controlEvent, false);
+					
+					keyboardBattleNav_init();		
 				}
 				
 				$(BATTLE_NAV.options[optionItem]).css("pointer-events", "auto");
@@ -709,7 +714,7 @@
 		{
 			case "mouseover":
 			{
-				$(event.target).css("opacity", "0.5");
+				$(event.target).css("opacity", "0.5"); 
 				
 				break;
 			}
@@ -743,6 +748,9 @@
 	{
 		var selectionDelay;
 		
+		var unselected0;
+		var unselected1;
+		
 		battleNav_control(false);
 		
 		$("#info-cloud").css("opacity", "0");
@@ -764,6 +772,15 @@
 		
 		$("#" + selected + " .battleNavShock").css("opacity", 1);
 		$("#" + selected + " div[class*='battleNavSprite-']").addClass("tween-battle-selected");
+		
+		
+		for(var optionItem in BATTLE_NAV.options)
+		{
+			if($(BATTLE_NAV.options[optionItem])[0].id !== selected)
+			{
+				$("#" + BATTLE_NAV.options[optionItem][0].id).css("opacity", 0.2);
+			}
+		}
 		
 		// LOGIC
 		battleNav_logicRequest();
@@ -868,22 +885,18 @@
 	{
 		$("#battle-nav").html("");
 		
-		// $("#info-cloud p").text(BATTLE_NAV.navText.txt_START);
-		
 		
 		$(BATTLE_NAV.player_1.head).addClass("battleCute-warrior-head-" + BATTLE_NAV.player_1.headType);
-		$("#battle-nav-player1 .battleCute-eyes-sprite").addClass("battleCute-eyes-look-R");
-		// $("#battle-nav-player1 .battleCute-speak-icon").addClass("battleCute-" + BATTLE_NAV.player_1.selection);
-		
 		$(BATTLE_NAV.player_2.head).addClass("battleCute-warrior-head-" + BATTLE_NAV.player_2.headType);
+		
+		$("#battle-nav-player1 .battleCute-eyes-sprite").addClass("battleCute-eyes-look-R");
 		$("#battle-nav-player2 .battleCute-eyes-sprite").addClass("battleCute-eyes-look-L");
-		// $("#battle-nav-player2 .battleCute-speak-icon").addClass("battleCute-" + BATTLE_NAV.player_2.selection);
 		
 		$("#battle-nav-fight").addClass("tween-battle-nav-fight");
 		
 		BATTLE_NAV.html.navBattle = $("#battle-nav-fight").html();
 		
-		// battleNav_showBattle();
+
 		
 		battleNav_speechBubbles();
 	}
@@ -1157,6 +1170,8 @@
 		$(".tween-battle-cloud")[0].addEventListener("transitionend", battleNav_outView, false);
 				
 		$("#battle-cloud").css(BATTLE_NAV.settings.y_hide);		
+	
+		$("#microBattle_darkness").css("opacity", "0");
 	}
 	
 	function battleNav_outView(event)
