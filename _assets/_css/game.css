@@ -160,7 +160,7 @@
 		
 		/* background: #20202a; */
 		
-		background: #17e69d;
+		/* background: #17e69d; */
 		
 		z-index: 1;
 	}
@@ -188,11 +188,13 @@
 		width: inherit;
 		height: 50%;
 		
+		background: #17e69d;
+		
 		position: absolute;
 		
 		top: 0;
 		
-		z-index: 2;
+		z-index: 1;
 	}
 	
 	
@@ -232,7 +234,7 @@
 		
 		top: 50%;
 		
-		z-index: 1;
+		z-index: 2;
 	}
 	
 	#displayErrorWrapper .displayError-base
@@ -1500,7 +1502,9 @@
 	.edgeBleed-forest
 	{
 		/* background: #17e69d; */
-		background: #000;				
+		/* background: #000; */
+		/* background: #ff0070; */
+		background: #20202a;				
 	}
 			
 	
@@ -1977,7 +1981,7 @@
 		width: inherit;
 		height: inherit;
 		
-		background: #dfdfd5;
+		/* background: #dfdfd5; */
 		
 		position: absolute;
 		
@@ -3086,7 +3090,7 @@
  	
  	/* TEMP */
  	
- 	.battleCute-warrior-head-griz
+ 	.battleCute-warrior-head-rabbit
  	{
 	 	background-position: -72px -209px;
  	}
@@ -3094,6 +3098,11 @@
   	.battleCute-warrior-head-bird
  	{
 	 	background-position: -108px -209px;
+ 	}
+ 	
+   	.battleCute-warrior-head-zombie
+ 	{
+	 	background-position: -144px -209px;
  	}
 	
 	/* TEMP */		

@@ -1,5 +1,120 @@
 @charset "UTF-8";
 
+/*
+	.filler
+	{
+		background-image: url(../_img/_test.png);
+		background-repeat: repeat;
+		background-size: 320px 320px;
+		background-position: center top;
+	}
+*/
+	
+	
+	.pixels_portalSnow
+	{
+		background-image: url(../_img/portalSpriteSnow_1x.png);
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 80px 320px;
+	}
+	
+	.pixels_forestMassSnow
+	{
+		background-image: url(../_img/tile_snowTreesMass_1x.png);
+		background-repeat: repeat;
+		background-position: center top;
+		background-size: 240px 240px;		
+	}
+	
+	.pixels_forestSnow
+	{
+		background-image: url(../_img/tile_pineTreesSnow_1x.png);
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerLightSnow
+	{
+		background-image: url(../_img/tile_flowersLightSnow_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerHeavySnow
+	{
+		background-image: url(../_img/tile_flowersHeavySnow_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerRichCrossSnow
+	{
+		background-image: url(../_img/tile_flowersRich_+Snow_1x.png);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 120px 120px;
+	}
+	
+	.field-floor-snow
+	{
+		background: #fff;
+	}
+	
+	.pixels_portalFire
+	{
+		background-image: url(../_img/portalSpriteFire_1x.png);
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 80px 320px;
+	}
+	
+	.pixels_forestMassFire
+	{
+		background-image: url(../_img/tile_pineTreesMassFire_1x.png);
+		background-repeat: repeat;
+		background-position: center top;
+		background-size: 240px 240px;		
+	}
+	
+	.pixels_forestFire
+	{
+		background-image: url(../_img/tile_pineTreesFire_1x.png);
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerLightFire
+	{
+		background-image: url(../_img/tile_flowersLightFire_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerHeavyFire
+	{
+		background-image: url(../_img/tile_flowersHeavyFire_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerRichCrossFire
+	{
+		background-image: url(../_img/tile_flowersRich_+Fire_1x.png);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 120px 120px;
+	}	
+	
+	.field-floor-fire
+	{
+		background: #20202a;
+	}	
+
 
 	
 

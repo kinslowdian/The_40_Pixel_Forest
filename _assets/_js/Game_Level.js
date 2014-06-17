@@ -240,6 +240,10 @@
 		
 		$(".field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
 		
+		// OUTER BACKGROUND
+		
+		$("#roam_content").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["OUTER"]["class"]);
+		
 		// TREES BUSHES
 		
 		i = 0;
@@ -419,6 +423,12 @@
 	
 	function level_clear()
 	{
+		var find_bgPixels 		= $("#roam_content").attr("class");
+		
+		var get_bgPixels_BEG 	= find_bgPixels.search("pixels");
+		var get_bgPixels_END 	= find_bgPixels.length;
+		var get_bgPixels 		= find_bgPixels.substr(get_bgPixels_BEG, get_bgPixels_END); 
+		
 		$(".field-floor > div").removeAttr("class");
 		
 		$(".enemy-area").html("");
@@ -430,6 +440,11 @@
 		$("#space .weather-snow").html("");
 		$("#space .weather-rain").html("");
 		$("#space .weather-wind").html("");
+		
+		
+		$("#roam_content").removeClass(get_bgPixels);
+		$(".field-floor > div").removeAttr("class");
+		
 		
 		for(var object_enemy in enemies_ARR)
 		{

@@ -513,7 +513,7 @@
 		
 		BATTLE_NAV.player_1.headType = "goat";
 		
-		BATTLE_NAV.player_2.headType = "bird";
+		BATTLE_NAV.player_2.headType = ROM.enemy.character.enemyType; // "bird"
 		
 		
 		BATTLE_NAV.game = {};

@@ -120,8 +120,6 @@
 			
 			// $("#displayErrorWrapper").remove();
 			
-			$("#displayErrorWrapper .message p").text("COME BACK NOW");
-			
 			focusBlur_add();
 		}
 		
@@ -142,7 +140,7 @@
 		// CONTROL_SIGNAL.userMissing = false;
 		
 		$(window)[0].addEventListener("blur", focusBlur_event, false);
-		$(window)[0].addEventListener("focus", focusBlur_event, false);	
+		// $(window)[0].addEventListener("focus", focusBlur_event, false);	
 	}
 	
 	function focusBlur_event(event)
@@ -151,6 +149,11 @@
 		
 		if(event.type === "blur")
 		{
+			if($("#displayErrorWrapper .message p").text() !== errorMessages.keyboard)
+			{
+				$("#displayErrorWrapper .message p").text(errorMessages.keyboard);	
+			}
+			
 			$(window)[0].removeEventListener("blur", focusBlur_event, false);
 			$(window)[0].addEventListener("focus", focusBlur_event, false);
 			
@@ -160,7 +163,7 @@
 							"-webkit-transition-delay"	: "0s",
 							"transition-delay" 			: "0s",
 							"opacity"					: "1"
-						};			
+						};
 		}
 		
 		if(event.type === "focus")
@@ -977,6 +980,7 @@
 		this.buildData.y 		= this.buildData.block_y * 80;
 		this.buildData.w 		= this.settings.w * 80;
 		this.buildData.h 		= this.settings.h * 80;
+		this.buildData.pixels	= this.settings.p;
 		
 		this.level				= this.settings.level;
 		this.exit				= this.settings.exit;	
@@ -992,8 +996,13 @@
 	
 	portal.prototype.build = function(levelCheck)
 	{
+		var pixelClass = this.buildData.pixels;
+		
 		$(this.buildData.container).append(this.buildData.html);
 		$(this.buildData.container + " #_portal").attr("id", this.id);
+		
+		$(this.buildData.container + " #" + this.id + " .pixelPush").addClass(this.buildData.pixels);
+		
 			
 		$("#" + this.id).css(this.buildData.css);
 	}

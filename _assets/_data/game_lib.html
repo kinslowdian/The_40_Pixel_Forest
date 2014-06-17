@@ -2,13 +2,13 @@
 <div class="_portal">
 <div id="_portal" class="" data-npc="portal" data-static-class="portal collideCheck-field tweenFlickerFix">
 							
-	<div class="" data-static-class="portal_top pixels_portal"></div>
+	<div class="" data-static-class="portal_top pixelPush"></div> <!-- pixels_portal -->
 								
 	<div class="" data-static-class="portal_space">
 									
-		<div class="" data-static-class="portal_stars0 pixels_portal tween-portalStars"></div>
-		<div class="" data-static-class="portal_stars1 pixels_portal tween-portalStars"></div>
-		<div class="" data-static-class="portal_stars2 pixels_portal tween-portalStars"></div>
+		<div class="" data-static-class="portal_stars0 tween-portalStars pixelPush"></div> <!-- pixels_portal -->
+		<div class="" data-static-class="portal_stars1 tween-portalStars pixelPush"></div> <!-- pixels_portal -->
+		<div class="" data-static-class="portal_stars2 tween-portalStars pixelPush"></div> <!-- pixels_portal -->
 										
 	</div>								
 								
@@ -57,11 +57,33 @@
 <div id="_clearing_cross" class="" data-static-class="clearing_cross clearing_2x2">
 								
 	<div class="" data-static-class="flowerRichCross pixels_flowerRichCross"></div>
-	<div class="" data-static-class="woodland-clearing-floor"></div>
+	<div class="" data-static-class="woodland-clearing-floor field-floor-default"></div>
 									
 </div>
 </div>
 <!-- CLEARING CROSS -->
+
+<!-- CLEARING CROSS SNOW -->
+<div class="_clearing_cross_snow">
+<div id="_clearing_cross_snow" class="" data-static-class="clearing_cross clearing_2x2">
+								
+	<div class="" data-static-class="flowerRichCross pixels_flowerRichCrossSnow"></div>
+	<div class="" data-static-class="woodland-clearing-floor field-floor-snow"></div>
+									
+</div>
+</div>
+<!-- CLEARING CROSS SNOW -->
+
+<!-- CLEARING CROSS FIRE -->
+<div class="_clearing_cross_fire">
+<div id="_clearing_cross_fire" class="" data-static-class="clearing_cross clearing_2x2">
+								
+	<div class="" data-static-class="flowerRichCross pixels_flowerRichCrossFire"></div>
+	<div class="" data-static-class="woodland-clearing-floor field-floor-fire"></div>
+									
+</div>
+</div>
+<!-- CLEARING CROSS FIRE -->
 
 <!-- WOLF GOD -->
 <div class="_clearing_wolfGod">
@@ -77,7 +99,7 @@
 	
 	</div>
 	
-	<div class="" data-static-class="woodland-clearing-floor"></div>
+	<div class="" data-static-class="woodland-clearing-floor field-floor-default"></div>
 	
 </div>
 </div>
@@ -289,7 +311,7 @@
 				
 		<div class="" data-static-class="stage-view-y">
 				
-			<div id="" class="" data-static-id="roam_content" data-static-class="stage-view-x pixels_forestMass">
+			<div id="" class="" data-static-id="roam_content" data-static-class="stage-view-x"> <!-- pixels_forestMass -->
 						
 				<div class="" data-static-class="field">
 							

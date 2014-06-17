@@ -3,6 +3,9 @@
 	
 	var ROM;
 	
+	var errorMessages = {};
+
+	
 	function phoneRotate(event)
 	{
 		var base_css;
@@ -27,6 +30,11 @@
 		
 		else
 		{
+			if($("#displayErrorWrapper .message p").text() !== errorMessages.touch)
+			{
+				$("#displayErrorWrapper .message p").text(errorMessages.touch);	
+			}
+			
 			trace("DISPLAY_FAIL");
 			
 			$("#displayErrorWrapper .displayError").removeClass("displayErrorHide").addClass("displayErrorShow");
@@ -64,6 +72,9 @@
 		{
 			levelCount++;
 		}
+		
+		errorMessages.touch 	= Logic.dat_ROM["_ERRORS"]["touch"]["txt"];
+		errorMessages.keyboard 	= Logic.dat_ROM["_ERRORS"]["keyboard"]["txt"];
 		
 		battleEngine.init(levelCount, diff.easy, diff.medium, diff.hard, diff.max);
 		
