@@ -882,8 +882,13 @@
 		
 		level_init();
 		
+/*
 		$("#portalScreen h1").text(LEVEL_MAIN.titleData.top.toUpperCase());
 		$("#portalScreen h2").text(LEVEL_MAIN.titleData.btm.toUpperCase());
+*/
+
+		$("#portalScreen .portalScreen_title_left h1").text(LEVEL_MAIN.titleData.top.toUpperCase());
+		$("#portalScreen .portalScreen_title_right h1").text(LEVEL_MAIN.titleData.btm.toUpperCase());
 	}
 	
 	function portalScreen_screen1()

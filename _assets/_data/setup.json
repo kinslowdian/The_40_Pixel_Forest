@@ -467,8 +467,7 @@
 						"t": "bird",
 						"l": 5,
 						"known" : "some mystic bird 0",
-						"spawn": 0,
-						"head": "BIRD"
+						"spawn": 0
 					},
 					
 					"ENEMY_1":
@@ -481,8 +480,7 @@
 						"t": "rabbit",
 						"l": 23,
 						"known" : "some mystic rabbit 0",
-						"spawn": 0,
-						"head": "RABBIT"
+						"spawn": 0
 					}	
 				}
 			},
@@ -995,8 +993,7 @@
 						"t": "bird",
 						"l": 10,
 						"known" : "some mystic bird 1",
-						"spawn": 1,
-						"head": "BIRD"
+						"spawn": 1
 					},
 					
 					"ENEMY_1":
@@ -1009,8 +1006,7 @@
 						"t": "rabbit",
 						"l": 44,
 						"known" : "some mystic rabbit 1",
-						"spawn": 1,
-						"head": "RABBIT"
+						"spawn": 1
 					}		
 				}
 			},
@@ -1334,8 +1330,7 @@
 						"t": "bird",
 						"l": 30,
 						"known" : "some mystic bird 2",
-						"spawn": 2,
-						"head": "BIRD"
+						"spawn": 2
 					},
 					
 					"ENEMY_1":
@@ -1348,8 +1343,7 @@
 						"t": "rabbit",
 						"l": 18,
 						"known" : "some mystic rabbit 2",
-						"spawn": 2,
-						"head": "RABBIT"
+						"spawn": 2
 					}			
 				}
 			},
@@ -1696,8 +1690,7 @@
 						"t": "bird",
 						"l": 79,
 						"known" : "some mystic bird 3",
-						"spawn": 3,
-						"head": "BIRD"
+						"spawn": 3
 					},
 					
 					"ENEMY_1":
@@ -1710,8 +1703,7 @@
 						"t": "rabbit",
 						"l": 22,
 						"known" : "some mystic rabbit 3",
-						"spawn": 3,
-						"head": "RABBIT"
+						"spawn": 3
 					}			
 				}
 			},
@@ -2180,8 +2172,7 @@
 						"t": "rabbit",
 						"l": 5,
 						"known" : "some mystic rabbit 4",
-						"spawn": 4,
-						"head": "RABBIT"
+						"spawn": 4
 					},
 					
 					"ENEMY_1":
@@ -2194,8 +2185,7 @@
 						"t": "rabbit",
 						"l": 99,
 						"known" : "some mystic rabbit 4",
-						"spawn": 4,
-						"head": "RABBIT"
+						"spawn": 4
 					}	
 				}
 			},
@@ -2708,8 +2698,7 @@
 						"t": "rabbit",
 						"l": 5,
 						"known" : "some mystic rabbit 4",
-						"spawn": 5,
-						"head": "RABBIT"
+						"spawn": 5
 					},
 					
 					"ENEMY_1":
@@ -2722,8 +2711,7 @@
 						"t": "rabbit",
 						"l": 99,
 						"known" : "some mystic rabbit 4",
-						"spawn": 5,
-						"head": "RABBIT"
+						"spawn": 5
 					}	
 				}
 			},
