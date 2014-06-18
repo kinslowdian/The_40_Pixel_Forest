@@ -76,25 +76,43 @@
 	
 	.microBattle_darkness_info
 	{
-		width: 80%;
+		width: 100%;
+		height: auto;
+		
+		display: block;
 		
 		font-size: 2em;
 		
-		-webkit-transform: translateY(249px);
-		transform: translateY(249px);
+		opacity: 0;
 		
 		position: absolute;
 		
-		opacity: 0;
+		left: 0; right: 0; top: 0; bottom: 0;
 		
-		left: 10%;
+		margin: 211px auto auto auto;
 		
 		z-index: 0;
+		
+		overflow: hidden;
+	}
+	
+	.microBattle_darkness_infoBlock
+	{
+		width: 80%;
+		height: 180px;
+		
+		position: absolute;
+		
+		left: 0; right: 0; top: 0; bottom: 0;
+		
+		margin: auto;
+		
+		z-index: 0;		
 	}
 	
 	.microBattle_darkness_info h1
 	{
-		width: inherit;
+		width: 100%;
 		
 		color: white;
 		text-align: center;
@@ -102,18 +120,22 @@
 		font-size: 0.8em;
 		line-height: 0.8em;
 		
-		position: relative;
+		position: absolute;
 		
-		margin: 0 auto;
+		z-index: 0;
 	}
 	
 	.microBattle_darkness_info .microBattle_darkness_info_p1
 	{
+		top: 0;
+		
 		color: #17e69d;
 	}
 	
 	.microBattle_darkness_info .microBattle_darkness_info_p2
 	{
+		bottom: 0;
+		
 		color: #ff0070;
 	}
 	
@@ -122,24 +144,14 @@
 		width: 100%;
 		height: 80px;
 		
-		position: relative;
+		position: absolute;
 		
-		margin: 30px auto;
+		left:0; right:0; top:0; bottom: 0;
+		
+		margin: auto;
+		
+		z-index: 0;
 	}
-	
-/*
-	.microBattle_darkness_info_split div
-	{
-		width: 2px;
-		height: 80px;
-		
-		background: #fff;
-		
-		position: relative;
-		
-		margin: 0 auto;
-	}
-*/
 
 	.microBattle_darkness_info_split .microBattle_darkness_info_split_line
 	{
@@ -154,18 +166,20 @@
 		
 		margin: 0 auto;
 		
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
 		z-index: 0;
 	}
 	
 	.microBattle_darkness_info_split .microBattle_darkness_info_split_text
 	{
+		width: 100%;
 		height: 80px;
 		font-size: 80px;
 		line-height: 80px;
 		
 		text-align: center;
-		
-		/* color: #fff; */
 		
 		opacity: 0;
 	}
@@ -184,6 +198,26 @@
 	{
 		color: #ffff66;
 	}
+	
+	.tween-microBattle_darkness_mega
+	{
+		-webkit-animation	: tweenMicroBattleDarknessMegaFrames 0.2s linear infinite;
+		animation			: tweenMicroBattleDarknessMegaFrames 0.2s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenMicroBattleDarknessMegaFrames
+	{
+		0%		{-webkit-transform: scale(1);}
+		50%		{-webkit-transform: scale(1.4);}
+		100%	{-webkit-transform: scale(1);}
+	}
+	
+	@keyframes tweenMicroBattleDarknessMegaFrames
+	{
+		0%		{transform: scale(1);}
+		50%		{transform: scale(1.4);}
+		100%	{transform: scale(1);}		
+	}  
 		
 	
 	

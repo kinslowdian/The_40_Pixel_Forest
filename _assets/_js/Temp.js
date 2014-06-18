@@ -186,6 +186,7 @@
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
 		
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").text(BATTLE_NAV.game.result);
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("tween-microBattle_darkness_mega");
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");
 		
 		

@@ -2234,7 +2234,9 @@
 		
 		overflow: hidden;
 		
-		background: #ffff66;
+		/* background: #ffff66; */
+		
+		background: #20202a;
 	
 		-webkit-transform	: translateX(100%);
 		transform			: translateX(100%);
@@ -2253,7 +2255,9 @@
 		
 		position: absolute;
 		
-		background: #ffff66;
+		/* background: #ffff66; */
+		
+		background: #20202a;
 		
 		z-index: 4;
 	}
@@ -2428,7 +2432,10 @@
 	
 	#portalScreen .portalScreen_bg .portalScreen_field
 	{
-		background: #ffff66;
+		/* background: #ffff66; */
+		
+		background: #20202a;
+		
 		
 		z-index: 1;
 	}
