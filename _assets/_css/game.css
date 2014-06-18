@@ -2230,7 +2230,7 @@
 		width: 100%;
 		height: 100%;
 		
-		position: relative;
+		position: absolute;
 		
 		overflow: hidden;
 		
@@ -2238,14 +2238,36 @@
 		
 		background: #20202a;
 	
-		-webkit-transform	: translateX(100%);
-		transform			: translateX(100%);
+		-webkit-transform	: translateY(-100%);
+		transform			: translateY(-100%);
+	
+		z-index: 1;
+	}
+	
+	#portalScreen .portalScreen_bleedFill
+	{
+		width: 100%;
+		height: 100%;
+		
+		background: #20202a;
+		
+		opacity: 0;
+		
+		position: absolute;
+		
+		z-index: 0;
 	}
 	
 	.tween-portalScreen_wrapper
 	{
-		-webkit-transition	: -webkit-transform 0.5s ease-in-out;
-		transition 			: transform 0.5s ease-in-out;
+		-webkit-transition	: -webkit-transform 0.6s ease-in-out;
+		transition 			: transform 0.6s ease-in-out;
+	}
+	
+	.tween-portalScreen_bleedFill
+	{
+		-webkit-transition: opacity 0.3s linear;
+		transition: opacity 0.3s linear;
 	}
 	
 	#portalScreen .portalScreen_fade
@@ -2264,8 +2286,8 @@
 	
 	.tween-portalScreen_fade
 	{
-		-webkit-transition	: opacity 0.3s ease-in-out;
-		transition 			: opacity 0.3s ease-in-out;
+		-webkit-transition	: opacity 0.3s ease-in-out 0s;
+		transition 			: opacity 0.3s ease-in-out 0s;
 	}
 	
 	#portalScreen .portalScreen_header
@@ -2408,16 +2430,26 @@
 		
 		background: #20202a;
 		
+		opacity: 0;
+		
+/*
 		-webkit-transform: translateY(100%);
 		transform: translateY(100%);
+*/
 		
 		z-index: 1;
 	}
 	
 	.tween-portalScreen_green
 	{
+/*
 		-webkit-transition	: -webkit-transform 1s ease;
 		transition 			: transform 1s ease;
+*/
+
+		-webkit-transition	: opacity 1s ease;
+		transition 			: opacity 1s ease;
+
 	}
 	
 	#portalScreen .portalScreen_bg

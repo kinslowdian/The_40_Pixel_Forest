@@ -859,11 +859,13 @@
 		var css;
 		
 		css = 	{
-					"-webkit-transform"	: "translateX(0%)",
-					"transform"			: "translateX(0%)"
+					"-webkit-transform"	: "translateY(0%)",
+					"transform"			: "translateY(0%)"
 				};
 				
 		$("#portalScreen .portalScreen_wrapper").css(css);
+		
+		$("#portalScreen .portalScreen_bleedFill").css("opacity", "1");
 		
 		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_screen0, false);
 		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_screen0, false);		
@@ -874,9 +876,9 @@
 		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen0, false);
 		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_screen0, false);		
 	
-		$("#portalScreen .portalScreen_fade").css("opacity", 0);
+		// $("#portalScreen .portalScreen_fade").css("opacity", 0);
 		
-		PortalScreen.delay = setTimeout(portalScreen_screen1, 2 * 1000);
+		PortalScreen.delay = setTimeout(portalScreen_screen1, 1 * 1000);
 		
 		level_clear();
 		
@@ -893,6 +895,7 @@
 	
 	function portalScreen_screen1()
 	{
+/*
 		var css;
 		
 		css = 	{
@@ -901,6 +904,9 @@
 				};
 				
 		$("#portalScreen .portalScreen_green").css(css);
+*/
+		$("#portalScreen .portalScreen_green").css("opacity", "1");
+
 	
 		$(".tween-portalScreen_green")[0].addEventListener("webkitTransitionEnd", portalScreen_screen2, false);
 		$(".tween-portalScreen_green")[0].addEventListener("transitionend", portalScreen_screen2, false);
@@ -928,28 +934,42 @@
 		$(".tween-portalScreen_header")[0].removeEventListener("transitionend", portalScreen_screen3, false);		
 		
 	
-		PortalScreen.delay = setTimeout(portalScreen_screen4, 2 * 1000);
+		PortalScreen.delay = setTimeout(portalScreen_screen4, 1 * 1000);
 	}
 	
 	function portalScreen_screen4()
 	{
-		var css;
+		var css_p_main;
+		var css_p_fade;
 		
-		css = 	{
-					"-webkit-transform"	: "translateX(100%)",
-					"transform"			: "translateX(100%)"
-				};
+		css_p_main = 	{
+							"-webkit-transform"	: "translateX(100%)",
+							"transform"			: "translateX(100%)"
+						};
+						
+		css_p_fade =	{
+							"-webkit-transition-delay"	: "0.6s",
+							"transition-delay" 			: "0.6s",
+							"opacity"					: "0"
+						};
 				
-		$("#portalScreen .portalScreen_wrapper").css(css);
+		$("#portalScreen .portalScreen_wrapper").css(css_p_main);
+		$("#portalScreen .portalScreen_bleedFill").css(css_p_fade);
 		
-		$(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
-		$(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_remove, false);	
+		// $(".tween-portalScreen_wrapper")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		// $(".tween-portalScreen_wrapper")[0].addEventListener("transitionend", portalScreen_remove, false);	
+	
+		$(".tween-portalScreen_bleedFill")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		$(".tween-portalScreen_bleedFill")[0].addEventListener("transitionend", portalScreen_remove, false);
 	}
 	
 	function portalScreen_remove(event)
 	{
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
-		$(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_remove, false);
+		// $(".tween-portalScreen_wrapper")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		// $(".tween-portalScreen_wrapper")[0].removeEventListener("transitionend", portalScreen_remove, false);
+		
+		$(".tween-portalScreen_bleedFill")[0].removeEventListener("webkitTransitionEnd", portalScreen_remove, false);
+		$(".tween-portalScreen_bleedFill")[0].removeEventListener("transitionend", portalScreen_remove, false);
 		
 		$("#portalScreen").html("");
 		

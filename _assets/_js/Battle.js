@@ -372,7 +372,7 @@
 		mbs_delay = new AnimationTimer();
 		
 		timerList_add(mbs_delay);
-		mbs_delay.time(2, microBattleSequence_boss);	
+		mbs_delay.time(1, microBattleSequence_boss);	
 	}
 	
 	function microBattleSequence_boss()
@@ -386,7 +386,7 @@
 		mbs_delay = new AnimationTimer();
 		
 		timerList_add(mbs_delay);
-		mbs_delay.time(2, microBattleSequence_scrollDown);
+		mbs_delay.time(0.5, microBattleSequence_scrollDown);
 	}
 	
 	function microBattleSequence_scrollDown()
@@ -1549,6 +1549,10 @@
 		
 		// FLUSH OBJECT
 		theBattle = {};
+		
+		// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
+		timerList_stopAll();
+		timerList_destroy();
 		
 		moveStageTest();		
 	}
