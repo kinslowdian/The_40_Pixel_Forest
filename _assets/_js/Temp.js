@@ -3,6 +3,7 @@
 	
 	var keyboardBattleNav;
 	
+	
 	function keyboardBattleNav_init()
 	{
 		keyboardBattleNav = {};
@@ -125,7 +126,99 @@
 		// $("#" + keyboardBattleNav.currentFocus + " .battleNavSprite-mouseEvents").css("opacity", "1");		
 	}
 	
+/*
+	function battleUserInfo_place()
+	{
+		var set_css;
+		
+		var set_y = $("#battle-cloud").height();
+		
+		var set_h = Math.abs(set_y - document.height);
+		
+		set_css	= 	{
+						"height"	: set_h + "px",
+						"top"		: set_y + "px"
+					};
+					
+		
+		$("#microBattle_darkness .microBattle_darkness_info").css(set_css);			
+	}
+*/
 	
+	function battleUserInfo_populate()
+	{
+		$("#microBattle_darkness .microBattle_darkness_info_p1").text(BATTLE_NAV.player_1.selection.toUpperCase());
+		
+		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+		
+		$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
+	
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+	}
+	
+	function battleUserInfo_cleanUp(event)
+	{
+		$(".tween-microBattle_darkness_lightning")[0].removeEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].removeEventListener("animationend", battleUserInfo_cleanUp, false);
+		
+		$("#microBattle_darkness .microBattle_darkness_lightning").removeClass("tween-microBattle_darkness_lightning");
+	}
+	
+	function battleUserInfo_enemy()
+	{
+		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_p2").text(BATTLE_NAV.player_2.selection.toUpperCase());
+		
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+	}
+	
+	function battleUserInfo_result()
+	{
+		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_p1").css("opacity", "0");
+		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "0");
+		$("#microBattle_darkness .microBattle_darkness_info_split_line").css("opacity", "0");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").text(BATTLE_NAV.game.result);
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");
+		
+		
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+	}
+	
+	function battleUserInfo_anotherRound()
+	{
+		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+		
+		$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "0");
+		
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+		
+		battleUserInfo_purge();
+	}
+	
+	function battleUserInfo_purge()
+	{
+		$("#microBattle_darkness .microBattle_darkness_info_p1").removeAttr("style");
+		$("#microBattle_darkness .microBattle_darkness_info_p2").removeAttr("style");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_line").removeAttr("style");
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeAttr("style");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
+		
+		
+		$("#microBattle_darkness .microBattle_darkness_info_p1").text("");
+		$("#microBattle_darkness .microBattle_darkness_info_p2").text("?");
+	}
 	
 	var battleEngine = 	{
 							gameStats : null,

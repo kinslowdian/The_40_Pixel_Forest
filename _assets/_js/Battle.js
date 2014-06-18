@@ -714,21 +714,21 @@
 		{
 			case "mouseover":
 			{
-				$(event.target).css("opacity", "0.5"); 
+				$("#" + event.target.parentNode.id).css(keyboardBattleNav.css.hit);
 				
 				break;
 			}
 			
 			case "mouseout":
 			{
-				$(event.target).css("opacity", "1");
+				$("#" + event.target.parentNode.id).css(keyboardBattleNav.css.def);
 				
 				break;
 			}
 			
 			case "click":
 			{
-				$(event.target).css("opacity", "1");
+				$("#" + event.target.parentNode.id).css(keyboardBattleNav.css.def);
 				
 				battleNav_selection(event.target.parentNode.id); //parentElement ?
 				
@@ -781,6 +781,8 @@
 				$("#" + BATTLE_NAV.options[optionItem][0].id).css("opacity", 0.2);
 			}
 		}
+		
+		battleUserInfo_populate();
 		
 		// LOGIC
 		battleNav_logicRequest();
@@ -1003,6 +1005,9 @@
 	 	$("#battle-nav-player1 .battleCute-speak-left").css("opacity", "1");
 	 	$("#battle-nav-player2 .battleCute-speak-right").css("opacity", "1");
 	 	
+	 	
+	 	battleUserInfo_enemy();
+	 	
 	 	winLoseDisplay = new AnimationTimer();
 	 	timerList_add(winLoseDisplay);
 	 	winLoseDisplay.time(2, battleNav_battleResults);		
@@ -1016,6 +1021,7 @@
 		
 		$("#battle-nav-player1 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-R").addClass("battleCute-eyes-look-C");
 		$("#battle-nav-player2 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-L").addClass("battleCute-eyes-look-C");
+		
 		
 		switch(BATTLE_NAV.game.result)
 		{
@@ -1059,6 +1065,8 @@
 			}
 			
 		}
+		
+		battleUserInfo_result();
 		
 		resultsEndDelay = new AnimationTimer();
 		timerList_add(resultsEndDelay);
@@ -1111,6 +1119,8 @@
 		$("#info-cloud p").text(BATTLE_NAV.navText.txt_AGAIN);
 		
 		$("#battle-nav").removeClass("battle-nav-hide").addClass("battle-nav-show");
+		
+		battleUserInfo_anotherRound();
 		
 		$(".tween-battle-nav")[0].addEventListener("webkitTransitionEnd", battleNav_anotherRoundInPlace, false);
 		$(".tween-battle-nav")[0].addEventListener("transitionend", battleNav_anotherRoundInPlace, false);		
