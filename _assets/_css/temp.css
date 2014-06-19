@@ -45,6 +45,50 @@
 	}
 */
 	
+	.microBattle_darkness_crowd_wrapper_40x40
+	{
+		width: inherit;
+		height: 40px;
+		
+		position: absolute;
+		
+		bottom: 0;
+		
+		z-index: 1;
+	}
+	
+	.microBattle_darkness_crowd_main_40x40
+	{
+		width: 320px;
+		height: 40px;
+		
+		position: relative;
+		
+		margin: 0 auto;
+		
+		-webkit-transform	: translateY(40px);
+		transform			: translateY(40px);
+		
+	}
+	
+	.tween-microBattle_darkness_crowd_main_40x40
+	{
+		-webkit-transition: -webkit-transform 0.1s ease-in-out;
+		transition: transform 0.1s ease-in-out;
+	}
+	
+	.microBattle_darkness_crowd_sprite_40x40
+	{
+		width: 40px;
+		height: 40px;
+		
+		position: relative;
+		
+		display: block;
+		
+		float: left;
+	}
+	
 	
 	.pixels_portalSnow
 	{

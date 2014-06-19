@@ -257,11 +257,56 @@
 	function battleUserInfo_result()
 	{
 		battleUserInfo_messaging("RESULT", true);
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleUserInfo_crowdAdd("#player1");
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleUserInfo_crowdAdd("#player2");
+		}
 	}
 	
 	function battleUserInfo_anotherRound()
 	{
 		battleUserInfo_messaging("ANOTHER", true);
+	}
+	
+	function battleUserInfo_crowdAdd(target)
+	{
+		var crowd_sprite_holder = '<div id="crowd_sprite_holder" class="microBattle_darkness_crowd_sprite_40x40"></div>';
+		var crowd_sprite_display = $(target).html();
+		
+		var css;
+		var crowd_y = 10;
+		
+		for(var i = 0; i < 8; i++)
+		{
+			var crowd_id = "microBattle_darkness_crowd" + i;
+			
+			$(".microBattle_darkness_crowd_main_40x40").append(crowd_sprite_holder);
+			
+			$("#crowd_sprite_holder").attr("id", crowd_id);
+			
+			$("#" + crowd_id).html(crowd_sprite_display);
+			
+		}
+		
+		
+		css = 	{
+					"-webkit-transform" : "translateY(" + crowd_y + "px)",
+					"-webkit-transform" : "translateY(" + crowd_y + "px)"
+				};
+				
+		$(".microBattle_darkness_crowd_main_40x40").css(css);
+		
+	}
+	
+	function battleUserInfo_crowdPurge()
+	{
+		$(".microBattle_darkness_crowd_main_40x40").html("");
 	}
 	
 	var battleEngine = 	{
