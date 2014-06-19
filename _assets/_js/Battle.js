@@ -798,9 +798,7 @@
 	
 	function battleNav_logicRequest()
 	{
-		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
-		
-		BATTLE_NAV.game.result = "DRAW";
+		BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
 		battleNav_logicDisplay();
 	}
@@ -931,13 +929,20 @@
 		$(".tween-battle-nav-fight")[0].removeEventListener("webkitTransitionEnd", battleNav_showBattleInPlace, false);
 		$(".tween-battle-nav-fight")[0].removeEventListener("transitionend", battleNav_showBattleInPlace, false);
 		
+/*
 		intoCountDownDelay = new AnimationTimer();
 		timerList_add(intoCountDownDelay);
 		intoCountDownDelay.time(1, battleNav_startBattleCountDown);
+*/
+		battleNav_startBattleCountDown();
+		
 	}
 	
 	function battleNav_startBattleCountDown()
 	{
+		battleUserInfo_vs();
+		
+		
 		$("#battle-nav-player1 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-R").addClass("battleCute-eyes-look-C");
 		
 		$("#battle-nav-player2 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-L").addClass("battleCute-eyes-look-C");

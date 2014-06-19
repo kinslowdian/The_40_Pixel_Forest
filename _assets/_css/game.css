@@ -3828,8 +3828,13 @@
  		 	
  	.tween-bird-flapAway
  	{
+/*
 	 	-webkit-animation	: tweenBirdFlapAwayFrames 2.5s linear forwards;
 	 	animation			: tweenBirdFlapAwayFrames 2.5s linear forwards;
+*/
+
+	 	-webkit-animation	: tweenBirdFlapAwayFrames 1.4s linear forwards;
+	 	animation			: tweenBirdFlapAwayFrames 1.4s linear forwards;
  	}
  		 	
  	@-webkit-keyframes tweenBirdFlapAwayFrames
