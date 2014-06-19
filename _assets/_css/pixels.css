@@ -206,10 +206,10 @@
 	
 	.pixels_portalScreen
 	{
-		background-image: url(../_img/tilePortalScreen_1x.png);
+		background-image: url(../_img/tilePortalScreenLRG_1x.png);
 		background-repeat: repeat;
-		background-position: center center;
-		background-size: 160px 160px;
+		background-position: center top;
+		background-size: 400px 320px;
 	}
 	
 	.pixels_battleCloud
@@ -540,7 +540,7 @@
 		
 		.pixels_portalScreen
 		{
-			background-image: url(../_img/tilePortalScreen_1x.png);
+			background-image: url(../_img/tilePortalScreenLRG_1x.png);
 		}
 		
 		.pixels_battleCloud
@@ -774,7 +774,7 @@
 		
 		.pixels_portalScreen
 		{
-			background-image: url(../_img/tilePortalScreen_2x.png);
+			background-image: url(../_img/tilePortalScreenLRG_2x.png);
 		}
 		
 		.pixels_battleCloud

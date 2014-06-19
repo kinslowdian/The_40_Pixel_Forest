@@ -652,8 +652,11 @@
 		$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
 		$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_fear");
 		
-		$("#microBattle_darkness").css("visibility", "visible");	
-		$("#microBattle_darkness").css("opacity", "1");		
+		
+		// $("#microBattle_darkness").css("visibility", "visible");	
+		// $("#microBattle_darkness").css("opacity", "1");		
+		
+		battleUserInfo_start();
 		
 		battleNav_control(true);			
 	}
@@ -795,7 +798,9 @@
 	
 	function battleNav_logicRequest()
 	{
-		BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
+		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
+		
+		BATTLE_NAV.game.result = "DRAW";
 		
 		battleNav_logicDisplay();
 	}
@@ -1116,7 +1121,7 @@
 		
 		battleNav_getValues();
 		
-		$("#info-cloud p").text(BATTLE_NAV.navText.txt_AGAIN);
+		$("#info-cloud p").text(BATTLE_NAV.navText.txt_AGAIN.toUpperCase());
 		
 		$("#battle-nav").removeClass("battle-nav-hide").addClass("battle-nav-show");
 		

@@ -144,6 +144,23 @@
 		$("#microBattle_darkness .microBattle_darkness_info").css(set_css);			
 	}
 */
+	function battleUserInfo_start()
+	{
+		battleUserInfo_firstText();
+		
+		
+		// $("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
+		
+		$("#microBattle_darkness").css("visibility", "visible");	
+		$("#microBattle_darkness").css("opacity", "1");
+	}
+	
+	function battleUserInfo_firstText()
+	{
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").text("YOUR TURN!");
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_DRAW");
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");		
+	}
 	
 	function battleUserInfo_populate()
 	{
@@ -151,10 +168,18 @@
 		
 		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
 		
-		$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
-	
+		// $("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_p1").css("opacity", "1");
+		$("#microBattle_darkness .microBattle_darkness_info_split_line").css("opacity", "1");
+		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "1");
+		
 		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
 		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_DRAW");
 	}
 	
 	function battleUserInfo_cleanUp(event)
@@ -180,8 +205,9 @@
 		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
 		
 		$("#microBattle_darkness .microBattle_darkness_info_p1").css("opacity", "0");
-		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "0");
 		$("#microBattle_darkness .microBattle_darkness_info_split_line").css("opacity", "0");
+		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "0");
+		
 		
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
 		
@@ -198,7 +224,9 @@
 	{
 		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
 		
-		$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "0");
+		//$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "0");
+		
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
 		
 		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
 		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
@@ -215,10 +243,15 @@
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeAttr("style");
 		
 		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
+		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("tween-microBattle_darkness_mega");
 		
 		
 		$("#microBattle_darkness .microBattle_darkness_info_p1").text("");
 		$("#microBattle_darkness .microBattle_darkness_info_p2").text("?");
+		
+		
+		battleUserInfo_firstText();
+		
 	}
 	
 	var battleEngine = 	{
