@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* PORTAL SCREEN */
+
+/* BATTLE NAV */
+	
+
+/* ----------------------------------------------------------------------- PHONE GENERAL */	
+	
+	/* if(screen.width <= 480) */
+	@media screen and (max-width:480px)
+	{
+		/* ----------------------------------------------------------------------- PORTAL SCREEN */
+		
+		#portalScreen .portalScreen_title_left
+		{
+			/* FORCE CENTER (!important) */
+			text-align: center !important;
+		}	
+
+		#portalScreen .portalScreen_title_right
+		{
+			/* FORCE CENTER (!important) */
+			text-align: center !important;
+		}		
+		
+		/* ----------------------------------------------------------------------- PORTAL SCREEN */		
+
+
+
+
+		/* ----------------------------------------------------------------------- BATTLE NAV */	
+
+		.microBattle_darkness_infoBlock
+		{
+			height: 40px;	
+		}
+		
+		.microBattle_darkness_infoBlock .microBattle_darkness_info_text
+		{
+			height: 40px;
+			font-size: 40px;
+			line-height: 40px;
+		}
+		
+		/* ----------------------------------------------------------------------- BATTLE NAV */
+		
+	}
+	
+/* ----------------------------------------------------------------------- PHONE GENERAL */	

@@ -785,7 +785,7 @@
 			}
 		}
 		
-		battleUserInfo_populate();
+		battleUserInfo_player();
 		
 		// LOGIC
 		battleNav_logicRequest();

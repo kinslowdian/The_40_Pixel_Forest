@@ -144,76 +144,80 @@
 		$("#microBattle_darkness .microBattle_darkness_info").css(set_css);			
 	}
 */
-	function battleUserInfo_start()
-	{
-		// battleUserInfo_firstText();
-		
-		battleUserInfo_textEngine("", "microBattle_darkness_info_split_text_DRAW", "YOUR TURN");
-		
-		// $("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
-		
-		$("#microBattle_darkness").css("visibility", "visible");	
-		$("#microBattle_darkness").css("opacity", "1");
-	}
 	
-	function battleUserInfo_firstText()
-	{
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").text("YOUR TURN!");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_DRAW");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");		
-	}
 	
-	function battleUserInfo_populate()
+	function battleUserInfo_messaging(flow_stage, lightning)
 	{
-		// $("#microBattle_darkness .microBattle_darkness_info_p1").text(BATTLE_NAV.player_1.selection.toUpperCase());
+		if(lightning)
+		{
+			$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+			
+			$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+			$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);			
+		}
 		
-		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
-		
-/*
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_DRAW");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_WIN");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").text(BATTLE_NAV.player_1.selection.toUpperCase());
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");
-*/
-
-		battleUserInfo_textEngine("microBattle_darkness_info_split_text_DRAW", "microBattle_darkness_info_split_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase());
-		
-		
-		
-		
-		// $("#microBattle_darkness .microBattle_darkness_info").css("opacity", "1");
-		
-/*
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
-		
-		$("#microBattle_darkness .microBattle_darkness_info_p1").css("opacity", "1");
-		$("#microBattle_darkness .microBattle_darkness_info_split_line").css("opacity", "1");
-		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "1");
-*/
-		
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
-		
-		// $("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_DRAW");
+		switch(flow_stage)
+		{
+			case "START":
+			{
+				battleUserInfo_textEngine("", "microBattle_darkness_info_text_DRAW", "YOUR TURN");
+				
+				break;
+			}
+			
+			case "PLAYER1":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase());
+				
+				break;
+			}
+			
+			case "VS":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "PLAYER2":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "RESULT":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "ANOTHER":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_" + BATTLE_NAV.game.result, "microBattle_darkness_info_text_DRAW", "YOUR TURN", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+		}
 	}
 	
 	function battleUserInfo_textEngine(rem_class, add_class, new_text, rem_extra, add_extra)
 	{
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass(rem_class);
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass(add_class);
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").text(new_text);
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");		
+		$("#microBattle_darkness .microBattle_darkness_info_text").css("opacity", "0");
+		$("#microBattle_darkness .microBattle_darkness_info_text").removeClass(rem_class);
+		$("#microBattle_darkness .microBattle_darkness_info_text").addClass(add_class);
+		$("#microBattle_darkness .microBattle_darkness_info_text").text(new_text);
+		$("#microBattle_darkness .microBattle_darkness_info_text").css("opacity", "1");		
 	
 		if(rem_extra != null || rem_extra != undefined)
 		{
-			$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass(rem_extra);
+			$("#microBattle_darkness .microBattle_darkness_info_text").removeClass(rem_extra);
 		}
 
 		if(add_extra != null || add_extra != undefined)
 		{
-			$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass(add_extra);
+			$("#microBattle_darkness .microBattle_darkness_info_text").addClass(add_extra);
 		}
 	}
 	
@@ -226,88 +230,38 @@
 		$("#microBattle_darkness .microBattle_darkness_lightning").removeClass("tween-microBattle_darkness_lightning");
 	}
 	
+	
+	function battleUserInfo_start()
+	{
+		battleUserInfo_messaging("START", false);
+		
+		$("#microBattle_darkness").css("visibility", "visible");	
+		$("#microBattle_darkness").css("opacity", "1");
+	}
+	
+	function battleUserInfo_player()
+	{
+		battleUserInfo_messaging("PLAYER1", true);
+	}
+	
 	function battleUserInfo_vs()
 	{
-		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
-		
-		battleUserInfo_textEngine("microBattle_darkness_info_split_text_WIN", "microBattle_darkness_info_split_text_DRAW", "VS", "", "tween-microBattle_darkness_mega");
-		
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+		battleUserInfo_messaging("VS", true);
 	}
 	
 	function battleUserInfo_enemy()
 	{
-		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
-		
-		// $("#microBattle_darkness .microBattle_darkness_info_p2").text(BATTLE_NAV.player_2.selection.toUpperCase());
-		
-		battleUserInfo_textEngine("microBattle_darkness_info_split_text_DRAW", "microBattle_darkness_info_split_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "tween-microBattle_darkness_mega");
-		
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+		battleUserInfo_messaging("PLAYER2", true);
 	}
 	
 	function battleUserInfo_result()
 	{
-		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
-		
-/*
-		$("#microBattle_darkness .microBattle_darkness_info_p1").css("opacity", "0");
-		$("#microBattle_darkness .microBattle_darkness_info_split_line").css("opacity", "0");
-		$("#microBattle_darkness .microBattle_darkness_info_p2").css("opacity", "0");
-*/
-		
-		battleUserInfo_textEngine("microBattle_darkness_info_split_text_LOSE", "microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "tween-microBattle_darkness_mega");
-				
-/*
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
-		
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").text(BATTLE_NAV.game.result);
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").addClass("tween-microBattle_darkness_mega");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "1");
-*/
-		
-		
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
+		battleUserInfo_messaging("RESULT", true);
 	}
 	
 	function battleUserInfo_anotherRound()
 	{
-		$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
-		
-		
-		battleUserInfo_textEngine("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result, "microBattle_darkness_info_split_text_DRAW", "YOUR TURN", "tween-microBattle_darkness_mega");
-		
-		//$("#microBattle_darkness .microBattle_darkness_info").css("opacity", "0");
-		
-		// $("#microBattle_darkness .microBattle_darkness_info_split_text").css("opacity", "0");
-		
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
-		$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);
-		
-		// battleUserInfo_purge();
-	}
-	
-	function battleUserInfo_purge()
-	{
-		$("#microBattle_darkness .microBattle_darkness_info_p1").removeAttr("style");
-		$("#microBattle_darkness .microBattle_darkness_info_p2").removeAttr("style");
-		
-		$("#microBattle_darkness .microBattle_darkness_info_split_line").removeAttr("style");
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeAttr("style");
-		
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("microBattle_darkness_info_split_text_" + BATTLE_NAV.game.result);
-		$("#microBattle_darkness .microBattle_darkness_info_split_text").removeClass("tween-microBattle_darkness_mega");
-		
-		
-		$("#microBattle_darkness .microBattle_darkness_info_p1").text("");
-		$("#microBattle_darkness .microBattle_darkness_info_p2").text("?");
-		
-		
-		battleUserInfo_firstText();
-		
+		battleUserInfo_messaging("ANOTHER", true);
 	}
 	
 	var battleEngine = 	{
