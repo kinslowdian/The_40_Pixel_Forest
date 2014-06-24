@@ -4536,7 +4536,7 @@
 					
 		position: absolute;
 					
-		z-index: 3;		
+		z-index: 2;	/* 3 */	
 	}
 	
 	
@@ -4972,7 +4972,7 @@
 					
 		position: absolute;
 					
-		z-index: 2;		
+		z-index: 3;	/* 2 */	
 	}
 		
 	#microBattle_resultWipe_content
@@ -4984,6 +4984,9 @@
 		
 		-webkit-transform: translateY(100%);
 		transform: translateY(100%);
+		
+		
+		background: #20202a;
 	}
 	
 	.tween-microBattle_resultWipe_content
@@ -4992,6 +4995,10 @@
 		transition 			: transform 1s ease;
 	}
 	
+	
+	/* -------------------------------- TAKE OUT -------------------------------- */
+	
+/*
 	.microBattle_resultWipe_fill
 	{
 		width: inherit;
@@ -5004,7 +5011,9 @@
 		
 		z-index: 0;
 	}
+*/
 	
+/*
 	.microBattle_endSky
 	{
 		width: inherit;
@@ -5019,11 +5028,13 @@
 		
 		z-index: 0;
 		
-		/* background: #e5ffb2; */
+		
 		
 		background: #1a004d;
 	}
+*/
 	
+/*
 	.microBattle_endSky_mountains
 	{
 		width: inherit;
@@ -5036,19 +5047,25 @@
 		
 		z-index: 1;
 	}
+*/
 	
+/*
 	.microBattle_endSky_mountains_win
 	{
 		background-repeat: repeat-x;
 		background-position: center -140px;
 	}
+*/
 	
+/*
 	.microBattle_endSky_mountains_lose
 	{
 		background-repeat: repeat-x;
 		background-position: center -250px;
 	}
+*/
 	
+/*
 	.microBattle_endSky_sunMoon
 	{
 		width: 140px;
@@ -5064,7 +5081,9 @@
 		
 		z-index: 0;
 	}
+*/
 	
+/*
 	.microBattle_endSky_sunMoon_sprite
 	{
 		width: 140px;
@@ -5078,29 +5097,39 @@
 		
 		z-index: 0;
 	}
+*/
 	
+/*
 	.microBattle_endSky_sunMoon_sprite_win
 	{
 		background-repeat: no-repeat;
 		background-position: 0 0;
 	}
+*/
 	
+/*
 	.microBattle_endSky_sunMoon_sprite_lose
 	{
 		background-repeat: no-repeat;
 		background-position: -140px 0;
 	}
+*/
 	
+/*
 	.microBattle_resultWipe_win
 	{
 		background: #17e69d;
-	}	
+	}
+*/	
 	
+/*
 	.microBattle_resultWipe_lose
 	{
 		background: #ff0070;
 	}
+*/
 	
+/*
 	.microBattle-resultWipe_crowd
 	{
 		width: 100%;
@@ -5113,7 +5142,9 @@
 		
 		z-index: 1;
 	}
+*/
 	
+/*
 	.microBattle-resultWipe_crowd > div
 	{
 		width: 100%;
@@ -5126,34 +5157,44 @@
 		
 		z-index: 0;	
 	}
+*/
 	
+/*
 	.tween-microBattle_endSky
 	{
 		-webkit-transition: -webkit-transform 1s ease;
 		transition: transform 1s ease;
 		
 	}
+*/
 	
+/*
 	.tween-microBattle-resultWipe_crowd
 	{
 		-webkit-animation	: tweenMicroBattleResultWipeCrowdFrames 0.3s ease-in-out infinite;
 		animation			: tweenMicroBattleResultWipeCrowdFrames 0.3s ease-in-out infinite;
 	}
+*/
 	
+/*
 	@-webkit-keyframes tweenMicroBattleResultWipeCrowdFrames
 	{
 		0%		{-webkit-transform: translateY(0px);}
 		50%		{-webkit-transform: translateY(20px);}	
 		100%	{-webkit-transform: translateY(0px);}
 	}
+*/
 	
+/*
 	@keyframes tweenMicroBattleResultWipeCrowdFrames
 	{
 		0%		{transform: translateY(0px);}
 		50%		{transform: translateY(20px);}	
 		100%	{transform: translateY(0px);}			
 	}
+*/
 	
+/*
 	.microBattle-resultWipe_boss
 	{
 		width: 320px;
@@ -5170,6 +5211,9 @@
 		
 		z-index: 1;
 	}
+*/
+	
+	/* -------------------------------- TAKE OUT -------------------------------- */
 	
 	.extra_flooring_wrapper
 	{

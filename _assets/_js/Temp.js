@@ -265,7 +265,7 @@
 		
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
-			battleUserInfo_crowdAdd("#player2");
+			battleUserInfo_crowdAdd("#player2", "enemy_" + ROM.enemy.character.enemyType);
 		}
 	}
 	
@@ -274,7 +274,7 @@
 		battleUserInfo_messaging("ANOTHER", true);
 	}
 	
-	function battleUserInfo_crowdAdd(target)
+	function battleUserInfo_crowdAdd(target, extra_class)
 	{
 		var crowd_sprite_holder = '<div id="crowd_sprite_holder" class="microBattle_darkness_crowd_sprite_40x40"></div>';
 		var crowd_sprite_display = $(target).html();
@@ -291,6 +291,11 @@
 			$("#crowd_sprite_holder").attr("id", crowd_id);
 			
 			$("#" + crowd_id).html(crowd_sprite_display);
+			
+			if(extra_class !== null || extra_class !== undefined)
+			{
+				$("#" + crowd_id).addClass(extra_class);
+			}
 			
 		}
 		
@@ -587,6 +592,182 @@
 		});			
 	}
 */
+
+	
+	///////////////// DISPLAY
+	
+/*
+	if(mountains != null || mountains != undefined)
+	{
+		battleEnd_alignMountains_measure();
+	}
+*/
+	
+	///////////////// DISPLAY
+
+	
+	var mountains;
+
+	function battleEnd_setup()
+	{
+		mountains = {};
+		
+		
+		mountains.width_full 	= $("#microBattle_resultWipe_content .microBattle_endSky").width();
+		mountains.width_side 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainL").width();
+		mountains.width_center 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainC").width();
+		
+		mountains.space_available 	= 0;
+		mountains.space_adjust 		= 0;
+		
+		battleEnd_showEndSequence();
+		
+		// CALL battleEnd_showEndSequenceSkyStart(); FOR ANIMATION		
+	}
+	
+	function battleEnd_showEndSequence()
+	{
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleEnd_showEndSequence_WIN_set();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleEnd_showEndSequence_LOSE_set();
+		}
+		
+		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").addClass("tween-microBattle_sunMoon_sprite");
+	}
+	
+	function battleEnd_showEndSequence_WIN_set()
+	{
+		// SETTINGS
+		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_WIN");
+		
+		$(".microBattle_sunMoon").addClass("microBattle_sunMoon_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_WIN");
+		
+		
+		// TWEENS
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("tween-microBattle_castle_goat");
+	}
+	
+	function battleEnd_showEndSequence_LOSE_set()
+	{
+		// SETTINGS
+		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_LOSE");
+		
+		$(".microBattle_sunMoon").addClass("microBattle_sunMoon_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_LOSE");
+		
+		// TWEENS
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").addClass("tween-microBattle_zombie_walk");
+	}
+	
+	function battleEnd_showEndSequenceSkyStart()
+	{
+		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").removeClass("microBattle_sunMoon_sprite_set").addClass("microBattle_sunMoon_sprite_rise");
+		
+		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
+		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);		
+				
+	}
+	
+	function battleEnd_showEndSequenceSkyInPlace(event)
+	{
+		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
+		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);		
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleEnd_showEndSequence_WIN_stage0();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleEnd_showEndSequence_LOSE_stage0();
+		}
+	}
+	
+	// WIN
+	
+	function battleEnd_showEndSequence_WIN_stage0()
+	{
+		var css;
+		
+		css = 	{
+					"-webkit-transform" : "translateY(0)",
+					"transform"			: "translateY(0)"
+				};
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag_WIN").css(css);
+		$("#microBattle_resultWipe_content .microBattle_castle_goat_WIN").css(css);
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").css(css);
+		$("#microBattle_resultWipe_content .microBattle_growField").css("opacity", "1");		
+	}
+	
+	// LOSE
+	
+	function battleEnd_showEndSequence_LOSE_stage0()
+	{
+		var css;
+		
+		var zombie_y;
+		
+		zombie_y = $("#microBattle_resultWipe_content .microBattle_endField").height();
+		
+		css = 	{
+					"-webkit-transform" : "translateY(" + zombie_y + "px)",
+					"transform"			: "translateY(" + zombie_y + "px)"
+				};
+				
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css);			
+	}
+	
+	function battleEnd_alignMountains_measure()
+	{
+		mountains.width_full = $("#microBattle_resultWipe_content .microBattle_endSky").width();
+		
+		mountains.space_available = Math.abs(Math.floor((mountains.width_full - mountains.width_center) * 0.5));
+		
+		if(mountains.space_available < mountains.width_side)
+		{
+			mountains.space_adjust = Math.abs(mountains.width_side - mountains.space_available);
+			
+			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainL"), -mountains.space_adjust);
+			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainR"), mountains.space_adjust);
+		}
+		
+		trace(mountains);		
+	}
+	
+	function battleEnd_alignMountains_set(mountain_div, mountain_x)
+	{
+		var css = 	{
+						"-webkit-transform" : "translateX(" + mountain_x + "px)",
+						"transform" 		: "translateX(" + mountain_x + "px)"
+					};
+					
+		$(mountain_div).css(css);		
+	}
 
 	
 	

@@ -6,3 +6,10 @@
 				};
 				
 	var NO_HIT_TEST = false;
+	
+	var BREAK_CODE = false;
+	
+	function breakCode()
+	{
+		BREAK_CODE = true;
+	}

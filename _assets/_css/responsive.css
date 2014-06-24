@@ -33,14 +33,14 @@
 
 		.microBattle_darkness_infoBlock
 		{
-			height: 40px;	
+			height: 40px !important;	
 		}
 		
 		.microBattle_darkness_infoBlock .microBattle_darkness_info_text
 		{
-			height: 40px;
-			font-size: 40px;
-			line-height: 40px;
+			height: 40px !important;
+			font-size: 40px !important;
+			line-height: 40px !important;
 		}
 		
 		/* ----------------------------------------------------------------------- BATTLE NAV */

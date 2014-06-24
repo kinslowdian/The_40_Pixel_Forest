@@ -798,8 +798,10 @@
 	
 	function battleNav_logicRequest()
 	{
-		BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
+		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
+		BATTLE_NAV.game.result = "LOSE";
+			
 		battleNav_logicDisplay();
 	}
 	
@@ -1081,7 +1083,6 @@
 		resultsEndDelay = new AnimationTimer();
 		timerList_add(resultsEndDelay);
 		resultsEndDelay.time(2, battleNav_battleResultsEndInit);		
-
 	}
 	
 	function battleNav_battleResultsEndInit()
@@ -1146,6 +1147,9 @@
 		battleNav_control(true);			
 	}
 	
+	/// ---------------------------- temp.js
+	
+/*
 	function battleNav_battleOver()
 	{
 		var crowdRandom = BATTLE_NAV.settings.crowdPixels[Math.floor(Math.random() * BATTLE_NAV.settings.crowdPixels.length)];
@@ -1183,6 +1187,23 @@
 	
 		battleNav_hide();
 	}
+*/
+	
+	function battleNav_battleOver()
+	{
+		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
+		
+		battleEnd_setup();
+		
+		if(spaceSquidsUse)
+		{
+			spaceSquids_animationReturn();	
+		}
+	
+		battleNav_hide();		
+	}
+	
+	/// ---------------------------- temp.js
 	
 	function battleNav_hide()
 	{
@@ -1213,6 +1234,9 @@
 		$("#microBattle_resultWipe_content").css(css);
 	}
 	
+	/// ---------------------------- temp.js
+	
+/*
 	function battleNav_memorySave(event)
 	{
 		var css;
@@ -1236,6 +1260,25 @@
 		
 		$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite").css(css);
 	}
+*/
+
+
+	function battleNav_memorySave(event)
+	{
+		var css;
+		
+		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
+		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("transitionend", battleNav_memorySave, false);
+		
+		$("#microBattle_nav_wrapper").html("");
+		$("#microBattle_fade_wrapper").html("");
+		
+		battleUserInfo_crowdPurge();		
+	
+		battleEnd_showEndSequenceSkyStart();
+	}
+	
+	/// ---------------------------- temp.js
 	
 	///////////////////////////////// --- BATTLE_NAV */
 	
