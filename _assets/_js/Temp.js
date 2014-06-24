@@ -637,6 +637,8 @@
 			battleEnd_showEndSequence_LOSE_set();
 		}
 		
+		screenUpdate(null);
+		
 		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").addClass("tween-microBattle_sunMoon_sprite");
 	}
 	
@@ -722,6 +724,9 @@
 		
 		$("#microBattle_resultWipe_content .microBattle_growField").css(css);
 		$("#microBattle_resultWipe_content .microBattle_growField").css("opacity", "1");		
+	
+		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
 	}
 	
 	// LOSE
@@ -739,7 +744,39 @@
 					"transform"			: "translateY(" + zombie_y + "px)"
 				};
 				
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css);			
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css);
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
+	}
+	
+	function battleEnd_completeEvents(event)
+	{
+		var bece_delay;	
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);			
+		
+			bece_delay = new AnimationTimer();
+			
+			timerList_add(bece_delay);
+			bece_delay.time(1, battleEnd_returnToGame);
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);
+			
+			battleEnd_returnToGame();			
+		}
+	}
+	
+	function battleEnd_returnToGame()
+	{
+		alert("battleEnd_returnToGame();");
 	}
 	
 	function battleEnd_alignMountains_measure()
@@ -754,9 +791,7 @@
 			
 			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainL"), -mountains.space_adjust);
 			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainR"), mountains.space_adjust);
-		}
-		
-		trace(mountains);		
+		}		
 	}
 	
 	function battleEnd_alignMountains_set(mountain_div, mountain_x)

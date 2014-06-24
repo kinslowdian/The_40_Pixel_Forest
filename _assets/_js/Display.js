@@ -76,6 +76,11 @@
 				screenDivision();	
 			}
 		}
+		
+		if(mountains != null || mountains != undefined)
+		{
+			battleEnd_alignMountains_measure();
+		}
 	}
 	
 	function screenDivision()
