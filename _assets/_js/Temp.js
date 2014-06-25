@@ -762,7 +762,7 @@
 			bece_delay = new AnimationTimer();
 			
 			timerList_add(bece_delay);
-			bece_delay.time(1, battleEnd_returnToGame);
+			bece_delay.time(0.5, battleEnd_returnToGame);
 		}
 		
 		if(BATTLE_NAV.game.result === "LOSE")
@@ -776,7 +776,22 @@
 	
 	function battleEnd_returnToGame()
 	{
-		alert("battleEnd_returnToGame();");
+		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			enemies_ARR[ROM.enemy.character.array_index].alive = false;
+			
+			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
+			
+			battleOver_returnWin();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleOver_returnLose();
+		}		
 	}
 	
 	function battleEnd_alignMountains_measure()

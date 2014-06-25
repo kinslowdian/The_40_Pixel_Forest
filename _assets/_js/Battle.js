@@ -1527,7 +1527,9 @@
 		
 		battleOver_setControlsBasic();
 		
-		delay_returnWorld = setTimeout(battleOver_returnWorld, 2 * 1000);
+		delay_returnWorld = setTimeout(battleOver_returnWorld, 0.1 * 1000);
+	
+		// battleOver_returnWorld();
 	}
 	
 	function battleOver_setControlsBasic()

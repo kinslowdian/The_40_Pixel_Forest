@@ -479,9 +479,13 @@
 		z-index: 2;
 	}
 	
-	
 	.microBattle_growField_WIN
 	{
+/*
+		-webkit-transition: opacity 0.3s ease 1.2s, -webkit-transform 0.6s ease 1.2s;
+		transition: opacity 0.3s ease 1.2s, transform 0.6s ease 1.2s;
+*/
+		
 		-webkit-transition: opacity 0.6s ease 1.2s, -webkit-transform 0.8s ease 1.2s;
 		transition: opacity 0.6s ease 1.2s, transform 0.8s ease 1.2s;
 	}
