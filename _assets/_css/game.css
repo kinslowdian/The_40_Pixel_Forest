@@ -36,6 +36,8 @@
 
 /* PORTAL */
 
+/* SCREENS */
+
 /* PORTAL SCREEN */
 
 /* TOUCH UI */
@@ -2196,9 +2198,9 @@
 
 
 
-/* ----------------------------------------------------------------------- PORTAL SCREEN */
+/* ----------------------------------------------------------------------- SCREENS */
 
-	#portalScreen, #enemyScreen, #battleScreen
+	#portalScreen, #enemyScreen, #battleScreen, #battleScreenFade
 	{
 		width: 100%;
 		height: 100%;
@@ -2217,6 +2219,11 @@
 		z-index: 0;
 	}
 	
+	#battleScreenFade
+	{
+		z-index: 0;
+	}
+	
 	#battleScreen
 	{
 		z-index: 1;
@@ -2226,8 +2233,14 @@
 	{
 		z-index: 2;
 	}
-	
-	
+
+/* ----------------------------------------------------------------------- SCREENS */
+
+
+
+
+/* ----------------------------------------------------------------------- PORTAL SCREEN */
+
 	#portalScreen .portalScreen_wrapper
 	{
 		width: 100%;
@@ -4995,6 +5008,26 @@
 		transition 			: transform 1s ease;
 	}
 	
+	.microBattle_resultWipe_fade
+	{
+		width: inherit;
+		height: inherit;
+		
+		background: #004753;
+		
+		position: absolute; 
+		
+		left: 0;
+		top:0;
+		
+		z-index: 2;
+	}
+	
+	.tween-microBattle_resultWipe_fade
+	{
+		-webkit-transition: opacity 0.6s ease;
+		transition: opacity 0.6s ease;
+	}
 	
 	.microBattle_resultWipe_fill
 	{
@@ -5491,6 +5524,23 @@
 	{
 		-webkit-transition: -webkit-transform 1s ease-in-out;
 		transition: transform 1s ease-in-out;
+		
+/*
+		-webkit-transition: -webkit-transform 0.6s ease-in-out;
+		transition: transform 0.6s ease-in-out;
+*/
+	}
+	
+	.battleScreenFade_use
+	{
+		visibility: visible;
+		background: #20202a;
+	}
+	
+	.tween-battleScreenFade
+	{
+		-webkit-transition: opacity 0.5s linear 1s;
+		transition: opacity 0.5s linear 1s;
 	}
 
 /* ----------------------------------------------------------------------- LEVEL_BATTLE */
