@@ -15,9 +15,19 @@
 	
 	var BATTLE_NAV;
 	
+	/* --- KEYBOARD_BATTLE_NAV */
+	
+	var keyboardBattleNav;
+	
+	/* --- BATTLE_USER_INFO */
+	
 	/* --- SPACE_SQUID */
 	
 	var spaceSquidsUse = false;
+	
+	/* --- BATTLE_END */
+	
+	var battleEnd_mountains;
 	
 	/* --- BATTLE_OVER */
 	
@@ -800,7 +810,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 			
 		battleNav_logicDisplay();
 	}
@@ -1147,48 +1157,6 @@
 		battleNav_control(true);			
 	}
 	
-	/// ---------------------------- temp.js
-	
-/*
-	function battleNav_battleOver()
-	{
-		var crowdRandom = BATTLE_NAV.settings.crowdPixels[Math.floor(Math.random() * BATTLE_NAV.settings.crowdPixels.length)];
-		
-		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
-		
-		
-		if(BATTLE_NAV.game.result === "WIN")
-		{
-			$("#microBattle_resultWipe_wrapper .microBattle-resultWipe_boss").remove();
-			
-			$("#microBattle_resultWipe_wrapper .microBattle-resultWipe_crowd > div").addClass("pixels_battleCrowd_" + crowdRandom);
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill").addClass("microBattle_resultWipe_win");
-			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_mountains").addClass("microBattle_endSky_mountains_win");
-			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_win");	
-		}
-		
-		else
-		{
-			$("#microBattle_resultWipe_wrapper .microBattle-resultWipe_crowd").remove();
-			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill").addClass("microBattle_resultWipe_lose");
-			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_mountains").addClass("microBattle_endSky_mountains_lose");
-			
-			$("#microBattle_resultWipe_wrapper .microBattle_resultWipe_fill .microBattle_endSky_sunMoon_sprite").addClass("microBattle_endSky_sunMoon_sprite_lose");
-		}
-		
-		if(spaceSquidsUse)
-		{
-			spaceSquids_animationReturn();	
-		}
-	
-		battleNav_hide();
-	}
-*/
-	
 	function battleNav_battleOver()
 	{
 		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
@@ -1202,8 +1170,6 @@
 	
 		battleNav_hide();		
 	}
-	
-	/// ---------------------------- temp.js
 	
 	function battleNav_hide()
 	{
@@ -1233,34 +1199,6 @@
 		
 		$("#microBattle_resultWipe_content").css(css);
 	}
-	
-	/// ---------------------------- temp.js
-	
-/*
-	function battleNav_memorySave(event)
-	{
-		var css;
-		
-		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
-		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("transitionend", battleNav_memorySave, false);
-		
-		$("#microBattle_nav_wrapper").html("");
-		$("#microBattle_fade_wrapper").html("");
-		
-		battleUserInfo_crowdPurge();		
-	
-		css = 	{
-					"-webkit-transform"	: "translateY(10px)",
-					"transform"			: "translateY(10px)"
-				};
-				
-		$(".tween-microBattle_endSky")[0].addEventListener("webkitTransitionEnd", battleOver_skySet, false);
-		$(".tween-microBattle_endSky")[0].addEventListener("transitionend", battleOver_skySet, false);
-		
-		
-		$("#microBattle_resultWipe_wrapper .microBattle_endSky_sunMoon_sprite").css(css);
-	}
-*/
 
 
 	function battleNav_memorySave(event)
@@ -1278,9 +1216,304 @@
 		battleEnd_showEndSequenceSkyStart();
 	}
 	
-	/// ---------------------------- temp.js
-	
 	///////////////////////////////// --- BATTLE_NAV */
+	
+	
+	
+	
+	///////////////////////////////// --- KEYBOARD_BATTLE_NAV */
+	
+	function keyboardBattleNav_init()
+	{
+		keyboardBattleNav = {};
+		
+		keyboardBattleNav.countTap = "DEFAULT";
+		
+		keyboardBattleNav.signal = {};
+		
+		keyboardBattleNav.signal.signal0 = BATTLE_NAV.options.stone;
+		keyboardBattleNav.signal.signal1 = BATTLE_NAV.options.paper;
+		keyboardBattleNav.signal.signal2 = BATTLE_NAV.options.scissors;
+		
+		keyboardBattleNav.currentFocus = "";
+		
+		keyboardBattleNav.css = {};
+		
+		keyboardBattleNav.css.def	= 	{
+											"-webkit-transform"	: "scale(1)",
+											"transform" 		: "scale(1)"			
+										};
+										
+		keyboardBattleNav.css.hit	= 	{
+											"-webkit-transform"	: "scale(1.2)",
+											"transform" 		: "scale(1.2)"			
+										};
+		
+		
+		$(window)[0].addEventListener("keyup", keyboardBattleNav_event, false);
+	}
+	
+	function keyboardBattleNav_event(event)
+	{
+		// LEFT + DOWN
+		if(event.keyCode == 37 || event.keyCode == 40)
+		{
+			if(keyboardBattleNav.countTap === "DEFAULT")
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardBattleNav.countTap --;
+			}
+			
+			if(keyboardBattleNav.countTap < 0)
+			{
+				keyboardBattleNav.countTap = 2;
+			}
+			
+			keyboardBattleNav_highLight();
+		}
+		
+		// RIGHT + UP
+		if(event.keyCode == 39 || event.keyCode == 38)
+		{
+			if(keyboardBattleNav.countTap === "DEFAULT")
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardBattleNav.countTap ++;
+			}
+			
+			if(keyboardBattleNav.countTap > 2)
+			{
+				keyboardBattleNav.countTap = 0;
+			}
+			
+			keyboardBattleNav_highLight();			
+		}
+		
+		if(event.keyCode == 13 || event.keyCode == 32)
+		{
+			if(keyboardBattleNav.countTap !== "DEFAULT")
+			{
+				keyboardBattleNav_select();
+			}
+		}
+	}
+	
+	function keyboardBattleNav_highLight()
+	{
+		var keyboardSelect = keyboardBattleNav.signal["signal" + keyboardBattleNav.countTap];
+		
+		var keyboardSelect_id = keyboardSelect[0].id;
+		
+		
+		if(!keyboardBattleNav.currentFocus)
+		{
+			keyboardBattleNav.currentFocus = keyboardSelect_id;
+			
+			$("#" + keyboardSelect_id).css(keyboardBattleNav.css.hit);
+		}
+		
+		else
+		{
+			$("#" + keyboardSelect_id).css(keyboardBattleNav.css.hit);
+			$("#" + keyboardBattleNav.currentFocus).css(keyboardBattleNav.css.def);
+			
+			keyboardBattleNav.currentFocus = keyboardSelect_id;
+		}
+	}
+	
+	function keyboardBattleNav_select()
+	{
+		$(window)[0].removeEventListener("keyup", keyboardBattleNav_event, false);
+		
+		$("#" + keyboardBattleNav.currentFocus).css(keyboardBattleNav.css.def);
+		
+		battleNav_selection(keyboardBattleNav.currentFocus);		
+	}	
+	
+	///////////////////////////////// --- KEYBOARD_BATTLE_NAV */	
+	
+	
+	
+	
+	///////////////////////////////// --- BATTLE_USER_INFO */
+	
+	function battleUserInfo_messaging(flow_stage, lightning)
+	{
+		if(lightning)
+		{
+			$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
+			
+			$(".tween-microBattle_darkness_lightning")[0].addEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+			$(".tween-microBattle_darkness_lightning")[0].addEventListener("animationend", battleUserInfo_cleanUp, false);			
+		}
+		
+		switch(flow_stage)
+		{
+			case "START":
+			{
+				battleUserInfo_textEngine("", "microBattle_darkness_info_text_DRAW", "YOUR TURN");
+				
+				break;
+			}
+			
+			case "PLAYER1":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase());
+				
+				break;
+			}
+			
+			case "VS":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "PLAYER2":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "RESULT":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+			
+			case "ANOTHER":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_" + BATTLE_NAV.game.result, "microBattle_darkness_info_text_DRAW", "YOUR TURN", "tween-microBattle_darkness_mega");
+				
+				break;
+			}
+		}
+	}
+	
+	function battleUserInfo_textEngine(rem_class, add_class, new_text, rem_extra, add_extra)
+	{
+		$("#microBattle_darkness .microBattle_darkness_info_text").css("opacity", "0");
+		$("#microBattle_darkness .microBattle_darkness_info_text").removeClass(rem_class);
+		$("#microBattle_darkness .microBattle_darkness_info_text").addClass(add_class);
+		$("#microBattle_darkness .microBattle_darkness_info_text").text(new_text);
+		$("#microBattle_darkness .microBattle_darkness_info_text").css("opacity", "1");		
+	
+		if(rem_extra != null || rem_extra != undefined)
+		{
+			$("#microBattle_darkness .microBattle_darkness_info_text").removeClass(rem_extra);
+		}
+
+		if(add_extra != null || add_extra != undefined)
+		{
+			$("#microBattle_darkness .microBattle_darkness_info_text").addClass(add_extra);
+		}
+	}
+	
+	
+	function battleUserInfo_cleanUp(event)
+	{
+		$(".tween-microBattle_darkness_lightning")[0].removeEventListener("webkitAnimationEnd", battleUserInfo_cleanUp, false);
+		$(".tween-microBattle_darkness_lightning")[0].removeEventListener("animationend", battleUserInfo_cleanUp, false);
+		
+		$("#microBattle_darkness .microBattle_darkness_lightning").removeClass("tween-microBattle_darkness_lightning");
+	}
+	
+	
+	function battleUserInfo_start()
+	{
+		battleUserInfo_messaging("START", false);
+		
+		$("#microBattle_darkness").css("visibility", "visible");	
+		$("#microBattle_darkness").css("opacity", "1");
+	}
+	
+	function battleUserInfo_player()
+	{
+		battleUserInfo_messaging("PLAYER1", true);
+	}
+	
+	function battleUserInfo_vs()
+	{
+		battleUserInfo_messaging("VS", true);
+	}
+	
+	function battleUserInfo_enemy()
+	{
+		battleUserInfo_messaging("PLAYER2", true);
+	}
+	
+	function battleUserInfo_result()
+	{
+		battleUserInfo_messaging("RESULT", true);
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleUserInfo_crowdAdd("#player1");
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleUserInfo_crowdAdd("#player2", "enemy_" + ROM.enemy.character.enemyType);
+		}
+	}
+	
+	function battleUserInfo_anotherRound()
+	{
+		battleUserInfo_messaging("ANOTHER", true);
+	}
+	
+	function battleUserInfo_crowdAdd(target, extra_class)
+	{
+		var crowd_sprite_holder = '<div id="crowd_sprite_holder" class="microBattle_darkness_crowd_sprite_40x40"></div>';
+		var crowd_sprite_display = $(target).html();
+		
+		var css;
+		var crowd_y = 10;
+		
+		for(var i = 0; i < 8; i++)
+		{
+			var crowd_id = "microBattle_darkness_crowd" + i;
+			
+			$(".microBattle_darkness_crowd_main_40x40").append(crowd_sprite_holder);
+			
+			$("#crowd_sprite_holder").attr("id", crowd_id);
+			
+			$("#" + crowd_id).html(crowd_sprite_display);
+			
+			if(extra_class !== null || extra_class !== undefined)
+			{
+				$("#" + crowd_id).addClass(extra_class);
+			}
+			
+		}
+		
+		
+		css = 	{
+					"-webkit-transform" : "translateY(" + crowd_y + "px)",
+					"-webkit-transform" : "translateY(" + crowd_y + "px)"
+				};
+				
+		$(".microBattle_darkness_crowd_main_40x40").css(css);
+		
+	}
+	
+	function battleUserInfo_crowdPurge()
+	{
+		$(".microBattle_darkness_crowd_main_40x40").html("");
+	}	
+	
+	///////////////////////////////// --- BATTLE_USER_INFO */
 	
 	
 	
@@ -1389,8 +1622,224 @@
 	
 	
 	
+	///////////////////////////////// --- BATTLE_END */
+	
+	function battleEnd_setup()
+	{
+		battleEnd_mountains = {};
+		
+		battleEnd_mountains.width_full 	= $("#microBattle_resultWipe_content .microBattle_endSky").width();
+		battleEnd_mountains.width_side 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainL").width();
+		battleEnd_mountains.width_center 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainC").width();
+		
+		battleEnd_mountains.space_available 	= 0;
+		battleEnd_mountains.space_adjust 		= 0;
+		
+		battleEnd_showEndSequence();		
+	}
+	
+	function battleEnd_showEndSequence()
+	{
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleEnd_showEndSequence_WIN_set();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleEnd_showEndSequence_LOSE_set();
+		}
+		
+		screenUpdate(null);
+		
+		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").addClass("tween-microBattle_sunMoon_sprite");
+	}
+	
+	function battleEnd_showEndSequence_WIN_set()
+	{
+		// SETTINGS
+		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_WIN");
+		
+		$(".microBattle_sunMoon").addClass("microBattle_sunMoon_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_WIN");
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_WIN");
+		
+		
+		// TWEENS
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("tween-microBattle_castle_goat");
+	}
+	
+	function battleEnd_showEndSequence_LOSE_set()
+	{
+		// SETTINGS
+		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_LOSE");
+		
+		$(".microBattle_sunMoon").addClass("microBattle_sunMoon_LOSE");
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_LOSE");
+		
+		// TWEENS
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").addClass("tween-microBattle_zombie_walk");
+	}
+	
+	function battleEnd_showEndSequenceSkyStart()
+	{
+		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").removeClass("microBattle_sunMoon_sprite_set").addClass("microBattle_sunMoon_sprite_rise");
+		
+		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
+		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);		
+				
+	}
+	
+	function battleEnd_showEndSequenceSkyInPlace(event)
+	{
+		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
+		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);		
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			battleEnd_showEndSequence_WIN_stage0();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleEnd_showEndSequence_LOSE_stage0();
+		}
+	}
+	
+	// WIN
+	
+	function battleEnd_showEndSequence_WIN_stage0()
+	{
+		var css;
+		
+		css = 	{
+					"-webkit-transform" : "translateY(0)",
+					"transform"			: "translateY(0)"
+				};
+		
+		$("#microBattle_resultWipe_content .microBattle_castle_flag_WIN").css(css);
+		$("#microBattle_resultWipe_content .microBattle_castle_goat_WIN").css(css);
+		
+		$("#microBattle_resultWipe_content .microBattle_growField").css(css);
+		$("#microBattle_resultWipe_content .microBattle_growField").css("opacity", "1");		
+	
+		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
+	}
+	
+	// LOSE
+	
+	function battleEnd_showEndSequence_LOSE_stage0()
+	{
+		var css;
+		
+		var zombie_y;
+		
+		zombie_y = $("#microBattle_resultWipe_content .microBattle_endField").height();
+		
+		css = 	{
+					"-webkit-transform" : "translateY(" + zombie_y + "px)",
+					"transform"			: "translateY(" + zombie_y + "px)"
+				};
+				
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css);
+		
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
+	}
+	
+	function battleEnd_completeEvents(event)
+	{
+		var bece_delay;	
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);			
+		
+			bece_delay = new AnimationTimer();
+			
+			timerList_add(bece_delay);
+			bece_delay.time(0.5, battleEnd_returnToGame);
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
+			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);
+			
+			battleEnd_returnToGame();			
+		}
+	}
+	
+	function battleEnd_returnToGame()
+	{
+		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
+		
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			enemies_ARR[ROM.enemy.character.array_index].alive = false;
+			
+			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
+			
+			battleOver_returnWin();
+		}
+		
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleOver_returnLose();
+		}		
+	}
+	
+	function battleEnd_alignMountains_measure()
+	{
+		battleEnd_mountains.width_full = $("#microBattle_resultWipe_content .microBattle_endSky").width();
+		
+		battleEnd_mountains.space_available = Math.abs(Math.floor((battleEnd_mountains.width_full - battleEnd_mountains.width_center) * 0.5));
+		
+		if(battleEnd_mountains.space_available < battleEnd_mountains.width_side)
+		{
+			battleEnd_mountains.space_adjust = Math.abs(battleEnd_mountains.width_side - battleEnd_mountains.space_available);
+			
+			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainL"), -battleEnd_mountains.space_adjust);
+			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainR"), battleEnd_mountains.space_adjust);
+		}		
+	}
+	
+	function battleEnd_alignMountains_set(mountain_div, mountain_x)
+	{
+		var css = 	{
+						"-webkit-transform" : "translateX(" + mountain_x + "px)",
+						"transform" 		: "translateX(" + mountain_x + "px)"
+					};
+					
+		$(mountain_div).css(css);		
+	}	
+	
+	///////////////////////////////// --- BATTLE_END */
+	
+	
+	
+	
 	///////////////////////////////// --- BATTLE_OVER */
 	
+/*
 	function battleOver_skySet(event)
 	{
 		$(".tween-microBattle_endSky")[0].removeEventListener("webkitTransitionEnd", battleOver_skySet, false);
@@ -1416,6 +1865,7 @@
 			battleOver_returnLose();
 		}
 	}
+*/
 	
 	function battleOver_returnWin()
 	{
@@ -1606,6 +2056,9 @@
 		
 		// FLUSH OBJECT
 		theBattle = {};
+		
+		// FLUSH OBJECT
+		battleEnd_mountains = null;
 		
 		// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
 		timerList_stopAll();

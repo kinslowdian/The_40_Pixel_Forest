@@ -354,13 +354,16 @@
 		background-size: 160px 240px; 
 	}
 	
+/*
 	.pixels_battleCrowd_sky
 	{
 		background-image: url(../_img/battleSky_1x.png);
-		/* background-repeat: no-repeat; */
+		
 		background-size: 534px 360px;
 	}
+*/
 	
+/*
 	.pixels_battleCrowd_goats
 	{
 		background-image: url(../_img/battleCrowdTile_goats_1x.png);
@@ -368,13 +371,23 @@
 		background-position: center top;
 		background-size: 80px 80px;
 	}
+*/
 	
+/*
 	.pixels_battleCrowd_rabbits
 	{
 		background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
 		background-repeat: repeat;
 		background-position: center top;
 		background-size: 80px 80px;
+	}
+*/
+	
+	.pixels_battleEnd
+	{
+		background-image: url(../_img/battleEnd_1x.png);
+		background-repeat: no-repeat;
+		background-size: 534px 400px;
 	}	
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -635,19 +648,30 @@
 			background-image: url(../_img/spaceSquid_1x.png);
 		}
 		
+/*
 		.pixels_battleCrowd_sky
 		{
 			background-image: url(../_img/battleSky_1x.png);
 		}
+*/
 		
+/*
 		.pixels_battleCrowd_goats
 		{
 			background-image: url(../_img/battleCrowdTile_goats_1x.png);
 		}
+*/
 		
+/*
 		.pixels_battleCrowd_rabbits
 		{
 			background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
+		}
+*/
+		
+		.pixels_battleEnd
+		{
+			background-image: url(../_img/battleEnd_1x.png);
 		}						
 	}
 
@@ -869,20 +893,31 @@
 			background-image: url(../_img/spaceSquid_2x.png);
 		}
 		
+/*
 		.pixels_battleCrowd_sky
 		{
 			background-image: url(../_img/battleSky_2x.png);
 		}
+*/
 		
+/*
 		.pixels_battleCrowd_goats
 		{
 			background-image: url(../_img/battleCrowdTile_goats_2x.png);
 		}
+*/
 		
+/*
 		.pixels_battleCrowd_rabbits
 		{
 			background-image: url(../_img/battleCrowdTile_rabbits_2x.png);
-		}									
+		}
+*/
+		
+		.pixels_battleEnd
+		{
+			background-image: url(../_img/battleEnd_2x.png);
+		}										
 	}
 
 /* ----------------------------------------------------------------------- 2 PIXEL DEPTH */

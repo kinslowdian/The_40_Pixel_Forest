@@ -3,6 +3,8 @@
 /* PORTAL SCREEN */
 
 /* BATTLE NAV */
+
+/* LEVEL_BATTLE */
 	
 
 /* ----------------------------------------------------------------------- PHONE GENERAL */	
@@ -44,6 +46,30 @@
 		}
 		
 		/* ----------------------------------------------------------------------- BATTLE NAV */
+		
+		
+		
+		
+		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
+		
+		.microBattle_endSky
+		{
+			height: 180px;
+		}
+		
+		.microBattle_sunMoon
+		{
+			-webkit-transform: translateX(0px);
+			transform: translateX(0px);			
+		}
+		
+		.microBattle_sunMoon_sprite_rise
+		{
+			-webkit-transform: translateY(-160px);
+			transform: translateY(-160px);			
+		}		
+		
+		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
 		
 	}
 	

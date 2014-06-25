@@ -4996,49 +4996,180 @@
 	}
 	
 	
-	/* -------------------------------- TAKE OUT -------------------------------- */
-	
-/*
 	.microBattle_resultWipe_fill
 	{
 		width: inherit;
+		height: auto;
+		
+		display: block;
+		
+		position: absolute;
+		
+		left: 0; right: 0; top: 0; bottom: 0;
+		
+		margin: 0 auto;
+		
+		z-index: 1;
+	}
+	
+	.microBattle_endSky
+	{
+		width: 100%;
+		height: 240px;
+		
+		position: relative;
+		
+		overflow: hidden;
+		
+		z-index: 0;
+	}
+	
+	.microBattle_endSky .microBattle_endSky_mountainL
+	{
+		width: 534px;
 		height: inherit;
 		
 		position: absolute;
 		
-		left: 0;
-		top:0;
+		left:0;
+		bottom: 0;
 		
-		z-index: 0;
+		z-index: 1;
 	}
-*/
 	
-/*
-	.microBattle_endSky
+	.microBattle_endSky .microBattle_endSky_mountainL .pixels_battleEnd
 	{
 		width: inherit;
-		height: 210px;
+		height: 110px;
 		
-		overflow: hidden;
+		background-position: 0 -140px;
 		
 		position: absolute;
 		
 		left: 0;
-		top: 0;
+		bottom: 0;
 		
 		z-index: 0;
-		
-		
-		
-		background: #1a004d;
 	}
-*/
 	
-/*
-	.microBattle_endSky_mountains
+	
+	.microBattle_endSky .microBattle_endSky_mountainC
+	{
+		width: 320px;
+		height: inherit;
+		
+		position: absolute;
+		
+		left:0; right:0; top:0; bottom:0;
+		
+		margin: 0 auto;
+		
+		z-index: 1;
+	}
+	
+	.microBattle_endSky .microBattle_endSky_mountainC .pixels_battleEnd
+	{
+		width: inherit;
+		height: 80px;
+		
+		background-position: -160px -260px;
+		
+		position: absolute;
+		
+		left: 0;
+		bottom: 0;
+		
+		z-index: 0;
+	}
+	
+	.microBattle_endSky .microBattle_endSky_mountainR
+	{
+		width: 534px;
+		height: inherit;
+		
+		position: absolute;
+		
+		right:0;
+		bottom: 0;
+		
+		z-index: 1;
+	}
+	
+	.microBattle_endSky .microBattle_endSky_mountainR .pixels_battleEnd
 	{
 		width: inherit;
 		height: 110px;
+		
+		background-position: 0 -140px;
+		
+		position: absolute;
+		
+		left: 0;
+		bottom: 0;
+		
+		z-index: 0;
+	}
+
+	.microBattle_endField
+	{
+		width: 100%;
+		height: 100%;
+		
+		position: relative;
+		
+		background: #004753;
+		
+		margin: 0 auto;
+		
+		z-index: 1;
+	}
+	
+	.microBattle_middleField
+	{
+		width: 320px;
+		height: 100%;
+		
+		position: relative;
+		
+		/* background: #004753; */
+		
+		margin: 0 auto;
+		
+		z-index: 1;
+	}
+	
+	/* CASTLE */
+	
+	.microBattle_middleField .microBattle_castle_wrapper
+	{
+		width: 100%;
+		height: 135px;
+		
+		position: relative;
+		
+		margin: 0 auto;
+	}
+	
+	.microBattle_castle
+	{
+		width: 40px;
+		height: 135px;
+	
+		position: absolute;
+		
+		left: 0; right: 0; top: 0; bottom: 0;
+		
+		/* margin: 40px auto 0 auto; */
+		
+		margin: 0 auto;
+		
+		z-index: 0;
+	}
+	
+	.microBattle_castle .microBattle_castle_tower
+	{
+		width: 40px;
+		height: 120px;
 		
 		position: absolute;
 		
@@ -5047,173 +5178,296 @@
 		
 		z-index: 1;
 	}
-*/
 	
-/*
-	.microBattle_endSky_mountains_win
+	.microBattle_castle_tower_WIN
 	{
-		background-repeat: repeat-x;
-		background-position: center -140px;
+		background-position: 0 -260px;
 	}
-*/
 	
-/*
-	.microBattle_endSky_mountains_lose
+	.microBattle_castle_tower_LOSE
 	{
-		background-repeat: repeat-x;
-		background-position: center -250px;
+		background-position: -40px -260px;
 	}
-*/
 	
-/*
-	.microBattle_endSky_sunMoon
+	.microBattle_castle .microBattle_castle_flag
 	{
-		width: 140px;
+		width: 40px;
+		height: 15px;
 		
-		position: absolute;
+		background-position: -80px -260px;
 		
-		left:0; right: 0; top: 0; bottom: 0; 
 		
-		margin: 0 auto;
-		
-		-webkit-transform: translateX(-100px);
-		transform: translateX(-100px);
-		
-		z-index: 0;
-	}
-*/
-	
-/*
-	.microBattle_endSky_sunMoon_sprite
-	{
-		width: 140px;
-		height: 140px;
-		
-		position: absolute;
-		left: 0; top: 0;
-		
-		-webkit-transform: translateY(210px);
-		transform: translateY(210px);
-		
-		z-index: 0;
-	}
-*/
-	
-/*
-	.microBattle_endSky_sunMoon_sprite_win
-	{
-		background-repeat: no-repeat;
-		background-position: 0 0;
-	}
-*/
-	
-/*
-	.microBattle_endSky_sunMoon_sprite_lose
-	{
-		background-repeat: no-repeat;
-		background-position: -140px 0;
-	}
-*/
-	
-/*
-	.microBattle_resultWipe_win
-	{
-		background: #17e69d;
-	}
-*/	
-	
-/*
-	.microBattle_resultWipe_lose
-	{
-		background: #ff0070;
-	}
-*/
-	
-/*
-	.microBattle-resultWipe_crowd
-	{
-		width: 100%;
-		height: 100%;
-		
-		position: absolute;
-		
-		-webkit-transform: translateY(306px);
-		transform: translateY(306px);
-		
-		z-index: 1;
-	}
-*/
-	
-/*
-	.microBattle-resultWipe_crowd > div
-	{
-		width: 100%;
-		height: 100%;
+		-webkit-transform: translateY(20px);
+		transform: translateY(20px);
 		
 		position: absolute;
 		
 		left: 0;
 		top: 0;
 		
-		z-index: 0;	
+		z-index: 0;
 	}
-*/
+
 	
-/*
-	.tween-microBattle_endSky
+	.microBattle_castle_flag_WIN
 	{
-		-webkit-transition: -webkit-transform 1s ease;
-		transition: transform 1s ease;
-		
+
 	}
-*/
 	
-/*
-	.tween-microBattle-resultWipe_crowd
+	.tween-microBattle_castle_flag
 	{
-		-webkit-animation	: tweenMicroBattleResultWipeCrowdFrames 0.3s ease-in-out infinite;
-		animation			: tweenMicroBattleResultWipeCrowdFrames 0.3s ease-in-out infinite;
+		-webkit-transition	: -webkit-transform 0.6s ease 0.6s;
+		transition			: transform 0.6s ease 0.6s;
 	}
-*/
 	
-/*
-	@-webkit-keyframes tweenMicroBattleResultWipeCrowdFrames
+	.microBattle_castle_flag_LOSE
 	{
-		0%		{-webkit-transform: translateY(0px);}
-		50%		{-webkit-transform: translateY(20px);}	
-		100%	{-webkit-transform: translateY(0px);}
+		visibility: hidden;
 	}
-*/
 	
-/*
-	@keyframes tweenMicroBattleResultWipeCrowdFrames
+	.microBattle_castle_goat
 	{
-		0%		{transform: translateY(0px);}
-		50%		{transform: translateY(20px);}	
-		100%	{transform: translateY(0px);}			
-	}
-*/
-	
-/*
-	.microBattle-resultWipe_boss
-	{
-		width: 320px;
-		height: 280px;
+		width: 40px;
 		
 		position: absolute;
 		
-		left: 0; right: 0; top: 0; bottom: 0;
+		left: 0;
+		top: 0;
+		
+		z-index: 0;
+		
+		-webkit-transform: translateY(26px);
+		transform: translateY(26px);		
+	}
+	
+	.microBattle_castle_goat_sprite
+	{
+		width: 40px;
+		height: 26px;
+		
+		position: relative;
+		
+		background-position: -120px -260px;
+	}
+	
+	.microBattle_castle_goat_WIN
+	{
+	
+	}
+	
+	.tween-microBattle_castle_goat
+	{
+		-webkit-transition	: -webkit-transform 0.4s ease;
+		transition			: -webkit-transform 0.4s ease;
+	}
+	
+	.microBattle_castle_goat_WIN > div
+	{
+		-webkit-animation	: tweenMicroBattleCastleGoatWinAmbFrames 0.8s linear infinite;
+		animation			: tweenMicroBattleCastleGoatWinAmbFrames 0.8s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenMicroBattleCastleGoatWinAmbFrames
+	{
+		0%		{-webkit-transform: translateY(0px);}
+		50%		{-webkit-transform: translateY(2px);}
+		100%	{-webkit-transform: translateY(0px);}
+	}
+	
+	@keyframes tweenMicroBattleCastleGoatWinAmbFrames
+	{
+		0%		{transform: translateY(0px);}
+		50%		{transform: translateY(2px);}
+		100%	{transform: translateY(0px);}
+	}
+	
+	.microBattle_castle_goat_LOSE
+	{
+		visibility: hidden;
+	}			
+	
+	/* ZOMBIE */
+	.microBattle_middleField .microBattle_zombie_wrapper
+	{
+		width: 100%;
+		height: 30px;
+		
+		position: relative;
+	
+		margin: 10px auto 0 auto;
+	}
+	
+	.microBattle_zombie
+	{
+		width: 40px;
+		
+		position: absolute;
+		
+		left:0; right:0; top:0; bottom:0;
 		
 		margin: 0 auto;
-		
-		-webkit-transform: translateY(306px);
-		transform: translateY(306px);
-		
-		z-index: 1;
 	}
-*/
 	
-	/* -------------------------------- TAKE OUT -------------------------------- */
+	.microBattle_zombie_WIN
+	{
+		visibility: hidden;
+	}
+	
+	.microBattle_zombie_LOSE
+	{
+		-webkit-animation: tweenMicroBattleZombieFrames 0.3s linear infinite;
+		animation: tweenMicroBattleZombieFrames 0.3s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenMicroBattleZombieFrames
+	{
+		0%		{-webkit-transform: translateX(0px);}
+		25%		{-webkit-transform: translateX(-2px);}
+		50%		{-webkit-transform: translateX(0px);}
+		75%		{-webkit-transform: translateX(2px);}
+		100%	{-webkit-transform: translateX(0px);}
+	}
+	
+	@keyframes tweenMicroBattleZombieFrames
+	{
+		0%		{transform: translateX(0px);}
+		25%		{transform: translateX(-2px);}
+		50%		{transform: translateX(0px);}
+		75%		{transform: translateX(2px);}
+		100%	{transform: translateX(0px);}
+	}
+	
+	.microBattle_zombie_walk
+	{
+		width: inherit;
+		
+		position: relative;
+		
+		-webkit-transform: translateY(0);
+		transform : translateY(0);
+	}
+	
+	.tween-microBattle_zombie_walk
+	{
+		-webkit-transition: -webkit-transform 2s ease-in;
+		transition: -webkit-transform 2s ease-in;
+	}
+	
+	.microBattle_zombie_sprite
+	{
+		width: 40px;
+		height: 30px;
+		
+		position: relative;
+	}
+	
+	.microBattle_zombie_LOSE .microBattle_zombie_sprite
+	{ 
+		-webkit-animation: tweenMicroBattleZombieSpriteFrames 0.2s steps(2) 0 infinite;
+		animation: tweenMicroBattleZombieSpriteFrames 0.2s steps(2) 0 infinite;
+	}
+	
+	@-webkit-keyframes tweenMicroBattleZombieSpriteFrames
+	{
+		from	{background-position: -120px -300px;}
+		to		{background-position: -120px -360px;}
+	}
+	
+	@keyframes tweenMicroBattleZombieSpriteFrames
+	{
+		from	{background-position: -120px -300px;}
+		to		{background-position: -120px -360px;}		
+	}	
+	
+	/* MOON-SUN */
+	
+	.microBattle_sunMoon
+	{
+		width: 140px;
+		height: 140px;
+		
+		position: absolute;
+		
+		left:0; right:0; top:0; bottom:0;
+		
+		margin: 10px auto 0 auto;
+		
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		
+		z-index: 0;
+	}
+	
+	.microBattle_sunMoon_WIN > div
+	{
+		background-position: 0 0;
+	}
+	
+	.microBattle_sunMoon_LOSE > div
+	{
+		background-position: -140px 0;	
+	}
+	
+	.microBattle_sunMoon_sprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.tween-microBattle_sunMoon_sprite
+	{
+		-webkit-transition: opacity 1s ease, -webkit-transform 2s ease;
+		transition: opacity 1s ease, transform 2s ease;
+	}
+	
+	.microBattle_sunMoon_sprite_set
+	{
+		opacity: 0;
+		
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);		
+	}
+	
+	
+	.microBattle_sunMoon_sprite_rise
+	{
+		opacity: 1;
+		
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);		
+	}
+	
+	.microBattle_growField
+	{
+		width: inherit;
+		height: inherit;
+		
+		opacity: 0;
+		
+		-webkit-transform: translateY(10px);
+		transform: translateY(10px);
+		
+		position: absolute;
+		
+		left:0; right:0; top:0; bottom:0;
+		
+		margin: 160px auto 0 auto;
+		
+		z-index: 2;
+	}
+	
+	.microBattle_growField_WIN
+	{
+		-webkit-transition: opacity 0.6s ease 1.2s, -webkit-transform 0.8s ease 1.2s;
+		transition: opacity 0.6s ease 1.2s, transform 0.8s ease 1.2s;
+	}
+	
+	.microBattle_growField_LOSE
+	{
+		visibility: hidden;
+	}
 	
 	.extra_flooring_wrapper
 	{

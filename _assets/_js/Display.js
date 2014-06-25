@@ -77,7 +77,7 @@
 			}
 		}
 		
-		if(mountains != null || mountains != undefined)
+		if(battleEnd_mountains != null || battleEnd_mountains != undefined)
 		{
 			battleEnd_alignMountains_measure();
 		}
