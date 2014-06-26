@@ -3,6 +3,10 @@
 	
 	var preBattleOptions;
 	
+	/* --- KEYBOARD_PRE_BATTLE_NAV */
+	
+	var keyboardPreBattle;
+	
 	/* --- THE_BATTLE */
 	
 	var theBattle;
@@ -184,11 +188,7 @@
 			
 			$(".preBattle_enemy")[0].addEventListener("click", preBattleOptions_action, false);
 			
-			// Temp.js
-			
-			keyboardPreBattle_init();
-				
-			// Temp.js			
+			keyboardPreBattle_init();		
 		}
 		
 		$("#display_wrapper #display_inner_world").html("");
@@ -211,7 +211,9 @@
 			$("#preBattle_attack")[0].removeEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].removeEventListener("click", preBattleOptions_action, false);
 			
-			$(".preBattle_enemy")[0].removeEventListener("click", preBattleOptions_action, false);			
+			$(".preBattle_enemy")[0].removeEventListener("click", preBattleOptions_action, false);
+			
+			keyboardPreBattle_off();			
 		}
 		
 		css = 	{
@@ -353,7 +355,163 @@
 		preBattleOptions = {};
 		
 		keyboardPreBattle = {};		
+	}
+	
+	///////////////////////////////// --- PRE_BATTLE_OPTIONS
+	
+	
+	
+	
+	///////////////////////////////// --- KEYBOARD_PRE_BATTLE_NAV
+	
+	function keyboardPreBattle_init()
+	{
+		keyboardPreBattle = {};
+		
+		keyboardPreBattle.countTap = "DEFAULT";
+		
+		keyboardPreBattle.currentFocus = "";
+		
+		keyboardPreBattle.signal = {};
+		
+		keyboardPreBattle.signal.signal0 = $("#preBattle_attack");
+		keyboardPreBattle.signal.signal1 = $("#preBattle_run");
+		
+		keyboardPreBattle.css = {};
+		
+		keyboardPreBattle.css.def	= 	{
+											"-webkit-transform" : "translateY(0px)",
+											"transform" 		: "translateY(0px)",
+											"color" 			: "white"			
+										};
+										
+		keyboardPreBattle.css.hit0	= 	{
+											"-webkit-transform" : "translateY(14px)",
+											"transform" 		: "translateY(14px)",
+											"color" 			: "#ff0070"		
+										};
+										
+		keyboardPreBattle.css.hit1	= 	{
+											"-webkit-transform" : "translateY(14px)",
+											"transform" 		: "translateY(14px)",
+											"color" 			: "#17e69d"		
+										};
+										
+		keyboardPreBattle.css.exit	= 	{
+											"-webkit-transform" : "translateY(0px)",
+											"transform" 		: "translateY(0px)"	
+										};
+		
+		keyboardPreBattle.listening = true;
+										
+		$(window)[0].addEventListener("keyup", keyboardPreBattle_event, false);		
+	}
+	
+	function keyboardPreBattle_event(event)
+	{
+		// LEFT + DOWN
+		if(event.keyCode == 37 || event.keyCode == 40)
+		{
+			if(keyboardPreBattle.countTap === "DEFAULT")
+			{
+				keyboardPreBattle.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardPreBattle.countTap --;
+			}
+			
+			if(keyboardPreBattle.countTap < 0)
+			{
+				keyboardPreBattle.countTap = 1;
+			}
+			
+			keyboardPreBattle_highLight();
+		}
+		
+		// RIGHT + UP
+		if(event.keyCode == 39 || event.keyCode == 38)
+		{
+			if(keyboardPreBattle.countTap === "DEFAULT")
+			{
+				keyboardPreBattle.countTap = 0;
+			}
+			
+			else
+			{
+				keyboardPreBattle.countTap ++;
+			}
+			
+			if(keyboardPreBattle.countTap > 1)
+			{
+				keyboardPreBattle.countTap = 0;
+			}
+			
+			keyboardPreBattle_highLight();			
+		}
+		
+		if(event.keyCode == 13 || event.keyCode == 32)
+		{
+			if(keyboardPreBattle.countTap !== "DEFAULT")
+			{
+				keyboardPreBattle_select();
+			}
+		}
+	}
+	
+	
+	function keyboardPreBattle_highLight()
+	{
+		var keyboardSelect = keyboardPreBattle.signal["signal" + keyboardPreBattle.countTap];
+		
+		var keyboardSelect_id = keyboardSelect[0].id;
+		
+		
+		if(!keyboardPreBattle.currentFocus)
+		{
+			keyboardPreBattle.currentFocus = keyboardSelect_id;
+			
+			$("#" + keyboardSelect_id).css(keyboardPreBattle.css["hit" + keyboardPreBattle.countTap]);
+		}
+		
+		else
+		{
+			$("#" + keyboardSelect_id).css(keyboardPreBattle.css["hit" + keyboardPreBattle.countTap]);
+			$("#" + keyboardPreBattle.currentFocus).css(keyboardPreBattle.css.def);
+			
+			keyboardPreBattle.currentFocus = keyboardSelect_id;
+		}
+	}
+	
+	function keyboardPreBattle_select()
+	{
+		keyboardPreBattle_off();		
+		
+		var fake_event;
+		
+		fake_event = {};
+		fake_event.target = {};
+		fake_event.target.id = keyboardPreBattle.currentFocus;
+		
+		$("#" + keyboardPreBattle.currentFocus).css(keyboardPreBattle.css.exit);
+		
+		preBattleOptions_action(fake_event);	
+	}
+	
+	function keyboardPreBattle_off()
+	{
+		if(keyboardPreBattle.listening)
+		{
+			keyboardPreBattle.listening = false;
+			$(window)[0].removeEventListener("keyup", keyboardPreBattle_event, false);
+		}		
 	}	
+	
+	///////////////////////////////// --- KEYBOARD_PRE_BATTLE_NAV
+	
+		
+	
 	
 	///////////////////////////////// --- THE_BATTLE
 	
@@ -763,7 +921,9 @@
 					
 					$(BATTLE_NAV.options[optionItem])[0].removeEventListener("mouseover", battleNav_controlEvent, false);	
 					$(BATTLE_NAV.options[optionItem])[0].removeEventListener("mouseout", battleNav_controlEvent, false);	
-					$(BATTLE_NAV.options[optionItem])[0].removeEventListener("click", battleNav_controlEvent, false);	
+					$(BATTLE_NAV.options[optionItem])[0].removeEventListener("click", battleNav_controlEvent, false);
+					
+					keyboardBattleNav_off();	
 				}
 				
 				$(BATTLE_NAV.options[optionItem]).css("pointer-events", "none");				
@@ -808,6 +968,31 @@
 			}
 		}
 	}
+	
+
+////////////// FIX... NEEDS TO HAVE OBJECT BATTLE_NAV.options TO BE RE-WRITTEN
+
+/*
+	function battleNav_mouseRollCheck(div)
+	{
+		for(var optionItem in BATTLE_NAV.options)
+		{
+			if(div !== BATTLE_NAV.options[optionItem][0].id && BATTLE_NAV.options[optionItem].scaled = true)
+			{
+				BATTLE_NAV.options[optionItem].scaled = false;
+				
+				$("#" + BATTLE_NAV.options[optionItem][0].id).css(keyboardBattleNav.css.def);
+			}
+			
+			else
+			{
+				BATTLE_NAV.options[optionItem].scaled = true;
+			}	
+		} 
+	}
+*/
+
+////////////// FIX... NEEDS TO HAVE OBJECT BATTLE_NAV.options TO BE RE-WRITTEN
 	
 	function battleNav_selection(selected)
 	{
@@ -862,7 +1047,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 			
 		battleNav_logicDisplay();
 	}
@@ -1302,6 +1487,8 @@
 										};
 		
 		
+		keyboardBattleNav.listening = true;
+		
 		$(window)[0].addEventListener("keyup", keyboardBattleNav_event, false);
 	}
 	
@@ -1383,12 +1570,21 @@
 	
 	function keyboardBattleNav_select()
 	{
-		$(window)[0].removeEventListener("keyup", keyboardBattleNav_event, false);
+		keyboardBattleNav_off();
 		
 		$("#" + keyboardBattleNav.currentFocus).css(keyboardBattleNav.css.def);
 		
 		battleNav_selection(keyboardBattleNav.currentFocus);		
-	}	
+	}
+	
+	function keyboardBattleNav_off()
+	{
+		if(keyboardBattleNav.listening)
+		{
+			keyboardBattleNav.listening = false;
+			$(window)[0].removeEventListener("keyup", keyboardBattleNav_event, false);
+		}		
+	}		
 	
 	///////////////////////////////// --- KEYBOARD_BATTLE_NAV */	
 	
