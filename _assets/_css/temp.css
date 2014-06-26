@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+	#microBattle_transition
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 6;
+	}
+	
 	
 	/* ---------------------------------------- PIXELS */
 	

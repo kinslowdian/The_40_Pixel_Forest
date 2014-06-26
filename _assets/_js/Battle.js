@@ -63,6 +63,11 @@
 		
 		html_lib_empty();
 		
+		
+		$("#display_inner_info #battleScreenFade").addClass("battleScreenFade_first");
+		$("#display_inner_info #battleScreenFade").addClass("battleScreenFade_use");
+		
+		
 		preBattleOptions_populate();
 	}
 	
@@ -99,43 +104,70 @@
 		$("#enemyScreen .preBattle_enemy").css(css);
 		
 		$("#enemyScreen .preBattle_enemy").html(ROM.enemy.character.buildData.html);
-		
 	}
 	
 	function preBattleOptions_show()
 	{
-		var css;
+		var css_screen;
+		var css_fader;
 		
-		css = 	{
-					"-webkit-transform"	: "translateY(0%)",
-					"transform"			: "translateY(0%)"
-				};
-				
+		css_screen = {
+						"-webkit-transform"	: "translateY(0%)",
+						"transform"			: "translateY(0%)"
+					};
+		
+		css_fader = {
+						"-webkit-transition-delay" 	: "0s",
+						"transition-delay" 			: "0s",
+						"opacity" 					: "1"
+					};
+		
 		$(".tween-preBattle_options")[0].addEventListener("webkitTransitionEnd", preBattleOptions_run, false);
 		$(".tween-preBattle_options")[0].addEventListener("transitionend", preBattleOptions_run, false);
 				
-		$("#enemyScreen .preBattle_options").css(css);
+		$("#display_inner_info #battleScreenFade").addClass("tween-battleScreenFade");
+		
+		$("#display_inner_info #battleScreenFade").css(css_fader);
+		
+		$("#enemyScreen .preBattle_options").css(css_screen);
 	}
-	
-	function preBattleOptions_hide()
+
+	function preBattleOptions_hide(y_percent) // 100 || -100
 	{
 		var css;
 		
 		css = 	{
-					"-webkit-transform"	: "translateY(-100%)",
-					"transform"			: "translateY(-100%)"
+					"-webkit-transform"	: "translateY(" + y_percent + "%)",
+					"transform"			: "translateY(" + y_percent + "%)"
 				};
-				
-		$(".tween-preBattle_options")[0].addEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
-		$(".tween-preBattle_options")[0].addEventListener("transitionend", preBattleOptions_purge, false);
+		
+		
+		$(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
+		$(".tween-battleScreenFade")[0].addEventListener("transitionend", preBattleOptions_purge, false);
 				
 		$("#enemyScreen .preBattle_options").css(css);
+	
+		if(preBattleOptions.choice === "RUN")
+		{
+			$("#display_inner_info #battleScreenFade").css("opacity", "0");	
+		}
+		
+		if(preBattleOptions.choice === "ATTACK")
+		{
+			$("#microBattle_transition").css("opacity", "0");
+		}
+		
 	}
 	
 	function preBattleOptions_run(event)
 	{
 		$(".tween-preBattle_options")[0].removeEventListener("webkitTransitionEnd", preBattleOptions_run, false);
-		$(".tween-preBattle_options")[0].removeEventListener("transitionend", preBattleOptions_run, false);		
+		$(".tween-preBattle_options")[0].removeEventListener("transitionend", preBattleOptions_run, false);	
+		
+		
+		$("#display_inner_info #battleScreenFade").removeAttr("style");
+		$("#display_inner_info #battleScreenFade").removeAttr("class");	
+		
 		
 		if(CONTROL_SIGNAL.enableTouch)
 		{
@@ -245,19 +277,23 @@
 	}
 	
 	function preBattleOptions_route()
-	{
+	{		
 		if(preBattleOptions.choice === "ATTACK")
 		{
 			theBattle_init(preBattleOptions);
 			
 			theBattle_build();
 			
-			preBattleOptions_hide();
+			preBattleOptions_hide(-100);
 		}
 		
 		if(preBattleOptions.choice === "RUN")
 		{
 			$("#display_wrapper #display_inner_world").html(preBattleOptions.html.display_inner_world);
+			
+			$("#display_inner_info #battleScreenFade").addClass("battleScreenFade_use");
+			$("#display_inner_info #battleScreenFade").addClass("tween-battleScreenFade");
+			
 			
 			if(CONTROL_SIGNAL.enableTouch)
 			{
@@ -273,24 +309,32 @@
 			MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = preBattleOptions.playerStore.x_return;
 			MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = preBattleOptions.playerStore.y_return;
 			
-			preBattleOptions_hide();
+			preBattleOptions_hide(100);
 		}
 	}
-	
+
 	function preBattleOptions_purge(event)
 	{
-		$(".tween-preBattle_options")[0].removeEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
-		$(".tween-preBattle_options")[0].removeEventListener("transitionend", preBattleOptions_purge, false);
+		$(".tween-battleScreenFade")[0].removeEventListener("webkitTransitionEnd", preBattleOptions_purge, false);
+		$(".tween-battleScreenFade")[0].removeEventListener("transitionend", preBattleOptions_purge, false);	
 		
 		$("#display_wrapper #display_inner_info #enemyScreen").html("");
 		
+
+		
 		if(preBattleOptions.choice === "ATTACK")
 		{
+			$("#microBattle_transition").removeAttr("style");
+			$("#microBattle_transition").removeAttr("class");
+			
 			microBattleSequence_init();
 		}
 		
 		if(preBattleOptions.choice === "RUN")
 		{
+			$("#display_inner_info #battleScreenFade").removeAttr("style");
+			$("#display_inner_info #battleScreenFade").removeAttr("class");			
+			
 			// SET UP CONTROLS + HITTEST
 			hitTest_init();
 			
@@ -346,6 +390,10 @@
 		theBattle.html.zombie = html_lib_use("_enemy_zombie", false, true);
 		
 		html_lib_empty();
+		
+		$("#microBattle_transition").addClass("battleScreenFade_use");
+		$("#microBattle_transition").addClass("tween-battleScreenFade");
+		
 		
 		screenUpdateInit(true);
 		
@@ -2074,11 +2122,12 @@
 		
 		
 		// ADD EVENT LISTENERS AND CLEAN FUNCTION
-		$("#display_inner_info #battleScreenFade").css("opacity", "0");
-		
 		
 		$(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
 		$(".tween-battleScreenFade")[0].addEventListener("transitionend", battleOver_returnWorldEnd, false);
+		
+		$("#display_inner_info #battleScreenFade").css("opacity", "0");
+
 		
 		// RETURN HOOK
 	}
