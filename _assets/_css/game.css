@@ -2819,8 +2819,8 @@
 		
 		display: inline-block;
 		
-		-webkit-transition: color 0.2s ease;
-		transition: color 0.2s ease;
+		-webkit-transition: color 0.2s ease, -webkit-transform 0.2s ease;
+		transition: color 0.2s ease, transform 0.2s ease;
 	}
 	
 	.preBattle_title_enemy .preBattle_title_action:hover

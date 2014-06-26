@@ -182,7 +182,13 @@
 			$("#preBattle_attack")[0].addEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].addEventListener("click", preBattleOptions_action, false);
 			
-			$(".preBattle_enemy")[0].addEventListener("click", preBattleOptions_action, false);			
+			$(".preBattle_enemy")[0].addEventListener("click", preBattleOptions_action, false);
+			
+			// Temp.js
+			
+			keyboardPreBattle_init();
+				
+			// Temp.js			
 		}
 		
 		$("#display_wrapper #display_inner_world").html("");
@@ -344,7 +350,9 @@
 		}
 		
 		// FLUSH OBJECT
-		preBattleOptions = {};		
+		preBattleOptions = {};
+		
+		keyboardPreBattle = {};		
 	}	
 	
 	///////////////////////////////// --- THE_BATTLE
