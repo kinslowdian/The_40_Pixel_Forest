@@ -1664,10 +1664,19 @@
 		height: inherit;
 	}
 	
+	/* FIELD FLOOR TYPES */
+	
 	.field-floor-default
 	{
 		background: #dfdfd5;
 	}
+	
+	.field-floor-dark
+	{
+		background: #20202a;
+	}	
+	
+	/* FIELD FLOOR TYPES */
 	
 	.landDecayBlock
 	{
@@ -4598,7 +4607,7 @@
 		z-index: 1;
 	}
 	
-	.warCrab_160x80
+	.microBattle_forest_160x80
 	{
 		width: 160px;
 		height: 80px;
@@ -4608,7 +4617,7 @@
 		z-index: 0;
 	}
 	
-	.warCrab_320x80
+	.microBattle_forest_320x80
 	{
 		width: 320px;
 		height: 80px;
@@ -4618,7 +4627,7 @@
 		z-index: 0;
 	}
 	
-	.warCrab_320x1360
+	.microBattle_forest_320x1360
 	{
 		width: 320px;
 		height: 1360px;
@@ -4628,7 +4637,7 @@
 		z-index: 0;
 	}
 	
-	.warCrab_80x200
+	.microBattle_forest_80x200
 	{
 		width: 80px;
 		height: 200px;
@@ -4638,31 +4647,31 @@
 		z-index: 0;
 	}
 	
-	.warCrabMass_0
+	.microBattle_forestMass_0
 	{
 		-webkit-transform: translate(80px, 0px);
 		transform: translate(80px, 0px);		
 	}
 	
-	.warCrabMass_1
+	.microBattle_forestMass_1
 	{
 		-webkit-transform: translate(0px, 360px);
 		transform: translate(0px, 360px);		
 	}
 	
-	.warCrabMass_2
+	.microBattle_forestMass_2
 	{
 		-webkit-transform: translate(0px, 1920px);
 		transform: translate(0px, 1920px);		
 	}
 	
-	.warCrabMass_3
+	.microBattle_forestMass_3
 	{
 		-webkit-transform: translate(0px, 1720px);
 		transform: translate(0px, 1720px);		
 	}
 	
-	.warCrabMass_4
+	.microBattle_forestMass_4
 	{
 		-webkit-transform: translate(240px, 1720px);
 		transform: translate(240px, 1720px);		
@@ -4861,7 +4870,7 @@
 		z-index: 0;
 	}
 
-	.neonGrass
+	.microBattle_neonGrass
 	{
 		width: inherit;
 		height: inherit;
@@ -4871,7 +4880,7 @@
 		z-index: 0;
 	}
 	
-	.neonGrass0
+	.microBattle_neonGrass0
 	{
 		width: 80px;
 		height: 40px;
@@ -4880,7 +4889,7 @@
 		transform: translate(120px, 1760px);
 	}
 	
-	.neonGrass1
+	.microBattle_neonGrass1
 	{
 		width: 80px;
 		height: 40px;
@@ -4899,6 +4908,19 @@
 		position: absolute;
 				
 		z-index: 5; /* 4 */			
+	}
+	
+	#microBattle_transition
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 6;
 	}
 	
 	#microBattle_darkness

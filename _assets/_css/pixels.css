@@ -388,6 +388,37 @@
 		background-image: url(../_img/battleEnd_1x.png);
 		background-repeat: no-repeat;
 		background-size: 534px 400px;
+	}
+	
+	.pixels_forestMassDark
+	{
+		background-image: url(../_img/tile_pineTreesMassDark_1x.png);
+		background-repeat: repeat;
+		background-position: center top;
+		background-size: 240px 240px;		
+	}
+	
+	.pixels_forestDark
+	{
+		background-image: url(../_img/tile_pineTreesDark_1x.png);
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerLightDark
+	{
+		background-image: url(../_img/tile_flowersLightDark_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_flowerHeavyDark
+	{
+		background-image: url(../_img/tile_flowersHeavyDark_1x.png);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 80px 80px;
 	}	
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -672,6 +703,26 @@
 		.pixels_battleEnd
 		{
 			background-image: url(../_img/battleEnd_1x.png);
+		}
+		
+		.pixels_forestMassDark
+		{
+			background-image: url(../_img/tile_pineTreesMassDark_1x.png);	
+		}
+		
+		.pixels_forestDark
+		{
+			background-image: url(../_img/tile_pineTreesDark_1x.png);
+		}
+		
+		.pixels_flowerLightDark
+		{
+			background-image: url(../_img/tile_flowersLightDark_1x.png);
+		}
+		
+		.pixels_flowerHeavyDark
+		{
+			background-image: url(../_img/tile_flowersHeavyDark_1x.png);
 		}						
 	}
 
@@ -917,6 +968,26 @@
 		.pixels_battleEnd
 		{
 			background-image: url(../_img/battleEnd_2x.png);
+		}
+		
+		.pixels_forestMassDark
+		{
+			background-image: url(../_img/tile_pineTreesMassDark_2x.png);	
+		}
+		
+		.pixels_forestDark
+		{
+			background-image: url(../_img/tile_pineTreesDark_2x.png);
+		}
+		
+		.pixels_flowerLightDark
+		{
+			background-image: url(../_img/tile_flowersLightDark_2x.png);
+		}
+		
+		.pixels_flowerHeavyDark
+		{
+			background-image: url(../_img/tile_flowersHeavyDark_2x.png);
 		}										
 	}
 
