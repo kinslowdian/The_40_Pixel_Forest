@@ -470,6 +470,13 @@
 			{
 				keyboardPreBattle_select();
 			}
+			
+			else
+			{
+				keyboardPreBattle.countTap = 0;
+				
+				keyboardPreBattle_highLight();
+			}
 		}
 	}
 	
@@ -674,9 +681,51 @@
 		mbs_level_delay = new AnimationTimer();
 		
 		timerList_add(mbs_level_delay);
-		mbs_level_delay.time(1.5, microBattleSequence_fadeOutLevel);		
+		mbs_level_delay.time(1.5, microBattleSequence_levelFlashIn);		
 	}
 	
+	function microBattleSequence_levelFlashIn()
+	{
+		$(".microBattle_fade_flash").addClass("tween-microBattle_fade_flash");
+		
+		$(".tween-microBattle_fade_flash")[0].addEventListener("webkitTransitionEnd", microBattleSequence_levelFlashOut, false);
+		$(".tween-microBattle_fade_flash")[0].addEventListener("transitionend", microBattleSequence_levelFlashOut, false);
+		
+		$(".microBattle_fade_flash").css("opacity", 1);
+	}
+	
+	function microBattleSequence_levelFlashOut(event)
+	{
+		$(".tween-microBattle_fade_flash")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_levelFlashOut, false);
+		$(".tween-microBattle_fade_flash")[0].removeEventListener("transitionend", microBattleSequence_levelFlashOut, false);
+		
+		$(".microBattle_fade_main").css("visibility", "visible");
+		
+		$(".tween-microBattle_fade_flash")[0].addEventListener("webkitTransitionEnd", microBattleSequence_levelFlashEnd, false);
+		$(".tween-microBattle_fade_flash")[0].addEventListener("transitionend", microBattleSequence_levelFlashEnd, false);
+		
+		$(".microBattle_fade_flash").css("opacity", 0);		
+	}
+	
+	function microBattleSequence_levelFlashEnd(event)
+	{
+		$(".tween-microBattle_fade_flash")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_levelFlashEnd, false);
+		$(".tween-microBattle_fade_flash")[0].removeEventListener("transitionend", microBattleSequence_levelFlashEnd, false);
+		
+		$(".microBattle_fade_flash").remove();
+		
+		$(".tween-microBattleWeatherFade")[0].addEventListener("webkitTransitionEnd", microBattleSequence_startBattle, false);
+		$(".tween-microBattleWeatherFade")[0].addEventListener("transitionend", microBattleSequence_startBattle, false);
+		
+		$(".microBattle_weather").css("opacity", "0");
+		
+		if(spaceSquidsUse)
+		{
+			spaceSquids_animationStart();	
+		}		
+	}
+	
+/*
 	function microBattleSequence_fadeOutLevel()
 	{
 		var css;
@@ -698,6 +747,7 @@
 			spaceSquids_animationStart();	
 		}
 	}
+*/
 	
 	function microBattleSequence_startBattle(event)
 	{

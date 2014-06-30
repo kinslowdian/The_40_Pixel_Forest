@@ -342,6 +342,10 @@
 		
 		$("#" + dead_obj.id).css(dead_obj.buildData.css);
 		
+		// GRAVE FIX
+		$("#" + dead_obj.id).addClass("field-floor-" + LEVEL_MAIN.landType);
+		// GRAVE FIX
+		
 		enemies_ARR[dead_obj.array_index].rendered = true;
 				
 		delete grave;

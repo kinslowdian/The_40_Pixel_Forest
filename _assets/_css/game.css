@@ -4428,7 +4428,10 @@
 					
 		z-index: 1;		
 	}
+
+/* !!!!!!!!!!!!!! IN temp.css */
 	
+/*
 	.microBattle_fade_main
 	{
 		width: 100%;
@@ -4446,6 +4449,9 @@
 		
 		z-index: 0;
 	}
+*/
+
+/* !!!!!!!!!!!!!! IN temp.css */
 	
 	#microBattle_fade_content
 	{
@@ -4759,6 +4765,7 @@
 		100%	{transform: scaleY(0.4);}
 	}
 	
+/*
 	.tween-fireFlame_0
 	{
 		-webkit-animation: tweenFireFlame0Frames 2s ease-in-out infinite;
@@ -4781,6 +4788,31 @@
 		50%		{transform: translateX(0px);}
 		75%		{transform: translateX(2px);}
 		100%	{transform: translateX(0px);}
+	}
+*/
+
+	.tween-fireFlame_0
+	{
+		-webkit-animation: tweenFireFlame0Frames 0.1s ease-in-out infinite;
+		animation: tweenFireFlame0Frames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenFireFlame0Frames
+	{
+		0%		{-webkit-transform: translateY(0px);}
+		25%		{-webkit-transform: translateY(-1px);}
+		50%		{-webkit-transform: translateY(0px);}
+		75%		{-webkit-transform: translateY(1px);}
+		100%	{-webkit-transform: translateY(0px);}
+	}
+	
+	@keyframes tweenFireFlame0Frames
+	{
+		0%		{transform: translateY(0px);}
+		25%		{transform: translateY(-1px);}
+		50%		{transform: translateY(0px);}
+		75%		{transform: translateY(1px);}
+		100%	{transform: translateY(0px);}
 	}
 	
 	.fireTriangle_x_0

@@ -1,6 +1,51 @@
 @charset "UTF-8";
 
 
+	.microBattle_fade_main
+	{
+		width: 100%;
+		height: 100%;
+		
+		overflow: hidden;
+		
+		visibility: hidden;
+		
+		position: absolute;
+		
+		background: #20202a;
+		
+/*
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+*/
+		
+		
+		z-index: 0;
+	}
+	
+	.microBattle_fade_flash
+	{
+		width: 100%;
+		height: 100%;
+		
+		background: #fff;
+		
+		opacity: 0;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 1;
+	}
+	
+	.tween-microBattle_fade_flash
+	{
+		-webkit-transition: opacity 0.1s linear;
+		transition: opacity 0.1s linear;
+	}
+
 	
 	
 	/* ---------------------------------------- PIXELS */
