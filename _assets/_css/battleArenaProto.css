@@ -1,0 +1,484 @@
+	
+	#wrapper-battleArena
+	{
+		background: #20202a;
+				
+		overflow: hidden;		
+	}
+	
+	
+	.battleArena-island
+	{
+		width: 320px;
+		height: 203px;
+				
+		position: absolute;
+				
+		top: 0; left: 0; right: 0; bottom: 0;
+				
+		margin: auto;
+			
+		z-index: 2;		
+	}
+	
+	.tween-battleArena-island
+	{
+		-webkit-animation	: tweenBattleArenaIsland 8s ease-in-out infinite;
+		animation			: tweenBattleArenaIsland 8s ease-in-out infinite;		
+	}
+	
+	@-webkit-keyframes tweenBattleArenaIsland
+	{
+		0%		{ -webkit-transform: translateY(0px); }
+		50%		{ -webkit-transform: translateY(60px); }
+		100%	{ -webkit-transform: translateY(0px); }
+	}
+			
+	@keyframes tweenBattleArenaIsland
+	{
+		0%		{ transform: translateY(0px); }
+		50%		{ transform: translateY(60px); }
+		100%	{ transform: translateY(0px); }
+	}
+	
+	.battleArena-floor
+	{
+		width: 280px;
+		height: 180px;
+		
+		background-position: 0 0;
+		
+		position: absolute;
+		
+		left: 0;
+		bottom: 0;
+		
+		z-index: 0;
+	}
+	
+	.battleArena-ground
+	{
+		width: 100%;
+		height: 100px;
+				
+		position: absolute;
+				
+		left: 0;
+		bottom: 0;
+				
+		z-index: 2;		
+	}
+	
+	.battleArena-ground-sprite
+	{
+		width: 60px;
+		height: 100px;
+				
+		position: absolute;
+				
+		z-index: 0;		
+	}
+	
+	.battleArena-ground-L
+	{
+		background-position: 0 -180;
+				
+		left: 0;
+		bottom: 0;		
+	}
+	
+	.battleArena-ground-R
+	{
+		background-position: -60 -180;
+				
+		right: 0;
+		bottom: 0;		
+	}
+	
+	.battleArena-stars
+	{
+		width: 100%;
+		height: 200%;
+				
+		position: absolute;
+				
+		top: 0; left: 0; right: 0; bottom: 0;
+				
+		margin: 0;
+				
+		z-index: 0;
+	}
+	
+	.tween-battleArena-stars
+	{
+		-webkit-animation	: tweenBattleArenaStarsFrames 1s linear infinite;
+		animation			: tweenBattleArenaStarsFrames 1s linear infinite;
+	}
+			
+	@-webkit-keyframes tweenBattleArenaStarsFrames
+	{
+		from	{ -webkit-transform: translateY(0px); }
+		to		{ -webkit-transform: translateY(-240px); }
+	}
+			
+	@keyframes tweenBattleArenaStarsFrames
+	{
+		from	{ transform: translateY(0px); }
+		to		{ transform: translateY(-240px); }
+	}
+	
+	
+	
+	
+	.pixels_battleArena
+	{
+		background-image: url(../_img/_battleArena/battleIsland_1x.png);
+		background-repeat: no-repeat;
+		background-size: 280px 280px;
+	}
+	
+	.pixels_battleArenaStars
+	{
+		background-image: url(../_img/_battleArena/battleStars_1x.png);
+		background-repeat: repeat;
+		background-size: 240px 240px;
+	}
+	
+	
+	
+
+
+
+
+
+
+
+
+
+*
+			{
+				padding: 0;
+				margin: 0;
+				outline: none;
+				border: none;
+			}
+			
+			#wrapper
+			{
+				width: 100%;
+				height: 100%;
+				
+				position: absolute;
+			
+				background: #20202a;
+				
+				overflow: hidden;
+			}
+			
+			#content
+			{
+				width: 320px;
+				height: 203px;
+				
+				position: absolute;
+				
+				top: 0; left: 0; right: 0; bottom: 0;
+				
+				margin: auto;
+			
+				z-index: 2;
+			}
+			
+			.island
+			{
+				width: 320px;
+				height: 203px;
+				
+				background: url(island.png) no-repeat left top;				
+			}
+			
+			.tween-island
+			{
+				-webkit-animation	: tweenIslandFrames 8s ease-in-out infinite;
+				animation			: tweenIslandFrames 8s ease-in-out infinite;
+			}
+			
+			@-webkit-keyframes tweenIslandFrames
+			{
+				0%		{ -webkit-transform: translateY(0px); }
+				50%		{ -webkit-transform: translateY(60px); }
+				100%	{ -webkit-transform: translateY(0px); }
+			}
+			
+			@keyframes tweenIslandFrames
+			{
+				0%		{ transform: translateY(0px); }
+				50%		{ transform: translateY(60px); }
+				100%	{ transform: translateY(0px); }
+			}
+			
+			.stageStars
+			{
+				width: 200%;
+				height: 100%;
+				
+				position: absolute;
+				
+				top: 0; left: 0; right: 0; bottom: 0;
+				
+				margin: 0;
+				
+				background: url(stars.png) repeat left top;
+				
+				z-index: 0;
+			}
+			
+			.tween-stageStars
+			{
+				-webkit-animation	: tweenStageStarsFrames 4s linear infinite;
+				animation			: tweenStageStarsFrames 4s linear infinite;
+			}
+			
+			@-webkit-keyframes tweenStageStarsFrames
+			{
+				from	{ -webkit-transform: translateX(0px); }
+				to		{ -webkit-transform: translateX(-120px); }
+			}
+			
+			@keyframes tweenStageStarsFrames
+			{
+				from	{ transform: translateX(0px); }
+				to		{ transform: translateX(-120px); }
+			}
+			
+			.stageStarsFar
+			{
+				width: 100%;
+				height: 200%;
+				
+				position: absolute;
+				
+				top: 0; left: 0; right: 0; bottom: 0;
+				
+				margin: 0;
+				
+				background: url(starsFar.png) repeat center center;
+				
+				z-index: 0;
+			}
+			
+			.tween-stageStarsFar
+			{
+				-webkit-animation	: tweenStageStarsFrames 1s linear infinite;
+				animation			: tweenStageStarsFrames 1s linear infinite;
+			}
+			
+			@-webkit-keyframes tweenStageStarsFrames
+			{
+				from	{ -webkit-transform: translateY(0px); }
+				to		{ -webkit-transform: translateY(-240px); }
+			}
+			
+			@keyframes tweenStageStarsFrames
+			{
+				from	{ transform: translateY(0px); }
+				to		{ transform: translateY(-240px); }
+			}
+			
+			.blocks
+			{
+				width: 100%;
+				height: 200%;
+				
+				top: 0; left: 0; right: 0; bottom: 0;
+				
+				margin: 0;
+				
+				background: url(blocks.png) repeat center center;
+				
+				-webkit-transform-origin: 50% 50%;
+				transform-origin: 50% 50%;
+				
+				z-index: 1;
+			}
+			
+			.tween-blocks
+			{
+				-webkit-animation	: tweenBlocksFrames 6s linear infinite;
+				animation			: tweenBlocksFrames 6s linear infinite;
+			}
+			
+			@-webkit-keyframes tweenBlocksFrames
+			{
+/*
+				from	{ -webkit-transform: translateY(0px) rotate(0deg); }
+				to		{ -webkit-transform: translateY(-160px) rotate(360deg); }
+*/
+				from	{ -webkit-transform: rotate(0deg); }
+				to		{ -webkit-transform: rotate(360deg); }
+			}
+			
+			@keyframes tweenBlocksFrames
+			{
+/*
+				from	{ transform: translateY(0px) rotate(0deg); }
+				to		{ transform: translateY(-160px) rotate(360deg); }
+*/
+
+				from	{ -webkit-transform: rotate(0deg); }
+				to		{ -webkit-transform: rotate(360deg); }
+			}
+			
+			.moonHolder
+			{
+				width: 2000px;
+				height: 600px;
+				
+				position: absolute;
+
+				left: 0;
+				bottom: -100px;
+				
+/*
+				top: 0; left: 0; right: 0; bottom: 0;
+				
+				margin: 0 0 -300px 0;
+*/
+				
+				z-index: 1;
+				
+			}
+			
+			.moonSprite
+			{
+				width: 319px;
+				height: 319px;
+				
+				background: url(moon.png) no-repeat left top;
+				
+				position: absolute;
+				
+				right: 0;
+				
+				bottom: 0;
+			}
+			
+			.tween-moon
+			{
+				-webkit-animation	: tweenMoonFrames 16s linear infinite;
+				animation			: tweenMoonFrames 16s linear infinite;
+			}
+			
+			@-webkit-keyframes tweenMoonFrames
+			{
+				from	{ -webkit-transform: translateX(1000px) rotate(0deg); }
+				to		{ -webkit-transform: translateX(-2000px) rotate(360deg); }
+			}
+			
+			@keyframes tweenMoonFrames
+			{
+				from	{ transform: translateX(1000px) rotate(0deg); }
+				to		{ transform: translateX(-2000px) rotate(360deg); }
+			}
+			
+			
+			.forestFloor
+			{
+				width: 200%;
+				height: 40px;
+				
+				position: absolute;
+				
+				bottom: 0;
+				
+				left: 0;
+				
+				z-index: 2;
+			}
+			
+			.tween-forestFloor
+			{
+				-webkit-animation: tweenForestFloorFrames 1s linear infinite;
+				animation: tweenForestFloorFrames 1s linear infinite;
+			}
+			
+			@-webkit-keyframes tweenForestFloorFrames
+			{
+				from	{-webkit-transform: translateX(0);}
+				to		{-webkit-transform: translateX(-80px);}
+			}
+			
+			@keyframes tweenForestFloorFrames
+			{
+				from	{transform: translateX(0);}
+				to		{transform: translateX(-80px);}
+			}
+			
+			.forestFloorSprite
+			{
+				width: inherit;
+				height: inherit;
+				
+				background: url(forest.png) repeat-x left top;
+			}
+			
+			.tween-forestFloorSprite
+			{
+				-webkit-animation: tweenForestFloorSprite 0.5s ease-in-out infinite;
+				animation: tweenForestFloorSprite 0.5s ease-in-out infinite;
+			}
+			
+			@-webkit-keyframes tweenForestFloorSprite
+			{
+				0%		{-webkit-transform: translateY(0px);}
+				50%		{-webkit-transform: translateY(10px);}
+				100%	{-webkit-transform: translateY(0px);}
+			}
+			
+			@keyframes tweenForestFloorSprite
+			{
+				0%		{transform: translateY(0px);}
+				50%		{transform: translateY(10px);}
+				100%	{transform: translateY(0px);}
+			}
+			
+			.groundLevel
+			{
+				width: 100%;
+				height: 100px;
+				
+				position: absolute;
+				
+				left: 0;
+				bottom: 0;
+				
+				z-index: 2;
+			}
+			
+			.groundLevelSprite
+			{
+				width: 60px;
+				height: 100px;
+				
+				background: url(edges.png) no-repeat left top;
+				
+				position: absolute;
+				
+				z-index: 0;
+			}
+			
+			.groundLevel-L
+			{
+				background-position: 0 0;
+				
+				left: 0;
+				bottom: 0;
+			}
+			
+			.groundLevel-R
+			{
+				background-position: -60 0;
+				
+				right: 0;
+				bottom: 0;
+			}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#CONTROL_CHECK
+{
+	width: 280px;
+	
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	
+	color: #000;
+	
+	
+	position: absolute;
+	
+	left: 10px;
+	top:10px;
+	
+	z-index: 1000;
+	
+}

@@ -1,4 +1,6 @@
 	
+	// --------------------------------------------- TIMER
+	
 	var timerListMain;
 		
 	var AnimationTimersMain = function()
@@ -18,15 +20,7 @@
 		
 	AnimationTimersMain.prototype.listTimer = function(ob)
 	{
-		this.timerList.push(ob);
-		
-		for(var i = 0; i < this.timerList.length; i++)
-		{
-			if(ob === this.timerList[i])
-			{
-				ob.ref = "AnimationTimer" + i;
-			}
-		}	
+		this.timerList.push(ob);	
 	};
 		
 	AnimationTimersMain.prototype.cancelAll = function()
@@ -44,7 +38,7 @@
  			
  	AnimationTimer.prototype.time = function(s, f, p)
  	{
-	 	p == undefined ? this._AT = setTimeout(f, s * 1000) : this._AT = setTimeout(f, s * 1000, p);
+ 		p == undefined ? this._AT = setTimeout(f, s * 1000) : this._AT = setTimeout(f, s * 1000, p);
  	};
  		
  	AnimationTimer.prototype.cancel = function()
@@ -79,6 +73,24 @@
 		
 		timerListMain = null;
 	}
+	
+	
+	// --------------------------------------------- CSS EVENTS
+	
+	// animationEventManager("#box0", "TRANSITION", "onEnd");
+	
+	// animationEventManager(".box", "ANIMATION", "onEnd");
+	
+	/*
+	function onEnd(event)
+	{
+		if($(event.target).attr("data-animationlink"))
+		{
+			animationEventKill($(event.target).attr("data-animationlink"));
+		}	
+	}
+	*/
+	
 		
 	function animationEventManager(div, anim_t, anim_f)
 	{

@@ -1,74 +1,249 @@
 @charset "UTF-8";
 
-/* GFX-FIX */
-
-/* GENERAL */
-
-/* VECTOR */
-
-/* 1 PIXEL DEPTH */
-
-/* 2 PIXEL DEPTH */
-
-
-
-	
-/* ----------------------------------------------------------------------- GFX-FIX */	
-	
-	.tweenFlickerFix div
+/* FLICKKER FIX */
+			
+	div[class*='tween-']
 	{
 		-webkit-backface-visibility	: hidden;
-		backface-visibility			: hidden;		
+		backface-visibility			: hidden;
+					
+		/* TRY */
+		-webkit-transform-style		: preserve-3d;
+		-webkit-transform			: translateZ(0);
+					
+		transform-style				: preserve-3d;
+		transform					: translateZ(0);
 	}
+
+/* BASIC */
+
 	
-/* ----------------------------------------------------------------------- GFX-FIX */
-
-
-
-
-/* ----------------------------------------------------------------------- GENERAL */
-
-	.pixels_landDecay
+	/* ---------------------------------------------------START */
+	
+	.startPixels
 	{
-		background-image: url(../_img/landPixelDecay_1x.png);
+		background-image: url(../_img/0_start/startSprite_1x.png);
 		background-repeat: no-repeat;
-		background-size: 1200px 800px;
+		background-size: 240px 203px;
 	}
 	
-	.pixels_woodlandBottom
+	.colour-navPink-Pixels
 	{
-		background-image: url(../_img/bottomEnd_1x.png);
+		background-image: url(../_img/0_start/col_nav-pink_1x.png);
+		background-repeat: repeat;
+		background-size: 100px 100px;
+	}
+	
+	
+	
+
+	/* ---------------------------------------------------CHARACTERS */
+	
+	/* BABY GOAT */
+			
+	.babyPixels
+	{
+		background-image: url(../_img/_characters/_intro/_baby/babySprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 42px 37px;
+	}
+	
+	/* BOSS */
+			
+	.bossPixels
+	{
+		background-image: url(../_img/_characters/_intro/_boss/bossSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 361px 216px;
+	}
+	
+	/* GOAT */
+	
+	.goatPixels
+	{
+		background-image: url(../_img/_characters/_intro/_goat/goatSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 56px 44px;			
+	}
+
+	
+	/* ---------------------------------------------------BACKGROUNDS */
+	
+	.grassPixels
+	{
+		background-image: url(../_img/_scene/grassTile_1x.png);
 		background-repeat: repeat-x;
-		background-position: center top;
-		background-size: 240px 160px;
+		background-position: left top;
+		background-size: 8px 4px;
 	}
 	
-	.pixels_forestMass
+	.skyPixels
 	{
-		background-image: url(../_img/tile_pineTreesMass_1x.png);
+		background-image: url(../_img/_scene/bg0_1x.png);
+		background-repeat: repeat;
+		background-size: 8px 8px;				
+	}
+	
+	.punchCloudPixels
+	{
+		background-image: url(../_img/1_intro/cloudSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 320px 965px;				
+	}
+	
+	.punchCloudTilePixels
+	{
+		background-image: url(../_img/1_intro/bossCloudTile_1x.png);
+		background-repeat: repeat-x;
+		background-size: 288px 400px;			
+	}
+	
+	.fallOffPixels
+	{
+		background-image: url(../_img/_scene/worldEdge_1x.png);
+		background-repeat: repeat-x;
+		background-size: 320px 600px;			
+	}
+	
+	.groundChipsPixels
+	{
+		background-image: url(../_img/_scene/groundTexture_1x.png);
+		background-repeat: repeat;
+		background-size: 300px 300px;		
+	}
+	
+	.introWallBreaksPixels
+	{
+		background-image: url(../_img/1_intro/introEndBG_1x.png);
+		background-repeat: repeat-x;
+		/* background-position: center top; */
+		background-size: 872px 482px;
+	}
+	
+	/* ---------------------------------------------------BATTLE NAV */
+	
+	.battleNavVectors
+	{
+		background: url(../_img/_battleNav/battleNavOptions.svg) no-repeat left top;
+	}
+	
+
+	.battleCloudPixels
+	{
+		background-image: url(../_img/_battleNav/battleNavCloud_1x.png);
+		background-repeat: repeat-x;
+		background-size: 72px 211px;
+		background-position: center top;				
+	}
+	
+	.battleFlowPixels
+	{
+		background-image: url(../_img/_battleNav/battleNavSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 371px 400px;				
+	}
+	
+	.stepsPixels
+	{
+		background-image: url(../_img/_scene/steps_1x.png);
+		background-repeat: repeat-y;
+		background-size: 50px 20px;
+		background-position: left top; 
+	}
+	
+	
+	/* ---------------------------------------------------NOTICE */
+	
+	.noticeRaccoonPixels
+	{	
+		background-image: url(../_img/_notice/notice_raccoon_1x.png);
+		background-repeat: no-repeat;
+		background-size: 520px 221px;
+	}
+	
+	
+	/* ---------------------------------------------------ROAM */
+	
+	
+	.pixels_field
+	{
+		background-image: url(../_img/_tiles/tile_floor_1x.png);
 		background-repeat: repeat;
 		background-position: center top;
-		background-size: 240px 240px;		
+		background-size: 80px 80px;
 	}
 	
-	.pixels_portal
+	.pixels_mapCloudBtm
 	{
-		background-image: url(../_img/portalSprite_1x.png);
+		background-image: url(../_img/_mapBlend/cloudMergeBTM_1x.png);
+		background-repeat: repeat-x;
+		background-position: center top;
+		background-size: 145px 360px;
+		
+	}
+	
+	.pixels_mapCloudTop
+	{
+		background-image: url(../_img/_mapBlend/cloudMergeTOP_1x.png);
+		background-repeat: repeat-x;
+		background-position: center top;
+		background-size: 145px 360px;
+		
+	}
+	
+	.pixels_weather-snow
+	{
+		background-image: url(../_img/_fx/snow_1x.png);
 		background-repeat: no-repeat;
-		background-position: left top;
-		background-size: 80px 320px;
+		background-position: 0 0;
+		background-size: 3px 3px;
 	}
 	
-	.pixels_forest
+	.pixels_weatherWindShadowCloud
 	{
-		background-image: url(../_img/tile_pineTrees_1x.png);
+		background-image: url(../_img/_fx/cloudWindShadow_1x.png);
+		background-repeat: no-repeat;
+		background-size: 116px 138px;
+	}
+	
+	.pixels_bush
+	{
+		background-image	: url(../_img/_tiles/tile_bush_1x.png);
+		background-repeat	: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_btm_bg_grass
+	{
+		background-image: url(../_img/_tiles/tile_btm_bg_grass_1x.png);
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
 	
+	.pixels_btm_bg_bushBorder
+	{
+		background-image: url(../_img/_tiles/tile_btm_bg_bushBorder_1x.png);
+		background-repeat: repeat;
+		background-size: 120px 80px;
+	}
+	
+	.pixels_btm_bg_levelFinish
+	{
+		background-image: url(../_img/_mapBlend/levelFinish_1x.png);
+		background-repeat: no-repeat;
+		background-size: 400px 120px;
+	}
+	
+	.pixels_darkEdge
+	{
+		background-image: url(../_img/_mapBlend/blackEdge_1x.png);
+		background-repeat: repeat-y;
+		background-size: 200px 320px;
+	}
+	
 	.pixels_flowerLight
 	{
-		background-image: url(../_img/tile_flowersLight_1x.png);
+		background-image: url(../_img/_tiles/tile_flowersLight_1x.png);
 		background-position: 0 0;
 		background-repeat: repeat;
 		background-size: 80px 80px;
@@ -76,7 +251,7 @@
 	
 	.pixels_flowerHeavy
 	{
-		background-image: url(../_img/tile_flowersHeavy_1x.png);
+		background-image: url(../_img/_tiles/tile_flowersHeavy_1x.png);
 		background-position: 0 0;
 		background-repeat: repeat;
 		background-size: 80px 80px;
@@ -84,911 +259,666 @@
 	
 	.pixels_flowerRichCross
 	{
-		background-image: url(../_img/tile_flowersRich_+_1x.png);
+		background-image: url(../_img/_tiles/tile_flowersRich_+_1x.png);
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		background-size: 120px 120px;
 	}
-
-	.pixels_rain0
-	{
-		background-image: url(../_img/rain_0_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;
-	}
 	
-	.pixels_rain1
+	.pixels_griz
 	{
-		background-image: url(../_img/rain_1_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_rain2
-	{
-		background-image: url(../_img/rain_2_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_snow0
-	{
-		background-image: url(../_img/snow_0_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;
-	}
-	
-	.pixels_snow1
-	{
-		background-image: url(../_img/snow_1_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_snow2
-	{
-		background-image: url(../_img/snow_2_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_wind0
-	{
-		background-image: url(../_img/wind_0_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;
-	}
-	
-	.pixels_wind1
-	{
-		background-image: url(../_img/wind_1_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_wind2
-	{
-		background-image: url(../_img/wind_2_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_start
-	{
-		background-image: url(../_img/startSprite_1x.png);
+		background: url(../_img/_characters/_roam/_griz/griz_1x.png);
 		background-repeat: no-repeat;
-		background-size: 240px 203px;
+		background-position: 0 0;
+		background-size: 40px 42px;
 	}
 	
-	.pixels_colour-navPink
+	.pixels_mapGoat
 	{
-/*
-		background-image: url(../_img/col_nav-pink_1x.png);
-		background-repeat: repeat;
-		background-size: 100px 100px;
-*/
-		background-color: #1a004d;
-		background-repeat: repeat;
-	}
-	
-	.pixels_map_player
-	{
-		background-image: url(../_img/map_playerSprite_1x.png);
+		background-image: url(../_img/_characters/_roam/_goat/goatSprite.png);
 		background-repeat: no-repeat;
-		/* background-position: 0 0; */
-		background-size: 320px 120px;
+		background-size: 20px 14px;		
 	}
 	
-	.pixels_battleFlow
+	.pixels_portalTile
 	{
-		background-image: url(../_img/battleNavSprite_1x.png);
+		background-image: url(../_img/_portal/portal_1x.png);
 		background-repeat: no-repeat;
-		background-size: 371px 400px;				
+		background-position: 0 0;
+		background-size: 80px 80px;
 	}
 	
-	
-	.pixels_map_enemy40x40
+	.pixels_touchyCrab
 	{
-		background-image: url(../_img/map_enemySprite40x40_1x.png);
+		background-image: url(../_img/_nav/touchy.svg);
 		background-repeat: no-repeat;
-		/* background-size: 320px 240px; */
-		background-size: 320px 360px;		
+		background-position: 0 0;
+		background-size: 130px 150px;
 	}
 	
-	.pixels_portalScreen
+	.pixels_touchyCrab
 	{
-		background-image: url(../_img/tilePortalScreenLRG_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 400px 320px;
+		background-image: url(../_img/_nav/touchySplit.svg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 260px 150px;
 	}
 	
-	.pixels_battleCloud
+	.pixels_woodlandBottom
 	{
-		background-image: url(../_img/battleNavCloud_1x.png);
+		background-image: url(../_img/_mapBlend/bottomEnd_1x.png);
 		background-repeat: repeat-x;
-		background-position: center top;				
-		background-size: 72px 211px;
-	}
-	
-	.pixels_battleFlow
-	{
-		background-image: url(../_img/battleNavSprite_1x.png);
-		background-repeat: no-repeat;
-		background-size: 371px 400px;				
-	}
-	
-	.pixels_warCrabs
-	{
-		background-image: url(../_img/tile_microBattle_bg_1x.png);
-		background-repeat: repeat;
 		background-position: left top;
-		background-size: 120px 120px;
+		background-size: 240px 160px;
 	}
 	
-	.pixels_warCrabsAlt
+	.pixels_woodlandBottomAlt
 	{
-		background-image: url(../_img/tile_microBattle_Alt_bg_1x.png);
-		background-repeat: repeat;
+		background-image: url(../_img/_mapBlend/bottomEndAlt_1x.png);
+		background-repeat: repeat-x;
 		background-position: left top;
-		background-size: 120px 120px;
+		background-size: 240px 160px;
 	}
 	
-	.pixels_fire
+	.pixels_flame
 	{
-		background-image: url(../_img/flameSprite_1x.png);
+		background-image: url(../_img/_fx/fire_1x.png);
 		background-repeat: no-repeat;
-		background-size: 120px 40px;
+		background-size: 20px 60px;
 	}
 	
-	.pixels_emptyDecay
+	@-webkit-keyframes pixels_tweenRainFrames
 	{
-		background-image: url(../_img/microBattle_landPixelDecay_1x.png);
+		0%		{background-image: url(../_img/_fx/rainTile0_1x.png);}
+		25%		{background-image: url(../_img/_fx/rainTile1_1x.png);}
+		50%		{background-image: url(../_img/_fx/rainTile2_1x.png);}
+		75%		{background-image: url(../_img/_fx/rainTile1_1x.png);}
+		100%	{background-image: url(../_img/_fx/rainTile0_1x.png);}
+	}
+			
+	@keyframes pixels_tweenRainFrames
+	{
+		0%		{background-image: url(../_img/_fx/rainTile0_1x.png);}
+		25%		{background-image: url(../_img/_fx/rainTile1_1x.png);}
+		50%		{background-image: url(../_img/_fx/rainTile2_1x.png);}
+		75%		{background-image: url(../_img/_fx/rainTile1_1x.png);}
+		100%	{background-image: url(../_img/_fx/rainTile0_1x.png);}
+	}
+	
+	.pixels_forest
+	{
+		background-image: url(../_img/_tiles/tile_pineTrees_1x.png);
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_forestMass
+	{
+		background-image: url(../_img/_tiles/tile_pineTreesMass_1x.png);
+		background-repeat: repeat;
+		background-size: 240px 240px;		
+	}
+	
+	.pixels_levelNotice
+	{
+		background-image: url(../_img/_notice/levelTitle_1x.png);
+		background-repeat: no-repeat;
+		background-size: 80px 105px;
+	}
+	
+	.pixels_levelNoticeMoon
+	{
+		background: url(../_img/_notice/sunMoon.svg) no-repeat left top;
+		background-size: 110px 55px;
+	}
+	
+	.pixels_landDecay
+	{
+		background-image: url(../_img/_mapBlend/landPixelDecay_1x.png);
 		background-repeat: no-repeat;
 		background-size: 1200px 800px;
 	}
 	
-	.pixels_emptyBottom
+	.pixels_battleArena
 	{
-		background-image: url(../_img/microBattle_bottomEnd_1x.png);
-		background-repeat: repeat-x;
-		background-position: center top;
-		background-size: 240px 160px;
-	}
-	
-	.pixels_tileNeonGrass
-	{
-		background-image: url(../_img/tile_neonGrass_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 80px 80px;
-	}
-	
-	.pixels_boss
-	{
-		background-image: url(../_img/bossSprite_1x.png);
+		background-image: url(../_img/_battleArena/battleIsland_1x.png);
 		background-repeat: no-repeat;
-		background-size: 361px 216px;
+		background-size: 280px 280px;
 	}
 	
-	.pixels_rainRed0
+	.pixels_battleArenaStars
 	{
-		background-image: url(../_img/rainRed_0_1x.png);
-		background-position: center top;
+		background-image: url(../_img/_battleArena/battleStars_1x.png);
 		background-repeat: repeat;
-		background-size: 320px 320px;
-	}
-	
-	.pixels_rainRed1
-	{
-		background-image: url(../_img/rainRed_1_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_rainRed2
-	{
-		background-image: url(../_img/rainRed_2_1x.png);
-		background-position: center top;
-		background-repeat: repeat;
-		background-size: 320px 320px;		
-	}
-	
-	.pixels_spaceStars_0
-	{
-		background-image: url(../_img/spaceStars_0_x1.png);
-		background-repeat: repeat;
-		background-position: center top;
 		background-size: 240px 240px;
 	}
 	
-	.pixels_spaceStars_1
+	.pixels_battleArenaTrees
 	{
-		background-image: url(../_img/spaceStars_1_x1.png);
+		background-image: url(../_img/_battleArena/tile_battleArenaTrees_1x.png);
 		background-repeat: repeat;
-		background-position: center top;
-		background-size: 240px 240px;
-	}
-	
-	.pixels_planetMask
-	{
-		-webkit-mask			: url(../_img/planetSprite_1x.png);
-		-webkit-mask-size		: 280px 840px;
-		-webkit-mask-position	: 0 0;
-		-webkit-mask-repeat		: no-repeat; 
-		
-		mask					: url(../_img/planetSprite_1x.png);
-		mask-size				: 280px 840px;
-		mask-position			: 0 0;
-		mask-repeat				: no-repeat;
-	}
-	
-	.pixels_planetDisplay
-	{
-		background-image: url(../_img/planetSprite_1x.png);
-		background-size: 280px 840px;
-	}
-	
-	.pixels_microBattleFloor
-	{
-		background-image: url(../_img/battleLevelFloor_1x.png);
-		background-position: 0 0;
-		background-repeat: no-repeat;
-		background-size: 800px 560px;
-	}
-	
-	.pixels_spaceSquid
-	{
-		background-image: url(../_img/spaceSquid_1x.png);
-		background-repeat: no-repeat;
-		background-size: 160px 240px; 
-	}
-	
-/*
-	.pixels_battleCrowd_sky
-	{
-		background-image: url(../_img/battleSky_1x.png);
-		
-		background-size: 534px 360px;
-	}
-*/
-	
-/*
-	.pixels_battleCrowd_goats
-	{
-		background-image: url(../_img/battleCrowdTile_goats_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 80px 80px;
-	}
-*/
-	
-/*
-	.pixels_battleCrowd_rabbits
-	{
-		background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
-		background-size: 80px 80px;
-	}
-*/
-	
-	.pixels_battleEnd
-	{
-		background-image: url(../_img/battleEnd_1x.png);
-		background-repeat: no-repeat;
-		background-size: 534px 400px;
-	}
-	
-	.pixels_forestMassDark
-	{
-		background-image: url(../_img/tile_pineTreesMassDark_1x.png);
-		background-repeat: repeat;
-		background-position: center top;
 		background-size: 240px 240px;		
 	}
 	
-	.pixels_forestDark
-	{
-		background-image: url(../_img/tile_pineTreesDark_1x.png);
-		background-repeat: repeat;
-		background-size: 80px 80px;
-	}
 	
-	.pixels_flowerLightDark
+	.pixels_touch-ui
 	{
-		background-image: url(../_img/tile_flowersLightDark_1x.png);
+		background-image: url(../_img/_nav/touch-ui_cross.svg);
+		background-repeat: no-repeat;
 		background-position: 0 0;
-		background-repeat: repeat;
-		background-size: 80px 80px;
+		background-size: 160px 160px;
 	}
 	
-	.pixels_flowerHeavyDark
+	.pixels_touch-mini
 	{
-		background-image: url(../_img/tile_flowersHeavyDark_1x.png);
+		background-image: url(../_img/_nav/touch-ui_cross_min.svg);
+		background-repeat: no-repeat;
 		background-position: 0 0;
-		background-repeat: repeat;
-		background-size: 80px 80px;
-	}	
-
-/* ----------------------------------------------------------------------- GENERAL */
-
-
-
-
-/* ----------------------------------------------------------------------- VECTOR */
-
-	.vectors_battleNav
-	{
-		background: url(../_img/battleNavOptions.svg) no-repeat left top;
-		/* background-size: 180px 270px; */
+		background-size: 40px 40px;
 	}
 	
-	.vectors_battleHint
-	{
-		background: url(../_img/battleNavHint.svg) no-repeat left top;
-		/* background-size: 270px 60px; */
-	}
+
+/* 1x */
 	
-	.vectors_touch-ui
-	{
-		background-image: url(../_img/touch-ui_cross.svg);
-		background-repeat: no-repeat;
-		/* background-size: 160px 160px; */
-	}
-	
-	.vectors_touch-mini
-	{
-		background-image: url(../_img/touch-ui_cross_min.svg);
-		background-repeat: no-repeat;
-		/* background-size: 40px 40px; */
-	}
-	
-	.vectors_clash_cloud
-	{
-		background-image: url(../_img/clash_cloud.svg);
-		background-repeat: no-repeat;
-		/* background-size: 240px 120px; */
-	}
-
-/* ----------------------------------------------------------------------- VECTOR */
-
-
-
-
-/* ----------------------------------------------------------------------- 1 PIXEL DEPTH */
-
 	@media all and (-webkit-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1)
 	{
-		.pixels_landDecay
+		.startPixels
 		{
-			background-image: url(../_img/landPixelDecay_1x.png);
+			background-image: url(../_img/0_start/startSprite_1x.png);
 		}
 		
-		.pixels_woodlandBottom
+		.colour-navPink-Pixels
 		{
-			background-image: url(../_img/bottomEnd_1x.png);
+			background-image: url(../_img/0_start/col_nav-pink_1x.png);
 		}
 		
-		.pixels_forestMass
+		.babyPixels
 		{
-			background-image: url(../_img/tile_pineTreesMass_1x.png);		
+			background-image: url(../_img/_characters/_intro/_baby/babySprite_1x.png);
 		}
 		
-		.pixels_portal
+		.bossPixels
 		{
-			background-image: url(../_img/portalSprite_1x.png);
+			background-image: url(../_img/_characters/_intro/_boss/bossSprite_1x.png);
 		}
 		
-		.pixels_forest
+		.goatPixels
 		{
-			background-image: url(../_img/tile_pineTrees_1x.png);
+			background-image: url(../_img/_characters/_intro/_goat/goatSprite_2x.png);
+		}
+		
+		.grassPixels
+		{
+			background-image: url(../_img/_scene/grassTile_1x.png);
+		}
+		
+		.skyPixels
+		{
+			background-image: url(../_img/_scene/bg0_1x.png);			
+		}
+		
+		.punchCloudPixels
+		{
+			background-image: url(../_img/1_intro/cloudSprite_1x.png);			
+		}
+		
+		.punchCloudTilePixels
+		{
+			background-image: url(../_img/1_intro/bossCloudTile_1x.png);
+		}
+		
+		.fallOffPixels
+		{
+			background-image: url(../_img/_scene/worldEdge_1x.png);		
+		}
+		
+		.groundChipsPixels
+		{
+			background-image: url(../_img/_scene/groundTexture_1x.png);	
+		}
+		
+		.introWallBreaksPixels
+		{
+			background-image: url(../_img/1_intro/introEndBG_1x.png);
+		}
+		
+		.battleCloudPixels
+		{
+			background-image: url(../_img/_battleNav/battleNavCloud_1x.png);
+		}
+		
+		.battleFlowPixels
+		{
+			background-image: url(../_img/_battleNav/battleNavSprite_1x.png);
+		}
+		
+		.stepsPixels
+		{
+			background-image: url(../_img/_scene/steps_1x.png);
+		}
+		
+		.noticeRaccoonPixels
+		{	
+			background-image: url(../_img/_notice/notice_raccoon_1x.png);
+		}
+		
+		
+		
+		
+		.pixels_field
+		{
+			background-image: url(../_img/_tiles/tile_floor_1x.png);
+		}
+		
+		.pixels_mapCloudBtm
+		{
+			background-image: url(../_img/_mapBlend/cloudMergeBTM_1x.png);
+		}
+		
+		.pixels_mapCloudTop
+		{
+			background-image: url(../_img/_mapBlend/cloudMergeTOP_1x.png);
+		}
+		
+		.pixels_weather-snow
+		{
+			background-image: url(../_img/_fx/snow_1x.png);
+		}
+		
+		.pixels_weatherWindShadowCloud
+		{
+			background-image: url(../_img/_fx/cloudWindShadow_1x.png);
+		}
+		
+		.pixels_bush
+		{
+			background-image	: url(../_img/_tiles/tile_bush_1x.png);
+		}
+		
+		.pixels_btm_bg_grass
+		{
+			background-image: url(../_img/_tiles/tile_btm_bg_grass_1x.png);
+		}
+		
+		.pixels_btm_bg_bushBorder
+		{
+			background-image: url(../_img/_tiles/tile_btm_bg_bushBorder_1x.png);
+		}
+		
+		.pixels_btm_bg_levelFinish
+		{
+			background-image: url(../_img/_mapBlend/levelFinish_1x.png);
+		}
+		
+		.pixels_darkEdge
+		{
+			background-image: url(../_img/_mapBlend/blackEdge_1x.png);
 		}
 		
 		.pixels_flowerLight
 		{
-			background-image: url(../_img/tile_flowersLight_1x.png);
+			background-image: url(../_img/_tiles/tile_flowersLight_1x.png);
 		}
 		
 		.pixels_flowerHeavy
 		{
-			background-image: url(../_img/tile_flowersHeavy_1x.png);
+			background-image: url(../_img/_tiles/tile_flowersHeavy_1x.png);
 		}
 		
 		.pixels_flowerRichCross
 		{
-			background-image: url(../_img/tile_flowersRich_+_1x.png);
+			background-image: url(../_img/_tiles/tile_flowersRich_+_1x.png);
 		}
 		
-		.pixels_rain0
+		.pixels_griz
 		{
-			background-image: url(../_img/rain_0_1x.png);
+			background: url(../_img/_characters/_roam/_griz/griz_1x.png);
 		}
 		
-		.pixels_rain1
+		.pixels_mapGoat
 		{
-			background-image: url(../_img/rain_1_1x.png);		
+			background-image: url(../_img/_characters/_roam/_goat/mapChar_goat_1x.png);	
 		}
 		
-		.pixels_rain2
+		.pixels_portalTile
 		{
-			background-image: url(../_img/rain_2_1x.png);		
+			background-image: url(../_img/_portal/portal_1x.png);
 		}
 		
-		.pixels_snow0
+		.pixels_woodlandBottom
 		{
-			background-image: url(../_img/snow_0_1x.png);
+			background-image: url(../_img/_mapBlend/bottomEnd_1x.png);
 		}
 		
-		.pixels_snow1
+		.pixels_woodlandBottomAlt
 		{
-			background-image: url(../_img/snow_1_1x.png);		
+			background-image: url(../_img/_mapBlend/bottomEndAlt_1x.png);
 		}
 		
-		.pixels_snow2
+		.pixels_flame
 		{
-			background-image: url(../_img/snow_2_1x.png);	
-		}
-		
-		.pixels_wind0
-		{
-			background-image: url(../_img/wind_0_1x.png);
-		}
-		
-		.pixels_wind1
-		{
-			background-image: url(../_img/wind_1_1x.png);	
-		}
-		
-		.pixels_wind2
-		{
-			background-image: url(../_img/wind_2_1x.png);		
-		}
-		
-		.pixels_start
-		{
-			background-image: url(../_img/startSprite_1x.png);
-		}
-		
-/*
-		.pixels_colour-navPink
-		{
-			background-image: url(../_img/col_nav-pink_1x.png);
-		}
-*/
-		
-		.pixels_map_player
-		{
-			background-image: url(../_img/map_playerSprite_1x.png);
-		}
-		
-		.pixels_battleFlow
-		{
-			background-image: url(../_img/battleNavSprite_1x.png);				
-		}
-		
-		.pixels_map_enemy40x40
-		{
-			background-image: url(../_img/map_enemySprite40x40_1x.png);	
-		}
-		
-		.pixels_portalScreen
-		{
-			background-image: url(../_img/tilePortalScreenLRG_1x.png);
-		}
-		
-		.pixels_battleCloud
-		{
-			background-image: url(../_img/battleNavCloud_1x.png);
-		}
-		
-		.pixels_battleFlow
-		{
-			background-image: url(../_img/battleNavSprite_1x.png);			
-		}
-		
-		.pixels_warCrabs
-		{
-			background-image: url(../_img/tile_microBattle_bg_1x.png);
+			background-image: url(../_img/_fx/fire_1x.png);
 		}
 
-		.pixels_warCrabsAlt
+		@-webkit-keyframes pixels_tweenRainFrames
 		{
-			background-image: url(../_img/tile_microBattle_Alt_bg_1x.png);
+			0%		{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile2_1x.png); background-size: 100px 100px;}
+		}
+				
+		@keyframes pixels_tweenRainFrames
+		{
+			0%		{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile2_1x.png); background-size: 100px 100px;}
 		}
 		
-		.pixels_fire
+		.pixels_forest
 		{
-			background-image: url(../_img/flameSprite_1x.png);
+			background-image: url(../_img/_tiles/tile_pineTrees_1x.png);
 		}
 		
-		.pixels_emptyDecay
+		.pixels_forestMass
 		{
-			background-image: url(../_img/microBattle_landPixelDecay_1x.png);
+			background-image: url(../_img/_tiles/tile_pineTreesMass_1x.png);		
 		}
 		
-		.pixels_emptyBottom
+		.pixels_levelNotice
 		{
-			background-image: url(../_img/microBattle_bottomEnd_1x.png);
+			background-image: url(../_img/_notice/levelTitle_1x.png);
 		}
 		
-		.pixels_tileNeonGrass
+		.pixels_landDecay
 		{
-			background-image: url(../_img/tile_neonGrass_1x.png);
+			background-image: url(../_img/_mapBlend/landPixelDecay_1x.png);
 		}
 		
-		.pixels_boss
+		.pixels_battleArena
 		{
-			background-image: url(../_img/bossSprite_1x.png);
+			background-image: url(../_img/_battleArena/battleIsland_1x.png);
 		}
 		
-		.pixels_rainRed0
+		.pixels_battleArenaStars
 		{
-			background-image: url(../_img/rainRed_0_1x.png);
+			background-image: url(../_img/_battleArena/battleStars_1x.png);
 		}
 		
-		.pixels_rainRed1
+		.pixels_battleArenaTrees
 		{
-			background-image: url(../_img/rainRed_1_1x.png);		
-		}
-		
-		.pixels_rainRed2
-		{
-			background-image: url(../_img/rainRed_2_1x.png);		
-		}
-		
-		.pixels_spaceStars_0
-		{
-			background-image: url(../_img/spaceStars_0_x1.png);
-		}
-		
-		.pixels_spaceStars_1
-		{
-			background-image: url(../_img/spaceStars_1_x1.png);
-		}
-		
-		.pixels_planetMask
-		{
-			-webkit-mask			: url(../_img/planetSprite_1x.png);
-			
-			mask					: url(../_img/planetSprite_1x.png);
-		}
-		
-		.pixels_planetDisplay
-		{
-			background-image: url(../_img/planetSprite_1x.png);
-		}
-		
-		.pixels_microBattleFloor
-		{
-			background-image: url(../_img/battleLevelFloor_1x.png);
-		}
-		
-		.pixels_spaceSquid
-		{
-			background-image: url(../_img/spaceSquid_1x.png);
-		}
+			background-image: url(../_img/_battleArena/tile_battleArenaTrees_1x.png);	
+		}		
+
 		
 /*
-		.pixels_battleCrowd_sky
+		@-webkit-keyframes pixels_tweenRainFrames
 		{
-			background-image: url(../_img/battleSky_1x.png);
+			0%		{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
+			25%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile2_1x.png); background-size: 100px 100px;}
+			75%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
 		}
-*/
-		
-/*
-		.pixels_battleCrowd_goats
+				
+		@keyframes pixels_tweenRainFrames
 		{
-			background-image: url(../_img/battleCrowdTile_goats_1x.png);
+			0%		{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
+			25%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile2_1x.png); background-size: 100px 100px;}
+			75%		{background-image: url(../_img/_fx/rainTile1_1x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile0_1x.png); background-size: 100px 100px;}
 		}
-*/
-		
-/*
-		.pixels_battleCrowd_rabbits
-		{
-			background-image: url(../_img/battleCrowdTile_rabbits_1x.png);
-		}
-*/
-		
-		.pixels_battleEnd
-		{
-			background-image: url(../_img/battleEnd_1x.png);
-		}
-		
-		.pixels_forestMassDark
-		{
-			background-image: url(../_img/tile_pineTreesMassDark_1x.png);	
-		}
-		
-		.pixels_forestDark
-		{
-			background-image: url(../_img/tile_pineTreesDark_1x.png);
-		}
-		
-		.pixels_flowerLightDark
-		{
-			background-image: url(../_img/tile_flowersLightDark_1x.png);
-		}
-		
-		.pixels_flowerHeavyDark
-		{
-			background-image: url(../_img/tile_flowersHeavyDark_1x.png);
-		}						
+*/	
 	}
 
-
-/* ----------------------------------------------------------------------- 1 PIXEL DEPTH */
-
-
-
-/* ----------------------------------------------------------------------- 2 PIXEL DEPTH */
+/* 2x */
 
 	@media all and (-webkit-min-device-pixel-ratio: 2), all and (min-device-pixel-ratio: 2)
 	{
-		.pixels_landDecay
+		.startPixels
 		{
-			background-image: url(../_img/landPixelDecay_2x.png);
+			background-image: url(../_img/0_start/startSprite_2x.png);
 		}
 		
-		.pixels_woodlandBottom
+		.colour-navPink-Pixels
 		{
-			background-image: url(../_img/bottomEnd_2x.png);
+			background-image: url(../_img/0_start/col_nav-pink_2x.png);
 		}
 		
-		.pixels_forestMass
+		.babyPixels
 		{
-			background-image: url(../_img/tile_pineTreesMass_2x.png);		
+			background-image: url(../_img/_characters/_intro/_baby/babySprite_2x.png);
 		}
 		
-		.pixels_portal
+		.bossPixels
 		{
-			background-image: url(../_img/portalSprite_2x.png);
+			background-image: url(../_img/_characters/_intro/_boss/bossSprite_2x.png);
 		}
-	
-		.pixels_forest
+		
+		.goatPixels
 		{
-			background-image: url(../_img/tile_pineTrees_2x.png);
+			background-image: url(../_img/_characters/_intro/_goat/goatSprite_2x.png);
+		}
+		
+		.grassPixels
+		{
+			background-image: url(../_img/_scene/grassTile_2x.png);
+		}
+		
+		.skyPixels
+		{
+			background-image: url(../_img/_scene/bg0_2x.png);			
+		}
+		
+		.punchCloudPixels
+		{
+			background-image: url(../_img/1_intro/cloudSprite_2x.png);			
+		}
+		
+		.punchCloudTilePixels
+		{
+			background-image: url(../_img/1_intro/bossCloudTile_2x.png);
+		}
+		
+		.fallOffPixels
+		{
+			background-image: url(../_img/_scene/worldEdge_2x.png);		
+		}
+		
+		.groundChipsPixels
+		{
+			background-image: url(../_img/_scene/groundTexture_2x.png);	
+		}
+		
+		.introWallBreaksPixels
+		{
+			background-image: url(../_img/1_intro/introEndBG_2x.png);
+		}
+		
+		.battleCloudPixels
+		{
+			background-image: url(../_img/_battleNav/battleNavCloud_2x.png);
+		}
+		
+		.battleFlowPixels
+		{
+			background-image: url(../_img/_battleNav/battleNavSprite_2x.png);
+		}
+		
+		.stepsPixels
+		{
+			background-image: url(../_img/_scene/steps_2x.png);
+		}
+		
+		.noticeRaccoonPixels
+		{	
+			background-image: url(../_img/_notice/notice_raccoon_2x.png);
+		}
+		
+		
+		
+		
+		.pixels_field
+		{
+			background-image: url(../_img/_tiles/tile_floor_2x.png);
+		}
+		
+		.pixels_mapCloudBtm
+		{
+			background-image: url(../_img/_mapBlend/cloudMergeBTM_2x.png);
+		}
+		
+		.pixels_mapCloudTop
+		{
+			background-image: url(../_img/_mapBlend/cloudMergeTOP_2x.png);
+		}
+		
+		.pixels_weather-snow
+		{
+			background-image: url(../_img/_fx/snow_2x.png);
+		}
+		
+		.pixels_weatherWindShadowCloud
+		{
+			background-image: url(../_img/_fx/cloudWindShadow_2x.png);
+		}
+		
+		.pixels_bush
+		{
+			background-image	: url(../_img/_tiles/tile_bush_2x.png);
+		}
+		
+		.pixels_btm_bg_grass
+		{
+			background-image: url(../_img/_tiles/tile_btm_bg_grass_2x.png);
+		}
+		
+		.pixels_btm_bg_bushBorder
+		{
+			background-image: url(../_img/_tiles/tile_btm_bg_bushBorder_2x.png);
+		}
+		
+		.pixels_btm_bg_levelFinish
+		{
+			background-image: url(../_img/_mapBlend/levelFinish_2x.png);
+		}
+		
+		.pixels_darkEdge
+		{
+			background-image: url(../_img/_mapBlend/blackEdge_2x.png);
 		}
 		
 		.pixels_flowerLight
 		{
-			background-image: url(../_img/tile_flowersLight_2x.png);
+			background-image: url(../_img/_tiles/tile_flowersLight_2x.png);
 		}
 		
 		.pixels_flowerHeavy
 		{
-			background-image: url(../_img/tile_flowersHeavy_2x.png);
+			background-image: url(../_img/_tiles/tile_flowersHeavy_2x.png);
 		}
 		
 		.pixels_flowerRichCross
 		{
-			background-image: url(../_img/tile_flowersRich_+_2x.png);
+			background-image: url(../_img/_tiles/tile_flowersRich_+_2x.png);
 		}
 		
-		.pixels_rain0
+		.pixels_griz
 		{
-			background-image: url(../_img/rain_0_2x.png);
+			background: url(../_img/_characters/_roam/_griz/griz_2x.png);
 		}
 		
-		.pixels_rain1
+		.pixels_mapGoat
 		{
-			background-image: url(../_img/rain_1_2x.png);		
+			background-image: url(../_img/_characters/_roam/_goat/mapChar_goat_2x.png);	
 		}
 		
-		.pixels_rain2
+		.pixels_portalTile
 		{
-			background-image: url(../_img/rain_2_2x.png);		
+			background-image: url(../_img/_portal/portal_2x.png);
 		}
 		
-		.pixels_snow0
+		.pixels_woodlandBottom
 		{
-			background-image: url(../_img/snow_0_2x.png);
+			background-image: url(../_img/_mapBlend/bottomEnd_2x.png);
 		}
 		
-		.pixels_snow1
+		.pixels_woodlandBottomAlt
 		{
-			background-image: url(../_img/snow_1_2x.png);		
+			background-image: url(../_img/_mapBlend/bottomEndAlt_2x.png);
 		}
 		
-		.pixels_snow2
+		.pixels_flame
 		{
-			background-image: url(../_img/snow_2_2x.png);	
+			background-image: url(../_img/_fx/fire_2x.png);
 		}
-		
-		.pixels_wind0
-		{
-			background-image: url(../_img/wind_0_2x.png);
-		}
-		
-		.pixels_wind1
-		{
-			background-image: url(../_img/wind_1_2x.png);	
-		}
-		
-		.pixels_wind2
-		{
-			background-image: url(../_img/wind_2_2x.png);		
-		}
-		
-		.pixels_start
-		{
-			background-image: url(../_img/startSprite_2x.png);
-		}
-		
-/*
-		.pixels_colour-navPink
-		{
-			background-image: url(../_img/col_nav-pink_2x.png);
-		}
-*/
-		
-		.pixels_map_player
-		{
-			background-image: url(../_img/map_playerSprite_2x.png);
-		}
-		
-		.pixels_battleFlow
-		{
-			background-image: url(../_img/battleNavSprite_2x.png);				
-		}
-		
-		.pixels_map_enemy40x40
-		{
-			background-image: url(../_img/map_enemySprite40x40_2x.png);	
-		}
-		
-		.pixels_portalScreen
-		{
-			background-image: url(../_img/tilePortalScreenLRG_2x.png);
-		}
-		
-		.pixels_battleCloud
-		{
-			background-image: url(../_img/battleNavCloud_2x.png);
-		}
-		
-		.pixels_battleFlow
-		{
-			background-image: url(../_img/battleNavSprite_2x.png);			
-		}
-		
-		.pixels_warCrabs
-		{
-			background-image: url(../_img/tile_microBattle_bg_2x.png);
-		}
-		
-		.pixels_warCrabsAlt
-		{
-			background-image: url(../_img/tile_microBattle_Alt_bg_2x.png);
-		}
-		
-		.pixels_fire
-		{
-			background-image: url(../_img/flameSprite_2x.png);
-		}
-		
-		.pixels_emptyDecay
-		{
-			background-image: url(../_img/microBattle_landPixelDecay_2x.png);
-		}
-		
-		.pixels_emptyBottom
-		{
-			background-image: url(../_img/microBattle_bottomEnd_2x.png);
-		}
-		
-		.pixels_tileNeonGrass
-		{
-			background-image: url(../_img/tile_neonGrass_2x.png);
-		}
-		
-		.pixels_boss
-		{
-			background-image: url(../_img/bossSprite_2x.png);
-		}
-		
-		.pixels_rainRed0
-		{
-			background-image: url(../_img/rainRed_0_2x.png);
-		}
-		
-		.pixels_rainRed1
-		{
-			background-image: url(../_img/rainRed_1_2x.png);		
-		}
-		
-		.pixels_rainRed2
-		{
-			background-image: url(../_img/rainRed_2_2x.png);		
-		}
-		
-		.pixels_spaceStars_0
-		{
-			background-image: url(../_img/spaceStars_0_x2.png);
-		}
-		
-		.pixels_spaceStars_1
-		{
-			background-image: url(../_img/spaceStars_1_x2.png);
-		}
-		
-		.pixels_planetMask
-		{
-			-webkit-mask			: url(../_img/planetSprite_2x.png);
-			
-			mask					: url(../_img/planetSprite_2x.png);
-		}
-		
-		.pixels_planetDisplay
-		{
-			background-image: url(../_img/planetSprite_2x.png);
-		}
-		
-		.pixels_microBattleFloor
-		{
-			background-image: url(../_img/battleLevelFloor_2x.png);
-		}
-		
-		.pixels_spaceSquid
-		{
-			background-image: url(../_img/spaceSquid_2x.png);
-		}
-		
-/*
-		.pixels_battleCrowd_sky
-		{
-			background-image: url(../_img/battleSky_2x.png);
-		}
-*/
-		
-/*
-		.pixels_battleCrowd_goats
-		{
-			background-image: url(../_img/battleCrowdTile_goats_2x.png);
-		}
-*/
-		
-/*
-		.pixels_battleCrowd_rabbits
-		{
-			background-image: url(../_img/battleCrowdTile_rabbits_2x.png);
-		}
-*/
-		
-		.pixels_battleEnd
-		{
-			background-image: url(../_img/battleEnd_2x.png);
-		}
-		
-		.pixels_forestMassDark
-		{
-			background-image: url(../_img/tile_pineTreesMassDark_2x.png);	
-		}
-		
-		.pixels_forestDark
-		{
-			background-image: url(../_img/tile_pineTreesDark_2x.png);
-		}
-		
-		.pixels_flowerLightDark
-		{
-			background-image: url(../_img/tile_flowersLightDark_2x.png);
-		}
-		
-		.pixels_flowerHeavyDark
-		{
-			background-image: url(../_img/tile_flowersHeavyDark_2x.png);
-		}										
-	}
 
-/* ----------------------------------------------------------------------- 2 PIXEL DEPTH */
+		@-webkit-keyframes pixels_tweenRainFrames
+		{
+			0%		{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile2_2x.png); background-size: 100px 100px;}
+		}
+				
+		@keyframes pixels_tweenRainFrames
+		{
+			0%		{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile2_2x.png); background-size: 100px 100px;}
+		}
+		
+		.pixels_forest
+		{
+			background-image: url(../_img/_tiles/tile_pineTrees_2x.png);
+		}
+		
+		.pixels_forestMass
+		{
+			background-image: url(../_img/_tiles/tile_pineTreesMass_2x.png);		
+		}
+		
+		.pixels_levelNotice
+		{
+			background-image: url(../_img/_notice/levelTitle_2x.png);
+		}
+		
+		.pixels_landDecay
+		{
+			background-image: url(../_img/_mapBlend/landPixelDecay_2x.png);
+		}
+		
+		.pixels_battleArena
+		{
+			background-image: url(../_img/_battleArena/battleIsland_2x.png);
+		}
+		
+		.pixels_battleArenaStars
+		{
+			background-image: url(../_img/_battleArena/battleStars_2x.png);
+		}
+		
+		.pixels_battleArenaTrees
+		{
+			background-image: url(../_img/_battleArena/tile_battleArenaTrees_2x.png);	
+		}	
+		
+/*
+		@-webkit-keyframes pixels_tweenRainFrames
+		{
+			0%		{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+			25%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile2_2x.png); background-size: 100px 100px;}
+			75%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+		}
+				
+		@keyframes pixels_tweenRainFrames
+		{
+			0%		{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+			25%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			50%		{background-image: url(../_img/_fx/rainTile2_2x.png); background-size: 100px 100px;}
+			75%		{background-image: url(../_img/_fx/rainTile1_2x.png); background-size: 100px 100px;}
+			100%	{background-image: url(../_img/_fx/rainTile0_2x.png); background-size: 100px 100px;}
+		}
+*/			
+	}
