@@ -1,137 +1,82 @@
 <!DOCTYPE HTML>
 <html lang="en">
-
+	
 	<head>
+		
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
-		<meta name="description" content="A tale of rock, paper, and scissors eternally told...">
-		<meta name="keywords" content="kinslowdian, Simon Kinslow, browser game" />
-		<meta name="revised" content="Simon Kinslow, 07/04/2014" />
-	
-		<title>BITMAP ADVENTURE by Simon Kinslow</title>
-	
+		<meta name="description" content="A tale of rock, paper, and scissors eternally told... Developed by Simon Kinslow">
+		<meta name="keywords" content="Mini RPG, browswer game, HTML5 game, Simon Kinslow, Kinslowdian, Pixel Art" />
+		<meta name="revised" content="Simon Kinslow, 19/06/2014" />
+		
+		<title>Forests of 40 Pixels. By Simon Kinslow</title>
+		
 		<link rel="icon" type="image/png" href="fav.png" />
 		<link rel="apple-touch-icon" href="iPhone.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="iPad.png" />
 		<link rel="apple-touch-icon" sizes="114x114" href="iPhone4.png" />
 		
-		<link href="_assets/_css/bitmapadv_build.css" rel="stylesheet" type="text/css">
+		<link href="_assets/_css/game.css" rel="stylesheet" type="text/css">
 		
-		<script type="text/javascript" src="_assets/_js/debug_trace.js"></script>
+		<script type="text/javascript" src="_assets/_js/Debug.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/_jquery/jquery-2.0.3.js"></script>
-		<script type="text/javascript" src="_assets/_js/_collision/jquery-collision.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_jquery/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="_assets/_js/_libs/_collision/jquery-collision.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/LoaderJSON.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/BitmapAdventure.js"></script>
+		<script type="text/javascript" src="_assets/_js/Game.js"></script>
+		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
+		<script type="text/javascript" src="_assets/_js/Game_Control.js"></script>
+		<script type="text/javascript" src="_assets/_js/Battle.js"></script>
 		
+		<script type="text/javascript" src="_assets/_js/Data.js"></script>
+		<script type="text/javascript" src="_assets/_js/Display.js"></script>
 		<script type="text/javascript" src="_assets/_js/AnimationEventManager.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/Intro.js"></script>
-		<script type="text/javascript" src="_assets/_js/Notice.js"></script>
+		<script type="text/javascript" src="_assets/_js/Temp.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/Move.js"></script>
-		<script type="text/javascript" src="_assets/_js/Tile.js"></script>
-		<script type="text/javascript" src="_assets/_js/Weather.js"></script>
 		
-		<script type="text/javascript" src="_assets/_js/BattleNav.js"></script>
-		<script type="text/javascript" src="_assets/_js/BattleScene.js"></script>
-		<script type="text/javascript" src="_assets/_js/BattleEngine.js"></script>
-	
+		
 	</head>
-
-	<body onorientationchange="phoneRotate(event);"> <!-- class="introBG" -->
 	
-		<div id="fader"></div>
+	<body onorientationchange="phoneRotate(event);">
 		
-		<div id="skipIntro">
-			
-			<div class="skipIntroIcon startPixels"></div>
-			
-			<div class="skipIntroText">
-				
-				<p class="font-dosis">HEAD INTO BATTLE</p>
-				
+		<div id="displayErrorWrapper">
+
+			<div class="displayError tween-displayError displayErrorHide">
+
+				<div class="displayError-top">		
+					
+					<div class="message font-dosis">
+						
+						<p>TURN ME AROUND</p>
+					
+					</div>
+					
+				</div>
+
+				<div class="displayError-btm pixels_colour-navPink">
+
+					<div class="boss-head-fullBleed pixels_start tween-boss-head-start"></div>
+					<div class="boss-body-fullBleed pixels_start"></div>
+					<div class="boss-hand-fullBleed-L boss-hand-fullBleed pixels_start"></div>
+					<div class="boss-hand-fullBleed-R boss-hand-fullBleed pixels_start"></div>
+
+				</div>
+
 			</div>
 
+			<div class="displayError-base pixels_colour-navPink tween-displayError-base"></div>
+		
 		</div>
 		
-		<div id="battles"></div>
+		<div id="display_wrapper" class="edgeBleed-forest">
 		
-		<div id="eventFill"></div>
+		</div> <!-- #display_wrapper -->
 		
-		<div id="gameDisp">
-		
-			<div id="wrapper-startIntro" class="wrapper">
-		
-				<div class="fallOff tween-fallOff">
-								
-					<div class="fallOff-TOP fallOffPixels"></div>
-					<div class="fallOff-BTM"></div>
-				
-				</div>
-		
-				<div id="stage-startIntro" class="stage viewer"> <!-- class="viewer" -->
-					
-					
-					<div id="START">
-						
-						
-						<div id="START-goat" class="startPixels tween-start-goat"></div>
-						
-						<!-- <header class="font-dosis">DIREVERSION</header> -->
-						<header class="font-dosis">BITMAP ADVENTURE</header>
-						
-						<div id="START-content">
-							
-							<div id="introDetail0">
-												
-								<p class="font-dosis">AN EPIC<br>ROCK, PAPER, SCISSORS<br>GAME</p>
-												
-								
-								
-								<div class="trigger-holder">
-									
-									<button id="trigger-gameBegin" class="font-dosis" onclick="userPresent(event);">BEGIN</button>
-									
-								</div>
-												
-								<p class="font-dosis">DESIGNED &amp; DEVELOPED BY<br><a href="http://www.simonkinslow.com" target="_blank" alt="My Portfolio">SIMON KINSLOW 2013</a></p>
-											
-							</div>
-							
-							
-							<div id="START-boss" class="colour-navPink-Pixels"> <!-- class="colour-navPink-Pixels" -->
-								
-								<div id="START-boss-head" class="startPixels tween-boss-head-start"></div>
-								<div id="START-boss-body" class="startPixels"></div>
-								<div id="START-boss-hand-L" class="startPixels startBossHand"></div>
-								<div id="START-boss-hand-R" class="startPixels startBossHand"></div>
-								
-							</div>
-							
-						</div>
-						
-							
-							
-							
-						
-					</div> <!-- #START -->
-					
-					<div class="START-fill start-extras"></div>
-					
-					<div class="START-trees tween-battleArena-stars pixels_battleArenaTrees start-extras"></div>
-					
-				</div> <!-- #stage -->
-			
-			</div> <!-- #wrapper -->
-		
-		</div> <!-- #gameDisp -->
-	
 		<div id="memory"></div>
-		
+	
 	</body>
-
+	
 </html>

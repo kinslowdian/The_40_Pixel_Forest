@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="160px" height="160px" viewBox="0 0 160 160" enable-background="new 0 0 160 160" xml:space="preserve">
+<g opacity="0.2">
+	<circle fill="#B7B7AD" cx="80" cy="80" r="76"/>
+</g>
+<path fill="#FFFFFF" d="M80,0C35.817,0,0,35.817,0,80s35.817,80,80,80s80-35.817,80-80S124.183,0,80,0z M155.975,79H81V4.025
+	C122.111,4.561,155.439,37.889,155.975,79z M79,4.025V79H4.025C4.561,37.889,37.889,4.561,79,4.025z M4.025,81H79v74.975
+	C37.889,155.439,4.561,122.111,4.025,81z M81,155.975V81h74.975C155.439,122.111,122.111,155.439,81,155.975z"/>
+<path fill="#DAFF00" d="M40,35c-2.761,0-5,2.239-5,5s2.239,5,5,5s5-2.239,5-5S42.761,35,40,35L40,35z"/>
+<path fill="#DAFF00" d="M120,35c-2.762,0-5,2.239-5,5s2.238,5,5,5s5-2.239,5-5S122.762,35,120,35L120,35z"/>
+<path fill="#DAFF00" d="M40,115c-2.761,0-5,2.238-5,5s2.239,5,5,5s5-2.238,5-5S42.761,115,40,115L40,115z"/>
+<path fill="#DAFF00" d="M120,115c-2.762,0-5,2.238-5,5s2.238,5,5,5s5-2.238,5-5S122.762,115,120,115L120,115z"/>
+</svg>

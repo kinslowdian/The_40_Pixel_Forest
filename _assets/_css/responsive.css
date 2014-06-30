@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* PORTAL SCREEN */
+
+/* BATTLE NAV */
+
+/* LEVEL_BATTLE */
+	
+
+/* ----------------------------------------------------------------------- PHONE GENERAL */	
+	
+	/* if(screen.width <= 480) */
+	@media screen and (max-width:480px)
+	{
+		/* ----------------------------------------------------------------------- PORTAL SCREEN */
+		
+		#portalScreen .portalScreen_title_left
+		{
+			/* FORCE CENTER (!important) */
+			text-align: center !important;
+		}	
+
+		#portalScreen .portalScreen_title_right
+		{
+			/* FORCE CENTER (!important) */
+			text-align: center !important;
+		}		
+		
+		/* ----------------------------------------------------------------------- PORTAL SCREEN */		
+
+
+
+
+		/* ----------------------------------------------------------------------- BATTLE NAV */	
+
+		.microBattle_darkness_infoBlock
+		{
+			height: 40px !important;	
+		}
+		
+		.microBattle_darkness_infoBlock .microBattle_darkness_info_text
+		{
+			height: 40px !important;
+			font-size: 40px !important;
+			line-height: 40px !important;
+		}
+		
+		/* ----------------------------------------------------------------------- BATTLE NAV */
+		
+		
+		
+		
+		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
+		
+		.microBattle_endSky
+		{
+			height: 180px;
+		}
+		
+		.microBattle_sunMoon
+		{
+			-webkit-transform: translateX(0px);
+			transform: translateX(0px);			
+		}
+		
+		.microBattle_sunMoon_sprite_rise
+		{
+			-webkit-transform: translateY(-160px);
+			transform: translateY(-160px);			
+		}		
+		
+		/* ----------------------------------------------------------------------- LEVEL_BATTLE */
+		
+	}
+	
+/* ----------------------------------------------------------------------- PHONE GENERAL */	
