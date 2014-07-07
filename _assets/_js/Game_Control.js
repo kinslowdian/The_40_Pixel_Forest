@@ -101,7 +101,7 @@
 			CONTROL_SIGNAL.enableTouch = true;
 
 			$(window)[0].addEventListener("touchstart", screenTouchMainListen, false);
-			$(window)[0].addEventListener("touchend", screenTouchMainListen, false);
+			$(window)[0].addEventListener("touchend", screenTouchMainListen, false);				
 			
 			CONTROL_SIGNAL.html.touchNav = $("#touchPad").html();
 			
@@ -314,7 +314,7 @@
 		{
 			event.preventDefault();
 			
-			if(event.type === "touchstart")
+			if(event.type === "touchstart" && DISPLAY._width <= 480)
 			{
 				css_max = 	{
 								"-webkit-transform"	: "scale(1)",
@@ -329,7 +329,7 @@
 							};
 			}
 			
-			if(event.type === "touchend")
+			if(event.type === "touchend" && DISPLAY._width <= 480)
 			{
 				css_max = 	{
 								"-webkit-transform"	: "scale(0)",
