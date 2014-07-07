@@ -330,7 +330,7 @@
 		animation			: tweenBossHeadStartFrames 1s ease-in-out infinite;
 	}
 	
-	.#displayErrorWrapper .bossFullBleed
+	#displayErrorWrapper .bossFullBleed
 	{
 		background: #1a004d;
 	}
