@@ -843,7 +843,11 @@
 		BATTLE_NAV.options.scissors.index	= 2;
 		
 		BATTLE_NAV.player_1.head = $("#battle-nav-player1 .battleCute-warrior-head");
-		BATTLE_NAV.player_2.head = $("#battle-nav-player2 .battleCute-warrior-head");		
+		BATTLE_NAV.player_2.head = $("#battle-nav-player2 .battleCute-warrior-head");
+		
+		// Temp.js
+		battleNav_init_extended();
+		// Temp.js		
 	}
 	
 	function battleNav_show()
@@ -1162,7 +1166,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
-		BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "DRAW";
 			
 		battleNav_logicDisplay();
 	}
@@ -1254,12 +1258,15 @@
 	{
 		$("#battle-nav").html("");
 		
-		
+		// BATTLE CUTE UPDATE NEEDS REWRITE
+/*
 		$(BATTLE_NAV.player_1.head).addClass("battleCute-warrior-head-" + BATTLE_NAV.player_1.headType);
 		$(BATTLE_NAV.player_2.head).addClass("battleCute-warrior-head-" + BATTLE_NAV.player_2.headType);
 		
 		$("#battle-nav-player1 .battleCute-eyes-sprite").addClass("battleCute-eyes-look-R");
 		$("#battle-nav-player2 .battleCute-eyes-sprite").addClass("battleCute-eyes-look-L");
+*/
+		// BATTLE CUTE UPDATE NEEDS REWRITE
 		
 		$("#battle-nav-fight").addClass("tween-battle-nav-fight");
 		
@@ -1272,8 +1279,12 @@
 	
 	function battleNav_speechBubbles()
 	{
+		// BATTLE CUTE UPDATE NEEDS REWRITE
+/*
 		$("#battle-nav-player1 .battleCute-speak-icon").addClass("battleCute-" + BATTLE_NAV.player_1.selection);
 		$("#battle-nav-player2 .battleCute-speak-icon").addClass("battleCute-" + BATTLE_NAV.player_2.selection);
+*/
+		// BATTLE CUTE UPDATE NEEDS REWRITE
 	
 		battleNav_showBattle();
 	}
@@ -1298,8 +1309,13 @@
 		timerList_add(intoCountDownDelay);
 		intoCountDownDelay.time(1, battleNav_startBattleCountDown);
 */
-		battleNav_startBattleCountDown();
+		// BATTLE CUTE UPDATE NEEDS REWRITE
+		/* battleNav_startBattleCountDown(); */
+		// BATTLE CUTE UPDATE NEEDS REWRITE
 		
+		// Temp.js replacement
+		hack_startBattleCountDown();
+		// Temp.js replacement
 	}
 	
 	function battleNav_startBattleCountDown()
@@ -1482,6 +1498,8 @@
 	{
 		$(".tween-battle-nav-fight")[0].removeEventListener("webkitTransitionEnd", battleNav_anotherRound, false);
 		$(".tween-battle-nav-fight")[0].removeEventListener("transitionend", battleNav_anotherRound, false);
+		
+		trace("ANOTHER-ROUND --- function2()");
 		
 		$("#battle-nav-fight").html("");
 		
@@ -1760,9 +1778,49 @@
 				break;
 			}
 			
+			case "FIGHT":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "FIGHT", "", "tween-microBattle_darkness_mega");
+			
+				break;
+			}
+			
+			
+			
+			
+			case "FIGHT_P1":
+			{
+/* 				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "tween-microBattle_darkness_mega"); */
+
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "");
+				
+				break;
+			}
+			
+			case "FIGHT_VS":
+			{
+				/* battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega"); */
+				
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "");
+				
+				break;
+			}
+			
+			case "FIGHT_P2":
+			{
+/* 				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "", "tween-microBattle_darkness_mega"); */
+				
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "", "");
+								
+				break;
+			}
+			
+			
+			
+			
 			case "VS":
 			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega");
+				/* battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega"); */
 				
 				break;
 			}
@@ -1790,7 +1848,7 @@
 		}
 	}
 	
-	function battleUserInfo_textEngine(rem_class, add_class, new_text, rem_extra, add_extra)
+	function battleUserInfo_textEngine(rem_class, add_class, new_text, rem_extra, add_extra) // REMOVE // ADD // TEXT // REMOVE PREV FX // ADD FX
 	{
 		$("#microBattle_darkness .microBattle_darkness_info_text").css("opacity", "0");
 		$("#microBattle_darkness .microBattle_darkness_info_text").removeClass(rem_class);
@@ -1832,10 +1890,53 @@
 		battleUserInfo_messaging("PLAYER1", true);
 	}
 	
+	function battleUserInfo_fight()
+	{
+		battleUserInfo_messaging("FIGHT", true);
+	}
+	
 	function battleUserInfo_vs()
 	{
 		battleUserInfo_messaging("VS", true);
 	}
+	
+	function battleUserInfo_fight_sequence()
+	{
+		var bui_fs_timer_vs = new AnimationTimer();
+		var bui_fs_timer_p2 = new AnimationTimer();
+		var bui_fs_timer_re = new AnimationTimer();
+		var bui_fs_timer_fm = new AnimationTimer();
+		
+		timerList_add(bui_fs_timer_vs);
+		timerList_add(bui_fs_timer_p2);
+		timerList_add(bui_fs_timer_re);
+		timerList_add(bui_fs_timer_fm);
+		
+		battleUserInfo_fight_p1();
+		
+		bui_fs_timer_vs.time(1, battleUserInfo_fight_vs);
+		bui_fs_timer_p2.time(2, battleUserInfo_fight_p2);
+		bui_fs_timer_re.time(3, battleUserInfo_result);
+		bui_fs_timer_fm.time(4, test_punchAttackControl, "FINISH");
+	}
+	
+
+	function battleUserInfo_fight_p1()
+	{
+		battleUserInfo_messaging("FIGHT_P1", true);
+	}
+	
+	function battleUserInfo_fight_vs()
+	{
+		battleUserInfo_messaging("FIGHT_VS", true);
+	}
+	
+	function battleUserInfo_fight_p2()
+	{
+		battleUserInfo_messaging("FIGHT_P2", true);
+	}
+	
+	
 	
 	function battleUserInfo_enemy()
 	{

@@ -45,15 +45,692 @@
 		-webkit-transition: opacity 0.1s linear;
 		transition: opacity 0.1s linear;
 	}
+	
+	
+	/* ---------------------------------------- FIGHT CHARS */
+
+/* SET CONTAINER:::: */	
+/*
+	#content
+	{
+		width: 320px;
+		height: 70px;
+		
+		position: absolute;
+		
+		left: 0; right: 0; top: 0; bottom: 0;
+		
+		margin: auto;
+		
+		z-index: 0;
+		
+		outline: 1px dashed white;
+	}	
+*/
+
+	#battleNav-player1
+	{
+		left: 0;
+		top: 0;
+	}
+	
+	#battleNav-player2
+	{
+		right: 0;
+		top: 0;
+		
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
+	
+	.battleNav-player
+	{
+		width: 60px;
+		height: 60px;
+		
+		position: absolute;
+		
+		z-index: 0;
+	}
+	
+	.battleNav-player-inner
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.battleNav-player-ThreatPos
+	{
+		-webkit-transform: translateX(90px);
+		transform: translateX(90px);		
+	}
+	
+	.battleNav-player-StartPos
+	{
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+	
+	.tween-battleNav-player-StartPos
+	{
+		-webkit-transition: -webkit-transform 0.2s ease;
+		transition: -webkit-transform 0.2s ease;
+	}
+	
+	.battleNav-player-head-main
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 3;
+	}
+	
+	.battleNav-player-head
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 0;
+	}
+	
+	.tween-battleNav-player-head
+	{
+		-webkit-animation	: tweenBattleNavPlayerHeadFrames 0.4s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHeadFrames 0.4s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHeadFrames
+	{
+		0%		{-webkit-transform: translateY(0);}
+		50%		{-webkit-transform: translateY(-2px);}
+		100%	{-webkit-transform: translateY(0);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHeadFrames
+	{
+		0%		{transform: translateY(0);}
+		50%		{transform: translateY(-2px);}
+		100%	{transform: translateY(0);}
+	}
+	
+	.tween-battleNav-player-headWeak
+	{
+		-webkit-animation	: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHeadWeakFrames
+	{
+		0%		{-webkit-transform: translateX(0);}
+		50%		{-webkit-transform: translateX(-2px);}
+		100%	{-webkit-transform: translateX(0);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHeadWeakFrames
+	{
+		0%		{transform: translateX(0);}
+		50%		{transform: translateX(-2px);}
+		100%	{transform: translateX(0);}
+	}
+	
+	.battleNav-player-head-rabbit
+	{
+		background-position: 0px -120px;
+	}
+	
+	.battleNav-player-eyes
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 0;
+	}
+	
+	.tween-battleNav-player-eyes
+	{
+		-webkit-transition: -webkit-transform 0.4s ease;
+		transition: transform 0.4s ease;
+	}
+	
+	.battleNav-player-eyes-lookF
+	{
+		-webkit-transform: translateX(1px);
+		transform: translateX(1px);
+	}
+	
+	.battleNav-player-eyes-lookB
+	{
+		-webkit-transform: translateX(-1px);
+		transform: translateX(-1px);		
+	}
+	
+	.battleNav-player-eyes-lookC
+	{
+		-webkit-transform: translateX(0px);
+		transform: translateX(0px);		
+	}
+	
+	.battleNav-player-eyesSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.battleNav-player-eyesSprite-normal
+	{
+		background-position: 0 0;
+	}
+	
+	.battleNav-player-eyesSprite-sad
+	{
+		background-position: -60px 0;
+	}
+	
+	.battleNav-player-eyesSprite-happy
+	{
+		background-position: -120px 0;
+	}	
+	
+	.battleNav-player-body
+	{
+		width: inherit;
+		height: inherit;
+		
+		background-position: 0 -60px;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 2;
+	}
+	
+	.battleNav-player-hands
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 0;
+	}
+	
+	.tween-battleNav-player-hands
+	{
+		-webkit-animation	: tweenBattleNavPlayerHandsFrames 0.4s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsFrames 0.4s ease-in-out infinite;
+	}
+	
+	.tween-battleNav-player-handsSuper
+	{
+		-webkit-animation	: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHandsFrames
+	{
+		0%		{-webkit-transform: translateX(4px);}
+		50%		{-webkit-transform: translateX(0px);}
+		100%	{-webkit-transform: translateX(4px);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHandsFrames
+	{
+		0%		{transform: translateX(4px);}
+		50%		{transform: translateX(0px);}
+		100%	{transform: translateX(4px);}
+	}
+		
+	.tween-battleNav-player-handsWeak
+	{
+		-webkit-animation	: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHandsWeakFrames
+	{
+		0%		{-webkit-transform: translateY(4px);}
+		50%		{-webkit-transform: translateY(0px);}
+		100%	{-webkit-transform: translateY(4px);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHandsWeakFrames
+	{
+		0%		{transform: translateY(4px);}
+		50%		{transform: translateY(0px);}
+		100%	{transform: translateY(4px);}
+	}	
+	
+	.battleNav-player-handsSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	#battleNav-player1 .battleNav-player-handsSprite
+	{
+		background-position: -60px -60px;
+	}
+	
+	#battleNav-player2 .battleNav-player-handsSprite
+	{
+		background-position: -120px -60px;
+	}
+	
+	.battleNav-player-legs
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		z-index: 1;
+	}
+	
+	.battleNav-player-legsSprite
+	{
+		width: inherit;	
+		height: inherit;
+		
+		background-position: -180px -60px;
+		
+		position: relative;
+	}
+	
+	
+	.battleNav-player-speech
+	{
+		width: 90px;
+		height: 70px;
+		
+		background-position: 0 0;
+		
+		
+		-webkit-transform-origin: 0% 50%;
+		transform-origin: 0% 50%;
+		
+		position: absolute;
+		
+		left: 50px;
+		top: -10px;
+		
+		z-index: 1;
+	}
+	
+	.battleNav-player-speech-hide
+	{
+		opacity: 0;
+		
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);		
+	}
+	
+	.battleNav-player-speech-show
+	{
+		opacity: 1;
+		
+		-webkit-transform: scale(1);
+		transform: scale(1);		
+	}
+	
+	.tween-battleNav-player-speech
+	{
+		-webkit-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+	
+	
+	
+	.battleNav-player-speechContainer
+	{
+		width: 70px;
+		height: 70px;
+		
+		position: absolute;
+	
+		z-index: 0;
+	}
+	
+	#battleNav-player1 .battleNav-player-speechContainer
+	{
+		left: 20px;
+	}
+	
+	#battleNav-player2 .battleNav-player-speechContainer
+	{
+		left: 20px;
+		
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
+	
+	.battleNav-player-choice
+	{
+		width: 30px;
+		height: 30px;
+		
+		position: absolute;
+		
+		left: 0; right: 0; top: 0; bottom: 0;
+		
+		margin: auto;
+		
+		z-index: 0;
+	}
+	
+	.battleNav-player-choice-STONE
+	{
+		background-position: 0px -70px;	
+	}
+	
+	.battleNav-player-choice-PAPER
+	{
+		background-position: -30px -70px;
+	}
+	
+	.battleNav-player-choice-SCISSORS
+	{
+		background-position: -60px -70px;
+	}
+	
+	.battleNav-player-choice-eyes
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.battleNav-player-choice-eyes-normal
+	{
+		background-position: 0 -100px;
+	}
+	
+	.battleNav-player-choice-eyes-sad
+	{
+		background-position: -60px -100px;
+	}
+	
+	.battleNav-player-choice-eyes-happy
+	{
+		background-position: -30px -100px;
+	}
+	
+	.battleNav-superPunch
+	{
+		width: 87px;
+		height: 60px;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 3; 
+	}
+	
+	.battleNav-superPunchSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		opacity: 0;
+		
+		position: absolute;
+		
+		left: 50px;
+		top: 0;
+		
+		z-index: 1;
+	}
+	
+	.tween-battleNav-superPunchSprite
+	{
+		-webkit-transition: -webkit-transform 0.2s ease-in-out;
+		transition: transform 0.2s ease-in-out;
+	}
+	
+	.battleNav-superPunchAttacker
+	{
+		z-index: 1;
+	}
+	
+	.battleNav-superPunchAttack
+	{
+		opacity: 1;
+		
+/*
+		-webkit-transform: translateX(150px);
+		transform: translateX(150px);
+*/
+		
+		-webkit-transform: translateX(130px);
+		transform: translateX(130px);
+	}
+	
+	.battleNav-superPunchReturn
+	{
+		opacity: 0.4;
+		
+		-webkit-transition-delay: 0.1s;
+		transition-delay: 0.1s;
+		
+		-webkit-transform: translateX(0px);
+		transform: translateX(0px);
+	}
+	
+	.battleNav-superPunchSprite > div
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	#battleNav-player1 .battleNav-superPunchSprite > div
+	{
+		background-position: 0 0;
+	}
+	
+	#battleNav-player2 .battleNav-superPunchSprite > div
+	{
+		background-position: 0 -60px;
+	}
+	
+	.tween-superPunchSpriteAmbient
+	{
+		-webkit-animation: tweenSuperPunchSpriteAmbientFrames 0.1s steps(3) 0 infinite;
+		animation: tweenSuperPunchSpriteAmbientFrames 0.1s steps(3) 0 infinite;
+	}
+	
+	@-webkit-keyframes tweenSuperPunchSpriteAmbientFrames
+	{
+		from 	{-webkit-transform: translateY(0);}
+		to		{-webkit-transform: translateY(3px);}
+	}
+	
+	@keyframes tweenSuperPunchSpriteAmbientFrames
+	{
+		from 	{transform: translateY(0);}
+		to		{transform: translateY(3px);}
+	}
+	
+	.battleNav-smash-head
+	{
+		-webkit-transform: rotate(-10deg) translateY(-10px);
+		transform: rotate(-10deg) translateY(-10px);
+	}
+	
+	.battleNav-smash-head-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+	
+		-webkit-transform: rotate(-30deg) translateY(-30px);
+		transform: rotate(-30deg) translateY(-30px);		
+	}
+	
+	.battleNav-smash-body
+	{
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	
+	.battleNav-smash-body-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+	
+		-webkit-transform: rotate(-14deg) translateX(-24px) translateY(-10px);
+		transform: rotate(-14deg) translateX(-24px) translateY(-10px);		
+	}
+	
+	.battleNav-smash-legs-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		
+		-webkit-transform: rotate(-4deg) translateX(-4px) translateY(-6px);
+		transform: rotate(-4deg) translateX(-4px) translateY(-6px);			
+	}
+	
+	.tween-battleNav-smash
+	{
+		-webkit-transition: -webkit-transform 0.1s linear;
+		transition: transform 0.1s linear;
+	}
+	
+	.battleNav-player-shock
+	{
+		width: 100px;
+		height: 100px;
+		
+		position: absolute;
+		
+		left: -10px;
+		top: -20px;
+		
+		z-index: 0;
+	}
+	
+	.tween-battleNav-player-shock
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		-webkit-animation: tweenBattleNavPlayerShockFrames 1s linear forwards;
+		animation: tweenBattleNavPlayerShockFrames 1s linear forwards;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerShockFrames
+	{
+		from	{-webkit-transform: rotate(0deg);}
+		to		{-webkit-transform: rotate(360deg);}
+	}
+	
+	@keyframes tweenBattleNavPlayerShockFrames
+	{
+		from	{transform: rotate(0deg);}
+		to		{transform: rotate(360deg);}
+	}
+	
+	.battleNav-player-shockSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		visibility: hidden;
+		
+		position: relative;
+	}
+	
+	.tween-battleNav-player-shockSprite
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		-webkit-animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
+		animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerShockSpriteFrames
+	{
+		from	{-webkit-transform: scale(1);}
+		to		{-webkit-transform: scale(0.4);}
+	}
+	
+	@keyframes tweenBattleNavPlayerShockSpriteFrames
+	{
+		from	{transform: scale(1);}
+		to		{transform: scale(0.4);}
+	}
+	
+	.KILLER-PUNCH
+	{
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	
+	
+	/* ---------------------------------------- FIGHT CHARS */
 
 	
 	
 	/* ---------------------------------------- PIXELS */
 	
-
+	.pixels_battleNav-player
+	{
+		background-image: url(../_img/battleCute_1x.png);
+		background-repeat: no-repeat;
+		background-size: 240px 180px;
+	}
 	
+	.pixels_battleNav
+	{
+		background-image: url(../_img/battleNavMin_1x.png);
+		background-repeat: no-repeat;
+		background-size: 180px 130px;
+	}
 	
-
+	.pixels_superPunch
+	{
+		background-image: url(../_img/superPunchSprite_1x.png);
+		background-repeat: no-repeat;
+		background-size: 87px 120px;
+	}
+	
+	.vectors_superPunchShock
+	{
+		background-image: url(../_img/puchSmashShock.svg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+	
 	
 	/* ---------------------------------------- PIXELS */
 	
