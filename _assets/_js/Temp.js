@@ -435,15 +435,21 @@
 				
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-sad").addClass("battleNav-player-choice-eyes-happy");
 				
-				removeBlow = setTimeout(battleMini_puchAttackReturn, 800, event);
+				// removeBlow = setTimeout(battleMini_puchAttackReturn, 900, event);
+			
+				BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
 			}
 			
 			else
 			{
-				removeBlow = setTimeout(battleMini_puchAttackReturn, 300, event);
+				// removeBlow = setTimeout(battleMini_puchAttackReturn, 400, event);
+				
+				BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_puchAttackReturn, event);
 			}
 		}
 	}
+	
+	// FAULTY WITH PASSING THE EVENT
 	
 	function battleMini_puchAttackReturn(event)
 	{

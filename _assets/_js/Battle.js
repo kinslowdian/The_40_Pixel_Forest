@@ -1830,8 +1830,6 @@
 	
 	function battleUserInfo_messaging(flow_stage, lightning)
 	{
-		trace("!!!!!!!----- lightning === " + lightning);
-		
 		if(lightning)
 		{
 			$("#microBattle_darkness .microBattle_darkness_lightning").addClass("tween-microBattle_darkness_lightning");
