@@ -5,11 +5,8 @@
 					console.log(str); 
 				};
 				
-	var NO_HIT_TEST = false;
+	var debug = {};
 	
-	var BREAK_CODE = false;
-	
-	function breakCode()
-	{
-		BREAK_CODE = true;
-	}
+	debug.touch = false;
+	debug.hitTest = false
+	debug.forceBreak = false;

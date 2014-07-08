@@ -1,7 +1,7 @@
 	
 	/* --- TOUCH */
 	
-	var deviceTest;
+	var touchSupported;
 	
 	/* --- JSON */
 	
@@ -26,12 +26,9 @@
 	
 	function checkDevice()
 	{
-		deviceTest = deviceTouchTest();
-	}
-	
-	function deviceTouchTest()
-	{
-		return typeof window.ontouchstart;
+		// CHANGE debug.touch IN debug.js TO true TO ENABLE TOUCH UI 
+		
+		touchSupported = ('ontouchstart' in document.documentElement) || (window.DocumentTouch && document instanceof DocumentTouch || navigator.msMaxTouchPoints || debug.touch ? true : false);
 	}
 	
 	// --------------------------------------------- TOUCH

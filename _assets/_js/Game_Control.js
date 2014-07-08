@@ -96,7 +96,7 @@
 		
 		CONTROL_SIGNAL.html = {};
 		
-		if(deviceTest.toString() === "object")
+		if(touchSupported)
 		{
 			CONTROL_SIGNAL.enableTouch = true;
 
