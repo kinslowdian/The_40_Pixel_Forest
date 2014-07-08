@@ -58,6 +58,36 @@
 			"txt_DRAW"	:	"a draw!",
 			"txt_WIN"	:	"fudge yes!",
 			"txt_AGN"	:	"try again"
+		},
+		
+		"battle":
+		{
+			"nav":
+			{
+				"txt_BEG"	:	"attack",
+				"txt_AGN"	:	"try again"
+			},
+			
+			"fight":
+			{
+				"txt_BEG"	: "YOUR TURN",
+				"txt_PRE"	: "GET READY",
+				"txt_BAT"	: "FIGHT",
+				"txt_AGN"	: "DO BETTER"
+			}
+		},
+		
+		"punches":
+		{
+			"player1":
+			{
+				"punchList" : ["CRRAACK!", "KRUUNCH!", "SMAAASH!", "KAAAPOW!"]
+			},
+			
+			"player2":
+			{
+				"punchList" : ["BAAAAAM!", "KABAAAM!", "ARRRRGH!", "CRAAASH!"]
+			}
 		}
 	},
 	

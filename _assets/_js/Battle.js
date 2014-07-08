@@ -821,6 +821,19 @@
 		BATTLE_NAV.navText.txt_AGAIN 	= Logic.dat_ROM["_LOGIC"]["messages"].txt_AGN;
 		
 		
+		BATTLE_NAV.fightText = {};
+		
+		BATTLE_NAV.fightText.txt_BEG	= Logic.dat_ROM["_LOGIC"]["battle"]["fight"].txt_BEG;
+		BATTLE_NAV.fightText.txt_PRE	= Logic.dat_ROM["_LOGIC"]["battle"]["fight"].txt_PRE;
+		BATTLE_NAV.fightText.txt_BAT	= Logic.dat_ROM["_LOGIC"]["battle"]["fight"].txt_BAT;
+		BATTLE_NAV.fightText.txt_AGN	= Logic.dat_ROM["_LOGIC"]["battle"]["fight"].txt_AGN;
+		
+		
+		// Temp.js
+		battleNav_init_extended();
+		// Temp.js		
+		
+		
 		battleNav_getValues();
 	}
 	
@@ -844,10 +857,6 @@
 		
 		BATTLE_NAV.player_1.head = $("#battle-nav-player1 .battleCute-warrior-head");
 		BATTLE_NAV.player_2.head = $("#battle-nav-player2 .battleCute-warrior-head");
-		
-		// Temp.js
-		battleNav_init_extended();
-		// Temp.js		
 	}
 	
 	function battleNav_show()
@@ -1766,41 +1775,57 @@
 		{
 			case "START":
 			{
-				battleUserInfo_textEngine("", "microBattle_darkness_info_text_DRAW", "YOUR TURN");
+				battleUserInfo_textEngine("", "microBattle_darkness_info_text_DRAW", BATTLE_NAV.fightText.txt_BEG.toUpperCase(), "", "");
 				
 				break;
 			}
 			
 			case "PLAYER1":
 			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase());
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "");
+				
+				break;
+			}
+			
+			case "PRE_FIGHT":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", BATTLE_NAV.fightText.txt_PRE.toUpperCase(), "", "");
 				
 				break;
 			}
 			
 			case "FIGHT":
 			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "FIGHT", "", "tween-microBattle_darkness_mega");
+				battleUserInfo_textEngine("", "microBattle_darkness_info_text_DRAW", BATTLE_NAV.fightText.txt_BAT.toUpperCase(), "", "tween-microBattle_darkness_mega");
 			
 				break;
 			}
 			
+			case "PUNCH_PLAYER1":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", battleUserInfo_randomPunch("player1").toUpperCase(), "", "");
+				
+				break;
+			}
+			
+			case "PUNCH_PLAYER2":
+			{
+				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_LOSE", battleUserInfo_randomPunch("player2").toUpperCase(), "", "");
+				
+				break;
+			}			
 			
 			
 			
 			case "FIGHT_P1":
 			{
-/* 				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "tween-microBattle_darkness_mega"); */
-
-				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "");
+				battleUserInfo_textEngine("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_WIN", BATTLE_NAV.player_1.selection.toUpperCase(), "", "");
 				
 				break;
 			}
 			
 			case "FIGHT_VS":
 			{
-				/* battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega"); */
-				
 				battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "");
 				
 				break;
@@ -1808,44 +1833,39 @@
 			
 			case "FIGHT_P2":
 			{
-/* 				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "", "tween-microBattle_darkness_mega"); */
-				
 				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "", "");
 								
 				break;
 			}
 			
 			
-			
-			
-			case "VS":
-			{
-				/* battleUserInfo_textEngine("microBattle_darkness_info_text_WIN", "microBattle_darkness_info_text_DRAW", "VS", "", "tween-microBattle_darkness_mega"); */
-				
-				break;
-			}
-			
-			case "PLAYER2":
-			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_DRAW", "microBattle_darkness_info_text_LOSE", BATTLE_NAV.player_2.selection.toUpperCase(), "tween-microBattle_darkness_mega");
-				
-				break;
-			}
-			
 			case "RESULT":
 			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "tween-microBattle_darkness_mega");
+				battleUserInfo_textEngine("microBattle_darkness_info_text_LOSE", "microBattle_darkness_info_text_" + BATTLE_NAV.game.result, BATTLE_NAV.game.result, "", "");
 				
 				break;
 			}
 			
 			case "ANOTHER":
 			{
-				battleUserInfo_textEngine("microBattle_darkness_info_text_" + BATTLE_NAV.game.result, "microBattle_darkness_info_text_DRAW", "YOUR TURN", "tween-microBattle_darkness_mega");
+				battleUserInfo_textEngine("microBattle_darkness_info_text_" + BATTLE_NAV.game.result, "microBattle_darkness_info_text_DRAW", BATTLE_NAV.fightText.txt_AGN.toUpperCase(), "tween-microBattle_darkness_mega", "");
 				
 				break;
 			}
 		}
+	}
+	
+	function battleUserInfo_randomPunch(playerType)
+	{
+		var batmanPunch;
+		
+		var punchLength = Logic.dat_ROM["_LOGIC"]["punches"][playerType]["punchList"].length;
+		
+		var punchSelect = Math.floor(Math.random() * punchLength);
+		
+		batmanPunch = Logic.dat_ROM["_LOGIC"]["punches"][playerType]["punchList"][punchSelect];
+		
+		return batmanPunch;
 	}
 	
 	function battleUserInfo_textEngine(rem_class, add_class, new_text, rem_extra, add_extra) // REMOVE // ADD // TEXT // REMOVE PREV FX // ADD FX
@@ -1890,10 +1910,26 @@
 		battleUserInfo_messaging("PLAYER1", true);
 	}
 	
+	function battleUserInfo_preFight()
+	{
+		battleUserInfo_messaging("PRE_FIGHT", true);
+	}
+	
 	function battleUserInfo_fight()
 	{
 		battleUserInfo_messaging("FIGHT", true);
 	}
+	
+	function battleUserInfo_punchPlayer1()
+	{
+		battleUserInfo_messaging("PUNCH_PLAYER1", true);
+	}
+	
+	function battleUserInfo_punchPlayer2()
+	{
+		battleUserInfo_messaging("PUNCH_PLAYER2", true);
+	}
+	
 	
 	function battleUserInfo_vs()
 	{

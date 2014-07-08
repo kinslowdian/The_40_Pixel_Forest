@@ -2765,7 +2765,8 @@
 	{
 		width: 80%;
 		
-		color: #ff0070;
+		/* color: #ff0070; */
+		color: #17e69d;
 		
 		text-align: left;
 		
@@ -2781,7 +2782,8 @@
 	{
 		width: 80%;
 		
-		color: #17e69d;
+		/* color: #17e69d; */
+		color: #ff0070;
 		
 		text-align: right;
 		
@@ -3982,12 +3984,14 @@
 	
 	.microBattle_darkness_info_text_WIN
 	{
-		color: #17e69d;
+		/* color: #17e69d; */
+		color: #ff0070;
 	}
 	
 	.microBattle_darkness_info_text_LOSE
 	{
-		color: #ff0070;
+		/* color: #ff0070; */
+		color: #17e69d;
 	}
 	
 	.microBattle_darkness_info_text_DRAW
