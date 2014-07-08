@@ -77,15 +77,16 @@
 		$(".battleNav-player-body").addClass("battleNav-smash-body");
 			
 		$(".battleNav-player-shockSprite").css("visibility", "visible");
-		
-		// BATTLE_NAV.animation.playheadDelay = setTimeout(battleMini_punchPositionScreamEnd, 1 * 1000);		
-		BATTLE_NAV.animation.playheadDelay.time(1, battleMini_punchPositionScreamEnd);
+				
+		BATTLE_NAV.animation.playheadDelay.time(0.5, battleMini_punchPositionScreamEnd);
 	}
 	
 	function battleMini_punchPositionScreamEnd()
 	{
 		$("#battleNav-player1 .battleNav-player-body")[0].addEventListener("webkitTransitionEnd", battleMini_punchPositionReturn, false);
 		$("#battleNav-player1 .battleNav-player-body")[0].addEventListener("transitionEnd", battleMini_punchPositionReturn, false);
+		
+		battleUserInfo_textEngine("CLEAR", true);
 		
 		$(".battleNav-player-hands").removeClass("tween-battleNav-player-handsSuper");
 			
@@ -132,8 +133,6 @@
 	
 	function battleMini_punchAttackControl(playhead)
 	{
-		// var playheadDelay;
-		
 		switch(BATTLE_NAV.animation.sequenceFlow)
 		{
 			case "START_PLAYER1":
@@ -166,13 +165,6 @@
 				
 				if(playhead === "FINISH")
 				{
-					// 2 X FIGHT ROUND
-/*
-					BATTLE_NAV.animation.sequenceFlow = "RETURN_PLAYER1";
-					
-					battleMini_punchAttackControl("BEGIN");
-*/
-				
 					// 1 X FIGHT ROUND
 					
 					BATTLE_NAV.animation.sequenceFlow = "OPTIONS";
@@ -184,40 +176,6 @@
 				break;				
 			}
 			
-			case "RETURN_PLAYER1":
-			{
-				if(playhead === "BEGIN")
-				{
-					battleMini_punchAttackSet(1);
-				}
-				
-				if(playhead === "FINISH")
-				{
-					BATTLE_NAV.animation.sequenceFlow = "RETURN_PLAYER2";
-					
-					battleMini_punchAttackControl("BEGIN");					
-				}
-				
-				break;
-			}
-			
-			case "RETURN_PLAYER2":
-			{
-				if(playhead === "BEGIN")
-				{
-					battleMini_punchAttackSet(2);
-				}
-				
-				if(playhead === "FINISH")
-				{
-					BATTLE_NAV.animation.sequenceFlow = "OPTIONS";
-					
-					battleMini_punchAttackControl("BEGIN");					
-				}
-				
-				break;
-			}
-			
 			case "OPTIONS":
 			{
 				if(playhead === "BEGIN")
@@ -225,11 +183,6 @@
 					$(".battleNav-player-speech").removeClass("battleNav-player-speech-hide").addClass("battleNav-player-speech-show");
 					
 					battleUserInfo_fightText_sequence();
-					
-					// BATTLE_NAV.animation.playheadDelay = setTimeout(battleMini_punchAttackControl, 1000, "FINISH");
-					
-					// BREAK!!!!
-					// BATTLE_NAV.animation.playheadDelay.time(1, battleMini_punchAttackControl, "FINISH");
 				}
 				
 				if(playhead === "FINISH")
@@ -249,7 +202,6 @@
 					if(BATTLE_NAV.game.result === "WIN")
 					{
 						BATTLE_NAV.animation.resultRound = true;
-						// BATTLE_NAV.animation.firstPunch = true;
 						
 						battleMini_punchAttackSet(1);
 					}
@@ -257,7 +209,6 @@
 					if(BATTLE_NAV.game.result === "LOSE")
 					{
 						BATTLE_NAV.animation.resultRound = true;
-						// BATTLE_NAV.animation.firstPunch = true;
 						
 						battleMini_punchAttackSet(2);
 					}
@@ -268,8 +219,6 @@
 						
 						$(".battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-normal").addClass("battleNav-player-choice-eyes-sad");
 						
-						
-						// BATTLE_NAV.animation.playheadDelay = setTimeout(battleMini_punchAttackControl, 500, "FINISH");
 						BATTLE_NAV.animation.playheadDelay.time(0.5, battleMini_punchAttackControl, "FINISH");
 					}
 				}
@@ -280,6 +229,8 @@
 					
 					if(BATTLE_NAV.game.result === "DRAW")
 					{
+						// ANOTHER ROUND
+						
 						$(".battleNav-player-speech").removeClass("battleNav-player-speech-show").addClass("battleNav-player-speech-hide");
 						
 						$(".battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-sad").addClass("battleNav-player-eyesSprite-normal");
@@ -288,9 +239,7 @@
 						
 						BATTLE_NAV.animation.sequenceFlow = "ANOTHER_ROUND";
 						
-						BATTLE_NAV.animation.playheadDelay.time(0.5, battleMini_punchAttackControl);	
-					
-						// ANOTHER ROUND
+						BATTLE_NAV.animation.playheadDelay.time(0.5, battleMini_punchAttackControl);
 					}
 					
 					else
@@ -456,15 +405,23 @@
 		{
 			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsSuper");
 			
-			
-			
 			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsWeak");
 			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").removeClass("tween-battleNav-player-headWeak");
 			
 			
 			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").removeClass("tween-battleNav-player-shockSprite");
 			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").addClass("tween-battleNav-player-shock");	
+			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").addClass("tween-battleNav-player-shock");
+			
+			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+			{
+				battleUserInfo_textEngine("PUNCH_PLAYER1_HOLD", true);
+			}	
+			
+			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+			{
+				battleUserInfo_textEngine("PUNCH_PLAYER2_HOLD", true);
+			}	
 			
 			if(BATTLE_NAV.animation.resultRound)
 			{
@@ -485,9 +442,6 @@
 			{
 				removeBlow = setTimeout(battleMini_puchAttackReturn, 300, event);
 			}
-			
-			
-			
 		}
 	}
 	
@@ -508,6 +462,20 @@
 		
 		if($("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-superPunch div").length === 0)
 		{
+			if(!BATTLE_NAV.animation.resultRound)
+			{
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER1_CLEAR", true);
+				}
+				
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER2_CLEAR", true);	
+				}
+			}
+		
+			
 			$("#" + BATTLE_NAV.animation.punch_id_attack).removeClass("battleNav-superPunchAttacker");
 			
 			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-eyes").removeClass("battleNav-player-eyes-lookF");
@@ -544,19 +512,14 @@
 				
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").addClass("tween-battleNav-player-hands");
 				
-				
-				
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").removeClass("battleNav-smash-head");
 				
-				
-			
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").removeClass("battleNav-smash-body");
-				
-				
 				
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").css("visibility", "hidden");
 				
 				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").removeClass("tween-battleNav-player-shock");	
+				
 				
 				BATTLE_NAV.animation.smashed = false;
 			}
@@ -577,7 +540,6 @@
 	
 	function battleMini_punchAttackReplay()
 	{
-		// BATTLE_NAV.animation.playheadDelay = setTimeout(battleMini_punchAttackControl, 0.4 * 1000, "FINISH");
 		BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_punchAttackControl, "FINISH");
 	}
 	
@@ -667,7 +629,9 @@
 		{
 			$("#battle-nav-fight").css(BATTLE_NAV.settings.y_hide);
 			
-			battleUserInfo_textEngine("CLEAR", true);
+			// battleUserInfo_textEngine("CLEAR", true);
+			
+			battleUserInfo_textEngine("SHAKE_CLEAR", true);
 			
 			$(".tween-battle-nav-fight")[0].addEventListener("webkitTransitionEnd", battleNav_anotherRound, false);
 			$(".tween-battle-nav-fight")[0].addEventListener("transitionend", battleNav_anotherRound, false);			
@@ -693,7 +657,7 @@
 		
 		battleNav_getValues();
 		
-		exitFrame = setTimeout(fromHereToSafety, 1000);
+		exitFrame = setTimeout(fromHereToSafety, 250);
 	}
 	
 	function fromHereToSafety()
@@ -717,145 +681,6 @@
 		
 		battleNav_control(true);			
 	}
-	
-	
-	/////// MERGE
-	
-	
-	
-	/////// HACKS
-	
-/*
-	function hack_startBattleCountDown()
-	{
-		battleUserInfo_textEngine("PRE_FIGHT", true);
-		
-		$("#battle-nav-playerBird .battleCute-bird-board").addClass("tween-battleCute-bird-countDown");
-		
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].addEventListener("webkitAnimationEnd", hack_startBattleCountDownSequence, false);
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].addEventListener("animationend", hack_startBattleCountDownSequence, false);		
-	}
-	
-	function hack_startBattleCountDownSequence(event)
-	{
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].removeEventListener("webkitAnimationEnd", hack_startBattleCountDownSequence, false);
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].removeEventListener("animationend", hack_startBattleCountDownSequence, false);
-	 	
-	 	battleUserInfo_textEngine("FIGHT", true);
-	 	
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-inner").addClass("tween-battleCute-bird-arm-main-fire");
-	 			
-	 	$("#battle-nav-playerBird .battleCute-eyes-sprite").removeClass("battleCute-eyes-norm").addClass("battleCute-eyes-happy");
-	 	
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-main").addClass("tween-battleCute-bird-arm-main-intoFly");
-	 			
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].addEventListener("webkitAnimationEnd", hack_clearStageForFightInit, false);
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].addEventListener("animationend", hack_clearStageForFightInit, false);
-	}
-	
-	function hack_clearStageForFightInit(event)
-	{
-	 	var clearStage;
-	 	
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].removeEventListener("webkitAnimationEnd", hack_clearStageForFightInit, false);
-	 	$("#battle-nav-playerBird .battleCute-bird-arm-main")[0].removeEventListener("animationend", hack_clearStageForFightInit, false);
-	 	
-	 	clearStage = new AnimationTimer();
-	 	timerList_add(clearStage);
-	 	clearStage.time(1, hack_clearStageForFight);	
-	}
-	
-	function hack_clearStageForFight()
-	{
-		$("#battle-nav-playerBird .battleCute-bird-arm-main").removeClass("tween-battleCute-bird-arm-main-intoFly").addClass("tween-battleCute-bird-arm-main");
-	 			
-	 	$("#battle-nav-playerBird").addClass("tween-bird-flapAway");	
-	
-	 	$("#battle-nav-playerBird")[0].addEventListener("webkitAnimationEnd", hack_clearedStage, false);
-	 	$("#battle-nav-playerBird")[0].addEventListener("animationend", hack_clearedStage, false);		
-	}
-	
-	function hack_clearedStage(event)
-	{
-		var winLoseDisplay;
-	 	
-	 	$("#battle-nav-playerBird")[0].removeEventListener("webkitAnimationEnd", hack_clearedStage, false);
-	 	$("#battle-nav-playerBird")[0].removeEventListener("animationend", hack_clearedStage, false);
-		
-		battleMini_punchPositionInit();
-		
-		$("#battle-nav-playerBird").remove();		
-	}
-	
-	function hack_battleResultsEnd()
-	{
-		var exitFrame;
-		
-		if(BATTLE_NAV.game.result === "WIN" || BATTLE_NAV.game.result === "LOSE")
-		{
-			exitFrame = new AnimationTimer();
-			timerList_add(exitFrame);
-			exitFrame.time(0.02, battleNav_battleOver);
-		}
-		
-		else
-		{
-			$("#battle-nav-fight").css(BATTLE_NAV.settings.y_hide);
-			
-			battleUserInfo_textEngine("CLEAR", true);
-			
-			$(".tween-battle-nav-fight")[0].addEventListener("webkitTransitionEnd", hack_anotherRound, false);
-			$(".tween-battle-nav-fight")[0].addEventListener("transitionend", hack_anotherRound, false);			
-		}		
-	}
-	
-	
-	
-	function hack_anotherRound(event)
-	{
-		var exitFrame;
-		
-		$(".tween-battle-nav-fight")[0].removeEventListener("webkitTransitionEnd", hack_anotherRound, false);
-		$(".tween-battle-nav-fight")[0].removeEventListener("transitionend", hack_anotherRound, false);
-		
-		$("#battle-nav-fight").html("");
-		
-		$("#battle-nav").html(BATTLE_NAV.html.navOptions);
-		
-		BATTLE_NAV.animation.resultRound = false;
-		
-		BATTLE_NAV.animation.sequenceFlow = "START_PLAYER1";
-		
-		battleNav_getValues();
-		
-		exitFrame = setTimeout(fromHereToSafety, 250);
-	}
-	
-	function fromHereToSafety()
-	{
-		$("#info-cloud p").text(BATTLE_NAV.navText.txt_AGAIN.toUpperCase());
-		
-		$("#battle-nav").removeClass("battle-nav-hide").addClass("battle-nav-show");
-		
-		battleUserInfo_textEngine("ANOTHER", true);
-		
-		$(".tween-battle-nav")[0].addEventListener("webkitTransitionEnd", hack_anotherRoundInPlace, false);
-		$(".tween-battle-nav")[0].addEventListener("transitionend", hack_anotherRoundInPlace, false);		
-	}
-	
-	function hack_anotherRoundInPlace(event)
-	{
-		$(".tween-battle-nav")[0].removeEventListener("webkitTransitionEnd", hack_anotherRoundInPlace, false);
-		$(".tween-battle-nav")[0].removeEventListener("transitionend", hack_anotherRoundInPlace, false);
-		
-		$("#info-cloud").css("opacity", "1");
-		
-		battleNav_control(true);			
-	}
-*/
-		
-	
-	/////// HACKS
 	
 	
 	
