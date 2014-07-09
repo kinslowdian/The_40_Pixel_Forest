@@ -308,37 +308,46 @@
 		{
 			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-speech").removeClass("battleNav-player-speech-show").addClass("battleNav-player-speech-hide");
 		}
-		
+
 		for(var i = 0; i < BATTLE_NAV.animation.punchTotal; i++)
 		{
-			var delay = i * 0.2;
-			var stall = setTimeout(battleMini_punchAttackAdd, delay * 1000, i);
+			battleMini_punchAttackAdd(i, battleMini_createDelay(i * 0.2));
 		}
 	}
 	
-	function battleMini_punchAttackAdd(num)
+	function battleMini_createDelay(val)
+	{
+		var animationDelay = 	{
+									"-webkit-transition-delay" 	: val + "s",
+									"transition-delay" 			: val + "s"
+								};
+								
+		return animationDelay;
+	}
+
+
+	function battleMini_punchAttackAdd(num, css)
 	{
 		var exitFrame;
-		
-		var css;
 		
 		$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-superPunch").append(BATTLE_NAV.animation.html.superPunch);
 		
 		$("#" + BATTLE_NAV.animation.punch_id_attack + " ._PUNCH").addClass("SUPER-PUNCH" + num);
 		$("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num).removeClass("_PUNCH");
 		
-		css = 	{
-					"-webkit-animation-duration" : "0.1s !important",
-					"animation-duration" : "0.1s !important"
-				};
+		$("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num).attr("data-punchCount", num);
+		
+		
+		$("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num).css(css);
 		
 		if(num === BATTLE_NAV.animation.punchTotal - 1)
 		{
-			$("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num).addClass("KILLER-PUNCH");	
+			$("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num).addClass("KILLER-PUNCH");
 		}
 	
 		exitFrame = setTimeout(battleMini_punchAttackFire, 20, $("#" + BATTLE_NAV.animation.punch_id_attack + " ." + "SUPER-PUNCH" + num));
 	}
+
 	
 	function battleMini_punchAttackFire(div)
 	{
@@ -352,101 +361,115 @@
 	{
 		var _classList = event.target.classList.toString();
 		var removeBlow;
+		var lastPunchFired = false;
 		
-		$(event.target)[0].removeEventListener("webkitTransitionEnd", battleMini_punchAttackFireEnd, false);
-		$(event.target)[0].removeEventListener("transitionend", battleMini_punchAttackFireEnd, false);
-		
-		if(BATTLE_NAV.animation.firstPunch)
+		if(event.propertyName !== "opacity")
 		{
-			BATTLE_NAV.animation.firstPunch = false;
+			$(event.target)[0].removeEventListener("webkitTransitionEnd", battleMini_punchAttackFireEnd, false);
+			$(event.target)[0].removeEventListener("transitionend", battleMini_punchAttackFireEnd, false);
 			
-			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+			
+			// REMOVES START PUNCH DELAY IN CSS
+			$(event.target).removeAttr("style");
+			
+			
+			if(BATTLE_NAV.animation.firstPunch)
 			{
-				battleUserInfo_textEngine("PUNCH_PLAYER1", true);	
+				BATTLE_NAV.animation.firstPunch = false;
+				
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER1", true);	
+				}
+				
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER2", true);	
+				}
 			}
 			
-			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+			
+			if(!BATTLE_NAV.animation.smashed)
 			{
-				battleUserInfo_textEngine("PUNCH_PLAYER2", true);	
-			}
-		}
-		
-		
-		if(!BATTLE_NAV.animation.smashed)
-		{
-			BATTLE_NAV.animation.smashed = true;
-			
-			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").addClass("tween-battleNav-player-handsSuper");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").addClass("tween-battleNav-player-headWeak");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").addClass("tween-battleNav-player-handsWeak");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-normal").addClass("battleNav-player-eyesSprite-sad");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").addClass("battleNav-smash-head");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").addClass("battleNav-smash-body");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").css("visibility", "visible");
-			
-			if(BATTLE_NAV.animation.resultRound)
-			{
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-normal").addClass("battleNav-player-choice-eyes-sad");	
-			}			
-		}
-		
-		if(_classList.search("KILLER-PUNCH") === -1)
-		{
-			battleMini_puchAttackReturn(event);			
-		}
-		
-		else
-		{
-			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsSuper");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsWeak");
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").removeClass("tween-battleNav-player-headWeak");
-			
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").removeClass("tween-battleNav-player-shockSprite");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").addClass("tween-battleNav-player-shock");
-			
-			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
-			{
-				battleUserInfo_textEngine("PUNCH_PLAYER1_HOLD", true);
-			}	
-			
-			if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
-			{
-				battleUserInfo_textEngine("PUNCH_PLAYER2_HOLD", true);
-			}	
-			
-			if(BATTLE_NAV.animation.resultRound)
-			{
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-sad").addClass("battleNav-player-eyesSprite-happy");
+				BATTLE_NAV.animation.smashed = true;
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").addClass("battleNav-smash-head-KILLER");
+				$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").addClass("tween-battleNav-player-handsSuper");
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").addClass("battleNav-smash-body-KILLER");
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").addClass("tween-battleNav-player-headWeak");
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-legs").addClass("battleNav-smash-legs-KILLER");
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").addClass("tween-battleNav-player-handsWeak");
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-sad").addClass("battleNav-player-choice-eyes-happy");
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-normal").addClass("battleNav-player-eyesSprite-sad");
 				
-				// removeBlow = setTimeout(battleMini_puchAttackReturn, 900, event);
-			
-				BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").addClass("battleNav-smash-head");
+				
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").addClass("battleNav-smash-body");
+				
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").css("visibility", "visible");
+				
+				if(BATTLE_NAV.animation.resultRound)
+				{
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-normal").addClass("battleNav-player-choice-eyes-sad");	
+				}			
 			}
 			
+			if(parseInt($(event.target).attr("data-punchCount")) === BATTLE_NAV.animation.punchTotal - 1)
+			{
+				lastPunchFired = true;
+			}
+			
+			if(lastPunchFired)
+			{
+				$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsSuper");
+				
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").removeClass("tween-battleNav-player-handsWeak");
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").removeClass("tween-battleNav-player-headWeak");
+				
+				
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").removeClass("tween-battleNav-player-shockSprite");
+				
+				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").addClass("tween-battleNav-player-shock");
+				
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER1_HOLD", true);
+				}	
+				
+				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+				{
+					battleUserInfo_textEngine("PUNCH_PLAYER2_HOLD", true);
+				}	
+				
+				if(BATTLE_NAV.animation.resultRound)
+				{
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-sad").addClass("battleNav-player-eyesSprite-happy");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").addClass("battleNav-smash-head-KILLER");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").addClass("battleNav-smash-body-KILLER");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-legs").addClass("battleNav-smash-legs-KILLER");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-choice-eyes").removeClass("battleNav-player-choice-eyes-sad").addClass("battleNav-player-choice-eyes-happy");
+					
+					// removeBlow = setTimeout(battleMini_puchAttackReturn, 900, event);
+				
+					BATTLE_NAV.animation.playheadDelay.time(0.8, battleMini_puchAttackReturn, event);
+				}
+				
+				else
+				{
+					BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_puchAttackReturn, event);
+				}
+			}
+	
 			else
 			{
-				// removeBlow = setTimeout(battleMini_puchAttackReturn, 400, event);
-				
-				BATTLE_NAV.animation.playheadDelay.time(0.4, battleMini_puchAttackReturn, event);
+				battleMini_puchAttackReturn(event);
 			}
+
 		}
+
 	}
 	
 	// FAULTY WITH PASSING THE EVENT
@@ -461,73 +484,89 @@
 	
 	function battleMini_punchAttackComplete(event)
 	{
-		$(event.target)[0].removeEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
-		$(event.target)[0].removeEventListener("transitionend", battleMini_punchAttackComplete, false);
+		var lastPunchComplete = false;
 		
-		$(event.target).remove();
-		
-		if($("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-superPunch div").length === 0)
+		if(event.propertyName !== "opacity")
 		{
-			if(!BATTLE_NAV.animation.resultRound)
+			$(event.target)[0].removeEventListener("webkitTransitionEnd", battleMini_punchAttackComplete, false);
+			$(event.target)[0].removeEventListener("transitionend", battleMini_punchAttackComplete, false);
+			
+			if(parseInt($(event.target).attr("data-punchCount")) === BATTLE_NAV.animation.punchTotal - 1)
 			{
-				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
-				{
-					battleUserInfo_textEngine("PUNCH_PLAYER1_CLEAR", true);
-				}
-				
-				if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
-				{
-					battleUserInfo_textEngine("PUNCH_PLAYER2_CLEAR", true);	
-				}
+				lastPunchComplete = true;
 			}
-		
 			
-			$("#" + BATTLE_NAV.animation.punch_id_attack).removeClass("battleNav-superPunchAttacker");
+			$(event.target).remove();
 			
-			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-eyes").removeClass("battleNav-player-eyes-lookF");
-			
-			$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").addClass("tween-battleNav-player-hands");
-		
-			if(BATTLE_NAV.animation.smashed)
+			if(lastPunchComplete)
 			{
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body")[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackPurge, false);
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body")[0].addEventListener("transitionend", battleMini_punchAttackPurge, false);
-				
-				if(BATTLE_NAV.animation.resultRound)
+				// CHROME FIX
+				if($("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-superPunch div").length > 0)
 				{
-					$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-normal").addClass("battleNav-player-eyesSprite-happy");
-					
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-happy").addClass("battleNav-player-eyesSprite-sad");
-				
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").removeClass("battleNav-smash-head-KILLER");
-					
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").removeClass("battleNav-smash-body-KILLER");
-					
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-legs").removeClass("battleNav-smash-legs-KILLER");
-					
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-speech").removeClass("battleNav-player-speech-show").addClass("battleNav-player-speech-hide");
+					$(".battleNav-superPunchSprite").remove();
 				}
 				
-				else
+				if(!BATTLE_NAV.animation.resultRound)
 				{
-					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-sad").addClass("battleNav-player-eyesSprite-normal");
+					if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player1")
+					{
+						battleUserInfo_textEngine("PUNCH_PLAYER1_CLEAR", true);
+					}
+					
+					if(BATTLE_NAV.animation.punch_id_attack === "battleNav-player2")
+					{
+						battleUserInfo_textEngine("PUNCH_PLAYER2_CLEAR", true);	
+					}
 				}
+			
 				
+				$("#" + BATTLE_NAV.animation.punch_id_attack).removeClass("battleNav-superPunchAttacker");
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").addClass("tween-battleNav-player-head");
+				$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-eyes").removeClass("battleNav-player-eyes-lookF");
 				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").addClass("tween-battleNav-player-hands");
-				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").removeClass("battleNav-smash-head");
-				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").removeClass("battleNav-smash-body");
-				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").css("visibility", "hidden");
-				
-				$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").removeClass("tween-battleNav-player-shock");	
-				
-				
-				BATTLE_NAV.animation.smashed = false;
+				$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-hands").addClass("tween-battleNav-player-hands");
+			
+				if(BATTLE_NAV.animation.smashed)
+				{
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body")[0].addEventListener("webkitTransitionEnd", battleMini_punchAttackPurge, false);
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body")[0].addEventListener("transitionend", battleMini_punchAttackPurge, false);
+					
+					if(BATTLE_NAV.animation.resultRound)
+					{
+						$("#" + BATTLE_NAV.animation.punch_id_attack + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-normal").addClass("battleNav-player-eyesSprite-happy");
+						
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-happy").addClass("battleNav-player-eyesSprite-sad");
+					
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").removeClass("battleNav-smash-head-KILLER");
+						
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").removeClass("battleNav-smash-body-KILLER");
+						
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-legs").removeClass("battleNav-smash-legs-KILLER");
+						
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-speech").removeClass("battleNav-player-speech-show").addClass("battleNav-player-speech-hide");
+					}
+					
+					else
+					{
+						$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-eyesSprite").removeClass("battleNav-player-eyesSprite-sad").addClass("battleNav-player-eyesSprite-normal");
+					}
+					
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head").addClass("tween-battleNav-player-head");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-hands").addClass("tween-battleNav-player-hands");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-head-main").removeClass("battleNav-smash-head");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-body").removeClass("battleNav-smash-body");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shockSprite").css("visibility", "hidden");
+					
+					$("#" + BATTLE_NAV.animation.punch_id_victim + " .battleNav-player-shock").removeClass("tween-battleNav-player-shock");	
+					
+					
+					BATTLE_NAV.animation.smashed = false;
+				}
 			}
 		}
 	}
