@@ -197,6 +197,8 @@
 		
 		else
 		{
+			$("body").removeClass("mouseTrap");
+			
 			$("#preBattle_attack")[0].addEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].addEventListener("click", preBattleOptions_action, false);
 			
@@ -222,6 +224,8 @@
 		
 		else
 		{
+			$("body").addClass("mouseTrap");
+			
 			$("#preBattle_attack")[0].removeEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].removeEventListener("click", preBattleOptions_action, false);
 			
@@ -869,8 +873,8 @@
 		BATTLE_NAV.options.paper.index		= 1;
 		BATTLE_NAV.options.scissors.index	= 2;
 		
-		BATTLE_NAV.player_1.head = $("#battle-nav-player1 .battleCute-warrior-head");
-		BATTLE_NAV.player_2.head = $("#battle-nav-player2 .battleCute-warrior-head");
+		// BATTLE_NAV.player_1.head = $("#battle-nav-player1 .battleCute-warrior-head");
+		// BATTLE_NAV.player_2.head = $("#battle-nav-player2 .battleCute-warrior-head");
 	}
 	
 	function battleNav_show()
@@ -1001,6 +1005,8 @@
 				
 				else
 				{
+					$("body").removeClass("mouseTrap");
+					
 					$(BATTLE_NAV.options[optionItem].source).css("cursor", "pointer");
 					
 					$(BATTLE_NAV.options[optionItem].source)[0].addEventListener("mouseover", battleNav_controlEvent, false);	
@@ -1022,6 +1028,8 @@
 				
 				else
 				{
+					$("body").addClass("mouseTrap");
+					
 					$(BATTLE_NAV.options[optionItem].source).css("cursor", "default");
 					
 					$(BATTLE_NAV.options[optionItem].source)[0].removeEventListener("mouseover", battleNav_controlEvent, false);	
@@ -1265,7 +1273,13 @@
 		
 		BATTLE_NAV.html.navBattle = $("#battle-nav-fight").html();
 		
-
+		// HEADS
+		$("#battleNav-player1 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_1.headType);
+		$("#battleNav-player2 .battleNav-player-head").addClass("battleNav-player-head-" + BATTLE_NAV.player_2.headType);
+		
+		// SPEECH
+		$("#battleNav-player1 .battleNav-player-choice").addClass("battleNav-player-choice-" + BATTLE_NAV.player_1.selection.toUpperCase());
+		$("#battleNav-player2 .battleNav-player-choice").addClass("battleNav-player-choice-" + BATTLE_NAV.player_2.selection.toUpperCase());		
 		
 		battleNav_speechBubbles();
 	}

@@ -494,10 +494,10 @@
 						"y": 9,
 						"w": 0.5,
 						"h": 0.5,
-						"n": "level0_bird0",
-						"t": "bird",
+						"n": "level0_crow0",
+						"t": "crow",
 						"l": 5,
-						"known" : "some mystic bird 0",
+						"known" : "some mystic crow 0",
 						"spawn": 0
 					},
 					
@@ -1021,10 +1021,10 @@
 						"y": 18,
 						"w": 0.5,
 						"h": 0.5,
-						"n": "level1_bird0",
-						"t": "bird",
+						"n": "level1_crow0",
+						"t": "crow",
 						"l": 10,
-						"known" : "some mystic bird 1",
+						"known" : "some mystic crow 1",
 						"spawn": 1
 					},
 					
@@ -1359,10 +1359,10 @@
 						"y": 8,
 						"w": 0.5,
 						"h": 0.5,
-						"n": "level2_bird0",
-						"t": "bird",
+						"n": "level2_crow0",
+						"t": "crow",
 						"l": 30,
-						"known" : "some mystic bird 2",
+						"known" : "some mystic crow 2",
 						"spawn": 2
 					},
 					
@@ -1720,10 +1720,10 @@
 						"y": 6.5,
 						"w": 0.5,
 						"h": 0.5,
-						"n": "level3_bird0",
-						"t": "bird",
+						"n": "level3_crow0",
+						"t": "crow",
 						"l": 79,
-						"known" : "some mystic bird 3",
+						"known" : "some mystic crow 3",
 						"spawn": 3
 					},
 					

@@ -1345,27 +1345,27 @@
 	}
 
 
-	.enemy_bird .enemy-sprite .map-enemy_40x40-head
+	.enemy_crow .enemy-sprite .map-enemy_40x40-head
 	{
 		background-position-y: -120px;
 	}
 	
-	.enemy_bird .enemy-sprite .map-enemy_40x40-hand-L
+	.enemy_crow .enemy-sprite .map-enemy_40x40-hand-L
 	{
 		background-position-y: -160px;
 	}
 	
-	.enemy_bird .enemy-sprite .map-enemy_40x40-hand-R
+	.enemy_crow .enemy-sprite .map-enemy_40x40-hand-R
 	{
 		background-position-y: -160px;
 	}
 	
-	.enemy_bird .enemy-sprite .map-enemy_40x40-body
+	.enemy_crow .enemy-sprite .map-enemy_40x40-body
 	{
 		background-position-y: -120px;
 	}
 	
-	.enemy_bird .enemy-sprite .map-enemy_40x40-legs
+	.enemy_crow .enemy-sprite .map-enemy_40x40-legs
 	{
 		background-position-y: -200px;
 	}

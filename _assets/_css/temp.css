@@ -1,5 +1,12 @@
 @charset "UTF-8";
-
+	
+	
+	/* HIDE MOUSE IN GAME */
+	.mouseTrap
+	{
+		cursor: none;
+	}
+	
 
 	.microBattle_fade_main
 	{
@@ -188,6 +195,16 @@
 	.battleNav-player-head-rabbit
 	{
 		background-position: 0px -120px;
+	}
+	
+	.battleNav-player-head-crow
+	{
+		background-position: -60px -120px;
+	}
+	
+	.battleNav-player-head-goat, .battleNav-player-head-zombie
+	{
+		background-position: -120px -120px;
 	}
 	
 	.battleNav-player-eyes
