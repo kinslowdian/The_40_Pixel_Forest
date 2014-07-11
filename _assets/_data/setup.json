@@ -636,11 +636,7 @@
 					"spawn": 0,
 					"p": "pixels_portal"
 				}
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		},
 		
 		"level1":
@@ -1191,11 +1187,7 @@
 					"spawn": 1,
 					"p": "pixels_portal"
 				}
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		},
 		
 		"level2":
@@ -1462,11 +1454,7 @@
 					"p": "pixels_portal"	
 				}
 				
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		},
 		
 		"level3":
@@ -1808,11 +1796,7 @@
 					"spawn": 3,
 					"p": "pixels_portal"	
 				}
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		},
 		
 		"level4":
@@ -2335,11 +2319,7 @@
 					"spawn": 4,
 					"p": "pixels_portalSnow"
 				}
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		},
 		
 		"level5":
@@ -2862,11 +2842,7 @@
 					"spawn": 5,
 					"p": "pixels_portalFire"
 				}
-			},
-			
-			"decay_L":[{"cut":"landDecay_l_0"}, {"cut":"landDecay_l_1"}, {"cut":"landDecay_l_2"}, {"cut":"landDecay_l_3"}, {"cut":"landDecay_l_4"}, {"cut":"landDecay_l_2"}],
-			
-			"decay_R":[{"cut":"landDecay_r_0"}, {"cut":"landDecay_r_1"}, {"cut":"landDecay_r_2"}, {"cut":"landDecay_r_3"}, {"cut":"landDecay_r_4"}, {"cut":"landDecay_r_2"}]
+			}
 		}
 
 	}

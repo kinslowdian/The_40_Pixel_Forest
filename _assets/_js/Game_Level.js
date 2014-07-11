@@ -235,8 +235,6 @@
 		
 		level_weather();
 		
-		decayBuild();
-		
 		// FLOOR COLOUR
 		
 		$(".field-floor > div").addClass(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["texture"]["FLOOR"]["class"]);
@@ -387,21 +385,6 @@
 		if(weather_use)
 		{
 			$(html_cont).html(html_data);
-		}
-	}
-	
-	function decayBuild()
-	{
-		var decayLength = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["decay_L"].length;
-		
-		for(var i = 0; i < decayLength; i++)
-		{
-			var final_class_L = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["decay_L"][i].cut;
-			var final_class_R = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["decay_R"][i].cut;
-			
-			$(".woodland-darkness-left .landDecayBlock_" + i).addClass(final_class_L);
-			
-			$(".woodland-darkness-right .landDecayBlock_" + i).addClass(final_class_R);
 		}
 	}
 	

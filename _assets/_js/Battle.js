@@ -197,8 +197,6 @@
 		
 		else
 		{
-			$("body").removeClass("mouseTrap");
-			
 			$("#preBattle_attack")[0].addEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].addEventListener("click", preBattleOptions_action, false);
 			
@@ -224,8 +222,6 @@
 		
 		else
 		{
-			$("body").addClass("mouseTrap");
-			
 			$("#preBattle_attack")[0].removeEventListener("click", preBattleOptions_action, false);
 			$("#preBattle_run")[0].removeEventListener("click", preBattleOptions_action, false);
 			
@@ -1005,8 +1001,6 @@
 				
 				else
 				{
-					$("body").removeClass("mouseTrap");
-					
 					$(BATTLE_NAV.options[optionItem].source).css("cursor", "pointer");
 					
 					$(BATTLE_NAV.options[optionItem].source)[0].addEventListener("mouseover", battleNav_controlEvent, false);	
@@ -1028,8 +1022,6 @@
 				
 				else
 				{
-					$("body").addClass("mouseTrap");
-					
 					$(BATTLE_NAV.options[optionItem].source).css("cursor", "default");
 					
 					$(BATTLE_NAV.options[optionItem].source)[0].removeEventListener("mouseover", battleNav_controlEvent, false);	
