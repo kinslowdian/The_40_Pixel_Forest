@@ -4527,7 +4527,7 @@
 	
 	#microBattle_fade_content
 	{
-		width: 1280px;
+		width: 100%; /* 1280px */
 		height: 2400px;
 		
 		position: absolute;
@@ -4628,13 +4628,13 @@
 	#spaceSquid0
 	{
 		top:0;
-		left:400px;
+		left:160px;
 	}
 	
 	#spaceSquid1
 	{
 		top:0;
-		left:800px;
+		left:560px;
 	}
 	
 	#microBattle_player_wrapper
@@ -4646,7 +4646,12 @@
 					
 		position: absolute;
 					
-		z-index: 2;	/* 3 */	
+		z-index: 2;	/* 3 */	/*  QUICK- 2 */
+	}
+	
+	.microBattle_player_wrapper_focus
+	{
+		z-index: 4;
 	}
 	
 	
@@ -4673,7 +4678,7 @@
 	
 	#microBattle_content, #microBattlePlayer_content
 	{
-		width: 1280px;
+		width: 100%; /* 1280px */
 		height: 2400px;
 	
 		position: absolute;
@@ -5040,7 +5045,7 @@
 		
 		opacity: 0;
 		
-		z-index: 4;
+		z-index: 2; /* QUICK- 4 */
 	}
 	
 	.tween-microBattle_darkness
@@ -5059,7 +5064,7 @@
 				
 		position: absolute;
 				
-		z-index: 3;			
+		z-index: 3;		
 	}
 	
 	#microBattle_space_wrapper .microBattle_weather
@@ -5121,7 +5126,7 @@
 					
 		position: absolute;
 					
-		z-index: 3;	/* 2 */	
+		z-index: 5;	/* 2 */	/* QUICK- 3 */
 	}
 		
 	#microBattle_resultWipe_content

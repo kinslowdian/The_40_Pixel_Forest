@@ -754,6 +754,8 @@
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("webkitTransitionEnd", microBattleSequence_startBattle, false);
 		$(".tween-microBattleWeatherFade")[0].removeEventListener("transitionend", microBattleSequence_startBattle, false);
 		
+		$("#microBattle_player_wrapper").addClass("microBattle_player_wrapper_focus");
+		
 		$("#microBattle_wrapper").html("");
 		
 		battleNav_init();
@@ -2082,7 +2084,7 @@
 	function spaceSquids_animationStart()
 	{
 		var css;
-		var final_y = 240;
+		var final_y = 0;
 		
 		$("#spaceSquid0").addClass("tween-spaceSquidMain");
 		$("#spaceSquid1").addClass("tween-spaceSquidMain");

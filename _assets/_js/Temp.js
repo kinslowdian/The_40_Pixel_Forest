@@ -142,6 +142,9 @@
 					BATTLE_NAV.animation.firstPunch = true;
 					
 					battleMini_punchAttackSet(1);
+					
+					$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_happy");
+					$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_fear");
 				}
 				
 				if(playhead === "FINISH")
@@ -149,6 +152,9 @@
 					BATTLE_NAV.animation.sequenceFlow = "START_PLAYER2";
 					
 					battleMini_punchAttackControl("BEGIN");
+					
+					$("#player1 .map-goat-head").removeClass("mapPlayer_head_happy").addClass("mapPlayer_head_default");
+					$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_fear").addClass("map-enemy_40x40_head_default");
 				}
 				
 				break;
@@ -161,6 +167,9 @@
 					BATTLE_NAV.animation.firstPunch = true;
 					
 					battleMini_punchAttackSet(2);
+					
+					$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_fear");
+					$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_happy");
 				}
 				
 				if(playhead === "FINISH")
@@ -171,6 +180,8 @@
 					
 					battleMini_punchAttackControl("BEGIN");	
 					
+					$("#player1 .map-goat-head").removeClass("mapPlayer_head_fear").addClass("mapPlayer_head_default");
+					$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_happy").addClass("map-enemy_40x40_head_default");					
 				}
 				
 				break;				
@@ -204,6 +215,9 @@
 						BATTLE_NAV.animation.resultRound = true;
 						
 						battleMini_punchAttackSet(1);
+						
+						$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_happy");
+						$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_dead");
 					}
 					
 					if(BATTLE_NAV.game.result === "LOSE")
@@ -211,6 +225,9 @@
 						BATTLE_NAV.animation.resultRound = true;
 						
 						battleMini_punchAttackSet(2);
+						
+						$("#player1 .map-goat-head").removeClass("mapPlayer_head_default").addClass("mapPlayer_head_dead");
+						$("#player2 .map-enemy_40x40-head").removeClass("map-enemy_40x40_head_default").addClass("map-enemy_40x40_head_happy");
 					}
 					
 					if(BATTLE_NAV.game.result === "DRAW")
