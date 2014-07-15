@@ -45,7 +45,7 @@
 		DISPLAY._width_fill 	= DISPLAY._width_row * DISPLAY.tileWidth;
 		DISPLAY._height_fill	= DISPLAY._height_row * DISPLAY.tileHeight;
 		
-		if(DISPLAY.screenUpdateUse)
+		if(DISPLAY.screenUpdateUse && $(".stage-view-x"))
 		{
 			// fix blurring:
 			DISPLAY.center_X		= Math.floor(($(".stage-main").width() - $(".stage-view-x").width()) * 0.5);

@@ -30,6 +30,8 @@
 
 /* LEVEL_GAME */
 
+/* LEVEL_COLORS */
+
 /* WEATHER */
 
 /* CLEARING */
@@ -740,8 +742,8 @@
 			
 	.tween-player-block
 	{
-		-webkit-transition	: -webkit-transform 0.24s ease-in-out;
-		transition			: transform 0.24s ease-in-out;				
+		-webkit-transition	: -webkit-transform 0.18s ease-in-out; /* QUICK- 0.24s */
+		transition			: transform 0.18s ease-in-out; /* QUICK- 0.24s */			
 	}
 			
 	.mapPlayer_head_default
@@ -903,8 +905,8 @@
 			
 	.tween-mapPlayerWalk_loop
 	{
-		-webkit-animation	: tweenMapPlayerWalkLoopFrames 0.12s steps(8) 0 infinite;
-		animation			: tweenMapPlayerWalkLoopFrames 0.12s steps(8) 0 infinite;
+		-webkit-animation	: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
+		animation			: tweenMapPlayerWalkLoopFrames 0.09s steps(8) 0 infinite; /* QUICK- 0.12s */
 	}
 			
 	.tween-mapPlayerWalk_stop
@@ -926,8 +928,8 @@
 			
 	.tween-player-walkX
 	{
-		-webkit-animation	: tweenPlayerWalkX_Frames 0.24s linear infinite; /* 0.6s */
-		animation			: tweenPlayerWalkX_Frames 0.24s linear infinite; /* 0.6s */			
+		-webkit-animation	: tweenPlayerWalkX_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
+		animation			: tweenPlayerWalkX_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */			
 	}
 			
 	@-webkit-keyframes tweenPlayerWalkX_Frames
@@ -950,8 +952,8 @@
 			
 	.tween-player-walkY
 	{
-		-webkit-animation	: tweenPlayerWalkY_Frames 0.24s linear infinite; /* 0.6s */
-		animation			: tweenPlayerWalkY_Frames 0.24s linear infinite; /* 0.6s */				
+		-webkit-animation	: tweenPlayerWalkY_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */
+		animation			: tweenPlayerWalkY_Frames 0.18s linear infinite; /* QUICK- 0.24s */ /* 0.6s */				
 	}
 			
 	@-webkit-keyframes tweenPlayerWalkY_Frames
@@ -1764,6 +1766,19 @@
 	}	
 
 /* ----------------------------------------------------------------------- LEVEL_GAME */
+
+
+
+
+/* ----------------------------------------------------------------------- LEVEL_COLORS */
+
+	.colorBleed-forest
+	{
+		
+	}
+
+/* ----------------------------------------------------------------------- LEVEL_COLORS */
+
 
 
 
@@ -4527,7 +4542,7 @@
 	
 	#microBattle_fade_content
 	{
-		width: 100%; /* 1280px */
+		width: 320px; /* 100% */ /* 1280px */
 		height: 2400px;
 		
 		position: absolute;
@@ -4606,8 +4621,8 @@
 		
 		margin: 0 auto;
 		
-		-webkit-transform: translateY(240px);
-		transform: translateY(240px);
+		-webkit-transform: translate(-240px, 240px);
+		transform: translate(-240px, 240px);
 		
 		z-index: 0;			
 	}

@@ -1193,6 +1193,13 @@
 		
 		$("#roam_wrapper").addClass("tween-fieldSmash");
 		
+		if(DISPLAY._width >= 768)
+		{
+			$(".edgeSmash_L").addClass("edgeSmash_show");
+			$(".edgeSmash_R").addClass("edgeSmash_show");			
+		}
+		
+		
 		delay_sequence = setTimeout(attackCloud_1, 0.2 * 1000);
 	}
 	
