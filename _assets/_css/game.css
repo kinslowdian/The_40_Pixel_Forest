@@ -2025,6 +2025,8 @@
 		width: 120px;
 		height: 120px;
 		
+		background-position: 0 0;
+		
 		position: absolute;
 		
 		top: 0; left: 0; right: 0; bottom: 0;
@@ -2040,57 +2042,49 @@
 		width: 24px;
 		height: 36px;
 		
+		background-position: 0px -120px;
+		
 		position: absolute;
 		
 		left: 0; right: 0; top: 0; bottom: 0;
 		
 		margin: auto;
-
-		background-position: -182px 0px;
 		
 		z-index: 1;
 	}
 	
-	.wolfGod .battleCute-eyes	
+	.wolfGod_eyes
 	{
-		-webkit-transform	: translate(4px, 15px);
-		transform			: translate(4px, 15px);
+		width: inherit;
+		height: inherit;
 		
-		z-index: 1;
+		background-position: 0px -156px;
+		
+		position: relative;
 	}
 	
-	.battleCute-eyes-wolf-norm
+	.tween-wolfGod_looking
 	{
-		background-position: -70px -70px;
+		-webkit-animation	: tweenWolfGodLookingFrames 1.8s ease-in-out infinite;
+		animation			: tweenWolfGodLookingFrames 1.8s ease-in-out infinite;		
 	}
 	
-	.battleCute-eyes-wolf-happy
+	@-webkit-keyframes tweenWolfGodLookingFrames
 	{
-		background-position: -56px -70px;
+		0%		{ -webkit-transform	: translateX(0px); } /* CENTER */
+		25%		{ -webkit-transform	: translateX(0px); } /* CENTER DELAY */
+		50%		{ -webkit-transform	: translateX(-2px); } /* LEFT */
+		75%		{ -webkit-transform	: translateX(-2px); } /* LEFT DELAY */
+		100%	{ -webkit-transform	: translateX(0px); } /* CENTER */		
 	}
 	
-	.tween-notice-wolf-looking
+	@keyframes tweenWolfGodLookingFrames
 	{
-		-webkit-animation	: tweenNoticeWolfLookingFrames 1.8s ease-in-out infinite;
-		animation			: tweenNoticeWolfLookingFrames 1.8s ease-in-out infinite;
-	}
-	
-	@-webkit-keyframes tweenNoticeWolfLookingFrames
-	{
-		0%		{ -webkit-transform	: translate(1px, 2px); } /* CENTER */
-		25%		{ -webkit-transform	: translate(1px, 2px); } /* CENTER DELAY */
-		50%		{ -webkit-transform	: translate(-1px, 2px); } /* LEFT */
-		75%		{ -webkit-transform	: translate(-1px, 2px); } /* LEFT DELAY */
-		100%	{ -webkit-transform	: translate(1px, 2px); } /* CENTER */
-	}
-	
-	@keyframes tweenNoticeWolfLookingFrames
-	{
-		0%		{ transform	: translate(1px, 2px); } /* CENTER */
-		25%		{ transform	: translate(1px, 2px); } /* CENTER DELAY */
-		50%		{ transform	: translate(-1px, 2px); } /* LEFT */
-		75%		{ transform	: translate(-1px, 2px); } /* LEFT DELAY */
-		100%	{ transform	: translate(1px, 2px); } /* CENTER */
+		0%		{ transform	: translateX(0px); } /* CENTER */
+		25%		{ transform	: translateX(0px); } /* CENTER DELAY */
+		50%		{ transform	: translateX(-2px); } /* LEFT */
+		75%		{ transform	: translateX(-2px); } /* LEFT DELAY */
+		100%	{ transform	: translateX(0px); } /* CENTER */		
 	}
 
 /* ----------------------------------------------------------------------- CLEARING */
@@ -3265,17 +3259,83 @@
 			
 	/* GENERAL */
 			
+/*
  	.battleCute-eyes
  	{
-	 	width: 16px;
-	 	height: 6px;
+	 	width: 126px;
+	 	height: 68px;
 	 		 	
 	 	position: absolute;
+	 	
+	 	top: 0;
+	 	left: 0;
+	 	
+	 	z-index: 0;
+ 	}
+*/
+
+	.battleCute-bird-eyes
+	{
+	 	width: 126px;
+	 	height: 68px;
 	 		 	
-	 	-webkit-transform	: translate(10px, 18px);
-	 	transform			: translate(10px, 18px);
+	 	position: absolute;
+	 	
+	 	top: 0;
+	 	left: 0;
+	 	
+	 	z-index: 0;		
+	}
+
+  	.battleCute-bird-eyes-sprite
+ 	{
+	 	width: inherit;
+	 	height: inherit;
+	 	
+	 	position: relative;
+ 	}
+ 	
+ 	.battleCute-bird-eyes-norm
+ 	{
+	 	background-position: -126px -68px;
  	}
  		 	
+ 	.battleCute-bird-eyes-happy
+ 	{
+	 	background-position: -126px 0px;
+ 	}
+ 	
+  	.battleCute-bird-eyes-sprite
+ 	{
+	 	-webkit-transition	: -webkit-transform 0.2s ease;
+	 	transition			: transform 0.2s ease;
+ 	}
+ 		 	
+ 	.battleCute-bird-eyes-look-C
+ 	{
+	 	-webkit-transform	: translateX(0px);
+	 	transform			: translateX(0px);	
+ 	}
+ 		 	
+ 	.battleCute-bird-eyes-look-L
+ 	{
+	 	-webkit-transform	: translateX(-1px);
+	 	transform			: translateX(-1px);		 		 	
+ 	}
+ 		 	
+ 	.battleCute-bird-eyes-look-R
+ 	{
+	 	-webkit-transform	: translateX(1px);
+	 	transform			: translateX(1px);	 		 	
+ 	} 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 		 	
+/*
  	.battleCute-eyes-sprite
  	{
 	 	width: 14px;
@@ -3379,9 +3439,11 @@
  	{
 	 	background-position: -60px -73px;
  	}
+*/
 			
 	/* WARRIOR */
 			
+/*
  	.battleCute-tears
  	{
 	 	width: 2px;
@@ -3544,9 +3606,6 @@
 	 	position: absolute;	 		 	
  	}
 			
-			
-	/* WARRIOR LEFT */
-			
 	#battle-nav-player1
 	{
 		position: absolute;
@@ -3605,11 +3664,13 @@
  	{
 	 	-webkit-transform	: translate(41px, 20px);
 	 	transform			: translate(41px, 20px);
- 	}	 	
+ 	}	
+*/ 	
  		 	
  		 	
 	/* WARRIOR RIGHT */
 			
+/*
 	#battle-nav-player2
 	{
 		position: absolute;
@@ -3669,6 +3730,7 @@
 	 	-webkit-transform	: translate(20px, 20px);
 	 	transform			: translate(20px, 20px);
  	}
+*/
 
 	/* BIRD */
 			
@@ -3679,6 +3741,8 @@
 	 	top:0; bottom: 0; left: 0; right: 0;
 	 		 	
 	 	margin: 0 auto;
+	 	
+	 	z-index: 0;
  	}
  		 	
  		 		
@@ -3688,6 +3752,15 @@
 	 	height: 71px;
 	 		 	
 	 	position: absolute;
+	 	
+	 	left: 0; right: 0; top:0; bottom:0;
+	 	
+	 	margin: auto;
+	 	
+	 	-webkit-transform: translateY(-9px);
+	 	transform: translateY(-9px);
+	 	
+	 	z-index: 0;
  	}
  		 			
  	.battleCute-bird-body
@@ -3699,20 +3772,18 @@
  		 				
  	.battleCute-bird-head
  	{
-	 	width: 24px;
-	 	height: 62px;
+	 	width: 126px;
+	 	height: 68px;
 	 		 	
-	 	background-position: -118px -73px;
+	 	background-position: 0px 0px;
 	 		 	
 	 	position: absolute;
 	 		 	
-	 	top: 0;
-	 	right: 0;
-	 	bottom: 0;
+	 	top: 9px;
 	 	left: 0;
-	 		 	
-	 	margin: 9px auto 0 auto;
- 	}
+	 	
+	 	z-index: 0;
+ 	} 
  		 	
  	.tween-battleCute-bird-body
  	{
@@ -3734,11 +3805,13 @@
 	 	100%	{ transform: translateY(0px); }
  	}
  		 	
+/*
  	.battleCute-bird-head .battleCute-eyes
  	{
 	 	-webkit-transform	: translate(4px, 7px);
 	 	transform			: translate(4px, 7px);
  	}
+*/
  		 				
  	.battleCute-bird-arm 
  	{
@@ -3864,19 +3937,15 @@
  		 				
  	.battleCute-bird-legs
  	{
-	 	width: 30px;
-	 	height: 48px;
+	 	width: 126px;
+	 	height: 68px;
 	 		 	
-	 	background-position: -142px -87px;
+	 	background-position: 0px -68px;
 	 		 	
 	 	position: absolute;
 	 		 	
 	 	top: 0;
-	 	right: 0;
-	 	bottom: 0;
 	 	left: 0;
-	 		 	
-	 	margin: 23px auto 0 auto;
 	 		 	
 	 	z-index: 0;
 	 		 	

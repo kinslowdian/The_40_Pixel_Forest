@@ -634,7 +634,7 @@
 	 	
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-inner").addClass("tween-battleCute-bird-arm-main-fire");
 	 			
-	 	$("#battle-nav-playerBird .battleCute-eyes-sprite").removeClass("battleCute-eyes-norm").addClass("battleCute-eyes-happy");
+	 	$("#battle-nav-playerBird .battleCute-bird-eyes-sprite").removeClass("battleCute-bird-eyes-norm").addClass("battleCute-bird-eyes-happy");
 	 	
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-main").addClass("tween-battleCute-bird-arm-main-intoFly");
 	 			

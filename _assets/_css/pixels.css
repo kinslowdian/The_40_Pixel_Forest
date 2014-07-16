@@ -88,6 +88,7 @@
 		background-size: 80px 80px;
 	}
 	
+/*
 	.pixels_flowerRichCross
 	{
 		background-image: url(../_img/tile_flowersRich_+_1x.png);
@@ -95,6 +96,7 @@
 		background-repeat: no-repeat;
 		background-size: 120px 120px;
 	}
+*/
 
 	.pixels_rain0
 	{
@@ -194,12 +196,14 @@
 		background-size: 320px 120px;
 	}
 	
+/*
 	.pixels_battleFlow
 	{
 		background-image: url(../_img/battleNavSprite_1x.png);
 		background-repeat: no-repeat;
 		background-size: 371px 400px;				
 	}
+*/
 	
 	
 	.pixels_map_enemy40x40
@@ -226,12 +230,14 @@
 		background-size: 72px 211px;
 	}
 	
+/*
 	.pixels_battleFlow
 	{
 		background-image: url(../_img/battleNavSprite_1x.png);
 		background-repeat: no-repeat;
 		background-size: 371px 400px;				
 	}
+*/
 	
 	.pixels_warCrabs
 	{
@@ -432,6 +438,13 @@
 		background-image: url(../_img/battleCuteFull_1x.png);
 		background-repeat: no-repeat;
 		background-size: 371px 390px;
+	}
+	
+	.pixels_levelClearing
+	{
+		background-image: url(../_img/levelClearing_1x.png);
+		background-repeat: no-repeat;
+		background-size: 400px 400px;
 	}	
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -518,10 +531,12 @@
 			background-image: url(../_img/tile_flowersHeavy_1x.png);
 		}
 		
+/*
 		.pixels_flowerRichCross
 		{
 			background-image: url(../_img/tile_flowersRich_+_1x.png);
 		}
+*/
 		
 		.pixels_rain0
 		{
@@ -585,10 +600,12 @@
 			background-image: url(../_img/map_playerSprite_1x.png);
 		}
 		
+/*
 		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_1x.png);				
 		}
+*/
 		
 		.pixels_map_enemy40x40
 		{
@@ -605,10 +622,12 @@
 			background-image: url(../_img/battleNavCloud_1x.png);
 		}
 		
+/*
 		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_1x.png);			
 		}
+*/
 		
 		.pixels_warCrabs
 		{
@@ -741,6 +760,11 @@
 		.pixels_battleNav-player
 		{
 			background-image: url(../_img/battleCuteFull_1x.png);
+		}
+		
+		.pixels_levelClearing
+		{
+			background-image: url(../_img/levelClearing_1x.png);
 		}						
 	}
 
@@ -788,10 +812,12 @@
 			background-image: url(../_img/tile_flowersHeavy_2x.png);
 		}
 		
+/*
 		.pixels_flowerRichCross
 		{
 			background-image: url(../_img/tile_flowersRich_+_2x.png);
 		}
+*/
 		
 		.pixels_rain0
 		{
@@ -855,10 +881,12 @@
 			background-image: url(../_img/map_playerSprite_2x.png);
 		}
 		
+/*
 		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_2x.png);				
 		}
+*/
 		
 		.pixels_map_enemy40x40
 		{
@@ -875,10 +903,12 @@
 			background-image: url(../_img/battleNavCloud_2x.png);
 		}
 		
+/*
 		.pixels_battleFlow
 		{
 			background-image: url(../_img/battleNavSprite_2x.png);			
 		}
+*/
 		
 		.pixels_warCrabs
 		{
@@ -1011,6 +1041,11 @@
 		.pixels_battleNav-player
 		{
 			background-image: url(../_img/battleCuteFull_2x.png);
+		}
+		
+		.pixels_levelClearing
+		{
+			background-image: url(../_img/levelClearing_2x.png);
 		}										
 	}
 
