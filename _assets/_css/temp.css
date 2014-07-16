@@ -261,17 +261,17 @@
 	
 	.battleNav-player-head-rabbit
 	{
-		background-position: 0px -120px;
+		background-position: 0px -330px;
 	}
 	
 	.battleNav-player-head-crow
 	{
-		background-position: -60px -120px;
+		background-position: -60px -330px;
 	}
 	
 	.battleNav-player-head-goat, .battleNav-player-head-zombie
 	{
-		background-position: -120px -120px;
+		background-position: -120px -330px;
 	}
 	
 	.battleNav-player-eyes
@@ -321,17 +321,17 @@
 	
 	.battleNav-player-eyesSprite-normal
 	{
-		background-position: 0 0;
+		background-position: 0 -210px;
 	}
 	
 	.battleNav-player-eyesSprite-sad
 	{
-		background-position: -60px 0;
+		background-position: -60px -210px;
 	}
 	
 	.battleNav-player-eyesSprite-happy
 	{
-		background-position: -120px 0;
+		background-position: -120px -210px;
 	}	
 	
 	.battleNav-player-body
@@ -339,7 +339,7 @@
 		width: inherit;
 		height: inherit;
 		
-		background-position: 0 -60px;
+		background-position: 0 -270px;
 		
 		position: absolute;
 		
@@ -418,12 +418,12 @@
 	
 	#battleNav-player1 .battleNav-player-handsSprite
 	{
-		background-position: -60px -60px;
+		background-position: -60px -270px;
 	}
 	
 	#battleNav-player2 .battleNav-player-handsSprite
 	{
-		background-position: -120px -60px;
+		background-position: -120px -270px;
 	}
 	
 	.battleNav-player-legs
@@ -441,7 +441,7 @@
 		width: inherit;	
 		height: inherit;
 		
-		background-position: -180px -60px;
+		background-position: -180px -270px;
 		
 		position: relative;
 	}
@@ -452,7 +452,7 @@
 		width: 90px;
 		height: 70px;
 		
-		background-position: 0 0;
+		background-position: -260px 0;
 		
 		
 		-webkit-transform-origin: 0% 50%;
@@ -529,17 +529,17 @@
 	
 	.battleNav-player-choice-STONE
 	{
-		background-position: 0px -70px;	
+		background-position: -260px -70px;	
 	}
 	
 	.battleNav-player-choice-PAPER
 	{
-		background-position: -30px -70px;
+		background-position: -290px -70px;
 	}
 	
 	.battleNav-player-choice-SCISSORS
 	{
-		background-position: -60px -70px;
+		background-position: -320px -70px;
 	}
 	
 	.battleNav-player-choice-eyes
@@ -552,17 +552,17 @@
 	
 	.battleNav-player-choice-eyes-normal
 	{
-		background-position: 0 -100px;
+		background-position: -260px -100px;
 	}
 	
 	.battleNav-player-choice-eyes-sad
 	{
-		background-position: -60px -100px;
+		background-position: -320px -100px;
 	}
 	
 	.battleNav-player-choice-eyes-happy
 	{
-		background-position: -30px -100px;
+		background-position: -290px -100px;
 	}
 	
 	.battleNav-superPunch
@@ -639,12 +639,12 @@
 	
 	#battleNav-player1 .battleNav-superPunchSprite > div
 	{
-		background-position: 0 0;
+		background-position: -243px -210px;
 	}
 	
 	#battleNav-player2 .battleNav-superPunchSprite > div
 	{
-		background-position: 0 -60px;
+		background-position: -243px -270px;
 	}
 	
 	.tween-superPunchSpriteAmbient
@@ -788,26 +788,16 @@
 	
 	/* ---------------------------------------- PIXELS */
 	
-	.pixels_battleNav-player
-	{
-		background-image: url(../_img/battleCute_1x.png);
-		background-repeat: no-repeat;
-		background-size: 240px 180px;
-	}
+
 	
+/*
 	.pixels_battleNav
 	{
 		background-image: url(../_img/battleNavMin_1x.png);
 		background-repeat: no-repeat;
 		background-size: 180px 130px;
 	}
-	
-	.pixels_superPunch
-	{
-		background-image: url(../_img/superPunchSprite_1x.png);
-		background-repeat: no-repeat;
-		background-size: 87px 120px;
-	}
+*/
 	
 	.vectors_superPunchShock
 	{

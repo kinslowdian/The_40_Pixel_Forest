@@ -425,6 +425,13 @@
 		background-position: 0 0;
 		background-repeat: repeat;
 		background-size: 80px 80px;
+	}
+	
+	.pixels_battleNav-player
+	{
+		background-image: url(../_img/battleCuteFull_1x.png);
+		background-repeat: no-repeat;
+		background-size: 371px 390px;
 	}	
 
 /* ----------------------------------------------------------------------- GENERAL */
@@ -729,6 +736,11 @@
 		.pixels_flowerHeavyDark
 		{
 			background-image: url(../_img/tile_flowersHeavyDark_1x.png);
+		}
+		
+		.pixels_battleNav-player
+		{
+			background-image: url(../_img/battleCuteFull_1x.png);
 		}						
 	}
 
@@ -994,6 +1006,11 @@
 		.pixels_flowerHeavyDark
 		{
 			background-image: url(../_img/tile_flowersHeavyDark_2x.png);
+		}
+		
+		.pixels_battleNav-player
+		{
+			background-image: url(../_img/battleCuteFull_2x.png);
 		}										
 	}
 
