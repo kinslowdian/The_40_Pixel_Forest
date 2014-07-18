@@ -933,8 +933,10 @@
 		$(".tween-portalScreen_header")[0].removeEventListener("webkitTransitionEnd", portalScreen_screen3, false);
 		$(".tween-portalScreen_header")[0].removeEventListener("transitionend", portalScreen_screen3, false);		
 		
+		
+		$(".portalScreen_miniMoon").css("opacity", "1");
 	
-		PortalScreen.delay = setTimeout(portalScreen_screen4, 1 * 1000);
+		PortalScreen.delay = setTimeout(portalScreen_screen4, 1.2 * 1000);
 	}
 	
 	function portalScreen_screen4()

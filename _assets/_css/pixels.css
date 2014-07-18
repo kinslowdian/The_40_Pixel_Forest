@@ -177,16 +177,14 @@
 		background-size: 240px 203px;
 	}
 	
+/*
 	.pixels_colour-navPink
 	{
-/*
 		background-image: url(../_img/col_nav-pink_1x.png);
 		background-repeat: repeat;
 		background-size: 100px 100px;
-*/
-		background-color: #1a004d;
-		background-repeat: repeat;
 	}
+*/
 	
 	.pixels_map_player
 	{
@@ -486,6 +484,13 @@
 		background-repeat: no-repeat;
 		/* background-size: 240px 120px; */
 	}
+	
+	.vectors_superPunchShock
+	{
+		background-image: url(../_img/puchSmashShock.svg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}	
 
 /* ----------------------------------------------------------------------- VECTOR */
 
