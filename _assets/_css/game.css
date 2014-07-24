@@ -2719,7 +2719,7 @@
 		width: 100%;
 		height: 100%;
 		
-		font-size: 2em;
+		font-size: 26px;
 		
 		background: #20202a;
 		
@@ -2731,30 +2731,22 @@
 	
 	.tween-preBattle_options
 	{
-/*
-		-webkit-transition	: -webkit-transform 0.5s ease-in-out;
-		transition 			: transform 0.5s ease-in-out;
-*/
-		
-/*
-		-webkit-transition: -webkit-transform 1s ease-in-out;
-		transition: transform 1s ease-in-out;
-*/
-
 		-webkit-transition: -webkit-transform 0.6s ease-in-out;
 		transition: transform 0.6s ease-in-out;
 	}
 	
 	.preBattle_options h1
 	{
-		font-size: 0.8em;
-		line-height: 0.8em;
+		font-size: 1em;
+		letter-spacing: 0.1em;
+		line-height: 1;
 	}
 	
 	.preBattle_options h2
 	{
-		font-size: 0.5em;
-		line-height: 0.5em;
+		font-size: 0.6em;
+		letter-spacing: 0.1em;
+		line-height: 1;
 	}
 	
 	.preBattle_title_enemy
@@ -5628,8 +5620,6 @@
 		width: 40px;
 		height: 15px;
 		
-		background-position: -80px -260px;
-		
 		
 		-webkit-transform: translateY(20px);
 		transform: translateY(20px);
@@ -5642,11 +5632,15 @@
 		z-index: 0;
 	}
 
-	
 	.microBattle_castle_flag_WIN
 	{
-
+		background-position: -80px -260px;
 	}
+	
+	.microBattle_castle_flag_LOSE
+	{
+		background-position: -80px -275px;		
+	}	
 	
 	.tween-microBattle_castle_flag
 	{
@@ -5654,12 +5648,7 @@
 		transition			: transform 0.6s ease 0.6s;
 	}
 	
-	.microBattle_castle_flag_LOSE
-	{
-		visibility: hidden;
-	}
-	
-	.microBattle_castle_goat
+	.microBattle_castle_watcher
 	{
 		width: 40px;
 		
@@ -5670,23 +5659,46 @@
 		
 		z-index: 0;
 		
-		-webkit-transform: translateY(26px);
-		transform: translateY(26px);		
+		-webkit-transform: translateY(27px);
+		transform: translateY(27px);		
 	}
 	
-	.microBattle_castle_goat_sprite
+	.microBattle_castle_watcher_sprite
 	{
 		width: 40px;
-		height: 26px;
+		height: 27px;
 		
 		position: relative;
-		
+	}
+	
+	.microBattle_castle_watcher_sprite_goat
+	{
 		background-position: -120px -260px;
+	}
+	
+	.microBattle_castle_watcher_sprite_rabbit
+	{
+		background-position: 0px -400px;
+	}
+	
+	.microBattle_castle_watcher_sprite_crow
+	{
+		background-position: -40px -400px;
+	}
+	
+	.microBattle_castle_watcher_sprite_zombie
+	{
+		background-position: -80px -400px;	
 	}
 	
 	.microBattle_castle_goat_WIN
 	{
 	
+	}
+	
+	.microBattle_castle_enemy_WIN
+	{
+
 	}
 	
 	.tween-microBattle_castle_goat
@@ -5695,29 +5707,24 @@
 		transition			: -webkit-transform 0.4s ease;
 	}
 	
-	.microBattle_castle_goat_WIN > div
+	.microBattle_castle_watcher_sprite
 	{
-		-webkit-animation	: tweenMicroBattleCastleGoatWinAmbFrames 0.8s linear infinite;
-		animation			: tweenMicroBattleCastleGoatWinAmbFrames 0.8s linear infinite;
+		-webkit-animation	: tweenMicroBattleCastleWatcherAmbFrames 0.8s linear infinite;
+		animation			: tweenMicroBattleCastleWatcherAmbFrames 0.8s linear infinite;
 	}
 	
-	@-webkit-keyframes tweenMicroBattleCastleGoatWinAmbFrames
+	@-webkit-keyframes tweenMicroBattleCastleWatcherAmbFrames
 	{
 		0%		{-webkit-transform: translateY(0px);}
 		50%		{-webkit-transform: translateY(2px);}
 		100%	{-webkit-transform: translateY(0px);}
 	}
 	
-	@keyframes tweenMicroBattleCastleGoatWinAmbFrames
+	@keyframes tweenMicroBattleCastleWatcherAmbFrames
 	{
 		0%		{transform: translateY(0px);}
 		50%		{transform: translateY(2px);}
 		100%	{transform: translateY(0px);}
-	}
-	
-	.microBattle_castle_goat_LOSE
-	{
-		visibility: hidden;
 	}			
 	
 	/* ZOMBIE */

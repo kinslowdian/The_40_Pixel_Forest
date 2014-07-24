@@ -1167,9 +1167,9 @@
 	
 	function battleNav_logicRequest()
 	{
-		BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
+		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 		
-		// BATTLE_NAV.game.result = "WIN";
+		BATTLE_NAV.game.result = "LOSE";
 			
 		battleNav_logicDisplay();
 	}
@@ -2670,7 +2670,7 @@
 		
 		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_WIN");
 		
-		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_WIN");
+		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("microBattle_castle_goat_WIN");
 		
 		$("#microBattle_resultWipe_content .microBattle_sunMoon").addClass("microBattle_sunMoon_WIN");
 		
@@ -2678,21 +2678,26 @@
 		
 		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_WIN");
 		
+		$("#microBattle_resultWipe_content .microBattle_castle_watcher_sprite").addClass("microBattle_castle_watcher_sprite_goat");
+		
 		
 		// TWEENS
 		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
 		
-		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("tween-microBattle_castle_goat");
+		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("tween-microBattle_castle_goat");
 	}
 	
 	function battleEnd_showEndSequence_LOSE_set()
 	{
+		var css_initSet_flag;
+		var css_initSet_char;
+		
 		// SETTINGS
 		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_LOSE");
 		
 		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_LOSE");
 		
-		$("#microBattle_resultWipe_content .microBattle_castle_goat").addClass("microBattle_castle_goat_LOSE");
+		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("microBattle_castle_enemy_WIN");
 		
 		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_LOSE");
 		
@@ -2700,7 +2705,25 @@
 		
 		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_LOSE");
 		
+		$("#microBattle_resultWipe_content .microBattle_castle_watcher_sprite").addClass("microBattle_castle_watcher_sprite_" + ROM.enemy.character.enemyType);
+		
+		css_initSet_flag = 	{
+								"-webkit-transform"	: "translateY(0px)",
+								"transform"			: "translateY(0px)"
+							};
+							
+		css_initSet_char = 	{
+								"-webkit-transform"	: "translateY(-4px)",
+								"transform"			: "translateY(-4px)"
+							};
+					
+		$(".microBattle_castle_flag_LOSE").css(css_initSet_flag);
+		
+		$(".microBattle_castle_enemy_WIN").css(css_initSet_char)		
+		
 		// TWEENS
+		// $("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
+		
 		$("#microBattle_resultWipe_content .microBattle_zombie_walk").addClass("tween-microBattle_zombie_walk");
 	}
 	
@@ -2753,14 +2776,21 @@
 	function battleEnd_showEndSequence_WIN_stage0()
 	{
 		var css;
+		var css_char;
 		
 		css = 	{
 					"-webkit-transform" : "translateY(0)",
 					"transform"			: "translateY(0)"
 				};
+				
+				
+		css_char = 	{
+						"-webkit-transform" : "translateY(-4px)",
+						"transform"			: "translateY(-4px)"			
+					};
 		
 		$("#microBattle_resultWipe_content .microBattle_castle_flag_WIN").css(css);
-		$("#microBattle_resultWipe_content .microBattle_castle_goat_WIN").css(css);
+		$("#microBattle_resultWipe_content .microBattle_castle_goat_WIN").css(css_char);
 		
 		$("#microBattle_resultWipe_content .microBattle_growField").css(css);
 		$("#microBattle_resultWipe_content .microBattle_growField").css("opacity", "1");		
@@ -2774,17 +2804,27 @@
 	function battleEnd_showEndSequence_LOSE_stage0()
 	{
 		var css;
+		var css_char;
+		var css_zombie;
 		
 		var zombie_y;
 		
 		zombie_y = $("#microBattle_resultWipe_content .microBattle_endField").height();
 		
 		css = 	{
-					"-webkit-transform" : "translateY(" + zombie_y + "px)",
-					"transform"			: "translateY(" + zombie_y + "px)"
-				};
+					"-webkit-transform" : "translateY(0)",
+					"transform"			: "translateY(0)"
+				};		
+		
+		
+		css_zombie = 	{
+							"-webkit-transform" : "translateY(" + zombie_y + "px)",
+							"transform"			: "translateY(" + zombie_y + "px)"
+						};
+						
+		// $("#microBattle_resultWipe_content .microBattle_castle_flag_LOSE").css(css);
 				
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css);
+		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css_zombie);
 		
 		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
 		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
