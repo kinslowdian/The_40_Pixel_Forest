@@ -9,6 +9,8 @@
 		
 		DISPLAY.screenSectionMove = false;
 		DISPLAY.screenSectionStore = 0;
+		
+		DISPLAY.gameHeight = 2000;
 	}
 	
 	function screenUpdateInit(forceEvent)
@@ -44,6 +46,7 @@
 		DISPLAY._height_row 	= Math.round(DISPLAY._height / DISPLAY.tileHeight);
 		DISPLAY._width_fill 	= DISPLAY._width_row * DISPLAY.tileWidth;
 		DISPLAY._height_fill	= DISPLAY._height_row * DISPLAY.tileHeight;
+		
 		
 		if(DISPLAY.screenUpdateUse)
 		{
@@ -86,6 +89,8 @@
 	function screenDivision()
 	{
 		DISPLAY._height <= 480 ?  DISPLAY.screenSections = 240 : DISPLAY.screenSections = 320; // 400
+	
+		DISPLAY.screenDivisionTotal = DISPLAY.gameHeight / DISPLAY.screenSections;
 	}
 	
 	function moveStageTest()
@@ -94,7 +99,7 @@
 		
 		var triggered = false;
 		
-		for(var i = 0; i < 2000 / DISPLAY.screenSections; i++)
+		for(var i = 0; i < DISPLAY.screenDivisionTotal; i++)
 		{
 			if(MAP_PLAYER.pos_y >= i * DISPLAY.screenSections && MAP_PLAYER.pos_y < (i + 1) * DISPLAY.screenSections)
 			{
@@ -113,8 +118,13 @@
 						moveStageScreen();
 					}
 				}
+				
+				traceHard(DISPLAY.screenSectionCurrent + " " + i + " " + DISPLAY.screenSectionMove + " " + DISPLAY.y + "px");
 			}
+			
+				
 		}
+		
 		
 		// CATCH NEW LEVEL WITHOUT A SCREEN MOVE
 		
@@ -135,12 +145,10 @@
 		
 		
 		// DEFAULT
-		
+
 		css =	{
 					"-webkit-transform"		: "translateY(" + DISPLAY.y + "px)",
-					"transform"				: "translateY(" + DISPLAY.y + "px)",
-					"-webkit-transition"	: "-webkit-transform 1s ease-in-out",
-					"transition"			: "transform 6s ease-in-out" 
+					"transform"				: "translateY(" + DISPLAY.y + "px)"
 				};
 				
 		$(".stage-view-y")[0].addEventListener("webkitTransitionEnd", moveStageScreenEnd, false);

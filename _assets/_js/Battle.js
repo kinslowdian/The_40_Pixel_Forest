@@ -2509,7 +2509,7 @@
 		
 		css = 	{
 					"-webkit-transform" : "translateY(" + crowd_y + "px)",
-					"-webkit-transform" : "translateY(" + crowd_y + "px)"
+					"transform" 		: "translateY(" + crowd_y + "px)"
 				};
 				
 		$(".microBattle_darkness_crowd_main_40x40").css(css);
@@ -2597,7 +2597,7 @@
 		
 		css	=	{
 					"-webkit-transform" : "translateY(" + DISPLAY._height + "px)",
-					"transform" : "translateY(" + DISPLAY._height + "px)"
+					"transform" 		: "translateY(" + DISPLAY._height + "px)"
 				};
 		
 		$("#spaceSquid0 .spaceSquid_legs0").removeClass("tween-SpaceSquid_legsStop").addClass("tween-SpaceSquid_legsPlay");

@@ -1,5 +1,32 @@
 @charset "UTF-8";
 	
+	/* ------------------------------ DEBUG */
+	
+	#debug
+	{
+		position: absolute;
+		z-index: 1000;
+		
+		left: 10px;
+		top: 10px;
+		
+		color: #ff0033;
+		
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	
+	#debug p
+	{
+		display: inline-block;
+		background: #fff;
+		padding: 4px;
+		
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+	}
+	
+	/* ------------------------------ DEBUG */
 	
 	
 	.edgeSmash

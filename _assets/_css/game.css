@@ -1508,7 +1508,7 @@
 			
 	#roam_content
 	{
-		width: 100%; /* 1280px */
+		width: 140%; /* 1280px */
 		height: 2400px;
 				
 		position: absolute;
@@ -1762,8 +1762,13 @@
 	
 	.stage-view-y
 	{
+/*
 		-webkit-transition: -webkit-transform 0.5s ease-in-out;
 		transition: transform 0.5s ease-in-out;
+*/
+
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+		transition: transform 1s ease-in-out;
 	}
 	
 	.woodland-bottom
@@ -4153,9 +4158,7 @@
 		
 		display: block;
 		
-		font-size: 2em;
-		
-		/* opacity: 0; */
+		font-size: 80px;
 		
 		position: absolute;
 		
@@ -4170,8 +4173,8 @@
 	
 	.microBattle_darkness_infoBlock
 	{
-		width: 80%;
-		height: 80px;
+		width: 80%;		
+		height: 1em;
 		
 		position: absolute;
 		
@@ -4185,9 +4188,10 @@
 	.microBattle_darkness_infoBlock .microBattle_darkness_info_text
 	{
 		width: 100%;
-		height: 80px;
-		font-size: 80px;
-		line-height: 80px;
+		height: 1em;
+		font-size: 1em;
+		letter-spacing: 0.1em;
+		line-height: 1;
 		
 		text-align: center;
 		
@@ -5791,7 +5795,7 @@
 	.tween-microBattle_zombie_walk
 	{
 		-webkit-transition: -webkit-transform 2s ease-in;
-		transition: -webkit-transform 2s ease-in;
+		transition: transform 2s ease-in;
 	}
 	
 	.microBattle_zombie_sprite

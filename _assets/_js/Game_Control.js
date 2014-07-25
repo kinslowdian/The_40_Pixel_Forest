@@ -1197,8 +1197,8 @@
 		
 		if(DISPLAY._width >= 768)
 		{
-			$(".edgeSmash_L").addClass("edgeSmash_show");
-			$(".edgeSmash_R").addClass("edgeSmash_show");			
+			// $(".edgeSmash_L").addClass("edgeSmash_show");
+			// $(".edgeSmash_R").addClass("edgeSmash_show");			
 		}
 		
 		

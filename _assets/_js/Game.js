@@ -60,6 +60,10 @@
 		checkDevice();
 		
 		gameData_get(gameData_found);
+	
+		//////////// debug.js
+		debug_init();
+		//////////// debug.js
 	}
 	
 	function gameData_found()

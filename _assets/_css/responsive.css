@@ -52,16 +52,9 @@
 
 		/* ----------------------------------------------------------------------- BATTLE NAV */	
 
-		.microBattle_darkness_infoBlock
+		.microBattle_darkness_info
 		{
-			height: 40px !important;	
-		}
-		
-		.microBattle_darkness_infoBlock .microBattle_darkness_info_text
-		{
-			height: 40px !important;
 			font-size: 40px !important;
-			line-height: 40px !important;
 		}
 		
 		/* ----------------------------------------------------------------------- BATTLE NAV */
@@ -93,7 +86,8 @@
 	}
 	
 /* ----------------------------------------------------------------------- PHONE GENERAL */
-
+	
+	/* if(screen.width >= 480) */
 	@media screen and (min-width:1000px)
 	{
 		/* ----------------------------------------------------------------------- PRE_BATTLE */
