@@ -108,6 +108,9 @@
 			phoneRotate(null);
 
 			trace("DEVICE === TOUCH");
+			
+			// temp.js
+			keyboardHint_init(false);
 		}
 		
 		else
@@ -121,6 +124,9 @@
 			// $("#displayErrorWrapper").remove();
 			
 			focusBlur_add();
+			
+			// temp.js
+			keyboardHint_init(true);
 		}
 		
 		CONTROL_SIGNAL.data = {};
@@ -235,6 +241,14 @@
 			
 			else
 			{
+				// temp.js
+				if(keyboardHint.firstInit)
+				{
+					keyboardHint.firstInit = false;
+					
+					keyboardHint_run();
+				}
+				
 				$(window)[0].addEventListener("keydown", keyboardFind, false);
 				$(window)[0].addEventListener("keyup", keyboardFind, false);	
 			}			
@@ -577,6 +591,16 @@
 				{
 					CONTROL_SIGNAL.data.moveDirection = "STILL";
 				}
+			}
+			
+			// temp.js
+			
+			if(keyboardHint || keyboardHint !== null || keyboardHint !== undefined)
+			{
+				if(event.keyCode >= 37 && event.keyCode <= 40)
+				{
+					keyboardHint_cancel();
+				}	
 			}	
 		}
 		
@@ -1194,12 +1218,6 @@
 		$(".player-sprite .actionCloudMain-1 .actionCloudSprite-inner").addClass("tween-actionCloudSpriteInner");	
 		
 		$("#roam_wrapper").addClass("tween-fieldSmash");
-		
-		if(DISPLAY._width >= 768)
-		{
-			// $(".edgeSmash_L").addClass("edgeSmash_show");
-			// $(".edgeSmash_R").addClass("edgeSmash_show");			
-		}
 		
 		
 		delay_sequence = setTimeout(attackCloud_1, 0.2 * 1000);

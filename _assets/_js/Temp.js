@@ -39,20 +39,93 @@
 */
 
 
-	/////////////////////////// BATTLE NAV UPDATE
+	/////////////////////////// KEYBOARD HINT
+	
+	var keyboardHint;
 	
 
+	function keyboardHint_init(use)
+	{
+		if(use)
+		{
+			keyboardHint = {};
+			
+			keyboardHint.firstInit = true;
+			keyboardHint.delay_show = null;
+			keyboardHint.delay_hide = null;
+			keyboardHint.inView = false;
+			keyboardHint.waitingForPress = false;
+			
+			keyboardHint.randomPress = new Array();
+			keyboardHint.randomPress = ["keyboardHint_pressU", "keyboardHint_pressD", "keyboardHint_pressL", "keyboardHint_pressR"];
+		}
+		
+		else
+		{
+			$(".keyboardHint_wrapper").remove();
+		}
+	}
 	
-
+	function keyboardHint_run()
+	{	
+		if(!keyboardHint.waitingForPress)
+		{
+			keyboardHint.waitingForPress = true;
+			
+			$(".keyboardHint_pressBtn").addClass(keyboardHint.randomPress[Math.floor(Math.random() * keyboardHint.randomPress.length)]);
+			
+			keyboardHint.delay_show = setTimeout(keyboardHint_switch, 2 * 1000, true);
+		}
+	}
+	
+	function keyboardHint_cancel()
+	{
+		clearTimeout(keyboardHint.delay_show);
+		clearTimeout(keyboardHint.delay_hide);
+		
+		if(keyboardHint.inView)
+		{
+			keyboardHint_switch(false);
+		}
+	}
+	
+	function keyboardHint_switch(use)
+	{
+		if(use && !keyboardHint.inView)
+		{
+			keyboardHint.inView = true;
+			
+			$(".keyboardHint_wrapper").css("opacity", "1");
+			
+			keyboardHint.delay_hide = setTimeout(keyboardHint_switch, 10 * 1000, false);	
+		}
+		
+		else
+		{
+			keyboardHint.inView = false;
+			
+			keyboardHint.waitingForPress = false;
+			
+			$(".keyboardHint_wrapper").css("opacity", "0");
+		
+			$(".keyboardHint_wrapper")[0].addEventListener("webkitTransitionEnd", keyboardHint_purge, false);
+			$(".keyboardHint_wrapper")[0].addEventListener("transitionEnd", keyboardHint_purge, false);
+		}
+	}
+	
+	function keyboardHint_purge(event)
+	{
+		$(".keyboardHint_wrapper")[0].removeEventListener("webkitTransitionEnd", keyboardHint_purge, false);
+		$(".keyboardHint_wrapper")[0].removeEventListener("transitionEnd", keyboardHint_purge, false);		
+		
+		$(".keyboardHint_wrapper").remove();
+		
+		delete keyboardHint;
+	}
 	
 	
+	/////////////////////////// KEYBOARD HINT
 	
-	
-	
-	/////////////////////////// BATTLE NAV UPDATE
-	
-	
-
 	
 	var battleEngine = 	{
 							gameStats : null,
