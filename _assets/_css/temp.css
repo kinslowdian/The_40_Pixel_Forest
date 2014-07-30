@@ -28,6 +28,187 @@
 	
 	/* ------------------------------ DEBUG */
 	
+	/* ------------------------------ WATER  */
+	
+	.pixels_waterBase
+	{
+		background-image: url(../_img/tile_river_2x.gif);
+		background-position: left top;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+	
+	.pixels_waterEdge
+	{
+		background-image: url(../_img/tile_waterEdge_1x.png);
+		background-position: left top;
+		background-repeat: repeat;
+		background-size: 40px 40px;
+	}
+	
+	.pixels_waterCharacters
+	{
+		background-image: url(../_img/water_chars_1x.png);
+		background-repeat: no-repeat;
+		background-size: 40px 40px;
+	}
+	
+	.waterBase
+	{
+		position: absolute;
+		
+		z-index: 0;
+	}
+	
+	.waterEdge
+	{
+		position: absolute;
+		
+		z-index: 1;
+	}
+	
+	.waterIsland
+	{
+		position: absolute;
+		
+		z-index: 2;
+	}
+	
+	.waterFish
+	{
+		width: 40px;
+		height: 40px;
+		
+		position: absolute;
+		
+		z-index: 2;
+	}
+	
+	.waterFishSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		background-position: 0 0;
+		
+		opacity: 0.4;
+		
+		position: relative;		
+	}
+	
+	.waterFishSprite > div
+	{
+		width: inherit;
+		height: inherit;
+		
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		position: relative;
+	}
+	
+	.tween-waterEdge
+	{
+		-webkit-animation: tweenWaterEdgeFrames 0.1s linear infinite;
+		animation: tweenWaterEdgeFrames 0.1s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenWaterEdgeFrames
+	{
+		0%		{opacity: 1;}	
+		50%		{opacity: 0.4;}
+		100%	{opacity: 1;}
+	}
+	
+	@keyframes tweenWaterEdgeFrames
+	{
+		0%		{opacity: 1;}	
+		50%		{opacity: 0.4;}
+		100%	{opacity: 1;}		
+	}
+	
+	.tween-waterFishSpritePixels
+	{
+		-webkit-animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
+		animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenWaterFishSpritePixelsFrames
+	{	
+		0%			{-webkit-transform: translate(0px, 4px);}
+		50%			{-webkit-transform: translate(4px, 0px);}
+		100%		{-webkit-transform: translate(0px, 4px);}
+	}
+	
+	@keyframes tweenWaterFishSpritePixelsFrames
+	{
+		0%			{transform: translate(0px, 4px);}
+		50%			{transform: translate(4px, 0px);}
+		100%		{transform: translate(0px, 4px);}
+	}
+	
+	.tween-waterFishSpriteCCW
+	{
+		-webkit-animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
+		animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenWaterFishSpriteCCWFrames
+	{
+		from	{-webkit-transform: rotate(0deg);}
+		to		{-webkit-transform: rotate(360deg);}
+	}
+	
+	@keyframes tweenWaterFishSpriteCCWFrames
+	{
+		from	{transform: rotate(0deg);}
+		to		{transform: rotate(360deg);}
+	}
+	
+	.tween-waterFishSpriteACW
+	{
+		-webkit-animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
+		animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
+	}
+	
+	@-webkit-keyframes tweenWaterFishSpriteACWFrames
+	{
+		from	{-webkit-transform: scaleY(-1) rotate(0deg);}
+		to		{-webkit-transform: scaleY(-1) rotate(360deg);}
+	}
+	
+	@keyframes tweenWaterFishSpriteACWFrames
+	{
+		from	{transform: scaleY(-1) rotate(0deg);}
+		to		{transform: scaleY(-1) rotate(360deg);}
+	}
+	
+	
+	.water-area
+	{
+		width: inherit;
+		height: 2000px;
+		
+		position: absolute;
+/* 		left:0; top:0; right:0; bottom:0; */
+		
+		left: 0;
+		top: 0;
+		
+		
+		z-index: 1;		
+	}
+	
+	/* ------------------------------ WATER  */
+	
+	
+	
+	
+	
+	
 	
 	
 	/* ------------------------------ KEYBOARD HINT  */

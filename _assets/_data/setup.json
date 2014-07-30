@@ -636,6 +636,258 @@
 					"spawn": 0,
 					"p": "pixels_portal"
 				}
+			},
+			
+			"water":
+			{
+				"edge":
+				{
+					"WATER_EDGE_0":
+					{
+						"x": 0,
+						"y": 3,
+						"w": 1.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_1":
+					{
+						"x": 2.5,
+						"y": 3,
+						"w": 1.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_2":
+					{
+						"x": -1,
+						"y": 3,
+						"w": 1,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_3":
+					{
+						"x": 4,
+						"y": 3,
+						"w": 1,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_4":
+					{
+						"x": 0,
+						"y": 6.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_5":
+					{
+						"x": 3.5,
+						"y": 6.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_6":
+					{
+						"x": 0.5,
+						"y": 5.5,
+						"w": 3,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"						
+					},
+					
+					"WATER_EDGE_7":
+					{
+						"x": 0.5,
+						"y": 4.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"		
+					},
+					
+					"WATER_EDGE_8":
+					{
+						"x": 3,
+						"y": 4.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"						
+					},
+					
+					"WATER_EDGE_9":
+					{
+						"x": 0.5,
+						"y": 7,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"						
+					},
+					
+					"WATER_EDGE_10":
+					{
+						"x": 3,
+						"y": 7,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterEdge waterEdge tween-waterEdge"						
+					}													
+				},
+				
+				"base":
+				{
+					"WATER_BASE_0":
+					{
+						"x": 0,
+						"y": 3,
+						"w": 1.5,
+						"h": 2,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_1":
+					{
+						"x": 2.5,
+						"y": 3,
+						"w": 1.5,
+						"h": 2,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_2":
+					{
+						"x": -1,
+						"y": 3,
+						"w": 1,
+						"h": 4,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_3":
+					{
+						"x": 4,
+						"y": 3,
+						"w": 1,
+						"h": 4,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_4":
+					{
+						"x": 0,
+						"y": 6.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_5":
+					{
+						"x": 3.5,
+						"y": 6.5,
+						"w": 0.5,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_6":
+					{
+						"x": 0.5,
+						"y": 5.5,
+						"w": 3,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_7":
+					{
+						"x": -1,
+						"y": 7,
+						"w": 2,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_8":
+					{
+						"x": 3,
+						"y": 7,
+						"w": 2,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_9":
+					{
+						"x": -0.5,
+						"y": 7.5,
+						"w": 1,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					},
+					
+					"WATER_BASE_10":
+					{
+						"x": 3.5,
+						"y": 7.5,
+						"w": 1,
+						"h": 0.5,
+						"p": "pixels_waterBase waterPool collideCheck-field"		
+					}						
+											
+				},
+				
+				"island":
+				{
+					"WATER_ISLAND_0":
+					{
+						"x": 0.5,
+						"y": 3.5,
+						"w": 0.5,
+						"h": 1,
+						"p": "pixels_flowerHeavy waterIsland collideCheck-field"						
+					},
+					
+					"WATER_ISLAND_1":
+					{
+						"x": 3,
+						"y": 3.5,
+						"w": 0.5,
+						"h": 1,
+						"p": "pixels_flowerHeavy waterIsland collideCheck-field"						
+					}
+				},
+				
+				"fish":
+				{
+					"WATER_FISH_0":
+					{
+						"x": -0.5,
+						"y": 3.5,
+						"w": 0.5,
+						"h": 0.5,
+						"n": "level0_waterFish0",
+						"t": "water_fishCCW" 					
+					},
+					
+					"WATER_FISH_1":
+					{
+						"x": -0.5,
+						"y": 4,
+						"w": 0.5,
+						"h": 0.5,
+						"n": "level0_waterFish1",
+						"t": "water_fishACW" 					
+					}
+				}
 			}
 		},
 		

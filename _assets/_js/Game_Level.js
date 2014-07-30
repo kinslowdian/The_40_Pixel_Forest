@@ -278,6 +278,65 @@
 			b.create();
 		}
 		
+		// EXTRAS
+		
+		if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"])
+		{
+			trace("HAS WATER");
+			
+			i = 0;
+			
+			for(var object_waterEdge in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["edge"])
+			{
+				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["edge"][object_waterEdge], i, "WATER_EDGE", ".water-area");
+				
+				w.create();
+				
+				i++;
+			}
+			
+			i = 0;
+			
+			for(var object_waterBase in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["base"])
+			{
+				var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["base"][object_waterBase], i, "WATER_BASE", ".water-area");
+				
+				w.create();
+				
+				i++;
+			}
+			
+			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["island"])
+			{
+				i = 0;
+				
+				for(var object_waterIsland in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["island"])
+				{
+					var w = new level_create_basic(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["island"][object_waterIsland], i, "WATER_ISLAND", ".water-area");
+					
+					w.create();
+					
+					i++;
+				} 
+			}
+			
+			if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["fish"])
+			{
+				// i = 0;
+				
+				for(var object_waterFish in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["fish"])
+				{
+					var w = new backgroundExtras(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"]["fish"][object_waterFish], ".water-area");
+					
+					w.create();
+					
+					// i++;					
+				}
+			}
+			
+		}
+		
+		
 		// PORTALS (PRE-READ)
 		
 		if(!portalsOpened)
@@ -422,6 +481,7 @@
 		$(".enemy-area").html("");
 		$(".portal-area").html("");
 		$(".field-area").html("");
+		$(".water-area").html("");
 		
 		$(".woodland-areas").html("");
 		
