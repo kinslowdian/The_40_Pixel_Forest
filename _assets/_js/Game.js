@@ -88,9 +88,14 @@
 	
 	function gameHTML_found()
 	{
+		sound_init();
+	}
+	
+	function soundData_found()
+	{
 		display_init();
 		
-		init_startScreen();
+		init_startScreen();		
 	}
 	
 	function init_startScreen()
@@ -146,4 +151,6 @@
 	{
 		mapPlayer_entry();
 		portalScreen_init();
+		
+		sound_play("level_tune");
 	}

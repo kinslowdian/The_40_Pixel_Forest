@@ -2512,6 +2512,10 @@
 		
 		opacity: 0;
 		
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		
+		
 		position: absolute;
 		
 		left: 0; right: 0; top: 0; bottom: 0;
@@ -2523,8 +2527,31 @@
 	
 	.tween-portalScreen_miniMoon
 	{
-		-webkit-transition: opacity 0.4s ease-in-out;
-		transition: opacity 0.4s ease-in-out;
+		-webkit-transition: opacity 0.6s ease;
+		transition: opacity 0.6s ease;
+		
+/*
+		-webkit-transition: -webkit-filter 0.4s ease-in-out 0.4s;
+		transition: filter 0.4s ease-in-out 0.4s;
+*/
+	}
+	
+	.tween-portalScreen_miniMoonBlur
+	{
+		-webkit-animation: tweenPortalScreenMiniMoonBlurFrames 1s ease forwards;
+		animation: tweenPortalScreenMiniMoonBlurFrames 1s ease forwards;
+	}
+	
+	@-webkit-keyframes tweenPortalScreenMiniMoonBlurFrames
+	{
+		from	{-webkit-filter: blur(0px);}
+		to		{-webkit-filter: blur(6px);}
+	}
+	
+	@keyframes tweenPortalScreenMiniMoonBlurFrames
+	{
+		from	{filter: blur(0px);}
+		to		{filter: blur(6px);}
 	}
 
 /* ----------------------------------------------------------------------- PORTAL SCREEN */

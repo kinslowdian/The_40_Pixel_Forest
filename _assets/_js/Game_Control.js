@@ -958,7 +958,8 @@
 		$(".tween-portalScreen_header")[0].removeEventListener("transitionend", portalScreen_screen3, false);		
 		
 		
-		$(".portalScreen_miniMoon").css("opacity", "1");
+		$(".portalScreen_miniMoon").css("opacity", "0.6");
+		$(".portalScreen_miniMoon").addClass("tween-portalScreen_miniMoonBlur");
 	
 		PortalScreen.delay = setTimeout(portalScreen_screen4, 1.2 * 1000);
 	}
