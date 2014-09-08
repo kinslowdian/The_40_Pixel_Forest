@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+	/*VECTORS*/
+	body :before
+	{
+    content: 	url(../_img/battleNavOptions.svg)
+    					url(../_img/battleNavHint.svg)
+							url(../_img/touch-ui_cross.svg)
+							url(../_img/touch-ui_cross_min.svg)
+							url(../_img/clash_cloud.svg)
+							url(../_img/puchSmashShock.svg);
+
+		display:none;
+	}
+
+	/* 1px */
+	@media all and (-webkit-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1)
+	{
+		body :before
+		{
+	    content: 	url(../_img/landPixelDecay_1x.png)
+								url(../_img/tile_pineTreesMass_1x.png)
+								url(../_img/portalSprite_1x.png)
+								url(../_img/tile_pineTrees_1x.png)
+								url(../_img/tile_flowersLight_1x.png)
+								url(../_img/tile_flowersHeavy_1x.png)
+								url(../_img/rain_0_1x.png)
+								url(../_img/rain_1_1x.png)
+								url(../_img/rain_2_1x.png)
+								url(../_img/snow_0_1x.png)
+								url(../_img/snow_1_1x.png)
+								url(../_img/snow_2_1x.png)
+								url(../_img/wind_0_1x.png)
+								url(../_img/wind_1_1x.png)
+								url(../_img/wind_2_1x.png)
+								url(../_img/startSprite_1x.png)
+								url(../_img/map_playerSprite_1x.png)
+								url(../_img/map_enemySprite40x40_1x.png)
+								url(../_img/tilePortalScreenLRG_1x.png)
+								url(../_img/battleNavCloud_1x.png)
+								url(../_img/tile_microBattle_bg_1x.png)
+								url(../_img/tile_microBattle_Alt_bg_1x.png)
+								url(../_img/flameSprite_1x.png)
+								url(../_img/microBattle_landPixelDecay_1x.png)
+								url(../_img/microBattle_bottomEnd_1x.png)
+								url(../_img/tile_neonGrass_1x.png)
+								url(../_img/bossSprite_1x.png)
+								url(../_img/rainRed_0_1x.png)
+								url(../_img/rainRed_1_1x.png)
+								url(../_img/rainRed_2_1x.png)
+								url(../_img/spaceStars_0_x1.png)
+								url(../_img/spaceStars_1_x1.png)
+								url(../_img/planetSprite_1x.png)
+								url(../_img/planetSprite_1x.png)
+								url(../_img/battleLevelFloor_1x.png)
+								url(../_img/spaceSquid_1x.png)
+								url(../_img/battleEnd_1x.png)
+								url(../_img/tile_pineTreesMassDark_1x.png)
+								url(../_img/tile_pineTreesDark_1x.png)
+								url(../_img/tile_flowersLightDark_1x.png)
+								url(../_img/tile_flowersHeavyDark_1x.png)
+								url(../_img/battleCuteFull_1x.png)
+								url(../_img/levelClearing_1x.png);
+
+			display:none;
+		}
+	}
+
+	/* 2px */
+	@media all and (-webkit-min-device-pixel-ratio: 2), all and (min-device-pixel-ratio: 2)
+	{
+		body :before
+		{
+	    content: 	url(../_img/landPixelDecay_2x.png)
+								url(../_img/tile_pineTreesMass_2x.png)
+								url(../_img/portalSprite_2x.png)
+								url(../_img/tile_pineTrees_2x.png)
+								url(../_img/tile_flowersLight_2x.png)
+								url(../_img/tile_flowersHeavy_2x.png)
+								url(../_img/rain_0_2x.png)
+								url(../_img/rain_1_2x.png)
+								url(../_img/rain_2_2x.png)
+								url(../_img/snow_0_2x.png)
+								url(../_img/snow_1_2x.png)
+								url(../_img/snow_2_2x.png)
+								url(../_img/wind_0_2x.png)
+								url(../_img/wind_1_2x.png)
+								url(../_img/wind_2_2x.png)
+								url(../_img/startSprite_2x.png)
+								url(../_img/map_playerSprite_2x.png)
+								url(../_img/map_enemySprite40x40_2x.png)
+								url(../_img/tilePortalScreenLRG_2x.png)
+								url(../_img/battleNavCloud_2x.png)
+								url(../_img/tile_microBattle_bg_2x.png)
+								url(../_img/tile_microBattle_Alt_bg_2x.png)
+								url(../_img/flameSprite_2x.png)
+								url(../_img/microBattle_landPixelDecay_2x.png)
+								url(../_img/microBattle_bottomEnd_2x.png)
+								url(../_img/tile_neonGrass_2x.png)
+								url(../_img/bossSprite_2x.png)
+								url(../_img/rainRed_0_2x.png)
+								url(../_img/rainRed_1_2x.png)
+								url(../_img/rainRed_2_2x.png)
+								url(../_img/spaceStars_0_x1.png)
+								url(../_img/spaceStars_1_x1.png)
+								url(../_img/planetSprite_2x.png)
+								url(../_img/planetSprite_2x.png)
+								url(../_img/battleLevelFloor_2x.png)
+								url(../_img/spaceSquid_2x.png)
+								url(../_img/battleEnd_2x.png)
+								url(../_img/tile_pineTreesMassDark_2x.png)
+								url(../_img/tile_pineTreesDark_2x.png)
+								url(../_img/tile_flowersLightDark_2x.png)
+								url(../_img/tile_flowersHeavyDark_2x.png)
+								url(../_img/battleCuteFull_2x.png)
+								url(../_img/levelClearing_2x.png);
+
+			display:none;
+		}
+	}
+
+
+
+
+

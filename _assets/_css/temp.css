@@ -1,35 +1,36 @@
 @charset "UTF-8";
-	
+
 	/* ------------------------------ DEBUG */
-	
+
 	#debug
 	{
 		position: absolute;
 		z-index: 1000;
-		
+
 		left: 10px;
 		top: 10px;
-		
+
 		color: #ff0033;
-		
+
 		font-family: sans-serif;
 		font-weight: bold;
 		font-size: 18px;
 	}
-	
+
 	#debug p
 	{
 		display: inline-block;
 		background: #fff;
 		padding: 4px;
-		
+
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 	}
-	
+
+
 	/* ------------------------------ DEBUG */
-	
+
 	/* ------------------------------ WATER  */
-	
+
 	.pixels_waterBase
 	{
 		background-image: url(../_img/tile_river_2x.gif);
@@ -37,7 +38,7 @@
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_waterEdge
 	{
 		background-image: url(../_img/tile_waterEdge_1x.png);
@@ -45,324 +46,324 @@
 		background-repeat: repeat;
 		background-size: 40px 40px;
 	}
-	
+
 	.pixels_waterCharacters
 	{
 		background-image: url(../_img/water_chars_1x.png);
 		background-repeat: no-repeat;
 		background-size: 40px 40px;
 	}
-	
+
 	.waterBase
 	{
 		position: absolute;
-		
+
 		z-index: 0;
 	}
-	
+
 	.waterEdge
 	{
 		position: absolute;
-		
+
 		z-index: 1;
 	}
-	
+
 	.waterIsland
 	{
 		position: absolute;
-		
+
 		z-index: 2;
 	}
-	
+
 	.waterFish
 	{
 		width: 40px;
 		height: 40px;
-		
+
 		position: absolute;
-		
+
 		z-index: 2;
 	}
-	
+
 	.waterFishSprite
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		-webkit-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
-		
+
 		background-position: 0 0;
-		
+
 		opacity: 0.4;
-		
-		position: relative;		
+
+		position: relative;
 	}
-	
+
 	.waterFishSprite > div
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		-webkit-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
-		
+
 		position: relative;
 	}
-	
+
 	.tween-waterEdge
 	{
 		-webkit-animation: tweenWaterEdgeFrames 0.1s linear infinite;
 		animation: tweenWaterEdgeFrames 0.1s linear infinite;
 	}
-	
+
 	@-webkit-keyframes tweenWaterEdgeFrames
 	{
-		0%		{opacity: 1;}	
+		0%		{opacity: 1;}
 		50%		{opacity: 0.4;}
 		100%	{opacity: 1;}
 	}
-	
+
 	@keyframes tweenWaterEdgeFrames
 	{
-		0%		{opacity: 1;}	
+		0%		{opacity: 1;}
 		50%		{opacity: 0.4;}
-		100%	{opacity: 1;}		
+		100%	{opacity: 1;}
 	}
-	
+
 	.tween-waterFishSpritePixels
 	{
 		-webkit-animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
 		animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
 	}
-	
+
 	@-webkit-keyframes tweenWaterFishSpritePixelsFrames
-	{	
+	{
 		0%			{-webkit-transform: translate(0px, 4px);}
 		50%			{-webkit-transform: translate(4px, 0px);}
 		100%		{-webkit-transform: translate(0px, 4px);}
 	}
-	
+
 	@keyframes tweenWaterFishSpritePixelsFrames
 	{
 		0%			{transform: translate(0px, 4px);}
 		50%			{transform: translate(4px, 0px);}
 		100%		{transform: translate(0px, 4px);}
 	}
-	
+
 	.tween-waterFishSpriteCCW
 	{
 		-webkit-animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
 		animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
 	}
-	
+
 	@-webkit-keyframes tweenWaterFishSpriteCCWFrames
 	{
 		from	{-webkit-transform: rotate(0deg);}
 		to		{-webkit-transform: rotate(360deg);}
 	}
-	
+
 	@keyframes tweenWaterFishSpriteCCWFrames
 	{
 		from	{transform: rotate(0deg);}
 		to		{transform: rotate(360deg);}
 	}
-	
+
 	.tween-waterFishSpriteACW
 	{
 		-webkit-animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
 		animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
 	}
-	
+
 	@-webkit-keyframes tweenWaterFishSpriteACWFrames
 	{
 		from	{-webkit-transform: scaleY(-1) rotate(0deg);}
 		to		{-webkit-transform: scaleY(-1) rotate(360deg);}
 	}
-	
+
 	@keyframes tweenWaterFishSpriteACWFrames
 	{
 		from	{transform: scaleY(-1) rotate(0deg);}
 		to		{transform: scaleY(-1) rotate(360deg);}
 	}
-	
-	
+
+
 	.water-area
 	{
 		width: inherit;
 		height: 2000px;
-		
+
 		position: absolute;
 /* 		left:0; top:0; right:0; bottom:0; */
-		
+
 		left: 0;
 		top: 0;
-		
-		
-		z-index: 1;		
+
+
+		z-index: 1;
 	}
-	
+
 	/* ------------------------------ WATER  */
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	/* ------------------------------ KEYBOARD HINT  */
-	
+
 	.vectors_keyboardHint
 	{
 		background-image: url(../_img/keyboardHint.svg);
 		background-repeat: no-repeat;
 	}
-	
+
 	.keyboardHint_wrapper
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		font-size: 20px;
-		
+
 		opacity: 0;
-		
+
 		position: absolute;
-		
+
 		z-index: 100;
-		
+
 		background: rgba(184, 224, 202, 0.9);
 	}
-	
+
 	.tween-keyboardHint
 	{
 		-webkit-transition: opacity 0.8s linear;
 		transition: opacity 0.8s linear;
 	}
-	
+
 	.keyboardHint_title
 	{
 		width: 300px;
 		height: 1em;
-		
+
 		position: absolute;
-		
+
 		top: 0; bottom: 0; left: 0; right: 0;
-		
-		margin: 120px auto 0 auto;		
-		
+
+		margin: 120px auto 0 auto;
+
 		z-index: 0
 	}
-	
+
 	.keyboardHint_title h1
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		font-size: 1em;
 		line-height: 1;
 		letter-spacing: 0.1em;
 		text-align: center;
 		color: #004752;
 	}
-	
+
 	.keyboardHint_content
 	{
 		width: 240px;
 		height: 160px;
-		
+
 		position: absolute;
-		
+
 		top: 0; bottom: 0; left: 0; right: 0;
-		
+
 		margin: auto auto 40px auto;
-		
+
 		z-index: 0;
 	}
-	
+
 	.keyboardHint_keys, .keyboardHint_press, .keyboardHint_arrows
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		position: absolute;
-		
+
 		left: 0;
 		top: 0;
 	}
-	
+
 	.keyboardHint_keys
 	{
 		background-position: 0 0;
-		
+
 		z-index: 0;
 	}
-	
+
 	.keyboardHint_press
 	{
 		z-index: 1;
 	}
-	
+
 	.keyboardHint_arrows
 	{
 		background-position: 0 -160px;
-		
+
 		z-index: 2;
 	}
-	
+
 	.keyboardHint_pressBtn
 	{
 		width: 50px;
 		height: 50px;
-		
+
 		opacity: 0;
-		
+
 		position: absolute;
-		
+
 		z-index: 0;
 	}
-	
+
 	.keyboardHint_press
 	{
 		width: 50px;
 		height: 50px;
-	
+
 		background-position: 0 -320px;
-		
+
 		position: relative;
 	}
-	
+
 	.keyboardHint_pressU
 	{
 		-webkit-transform	: translate(95px, 15px);
 		transform			: translate(95px, 15px);
-	} 
+	}
 
 	.keyboardHint_pressD
 	{
 		-webkit-transform	: translate(95px, 95px);
 		transform			: translate(95px, 95px);
 	}
-	
+
 	.keyboardHint_pressL
 	{
 		-webkit-transform	: translate(15px, 95px);
 		transform			: translate(15px, 95px);
 	}
-	
+
 	.keyboardHint_pressR
 	{
 		-webkit-transform	: translate(175px, 95px);
 		transform			: translate(175px, 95px);
 	}
-	
+
 	.tween-keyboardHint_pressDisplay
 	{
 		-webkit-animation	: tweenKeyboardHintPressDisplayFrames 0.3s linear infinite;
-		animation			: tweenKeyboardHintPressDisplayFrames 0.3s linear infinite;			
+		animation			: tweenKeyboardHintPressDisplayFrames 0.3s linear infinite;
 	}
-	
+
 	@-webkit-keyframes tweenKeyboardHintPressDisplayFrames
 	{
 		0%		{opacity: 0;}
@@ -372,7 +373,7 @@
 		80%		{opacity: 0;}
 		100%	{opacity: 0;}
 	}
-	
+
 	@keyframes tweenKeyboardHintPressDisplayFrames
 	{
 		0%		{opacity: 0;}
@@ -381,77 +382,77 @@
 		60%		{opacity: 1;}
 		80%		{opacity: 0;}
 		100%	{opacity: 0;}
-	}    
-	
+	}
+
 	/* ------------------------------ KEYBOARD HINT  */
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 /*
 	.edgeSmash
 	{
 		width: inherit;
 		height: inherit;
-		
+
 		position: absolute;
-		
+
 		left: 0; right: 0; top: 0; bottom: 0;
-		
+
 		margin: auto;
-		
+
 		z-index: 2;
 	}
-	
+
 	.edgeSmash_L, .edgeSmash_R
 	{
 		width: 80px;
 		height: inherit;
-		
+
 		position: absolute;
-		
-		
-		
+
+
+
 		z-index: 0;
 	}
-	
+
 	.edgeSmash_L
 	{
 		left: 0; top: 0;
-		
+
 		background-position: 0 0;
-		
+
 		-webkit-transform: translateX(-80px);
-		transform: translateX(-80px);		
+		transform: translateX(-80px);
 	}
-	
+
 	.edgeSmash_R
 	{
 		right: 0; top: 0;
-		
+
 		background-position: -80px 0;
-		
+
 		-webkit-transform: translateX(80px);
-		transform: translateX(80px);				
+		transform: translateX(80px);
 	}
-	
+
 	.edgeSmash_show
 	{
 		-webkit-transform: translateX(0px);
-		transform: translateX(0px);			
+		transform: translateX(0px);
 	}
-	
+
 	.tween-edgeSmash
 	{
 		-webkit-transition: -webkit-transform 0.1s ease-in-out;
 		transition: transform 0.1s ease-in-out;
 	}
-	
+
 	.pixels_tileEdgeSmash
 	{
 		background-image: url(../_img/tile_edgeSmash_1x.png);
@@ -459,50 +460,50 @@
 		background-size: 160px 40px;
 	}
 */
-	
-	
-	
-	
-	
-	
-	
-	
 
 
-	
-	
+
+
+
+
+
+
+
+
+
+
 	/* ---------------------------------------- FIGHT CHARS */
 
-/* SET CONTAINER:::: */	
+/* SET CONTAINER:::: */
 /*
 	#content
 	{
 		width: 320px;
 		height: 70px;
-		
+
 		position: absolute;
-		
+
 		left: 0; right: 0; top: 0; bottom: 0;
-		
+
 		margin: auto;
-		
+
 		z-index: 0;
-		
+
 		outline: 1px dashed white;
-	}	
+	}
 */
 
 
-	
-	
+
+
 	/* ---------------------------------------- FIGHT CHARS */
 
-	
-	
-	/* ---------------------------------------- PIXELS */
-	
 
-	
+
+	/* ---------------------------------------- PIXELS */
+
+
+
 /*
 	.pixels_battleNav
 	{
@@ -511,35 +512,35 @@
 		background-size: 180px 130px;
 	}
 */
-	
 
-	
-	
+
+
+
 	/* ---------------------------------------- PIXELS */
-	
-	
-	
-	
+
+
+
+
 	/* ---------------------------------------- BATTLE END */
-	
-	
-	
+
+
+
 	/* ---------------------------------------- BATTLE END */
-	
-	
-	
-	
+
+
+
+
 	/* ---------------------------------------- RESPONSIVE */
-	
+
 	@media screen and (max-width:480px)
 	{
 
-	}	
-	
+	}
+
 	/* ---------------------------------------- RESPONSIVE */
-	
-	
-	
+
+
+
 
 
 /*
@@ -547,36 +548,36 @@
 	{
 		width: 100%;
 		height: 8%;
-		
+
 		max-height: 40px;
-		
+
 		position: absolute;
-		
+
 		bottom: 0;
-		
+
 		background: #fff;
-		
+
 		font-size: 1em;
-		
+
 		z-index: 1;
 	}
-	
+
 	.game_menu_content
 	{
 		width: 80%;
-		
+
 		position: relative;
-		
+
 		margin: 10px auto 0 auto;
 	}
 */
-	
-	
-	
-  
-		
-	
-	
+
+
+
+
+
+
+
 /*
 	.filler
 	{
@@ -586,10 +587,10 @@
 		background-position: center top;
 	}
 */
-	
 
-	
-	
+
+
+
 	.pixels_portalSnow
 	{
 		background-image: url(../_img/portalSpriteSnow_1x.png);
@@ -597,22 +598,22 @@
 		background-position: left top;
 		background-size: 80px 320px;
 	}
-	
+
 	.pixels_forestMassSnow
 	{
 		background-image: url(../_img/tile_snowTreesMass_1x.png);
 		background-repeat: repeat;
 		background-position: center top;
-		background-size: 240px 240px;		
+		background-size: 240px 240px;
 	}
-	
+
 	.pixels_forestSnow
 	{
 		background-image: url(../_img/tile_pineTreesSnow_1x.png);
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerLightSnow
 	{
 		background-image: url(../_img/tile_flowersLightSnow_1x.png);
@@ -620,7 +621,7 @@
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerHeavySnow
 	{
 		background-image: url(../_img/tile_flowersHeavySnow_1x.png);
@@ -628,7 +629,7 @@
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerRichCrossSnow
 	{
 		background-image: url(../_img/tile_flowersRich_+Snow_1x.png);
@@ -636,12 +637,12 @@
 		background-repeat: no-repeat;
 		background-size: 120px 120px;
 	}
-	
+
 	.field-floor-snow
 	{
 		background: #fff;
 	}
-	
+
 	.pixels_portalFire
 	{
 		background-image: url(../_img/portalSpriteFire_1x.png);
@@ -649,22 +650,22 @@
 		background-position: left top;
 		background-size: 80px 320px;
 	}
-	
+
 	.pixels_forestMassFire
 	{
 		background-image: url(../_img/tile_pineTreesMassFire_1x.png);
 		background-repeat: repeat;
 		background-position: center top;
-		background-size: 240px 240px;		
+		background-size: 240px 240px;
 	}
-	
+
 	.pixels_forestFire
 	{
 		background-image: url(../_img/tile_pineTreesFire_1x.png);
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerLightFire
 	{
 		background-image: url(../_img/tile_flowersLightFire_1x.png);
@@ -672,7 +673,7 @@
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerHeavyFire
 	{
 		background-image: url(../_img/tile_flowersHeavyFire_1x.png);
@@ -680,31 +681,30 @@
 		background-repeat: repeat;
 		background-size: 80px 80px;
 	}
-	
+
 	.pixels_flowerRichCrossFire
 	{
 		background-image: url(../_img/tile_flowersRich_+Fire_1x.png);
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		background-size: 120px 120px;
-	}	
-	
+	}
+
 	.field-floor-fire
 	{
 		background: #20202a;
-	}	
+	}
 
 
-	
 
-	
 
-	
-	
-	
-	
 
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+

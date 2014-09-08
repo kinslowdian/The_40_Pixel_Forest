@@ -1,71 +1,106 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	
+
 	<head>
-		
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		
+
 		<meta name="description" content="A tale of rock, paper, and scissors eternally told... Developed by Simon Kinslow">
 		<meta name="keywords" content="Mini RPG, browswer game, HTML5 game, Simon Kinslow, Kinslowdian, Pixel Art" />
-		<meta name="revised" content="Simon Kinslow, 19/06/2014" />
-		
+		<meta name="revised" content="Simon Kinslow, 08/09/2014" />
+
 		<title>Forests of 40 Pixels. By Simon Kinslow</title>
-		
+
 		<link rel="icon" type="image/png" href="fav.png" />
 		<link rel="apple-touch-icon" href="iPhone.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="iPad.png" />
 		<link rel="apple-touch-icon" sizes="114x114" href="iPhone4.png" />
-		
+
+		<style type="text/css">
+
+		#preload-wrapper
+		{
+			width: 100%;
+			height: 100%;
+
+			opacity: 1;
+
+			position: absolute;
+			left: 0; right: 0; top: 0; bottom: 0;
+
+			margin: auto;
+
+			z-index: 2;
+		}
+
+		#preload-wrapper .preloader
+		{
+			width: inherit;
+			height: inherit;
+
+			background: pink;
+		}
+
+		.tween-preload
+		{
+			-webkit-transition : 300ms linear;
+			transition         : 300ms linear;
+		}
+
+		</style>
+
+		<link href="_assets/_css/img.css" rel="stylesheet" type="text/css">
+
 		<link href="_assets/_css/game.css" rel="stylesheet" type="text/css">
-		
+
 		<script type="text/javascript" src="_assets/_js/Debug.js"></script>
-		
+
 		<script type="text/javascript" src="_assets/_js/_libs/_jquery/jquery-2.0.3.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_collision/jquery-collision.js"></script>
-		
+
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/Proxy.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/utils/IndexOf.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/Event.js"></script>
 		<script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/createjs/events/EventDispatcher.js"></script>
 	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/Sound.js"></script>
 	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/WebAudioPlugin.js"></script>
-	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>		
-		
-		
+	    <script type="text/javascript" src="_assets/_js/_libs/_SoundJS/src/soundjs/HTMLAudioPlugin.js"></script>
+
+
 		<script type="text/javascript" src="_assets/_js/Game.js"></script>
 		<script type="text/javascript" src="_assets/_js/Game_Level.js"></script>
 		<script type="text/javascript" src="_assets/_js/Game_Control.js"></script>
 		<script type="text/javascript" src="_assets/_js/Battle.js"></script>
-		
+
 		<script type="text/javascript" src="_assets/_js/Data.js"></script>
 		<script type="text/javascript" src="_assets/_js/Display.js"></script>
 		<script type="text/javascript" src="_assets/_js/AnimationEventManager.js"></script>
-		
+
 		<script type="text/javascript" src="_assets/_js/Sound.js"></script>
-		
+
 		<script type="text/javascript" src="_assets/_js/Temp.js"></script>
-		
-		
-		
+
+
+
 	</head>
-	
+
 	<body onorientationchange="phoneRotate(event);">
-		
+
 		<div id="debug"><p>test</p></div>
-		
+
 		<div id="displayErrorWrapper">
 
 			<div class="displayError tween-displayError displayErrorHide">
 
-				<div class="displayError-top">		
-					
+				<div class="displayError-top">
+
 					<div class="message font-dosis">
-						
+
 						<p>TURN ME AROUND</p>
-					
+
 					</div>
-					
+
 				</div>
 
 				<div class="displayError-btm">
@@ -80,15 +115,21 @@
 			</div>
 
 			<div class="displayError-base tween-displayError-base"></div>
-		
+
 		</div>
-		
+
 		<div id="display_wrapper" class="edgeBleed-forest">
-		
+
 		</div> <!-- #display_wrapper -->
-		
+
 		<div id="memory"></div>
-	
+
+		<div id="preload-wrapper" class="tween-preload">
+
+			<div class="preloader"></div>
+
+		</div>
+
 	</body>
-	
+
 </html>
