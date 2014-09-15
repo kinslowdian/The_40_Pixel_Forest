@@ -43,9 +43,12 @@
 	{
 		soundEffects_pedal.main.fileCount = 0;
 
-		soundEffects_pedal.main.assetsPath = "_assets/_sound/";
+		// soundEffects_pedal.main.assetsPath = "_assets/_sound/";
+
+		soundEffects_pedal.main.assetsPath = Logic.dat_ROM._SOUND.soundSource;
 
 	   // CONSIDER JSON
+	   /*
 	   soundEffects_pedal.main.manifest =	[
 				            							{src:"bg_forest.ogg", id:"BGM_BG_FOREST"},
 															{src:"bg_sea.ogg", id:"BGM_BG_SEA"},
@@ -54,7 +57,9 @@
 															{src:"fx_squeak.ogg", id:"BGM_FX_RABBIT"},
 															{src:"fx_moo.ogg", id:"BGM_FX_WHALE"},
 															{src:"fx_trees.ogg", id:"BGM_FX_TREES"}
-														];
+														];*/
+
+		soundEffects_pedal.main.manifest = Logic.dat_ROM._SOUND.soundAssets;
 
 		sound_init_finish();
 	}
@@ -130,6 +135,25 @@
 	{
 			// JSON FOR LOOP
 
+			for(var i in Logic.dat_ROM._SOUND.soundList)
+			{
+				var soundListData = Logic.dat_ROM._SOUND.soundList[i];
+
+				sound_list(soundListData.name,
+				{
+					id: soundListData.id,
+				  loop: soundListData.loop,
+				  volume: soundListData.volume
+				},
+
+				{
+				  paused:soundListData.paused,
+				  storeInstance: soundListData.storeInstance,
+				  singleChannel: soundListData.singleChannel
+				 });
+			}
+
+			/*
 			sound_list("level_bg_forest", {id: "BGM_BG_FOREST", loop: -1, volume: 1}, {paused:true, storeInstance: true, singleChannel: true});
 
 			sound_list("level_bg_sea", {id: "BGM_BG_SEA", loop: -1, volume: 0}, {paused:true, storeInstance: true, singleChannel: true});
@@ -139,7 +163,7 @@
 			sound_list("fx_rabbit", {id: "BGM_FX_RABBIT", loop: 0, volume: 0.06}, {paused:true, storeInstance: true, singleChannel: false});
 			sound_list("fx_whale", {id: "BGM_FX_WHALE", loop: 0, volume: 1}, {paused:true, storeInstance: true, singleChannel: true});
 
-			sound_list("fx_trees", {id: "BGM_FX_TREES", loop: 0, volume: 1}, {paused:true, storeInstance: true, singleChannel: false});
+			sound_list("fx_trees", {id: "BGM_FX_TREES", loop: 0, volume: 1}, {paused:true, storeInstance: true, singleChannel: false});*/
 	}
 
 	function sound_run(soundRef)
