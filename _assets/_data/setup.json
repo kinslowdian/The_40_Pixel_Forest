@@ -148,6 +148,103 @@
 
 			"texture":
 			{
+				"WALLS" :
+				[
+					{"x": 1.5, "y": 1.5, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 6, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 7, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 7, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 8, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 8, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3.5, "y": 14, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 14.5, "w": 1, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 15, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 16, "w": 1, "h": 4, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 16, "w": 1, "h": 2, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 19, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 21, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 23, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 3, "y": 19, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 20, "w": 4, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 21, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 22, "w": 4, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 3, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 1, "y": 24, "w": 3, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 3, "w": 1.5, "h": 1.5, "p": "pixels_flowerRichCross"},
+
+					{"x": 2.5, "y": 3, "w": 1.5, "h": 1.5, "p": "pixels_flowerRichCross"},
+
+					{"x": 0, "y": 5, "w": 4, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 3.5, "y": 5.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 1, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 7.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 1.5, "y": 9.5, "w": 1, "h": 3.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 11.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 1, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 12, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"}
+				],
+
+				"CLEARING":
+				[
+					{"x": -3, "y": 3, "w": 2, "h": 2, "n": "level0_clearing0", "t": "clearing_cross"},
+
+					{"x": 5, "y": 3, "w": 2, "h": 2, "n": "level0_clearing1", "t": "clearing_cross"},
+
+					{"x": 5, "y": 5, "w": 2, "h": 2, "n": "level0_clearing2", "t": "clearing_cross"},
+
+					{"x": -3, "y": 5, "w": 2, "h": 2, "n": "level0_clearing3", "t": "clearing_cross"},
+
+					{"x": -3, "y": 23, "w": 1, "h": 1, "n": "level0_clearing4", "t": "clearing_wolfGod"},
+
+					{"x": 5, "y": 23, "w": 2, "h": 2, "n": "level0_clearing5", "t": "clearing_cross"}
+				],
+
 				"FLOOR":
 				{
 					"class" : "field-floor-forest"
@@ -156,457 +253,105 @@
 				"OUTER":
 				{
 					"class" : "pixels_forestMass"
-				},
-
-				"BUSH":
-				{
-					"BUSH_0":
-					{
-						"x": 1.5,
-						"y": 1.5,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_1":
-					{
-						"x": 1,
-						"y": 6,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_2":
-					{
-						"x": 0,
-						"y": 7,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_3":
-					{
-						"x": 1,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_4":
-					{
-						"x": 2.5,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_5":
-					{
-						"x": 3,
-						"y": 7,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_6":
-					{
-						"x": 0,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_7":
-					{
-						"x": 3,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_8":
-					{
-						"x": 1,
-						"y": 8.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_9":
-					{
-						"x": 2.5,
-						"y": 8.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_10":
-					{
-						"x": 0,
-						"y": 14,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_11":
-					{
-						"x": 3.5,
-						"y": 14,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_12":
-					{
-						"x": 0,
-						"y": 14.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_13":
-					{
-						"x": 3,
-						"y": 14.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_14":
-					{
-						"x": 0,
-						"y": 15,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_15":
-					{
-						"x": 0,
-						"y": 16,
-						"w": 1,
-						"h": 4,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_16":
-					{
-						"x": 3,
-						"y": 16,
-						"w": 1,
-						"h": 2,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_17":
-					{
-						"x": 1,
-						"y": 19,
-						"w": 2,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_18":
-					{
-						"x": 1,
-						"y": 21,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_19":
-					{
-						"x": 0,
-						"y": 23,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					}
-
-
-				},
-
-				"FLOWER_LIGHT":
-				{
-					"FLOWER_0":
-					{
-						"x": 3,
-						"y": 19,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_1":
-					{
-						"x": 0,
-						"y": 20,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_2":
-					{
-						"x": 0,
-						"y": 21,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_3":
-					{
-						"x": 0,
-						"y": 22,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_4":
-					{
-						"x": 3,
-						"y": 23,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_5":
-					{
-						"x": 1,
-						"y": 24,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_CROSS_0":
-					{
-						"x": 0,
-						"y": 3,
-						"w": 1.5,
-						"h": 1.5,
-						"p": "pixels_flowerRichCross"
-					},
-
-					"FLOWER_CROSS_1":
-					{
-						"x": 2.5,
-						"y": 3,
-						"w": 1.5,
-						"h": 1.5,
-						"p": "pixels_flowerRichCross"
-					},
-
-					"FLOWER_HEAVY_0":
-					{
-						"x": 0,
-						"y": 5,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_1":
-					{
-						"x": 0,
-						"y": 5.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_2":
-					{
-						"x": 3.5,
-						"y": 5.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_3":
-					{
-						"x": 1,
-						"y": 7.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_4":
-					{
-						"x": 2.5,
-						"y": 7.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_5":
-					{
-						"x": 1.5,
-						"y": 9.5,
-						"w": 1,
-						"h": 3.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_6":
-					{
-						"x": 0.5,
-						"y": 11.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_7":
-					{
-						"x": 2.5,
-						"y": 11.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_8":
-					{
-						"x": 1,
-						"y": 12,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_9":
-					{
-						"x": 2.5,
-						"y": 12,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					}
 				}
+			},
+
+			"water":
+			{
+				"EDGE":
+				[
+					{"x": 0, "y": 3, "w": 1.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 2.5, "y": 3, "w": 1.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": -1, "y": 3, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 4, "y": 3, "w": 1, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 0.5, "y": 5.5, "w": 3, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 0.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 0.5, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"},
+
+					{"x": 3, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_waterEdge waterEdge tween-waterEdge"}
+				],
+
+				"BASE":
+				[
+					{"x": 0, "y": 3, "w": 1.5, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 2.5, "y": 3, "w": 1.5, "h": 2, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": -1, "y": 3, "w": 1, "h": 4, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 4, "y": 3, "w": 1, "h": 4, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 0, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 3.5, "y": 6.5, "w": 0.5, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 0.5, "y": 5.5, "w": 3, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": -1, "y": 7, "w": 2, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 3, "y": 7, "w": 2, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": -0.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"},
+
+					{"x": 3.5, "y": 7.5, "w": 1, "h": 0.5, "p": "pixels_waterBase waterPool collideCheck-field"}
+				],
+
+				"ISLAND":
+				[
+					{"x": 0.5, "y": 3.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy waterIsland collideCheck-field"},
+
+					{"x": 3, "y": 3.5, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy waterIsland collideCheck-field"}
+				],
+
+				"FISH":
+				[
+					{"x": -0.5, "y": 3.5, "w": 0.5, "h": 0.5, "n": "level0_waterFish0", "t": "water_fishCCW"},
+
+					{"x": -0.5, "y": 4, "w": 0.5, "h": 0.5, "n": "level0_waterFish1", "t": "water_fishACW"}
+				]
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 0,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level0_crow0",
-						"t": "crow",
-						"l": 5,
-						"known" : "some mystic crow 0",
-						"spawn": 0
-					},
+					"x": 0,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_crow0",
+					"t": "crow",
+					"l": 5,
+					"known" : "some mystic crow 0",
+					"spawn": 0
+				},
 
-					"ENEMY_1":
-					{
-						"x": 3,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level0_rabbit1",
-						"t": "rabbit",
-						"l": 23,
-						"known" : "some mystic rabbit 0",
-						"spawn": 0
-					}
+				{
+					"x": 3,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_rabbit1",
+					"t": "rabbit",
+					"l": 23,
+					"known" : "some mystic rabbit 0",
+					"spawn": 0
 				}
-			},
-
-			"clearing":
-			{
-				"CLEARING_0":
-				{
-					"x": -3,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level0_clearing0",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_1":
-				{
-					"x": 5,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level0_clearing1",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_2":
-				{
-					"x": 5,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level0_clearing2",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_3":
-				{
-					"x": -3,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level0_clearing3",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_4":
-				{
-					"x": -3,
-					"y": 23,
-					"w": 1,
-					"h": 1,
-					"n": "level0_clearing4",
-					"t": "clearing_wolfGod"
-				},
-
-				"CLEARING_5":
-				{
-					"x": 5,
-					"y": 23,
-					"w": 2,
-					"h": 2,
-					"n": "level0_clearing5",
-					"t": "clearing_cross"
-				}
-			},
+			],
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 1.5,
@@ -620,7 +365,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 1.5,
@@ -634,7 +378,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 0,
@@ -648,7 +391,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_3":
 				{
 					"num": 3,
 					"x": 0,
@@ -661,259 +403,7 @@
 					"spawn": 0,
 					"p": "pixels_portal"
 				}
-			},
-
-			"water":
-			{
-				"edge":
-				{
-					"WATER_EDGE_0":
-					{
-						"x": 0,
-						"y": 3,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_1":
-					{
-						"x": 2.5,
-						"y": 3,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_2":
-					{
-						"x": -1,
-						"y": 3,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_3":
-					{
-						"x": 4,
-						"y": 3,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_4":
-					{
-						"x": 0,
-						"y": 6.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_5":
-					{
-						"x": 3.5,
-						"y": 6.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_6":
-					{
-						"x": 0.5,
-						"y": 5.5,
-						"w": 3,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_7":
-					{
-						"x": 0.5,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_8":
-					{
-						"x": 3,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_9":
-					{
-						"x": 0.5,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					},
-
-					"WATER_EDGE_10":
-					{
-						"x": 3,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterEdge waterEdge tween-waterEdge"
-					}
-				},
-
-				"base":
-				{
-					"WATER_BASE_0":
-					{
-						"x": 0,
-						"y": 3,
-						"w": 1.5,
-						"h": 2,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_1":
-					{
-						"x": 2.5,
-						"y": 3,
-						"w": 1.5,
-						"h": 2,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_2":
-					{
-						"x": -1,
-						"y": 3,
-						"w": 1,
-						"h": 4,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_3":
-					{
-						"x": 4,
-						"y": 3,
-						"w": 1,
-						"h": 4,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_4":
-					{
-						"x": 0,
-						"y": 6.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_5":
-					{
-						"x": 3.5,
-						"y": 6.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_6":
-					{
-						"x": 0.5,
-						"y": 5.5,
-						"w": 3,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_7":
-					{
-						"x": -1,
-						"y": 7,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_8":
-					{
-						"x": 3,
-						"y": 7,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_9":
-					{
-						"x": -0.5,
-						"y": 7.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					},
-
-					"WATER_BASE_10":
-					{
-						"x": 3.5,
-						"y": 7.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_waterBase waterPool collideCheck-field"
-					}
-
-				},
-
-				"island":
-				{
-					"WATER_ISLAND_0":
-					{
-						"x": 0.5,
-						"y": 3.5,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_flowerHeavy waterIsland collideCheck-field"
-					},
-
-					"WATER_ISLAND_1":
-					{
-						"x": 3,
-						"y": 3.5,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_flowerHeavy waterIsland collideCheck-field"
-					}
-				},
-
-				"fish":
-				{
-					"WATER_FISH_0":
-					{
-						"x": -0.5,
-						"y": 3.5,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level0_waterFish0",
-						"t": "water_fishCCW"
-					},
-
-					"WATER_FISH_1":
-					{
-						"x": -0.5,
-						"y": 4,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level0_waterFish1",
-						"t": "water_fishACW"
-					}
-				}
-			}
+			]
 		},
 
 		"level1":
@@ -933,6 +423,101 @@
 
 			"texture":
 			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 0, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 0, "w": 1, "h": 9, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 0.5, "w": 0.5, "h": 2.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0.5, "y": 1, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0.5, "y": 2.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1.5, "y": 0.5, "w": 0.5, "h": 2, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 4, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 5, "w": 1, "h": 2, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 7, "w": 0.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 7.5, "w": 2, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1.5, "y": 4.5, "w": 0.5, "h": 3, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 9, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 10.5, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 12, "w": 3, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2, "y": 13, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 1, "y": 14, "w": 2, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 16, "w": 4, "h": 1, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0.5, "y": 0.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 1, "y": 1, "w": 0.5, "h": 1, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 2, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 4.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 1, "y": 5, "w": 0.5, "h": 2, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 7, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0, "y": 9.5, "w": 4, "h": 1, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 8.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+
+					{"x": 3.5, "y": 11, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+
+					{"x": 3.5, "y": 15.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerLight"},
+
+					{"x": 1, "y": 17, "w": 3, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 18, "w": 3, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 19, "w": 2, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 20, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 1.5, "y": 20.5, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 3, "y": 21, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 2, "y": 22, "w": 2, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 1, "y": 23, "w": 3, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0, "y": 24, "w": 3, "h": 1, "p": "pixels_flowerLight"}
+				],
+
+				"CLEARING":
+				[
+					{"x": -3, "y": 3, "w": 2, "h": 2, "n": "level1_clearing0", "t": "clearing_cross"},
+
+					{"x": 5, "y": 3, "w": 2, "h": 2, "n": "level1_clearing1", "t": "clearing_cross"},
+
+					{"x": 5, "y": 5, "w": 2, "h": 2, "n": "level1_clearing2", "t": "clearing_cross"},
+
+					{"x": -3, "y": 5, "w": 2, "h": 2, "n": "level1_clearing3", "t": "clearing_cross"},
+
+					{"x": -3, "y": 23, "w": 2, "h": 2, "n": "level1_clearing4", "t": "clearing_cross"},
+
+					{"x": 5, "y": 23, "w": 2, "h": 2, "n": "level1_clearing5", "t": "clearing_cross"}
+				],
+
 				"FLOOR":
 				{
 					"class" : "field-floor-forest"
@@ -941,447 +526,38 @@
 				"OUTER":
 				{
 					"class" : "pixels_forestMass"
-				},
-
-				"BUSH":
-				{
-					"BUSH_0":
-					{
-						"x": 0,
-						"y": 0,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_1":
-					{
-						"x": 3,
-						"y": 0,
-						"w": 1,
-						"h": 9,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_2":
-					{
-						"x": 0,
-						"y": 0.5,
-						"w": 0.5,
-						"h": 2.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_3":
-					{
-						"x": 0.5,
-						"y": 1,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_4":
-					{
-						"x": 0.5,
-						"y": 2.5,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_5":
-					{
-						"x": 1.5,
-						"y": 0.5,
-						"w": 0.5,
-						"h": 2,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_6":
-					{
-						"x": 0,
-						"y": 4,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_7":
-					{
-						"x": 0,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_8":
-					{
-						"x": 0,
-						"y": 5,
-						"w": 1,
-						"h": 2,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_9":
-					{
-						"x": 0,
-						"y": 7,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_10":
-					{
-						"x": 0,
-						"y": 7.5,
-						"w": 2,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_11":
-					{
-						"x": 1.5,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 3,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_12":
-					{
-						"x": 0,
-						"y": 9,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_13":
-					{
-						"x": 0,
-						"y": 10.5,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_14":
-					{
-						"x": 0,
-						"y": 12,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_15":
-					{
-						"x": 2,
-						"y": 13,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_16":
-					{
-						"x": 1,
-						"y": 14,
-						"w": 2,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_17":
-					{
-						"x": 0,
-						"y": 16,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					}
-				},
-
-				"FLOWER_LIGHT":
-				{
-					"FLOWER_HEAVY_0":
-					{
-						"x": 0.5,
-						"y": 0.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_1":
-					{
-						"x": 1,
-						"y": 1,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_2":
-					{
-						"x": 0.5,
-						"y": 2,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_3":
-					{
-						"x": 0.5,
-						"y": 4.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_4":
-					{
-						"x": 1,
-						"y": 5,
-						"w": 0.5,
-						"h": 2,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_5":
-					{
-						"x": 0.5,
-						"y": 7,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_6":
-					{
-						"x": 0,
-						"y": 9.5,
-						"w": 4,
-						"h": 1,
-						"p": "pixels_flowerHeavy"
-					},
-
-
-					"FLOWER_0":
-					{
-						"x": 2.5,
-						"y": 8.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_1":
-					{
-						"x": 3.5,
-						"y": 11,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_2":
-					{
-						"x": 3.5,
-						"y": 15.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_3":
-					{
-						"x": 1,
-						"y": 17,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_4":
-					{
-						"x": 0,
-						"y": 18,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_5":
-					{
-						"x": 0,
-						"y": 19,
-						"w": 2,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_6":
-					{
-						"x": 0,
-						"y": 20,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_7":
-					{
-						"x": 1.5,
-						"y": 20.5,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_8":
-					{
-						"x": 3,
-						"y": 21,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_9":
-					{
-						"x": 2,
-						"y": 22,
-						"w": 2,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_10":
-					{
-						"x": 1,
-						"y": 23,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_11":
-					{
-						"x": 0,
-						"y": 24,
-						"w": 3,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					}
 				}
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 3,
-						"y": 18,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level1_crow0",
-						"t": "crow",
-						"l": 10,
-						"known" : "some mystic crow 1",
-						"spawn": 1
-					},
+					"x": 3,
+					"y": 18,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level1_crow0",
+					"t": "crow",
+					"l": 10,
+					"known" : "some mystic crow 1",
+					"spawn": 1
+				},
 
-					"ENEMY_1":
-					{
-						"x": 0,
-						"y": 22,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level1_rabbit1",
-						"t": "rabbit",
-						"l": 44,
-						"known" : "some mystic rabbit 1",
-						"spawn": 1
-					}
+				{
+					"x": 0,
+					"y": 22,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level1_rabbit1",
+					"t": "rabbit",
+					"l": 44,
+					"known" : "some mystic rabbit 1",
+					"spawn": 1
 				}
-			},
-
-			"clearing":
-			{
-				"CLEARING_0":
-				{
-					"x": -3,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing0",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_1":
-				{
-					"x": 5,
-					"y": 3,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing1",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_2":
-				{
-					"x": 5,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing2",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_3":
-				{
-					"x": -3,
-					"y": 5,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing3",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_4":
-				{
-					"x": -3,
-					"y": 23,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing4",
-					"t": "clearing_cross"
-				},
-
-				"CLEARING_5":
-				{
-					"x": 5,
-					"y": 23,
-					"w": 2,
-					"h": 2,
-					"n": "level1_clearing5",
-					"t": "clearing_cross"
-				}
-			},
+			],
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 0,
@@ -1395,7 +571,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 0,
@@ -1409,7 +584,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 0,
@@ -1423,7 +597,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_3":
 				{
 					"num": 3,
 					"x": 1,
@@ -1437,7 +610,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_4":
 				{
 					"num": 4,
 					"x": 0,
@@ -1451,7 +623,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_5":
 				{
 					"num": 5,
 					"x": 3,
@@ -1464,7 +635,7 @@
 					"spawn": 1,
 					"p": "pixels_portal"
 				}
-			}
+			]
 		},
 
 		"level2":
@@ -1484,6 +655,59 @@
 
 			"texture":
 			{
+				"WALLS" :
+				[
+					{"x": 0.5, "y": 8, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 8, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0.5, "y": 10, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 10, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 11.5, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 13, "w": 4, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0.5, "y": 14, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5,"y": 14, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0.5,"y": 16, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5,"y": 16, "w": 1, "h": 1, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 0.5, "y": 4, "w": 3, "h": 3, "p": "pixels_flowerLight"},
+
+					{"x": 1.5, "y": 12, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 0.5, "y": 18, "w": 3, "h": 3, "p": "pixels_flowerLight"}
+				],
+
+				"CLEARING":
+				[
+					{
+						"x": -3,
+						"y": 6,
+						"w": 2,
+						"h": 2,
+						"n": "level2_clearing0",
+						"t": "clearing_cross"
+					},
+
+					{
+						"x": 5,
+						"y": 6,
+						"w": 2,
+						"h": 2,
+						"n": "level2_clearing1",
+						"t": "clearing_cross"
+					}
+				],
+
 				"FLOOR":
 				{
 					"class" : "field-floor-forest"
@@ -1492,190 +716,38 @@
 				"OUTER":
 				{
 					"class" : "pixels_forestMass"
-				},
-
-				"BUSH":
-				{
-					"BUSH_0":
-					{
-						"x": 0.5,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_1":
-					{
-						"x": 2.5,
-						"y": 8,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_2":
-					{
-						"x": 0.5,
-						"y": 10,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_3":
-					{
-						"x": 2.5,
-						"y": 10,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_4":
-					{
-						"x": 0,
-						"y": 11.5,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_5":
-					{
-						"x": 0,
-						"y": 13,
-						"w": 4,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_6":
-					{
-						"x": 0.5,
-						"y": 14,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_7":
-					{
-						"x": 2.5,
-						"y": 14,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_8":
-					{
-						"x": 0.5,
-						"y": 16,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_9":
-					{
-						"x": 2.5,
-						"y": 16,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					}
-				},
-
-				"FLOWER_LIGHT":
-				{
-					"FLOWER_0":
-					{
-						"x": 0.5,
-						"y": 4,
-						"w": 3,
-						"h": 3,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_1":
-					{
-						"x": 1.5,
-						"y": 12,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_2":
-					{
-						"x": 0.5,
-						"y": 18,
-						"w": 3,
-						"h": 3,
-						"p": "pixels_flowerLight"
-					}
 				}
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 1.5,
-						"y": 8,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level2_crow0",
-						"t": "crow",
-						"l": 30,
-						"known" : "some mystic crow 2",
-						"spawn": 2
-					},
-
-					"ENEMY_1":
-					{
-						"x": 1.5,
-						"y": 16,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level2_rabbit1",
-						"t": "rabbit",
-						"l": 18,
-						"known" : "some mystic rabbit 2",
-						"spawn": 2
-					}
-				}
-			},
-
-			"clearing":
-			{
-				"CLEARING_0":
-				{
-					"x": -3,
-					"y": 6,
-					"w": 2,
-					"h": 2,
-					"n": "level2_clearing0",
-					"t": "clearing_cross"
+					"x": 1.5,
+					"y": 8,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level2_crow0",
+					"t": "crow",
+					"l": 30,
+					"known" : "some mystic crow 2",
+					"spawn": 2
 				},
 
-				"CLEARING_1":
 				{
-					"x": 5,
-					"y": 6,
-					"w": 2,
-					"h": 2,
-					"n": "level2_clearing1",
-					"t": "clearing_cross"
+					"x": 1.5,
+					"y": 16,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level2_rabbit1",
+					"t": "rabbit",
+					"l": 18,
+					"known" : "some mystic rabbit 2",
+					"spawn": 2
 				}
-			},
+			],
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 1.5,
@@ -1689,7 +761,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 1.5,
@@ -1703,7 +774,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 1.5,
@@ -1717,7 +787,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_3":
 				{
 					"num": 3,
 					"x": 1.5,
@@ -1730,8 +799,7 @@
 					"spawn": 2,
 					"p": "pixels_portal"
 				}
-
-			}
+			]
 		},
 
 		"level3":
@@ -1751,6 +819,65 @@
 
 			"texture":
 			{
+				"WALLS" :
+				[
+					{"x": 0, "y": 0, "w": 4, "h": 3.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 3.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 3.5, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 4, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3.5, "y": 4, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 6, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3.5, "y": 6, "w": 0.5, "h": 1, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 2.5, "y": 7, "w": 1.5, "h": 0.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 7.5, "w": 4, "h": 14.5, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 0, "y": 22, "w": 1, "h": 3, "p": "pixels_forest collideCheck-field"},
+
+					{"x": 3, "y": 22, "w": 1, "h": 3, "p": "pixels_forest collideCheck-field"}
+				],
+
+				"PLANTS":
+				[
+					{"x": 1, "y": 22, "w": 0.5, "h": 3, "p": "pixels_flowerLight"},
+
+					{"x": 1.5, "y": 23, "w": 1, "h": 1, "p": "pixels_flowerLight"},
+
+					{"x": 2.5, "y": 22, "w": 0.5, "h": 3, "p": "pixels_flowerLight"},
+
+					{"x": 0.5, "y": 4, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 4, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 3, "y": 4.5, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 3, "y": 6, "w": 0.5, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 0.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"},
+
+					{"x": 2.5, "y": 6.5, "w": 1, "h": 0.5, "p": "pixels_flowerHeavy"}
+				],
+
+				"CLEARING":
+				[
+					{"x": -3, "y": 6, "w": 2, "h": 2, "n": "level2_clearing0", "t": "clearing_cross"},
+
+					{"x": 5, "y": 6, "w": 2, "h": 2, "n": "level2_clearing1", "t": "clearing_cross"}
+				],
+
 				"FLOOR":
 				{
 					"class" : "field-floor-forest"
@@ -1759,280 +886,38 @@
 				"OUTER":
 				{
 					"class" : "pixels_forestMass"
-				},
-
-				"BUSH":
-				{
-					"BUSH_0":
-					{
-						"x": 0,
-						"y": 0,
-						"w": 4,
-						"h": 3.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_1":
-					{
-						"x": 0,
-						"y": 3.5,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_2":
-					{
-						"x": 2.5,
-						"y": 3.5,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_3":
-					{
-						"x": 0,
-						"y": 4,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_4":
-					{
-						"x": 3.5,
-						"y": 4,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_5":
-					{
-						"x": 0,
-						"y": 6,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_6":
-					{
-						"x": 3.5,
-						"y": 6,
-						"w": 0.5,
-						"h": 1,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_7":
-					{
-						"x": 0,
-						"y": 7,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_8":
-					{
-						"x": 2.5,
-						"y": 7,
-						"w": 1.5,
-						"h": 0.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_9":
-					{
-						"x": 0,
-						"y": 7.5,
-						"w": 4,
-						"h": 14.5,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_10":
-					{
-						"x": 0,
-						"y": 22,
-						"w": 1,
-						"h": 3,
-						"p": "pixels_forest collideCheck-field"
-					},
-
-					"BUSH_11":
-					{
-						"x": 3,
-						"y": 22,
-						"w": 1,
-						"h": 3,
-						"p": "pixels_forest collideCheck-field"
-					}
-				},
-
-				"FLOWER_LIGHT":
-				{
-					"FLOWER_0":
-					{
-						"x": 1,
-						"y": 22,
-						"w": 0.5,
-						"h": 3,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_1":
-					{
-						"x": 1.5,
-						"y": 23,
-						"w": 1,
-						"h": 1,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_2":
-					{
-						"x": 2.5,
-						"y": 22,
-						"w": 0.5,
-						"h": 3,
-						"p": "pixels_flowerLight"
-					},
-
-					"FLOWER_HEAVY_0":
-					{
-						"x": 0.5,
-						"y": 4,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_1":
-					{
-						"x": 0.5,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_2":
-					{
-						"x": 2.5,
-						"y": 4,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_3":
-					{
-						"x": 3,
-						"y": 4.5,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_4":
-					{
-						"x": 0.5,
-						"y": 6,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_5":
-					{
-						"x": 3,
-						"y": 6,
-						"w": 0.5,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_6":
-					{
-						"x": 0.5,
-						"y": 6.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					},
-
-					"FLOWER_HEAVY_7":
-					{
-						"x": 2.5,
-						"y": 6.5,
-						"w": 1,
-						"h": 0.5,
-						"p": "pixels_flowerHeavy"
-					}
 				}
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 1.5,
-						"y": 6.5,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level3_crow0",
-						"t": "crow",
-						"l": 79,
-						"known" : "some mystic crow 3",
-						"spawn": 3
-					},
-
-					"ENEMY_1":
-					{
-						"x": 1,
-						"y": 23,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level3_rabbit1",
-						"t": "rabbit",
-						"l": 22,
-						"known" : "some mystic rabbit 3",
-						"spawn": 3
-					}
-				}
-			},
-
-			"clearing":
-			{
-				"CLEARING_0":
-				{
-					"x": -3,
-					"y": 6,
-					"w": 2,
-					"h": 2,
-					"n": "level2_clearing0",
-					"t": "clearing_cross"
+					"x": 1.5,
+					"y": 6.5,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level3_crow0",
+					"t": "crow",
+					"l": 79,
+					"known" : "some mystic crow 3",
+					"spawn": 3
 				},
 
-				"CLEARING_1":
 				{
-					"x": 5,
-					"y": 6,
-					"w": 2,
-					"h": 2,
-					"n": "level2_clearing1",
-					"t": "clearing_cross"
+					"x": 1,
+					"y": 23,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level3_rabbit1",
+					"t": "rabbit",
+					"l": 22,
+					"known" : "some mystic rabbit 3",
+					"spawn": 3
 				}
-			},
+			],
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 1.5,
@@ -2046,7 +931,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 1.5,
@@ -2060,7 +944,6 @@
 					"p": "pixels_portal"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 1.5,
@@ -2073,7 +956,7 @@
 					"spawn": 3,
 					"p": "pixels_portal"
 				}
-			}
+			]
 		},
 
 		"level4":
@@ -2455,36 +1338,31 @@
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 0,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level4_rabbit0",
-						"t": "rabbit",
-						"l": 5,
-						"known" : "some mystic rabbit 4",
-						"spawn": 4
-					},
+					"x": 0,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level4_rabbit0",
+					"t": "rabbit",
+					"l": 5,
+					"known" : "some mystic rabbit 4",
+					"spawn": 4
+				},
 
-					"ENEMY_1":
-					{
-						"x": 3,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level4_rabbit1",
-						"t": "rabbit",
-						"l": 99,
-						"known" : "some mystic rabbit 4",
-						"spawn": 4
-					}
+				{
+					"x": 3,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level4_rabbit1",
+					"t": "rabbit",
+					"l": 99,
+					"known" : "some mystic rabbit 4",
+					"spawn": 4
 				}
-			},
+			],
 
 			"clearing":
 			{
@@ -2540,8 +1418,7 @@
 			},
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 1.5,
@@ -2555,7 +1432,6 @@
 					"p": "pixels_portalSnow"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 1.5,
@@ -2569,7 +1445,6 @@
 					"p": "pixels_portalSnow"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 0,
@@ -2583,7 +1458,6 @@
 					"p": "pixels_portalSnow"
 				},
 
-				"PORTAL_3":
 				{
 					"num": 3,
 					"x": 0,
@@ -2596,7 +1470,7 @@
 					"spawn": 4,
 					"p": "pixels_portalSnow"
 				}
-			}
+			]
 		},
 
 		"level5":
@@ -2978,36 +1852,31 @@
 			},
 
 			"enemyPlayers":
-			{
-				"ENEMY":
+			[
 				{
-					"ENEMY_0":
-					{
-						"x": 0,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level5_rabbit0",
-						"t": "rabbit",
-						"l": 5,
-						"known" : "some mystic rabbit 4",
-						"spawn": 5
-					},
+					"x": 0,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level5_rabbit0",
+					"t": "rabbit",
+					"l": 5,
+					"known" : "some mystic rabbit 4",
+					"spawn": 5
+				},
 
-					"ENEMY_1":
-					{
-						"x": 3,
-						"y": 9,
-						"w": 0.5,
-						"h": 0.5,
-						"n": "level5_rabbit1",
-						"t": "rabbit",
-						"l": 99,
-						"known" : "some mystic rabbit 4",
-						"spawn": 5
-					}
+				{
+					"x": 3,
+					"y": 9,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level5_rabbit1",
+					"t": "rabbit",
+					"l": 99,
+					"known" : "some mystic rabbit 4",
+					"spawn": 5
 				}
-			},
+			],
 
 			"clearing":
 			{
@@ -3063,8 +1932,7 @@
 			},
 
 			"portal":
-			{
-				"PORTAL_0":
+			[
 				{
 					"num": 0,
 					"x": 1.5,
@@ -3078,7 +1946,6 @@
 					"p": "pixels_portalFire"
 				},
 
-				"PORTAL_1":
 				{
 					"num": 1,
 					"x": 1.5,
@@ -3092,7 +1959,6 @@
 					"p": "pixels_portalFire"
 				},
 
-				"PORTAL_2":
 				{
 					"num": 2,
 					"x": 0,
@@ -3106,7 +1972,6 @@
 					"p": "pixels_portalFire"
 				},
 
-				"PORTAL_3":
 				{
 					"num": 3,
 					"x": 0,
@@ -3119,7 +1984,7 @@
 					"spawn": 5,
 					"p": "pixels_portalFire"
 				}
-			}
+			]
 		}
 
 	}
