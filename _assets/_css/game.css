@@ -735,6 +735,13 @@
 		100%	{ transform	: translateY(0px); }
 	}
 
+	.boss-body .portal
+	{
+		left: 0; right: 0; top: 0; bottom: 0;
+
+		margin: 10px auto auto 10px;
+	}
+
 /* ----------------------------------------------------------------------- BOSS */
 
 

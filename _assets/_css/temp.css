@@ -700,6 +700,197 @@
 
 
 
+.return_wrapper
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	background: #20202a;
+
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+
+	z-index: 5;
+}
+
+.return_wrapper_show
+{
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+.tween-return_wrapper
+{
+	-webkit-transition	: -webkit-transform 1s ease;
+	transition 			: transform 1s ease;
+}
+
+
+
+
+.pixels_portalZombie
+{
+	background-image: url(../_img/portalZombieSprite_1x.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 80px 360px;
+}
+
+
+
+.failScreen_wrapper
+{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	overflow: hidden;
+
+	font-size: 20px;
+}
+
+.failScreen_title_top
+{
+	width: 100%;
+	height: 50%;
+
+	opacity: 0;
+
+	-webkit-transform: translateY(10px);
+	transform: translateY(10px);
+
+	position: absolute;
+}
+
+.tween-failScreen_title_top
+{
+	-webkit-transition: 0.6s linear;
+	transition: 0.6s linear;
+}
+
+.failScreen_title_top_show
+{
+	opacity: 1;
+
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+
+
+.failScreen_title_top h1
+{
+		font-size: 1em;
+		letter-spacing: 0.1em;
+		text-align: center;
+		line-height: 1;
+		font-weight: 400;
+
+		text-transform: uppercase;
+
+		color: #17e69d;
+
+		position: absolute;
+
+		top: 50%; bottom: 50%; left: 0; right: 0;
+
+		margin: 0 auto;
+
+		-webkit-transform: translateY(-50%);
+
+		transform: translateY(-50%);
+}
+
+
+.failScreen_portal, .failScreen_zombie
+{
+	width: 80px;
+	height: 80px;
+
+	position: absolute;
+
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+.failScreen_zombie
+{
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+
+	opacity: 0;
+}
+
+.failScreen_zombie_show
+{
+	-webkit-transform: translateY(80px);
+	transform: translateY(80px);
+	opacity: 1;
+}
+
+.tween-failScreen_zombie
+{
+	-webkit-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+.failScreen_zombie .enemy_zombie
+{
+	left: 0; right: 0; top: 0; bottom: 0;
+
+	margin: auto;
+}
+
+
+
+
+.failScreen_grass
+{
+	width: 40px;
+	height: 40px;
+
+	background-position: 0px -320px;
+
+	position: absolute;
+}
+
+.failScreen_tree
+{
+	width: 40px;
+	height: 40px;
+
+	background-position: -40px -320px;
+
+	position: absolute;
+}
+
+.failScreen_grass_tl
+{
+	left: 0; top: 0;
+}
+
+.failScreen_grass_tr
+{
+	right: 0; top: 0;
+}
+
+.failScreen_grass_bl
+{
+	left: 0; bottom: 0;
+}
+
+.failScreen_grass_br
+{
+	right: 0; bottom: 0;
+}
+
+
 
 
 

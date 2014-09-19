@@ -258,6 +258,21 @@
 				]
 			},
 
+			"enemyPlayers":
+			[
+				{
+					"x": 0,
+					"y": 0,
+					"w": 0.5,
+					"h": 0.5,
+					"n": "level0_crow0",
+					"t": "crow",
+					"l": 10,
+					"known" : "some mystic crow 0",
+					"spawn": 0
+				}
+			],
+
 			"portal":
 			[
 				{
