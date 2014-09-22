@@ -56,7 +56,6 @@
 								url(../_img/planetSprite_1x.png)
 								url(../_img/battleLevelFloor_1x.png)
 								url(../_img/spaceSquid_1x.png)
-								url(../_img/battleEnd_1x.png)
 								url(../_img/tile_pineTreesMassDark_1x.png)
 								url(../_img/tile_pineTreesDark_1x.png)
 								url(../_img/tile_flowersLightDark_1x.png)
@@ -111,7 +110,6 @@
 								url(../_img/planetSprite_2x.png)
 								url(../_img/battleLevelFloor_2x.png)
 								url(../_img/spaceSquid_2x.png)
-								url(../_img/battleEnd_2x.png)
 								url(../_img/tile_pineTreesMassDark_2x.png)
 								url(../_img/tile_pineTreesDark_2x.png)
 								url(../_img/tile_flowersLightDark_2x.png)
@@ -122,6 +120,9 @@
 			display:none;
 		}
 	}
+
+
+	/*PIXELS FAIL SAFE x1*/
 
 
 

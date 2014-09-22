@@ -1169,7 +1169,7 @@
 	{
 		// BATTLE_NAV.game.result = battleEngine.battle(MAP_PLAYER, ROM.enemy.character, false);
 
-		BATTLE_NAV.game.result = "LOSE";
+		BATTLE_NAV.game.result = "WIN";
 
 		battleNav_logicDisplay();
 	}
@@ -2016,7 +2016,7 @@
 	{
 		$("#microBattle_resultWipe_wrapper").html(theBattle.html.wipeWrapper);
 
-		battleEnd_setup();
+		// battleEnd_setup();
 
 		if(spaceSquidsUse)
 		{
@@ -2057,7 +2057,7 @@
 		*/
 
 		// temp.js
-		test_return_show();
+		battleEnd_return_show();
 
 	}
 
@@ -2067,20 +2067,20 @@
 
 
 
-	function battleNav_memorySave(event)
-	{
-		var css;
+	// function battleNav_memorySave(event)
+	// {
+	// 	var css;
 
-		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
-		$(".tween-microBattle_resultWipe_content")[0].removeEventListener("transitionend", battleNav_memorySave, false);
+	// 	$(".tween-microBattle_resultWipe_content")[0].removeEventListener("webkitTransitionEnd", battleNav_memorySave, false);
+	// 	$(".tween-microBattle_resultWipe_content")[0].removeEventListener("transitionend", battleNav_memorySave, false);
 
-		$("#microBattle_nav_wrapper").html("");
-		$("#microBattle_fade_wrapper").html("");
+	// 	$("#microBattle_nav_wrapper").html("");
+	// 	$("#microBattle_fade_wrapper").html("");
 
-		battleUserInfo_crowdPurge();
+	// 	battleUserInfo_crowdPurge();
 
-		battleEnd_fadeIn();
-	}
+	// 	battleEnd_fadeIn();
+	// }
 
 	///////////////////////////////// --- BATTLE_NAV */
 
@@ -2643,241 +2643,110 @@
 
 	///////////////////////////////// --- BATTLE_END */
 
-	function battleEnd_setup()
+
+
+function battleEnd_return_show()
+{
+	if(BATTLE_NAV.game.result === "WIN")
 	{
-		battleEnd_mountains = {};
-
-		battleEnd_mountains.width_full 	= $("#microBattle_resultWipe_content .microBattle_endSky").width();
-		battleEnd_mountains.width_side 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainL").width();
-		battleEnd_mountains.width_center 	= $("#microBattle_resultWipe_content .microBattle_endSky_mountainC").width();
-
-		battleEnd_mountains.space_available 	= 0;
-		battleEnd_mountains.space_adjust 		= 0;
-
-		battleEnd_showEndSequence();
+		$(".return_wrapper .failScreen_wrapper").remove();
 	}
 
-	function battleEnd_showEndSequence()
+	if(BATTLE_NAV.game.result === "LOSE")
 	{
+
+	}
+
+	$(".return_wrapper").addClass("return_wrapper_show");
+
+	$(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_return_showEnd, false);
+	$(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_return_showEnd, false);
+}
+
+function battleEnd_return_showEnd(event)
+{
+	$(".tween-return_wrapper")[0].removeEventListener("webkitTransitionEnd", battleEnd_return_showEnd, false);
+	$(".tween-return_wrapper")[0].removeEventListener("transitionend", battleEnd_return_showEnd, false);
+
+	// COPIED FROM battleNav_memorySave();
+
+		$("#microBattle_nav_wrapper").html("");
+		$("#microBattle_fade_wrapper").html("");
+
+		$("#enemyScreen").html("");
+		$("#microBattle_player_wrapper").remove();
+		$("#microBattle_wrapper").remove();
+
+
+		battleUserInfo_crowdPurge();
+
 		if(BATTLE_NAV.game.result === "WIN")
 		{
-			// END SCREEN CUT
-			battleEnd_showEndSequence_WIN_set();
+			battleEnd_battleEnd_returnToGame();
 		}
 
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
-			battleEnd_showEndSequence_LOSE_set();
+			failScreen_showZombie();
 		}
-
-		screenUpdate(null);
-
-		// END SCREEN CUT
-		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").addClass("tween-microBattle_sunMoon_sprite");
-	}
-
-	function battleEnd_showEndSequence_WIN_set()
-	{
-		// SETTINGS
-		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("microBattle_castle_goat_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_sunMoon").addClass("microBattle_sunMoon_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_watcher_sprite").addClass("microBattle_castle_watcher_sprite_goat");
+}
 
 
-		// TWEENS
-		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
 
-		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("tween-microBattle_castle_goat");
-	}
-
-	function battleEnd_showEndSequence_LOSE_set()
-	{
-		var css_initSet_flag;
-		var css_initSet_char;
-
-		// SETTINGS
-		$("#microBattle_resultWipe_content .microBattle_castle_tower").addClass("microBattle_castle_tower_LOSE");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("microBattle_castle_flag_LOSE");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_watcher").addClass("microBattle_castle_enemy_WIN");
-
-		$("#microBattle_resultWipe_content .microBattle_zombie").addClass("microBattle_zombie_LOSE");
-
-		$("#microBattle_resultWipe_content .microBattle_sunMoon").addClass("microBattle_sunMoon_LOSE");
-
-		$("#microBattle_resultWipe_content .microBattle_growField").addClass("microBattle_growField_LOSE");
-
-		$("#microBattle_resultWipe_content .microBattle_castle_watcher_sprite").addClass("microBattle_castle_watcher_sprite_" + ROM.enemy.character.enemyType);
-
-		css_initSet_flag = 	{
-								"-webkit-transform"	: "translateY(0px)",
-								"transform"			: "translateY(0px)"
-							};
-
-		css_initSet_char = 	{
-								"-webkit-transform"	: "translateY(-4px)",
-								"transform"			: "translateY(-4px)"
-							};
-
-		$(".microBattle_castle_flag_LOSE").css(css_initSet_flag);
-
-		$(".microBattle_castle_enemy_WIN").css(css_initSet_char)
-
-		// TWEENS
-		// $("#microBattle_resultWipe_content .microBattle_castle_flag").addClass("tween-microBattle_castle_flag");
-
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk").addClass("tween-microBattle_zombie_walk");
-	}
-
-	function battleEnd_fadeIn()
-	{
-/*
-		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").removeClass("microBattle_sunMoon_sprite_set").addClass("microBattle_sunMoon_sprite_rise");
-
-		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
-		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);
-*/
-
-		// END SCREEN CUT
-		$(".tween-microBattle_resultWipe_fade")[0].addEventListener("webkitTransitionEnd", battleEnd_fadeInComplete, false);
-		$(".tween-microBattle_resultWipe_fade")[0].addEventListener("transitionend", battleEnd_fadeInComplete, false);
-
-		// END SCREEN CUT
-		$("#microBattle_resultWipe_content .microBattle_resultWipe_fade").css("opacity", "0");
-
-	}
-
-	function battleEnd_fadeInComplete(event)
-	{
-		$(".tween-microBattle_resultWipe_fade")[0].removeEventListener("webkitTransitionEnd", battleEnd_fadeInComplete, false);
-		$(".tween-microBattle_resultWipe_fade")[0].removeEventListener("transitionend", battleEnd_fadeInComplete, false);
-
-		$("#microBattle_resultWipe_content .microBattle_sunMoon_sprite").removeClass("microBattle_sunMoon_sprite_set").addClass("microBattle_sunMoon_sprite_rise");
-
-		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
-		$(".tween-microBattle_sunMoon_sprite")[0].addEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);
-	}
-
-	function battleEnd_showEndSequenceSkyInPlace(event)
-	{
-		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("webkitTransitionEnd", battleEnd_showEndSequenceSkyInPlace, false);
-		$(".tween-microBattle_sunMoon_sprite")[0].removeEventListener("transitionend", battleEnd_showEndSequenceSkyInPlace, false);
-
-		if(BATTLE_NAV.game.result === "WIN")
+		function failScreen_showZombie()
 		{
-			battleEnd_showEndSequence_WIN_stage0();
+			$(".failScreen_zombie")[0].addEventListener("webkitTransitionEnd", failScreen_showTitle, false);
+			$(".failScreen_zombie")[0].addEventListener("transitionend", failScreen_showTitle, false);
+
+			$(".failScreen_zombie").addClass("failScreen_zombie_show");
 		}
 
-		if(BATTLE_NAV.game.result === "LOSE")
+		function failScreen_showTitle(event)
 		{
-			battleEnd_showEndSequence_LOSE_stage0();
+			$(".failScreen_zombie")[0].removeEventListener("webkitTransitionEnd", failScreen_showTitle, false);
+			$(".failScreen_zombie")[0].removeEventListener("transitionend", failScreen_showTitle, false);
+
+			$(".failScreen_title_top")[0].addEventListener("webkitTransitionEnd", failScreen_end, false);
+			$(".failScreen_title_top")[0].addEventListener("transitionend", failScreen_end, false);
+
+			$(".failScreen_title_top").addClass("failScreen_title_top_show");
 		}
-	}
 
-	// WIN
-
-	function battleEnd_showEndSequence_WIN_stage0()
-	{
-		var css;
-		var css_char;
-
-		css = 	{
-					"-webkit-transform" : "translateY(0)",
-					"transform"			: "translateY(0)"
-				};
-
-
-		css_char = 	{
-						"-webkit-transform" : "translateY(-4px)",
-						"transform"			: "translateY(-4px)"
-					};
-
-		$("#microBattle_resultWipe_content .microBattle_castle_flag_WIN").css(css);
-		$("#microBattle_resultWipe_content .microBattle_castle_goat_WIN").css(css_char);
-
-		$("#microBattle_resultWipe_content .microBattle_growField").css(css);
-		$("#microBattle_resultWipe_content .microBattle_growField").css("opacity", "1");
-
-		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
-		$("#microBattle_resultWipe_content .microBattle_growField")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
-	}
-
-	// LOSE
-
-	function battleEnd_showEndSequence_LOSE_stage0()
-	{
-		var css;
-		var css_char;
-		var css_zombie;
-
-		var zombie_y;
-
-		zombie_y = $("#microBattle_resultWipe_content .microBattle_endField").height();
-
-		css = 	{
-					"-webkit-transform" : "translateY(0)",
-					"transform"			: "translateY(0)"
-				};
-
-
-		css_zombie = 	{
-							"-webkit-transform" : "translateY(" + zombie_y + "px)",
-							"transform"			: "translateY(" + zombie_y + "px)"
-						};
-
-		// $("#microBattle_resultWipe_content .microBattle_castle_flag_LOSE").css(css);
-
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk").css(css_zombie);
-
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
-		$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].addEventListener("transitionend", battleEnd_completeEvents, false);
-	}
-
-	function battleEnd_completeEvents(event)
-	{
-		var bece_delay;
-
-		if(BATTLE_NAV.game.result === "WIN")
+		function failScreen_end(event)
 		{
-			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
-			$("#microBattle_resultWipe_content .microBattle_growField")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);
+			var fse_end_delay;
 
-			bece_delay = new AnimationTimer();
+			$(".failScreen_title_top")[0].removeEventListener("webkitTransitionEnd", failScreen_end, false);
+			$(".failScreen_title_top")[0].removeEventListener("transitionend", failScreen_end, false);
 
-			timerList_add(bece_delay);
-			bece_delay.time(0.5, battleEnd_returnToGame);
+			$(".failScreen_zombie .map-enemy_40x40-head").addClass("mapPlayer_head_fear");
+
+			fse_end_delay = new AnimationTimer();
+
+			timerList_add(fse_end_delay);
+			fse_end_delay.time(1.5, battleEnd_battleEnd_returnToGame);
+
 		}
 
-		if(BATTLE_NAV.game.result === "LOSE")
-		{
-			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("webkitTransitionEnd", battleEnd_completeEvents, false);
-			$("#microBattle_resultWipe_content .microBattle_zombie_walk")[0].removeEventListener("transitionend", battleEnd_completeEvents, false);
 
-			battleEnd_returnToGame();
-		}
-	}
 
-	function battleEnd_returnToGame()
+
+
+
+
+	function battleEnd_battleEnd_returnToGame()
 	{
 		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
 
 		// RETURN HOOK
 
+
+		/*
 		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
 
 		$("#display_inner_info #battleScreenFade").addClass("battleScreenFade_use");
 		$("#display_inner_info #battleScreenFade").addClass("tween-battleScreenFade");
+		*/
 
 		// RETURN HOOK
 
@@ -2889,76 +2758,17 @@
 
 			// alert("LEVEL CLEARED === " + ROM.game.statusInfo.cleared_level + " COMPLETED === " + ROM.game.statusInfo.cleared_all);
 
-			battleOver_returnWin();
+			battleEnd_battleOver_returnWin();
 		}
 
 		if(BATTLE_NAV.game.result === "LOSE")
 		{
-			battleOver_returnLose();
+			battleEnd_battleOver_returnLose();
 		}
 	}
 
-	function battleEnd_alignMountains_measure()
-	{
-		battleEnd_mountains.width_full = $("#microBattle_resultWipe_content .microBattle_endSky").width();
 
-		battleEnd_mountains.space_available = Math.abs(Math.floor((battleEnd_mountains.width_full - battleEnd_mountains.width_center) * 0.5));
-
-		if(battleEnd_mountains.space_available < battleEnd_mountains.width_side)
-		{
-			battleEnd_mountains.space_adjust = Math.abs(battleEnd_mountains.width_side - battleEnd_mountains.space_available);
-
-			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainL"), -battleEnd_mountains.space_adjust);
-			battleEnd_alignMountains_set($("#microBattle_resultWipe_content .microBattle_endSky_mountainR"), battleEnd_mountains.space_adjust);
-		}
-	}
-
-	function battleEnd_alignMountains_set(mountain_div, mountain_x)
-	{
-		var css = 	{
-						"-webkit-transform" : "translateX(" + mountain_x + "px)",
-						"transform" 		: "translateX(" + mountain_x + "px)"
-					};
-
-		$(mountain_div).css(css);
-	}
-
-	///////////////////////////////// --- BATTLE_END */
-
-
-
-
-	///////////////////////////////// --- BATTLE_OVER */
-
-/*
-	function battleOver_skySet(event)
-	{
-		$(".tween-microBattle_endSky")[0].removeEventListener("webkitTransitionEnd", battleOver_skySet, false);
-		$(".tween-microBattle_endSky")[0].removeEventListener("transitionend", battleOver_skySet, false);
-
-		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
-		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
-
-		if(BATTLE_NAV.game.result === "WIN")
-		{
-			enemies_ARR[ROM.enemy.character.array_index].alive = false;
-
-			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
-
-			trace("ROM.game!!! ::");
-			trace(ROM.game);
-
-			battleOver_returnWin();
-		}
-
-		if(BATTLE_NAV.game.result === "LOSE")
-		{
-			battleOver_returnLose();
-		}
-	}
-*/
-
-	function battleOver_returnWin()
+	function battleEnd_battleOver_returnWin()
 	{
 		$("#" + enemies_ARR[ROM.enemy.character.array_index].id).html("");
 		$("#" + enemies_ARR[ROM.enemy.character.array_index].id).html(theBattle.grave.html);
@@ -2969,19 +2779,23 @@
 
 		$("#" + enemies_ARR[ROM.enemy.character.array_index].id).addClass("field-floor-" + LEVEL_MAIN.landType);
 
-		battleOver_prepareForReturn();
+		battleEnd_battleOver_setControlsBasic();
+
+		battleEnd_battleOver_prepareForReturn();
 	}
 
-	function battleOver_returnLose()
+
+
+	function battleEnd_battleOver_returnLose()
 	{
 		$("#microBattle_player_wrapper #player1").html("");
 		$("#microBattle_player_wrapper #player1").html(theBattle.html.zombie);
 		$("#microBattle_player_wrapper #player1 #_enemy_zombie").removeAttr("id");
 
-		battleOver_zombie();
+		battleEnd_battleOver_zombie();
 	}
 
-	function battleOver_zombie()
+	function battleEnd_battleOver_zombie()
 	{
 		var new_zombie = new Object();
 
@@ -3061,21 +2875,23 @@
 			}
 		}
 
-		battleOver_prepareForReturn();
+		// battleOver_prepareForReturn();
+
+		battleEnd_battleOver_setControlsBasic();
+
+		battleEnd_battleOver_prepareForReturn();
+
 	}
 
-	function battleOver_prepareForReturn()
-	{
-		var delay_returnWorld;
 
-		battleOver_setControlsBasic();
 
-		delay_returnWorld = setTimeout(battleOver_returnWorld, 0.1 * 1000);
 
-		// battleOver_returnWorld();
-	}
 
-	function battleOver_setControlsBasic()
+
+
+
+
+	function battleEnd_battleOver_setControlsBasic()
 	{
 		var edit_x;
 		var edit_y;
@@ -3119,65 +2935,24 @@
 		MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = edit_y;
 	}
 
-	function battleOver_returnWorld()
+	function battleEnd_battleOver_prepareForReturn()
 	{
-		var css;
+		$(".tween-return_wrapper")[0].addEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
+		$(".tween-return_wrapper")[0].addEventListener("transitionend", battleEnd_battleOver_cleanup, false);
 
-/*
-		css = 	{
-					"-webkit-transform" : "translateX(-100%)",
-					"transform" 		: "translateX(-100%)"
-				};
-*/
-
-		css = 	{
-					"-webkit-transform" : "translateY(100%)",
-					"transform" 		: "translateY(100%)"
-				};
-
-		// $(".tween-battleScreen")[0].addEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
-		// $(".tween-battleScreen")[0].addEventListener("transitionend", battleOver_returnWorldEnd, false);
-
-		// RETURN HOOK
-
-		$("#display_inner_info #battleScreen").css(css);
-
-
-		// ADD EVENT LISTENERS AND CLEAN FUNCTION
-
-		$(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
-		$(".tween-battleScreenFade")[0].addEventListener("transitionend", battleOver_returnWorldEnd, false);
-
-		$("#display_inner_info #battleScreenFade").css("opacity", "0");
-
-
-		// RETURN HOOK
+		$(".return_wrapper").removeClass("return_wrapper_show");
 	}
 
-	function battleOver_returnWorldEnd(event)
+	function battleEnd_battleOver_cleanup(event)
 	{
-		// $(".tween-battleScreen")[0].removeEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
-		// $(".tween-battleScreen")[0].removeEventListener("transitionend", battleOver_returnWorldEnd, false);
+		$(".tween-return_wrapper")[0].removeEventListener("webkitTransitionEnd", battleEnd_battleOver_cleanup, false);
+		$(".tween-return_wrapper")[0].removeEventListener("transitionend", battleEnd_battleOver_cleanup, false);
 
-		$(".tween-battleScreenFade")[0].removeEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
-		$(".tween-battleScreenFade")[0].removeEventListener("transitionend", battleOver_returnWorldEnd, false);
-
-		battleOver_cleanUp();
-	}
-
-	function battleOver_cleanUp()
-	{
 		$("#display_inner_info #battleScreen").html("");
 		$("#display_inner_info #battleScreen").removeAttr("style");
 
 		$("#display_inner_info #battleScreenFade").removeAttr("style");
 		$("#display_inner_info #battleScreenFade").removeAttr("class");
-
-		// FLUSH OBJECT
-		theBattle = {};
-
-		// FLUSH OBJECT
-		battleEnd_mountains = null;
 
 		// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
 		timerList_stopAll();
@@ -3185,6 +2960,286 @@
 
 		moveStageTest();
 	}
+
+
+// $("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	///////////////////////////////// --- BATTLE_END */
+
+
+
+
+	///////////////////////////////// --- BATTLE_OVER */
+
+/*
+	function battleOver_skySet(event)
+	{
+		$(".tween-microBattle_endSky")[0].removeEventListener("webkitTransitionEnd", battleOver_skySet, false);
+		$(".tween-microBattle_endSky")[0].removeEventListener("transitionend", battleOver_skySet, false);
+
+		$("#display_wrapper #display_inner_world").html(theBattle.html.display_inner_world);
+		$("#display_inner_info #battleScreen").addClass("tween-battleScreen");
+
+		if(BATTLE_NAV.game.result === "WIN")
+		{
+			enemies_ARR[ROM.enemy.character.array_index].alive = false;
+
+			ROM.game.statusInfo = battleEngine.levelClearedCheck(enemies_ARR, ROM.mapLevel);
+
+			trace("ROM.game!!! ::");
+			trace(ROM.game);
+
+			battleOver_returnWin();
+		}
+
+		if(BATTLE_NAV.game.result === "LOSE")
+		{
+			battleOver_returnLose();
+		}
+	}
+*/
+
+	// function battleOver_returnWin()
+	// {
+	// 	$("#" + enemies_ARR[ROM.enemy.character.array_index].id).html("");
+	// 	$("#" + enemies_ARR[ROM.enemy.character.array_index].id).html(theBattle.grave.html);
+	// 	$("#" + enemies_ARR[ROM.enemy.character.array_index].id).removeAttr("data-npc");
+	// 	$("#" + enemies_ARR[ROM.enemy.character.array_index].id).removeClass("collideCheck-field");
+
+	// 	$("#" + theBattle.grave.ref).removeAttr("id");
+
+	// 	$("#" + enemies_ARR[ROM.enemy.character.array_index].id).addClass("field-floor-" + LEVEL_MAIN.landType);
+
+	// 	battleOver_prepareForReturn();
+	// }
+
+	// function battleOver_returnLose()
+	// {
+	// 	$("#microBattle_player_wrapper #player1").html("");
+	// 	$("#microBattle_player_wrapper #player1").html(theBattle.html.zombie);
+	// 	$("#microBattle_player_wrapper #player1 #_enemy_zombie").removeAttr("id");
+
+	// 	battleOver_zombie();
+	// }
+
+	// function battleOver_zombie()
+	// {
+	// 	var new_zombie = new Object();
+
+	// 	var count_zombie = 0;
+
+	// 	var graveOverlap = false;
+
+	// 	for(var enemyObj in enemies_ARR)
+	// 	{
+	// 		if(enemies_ARR[enemyObj].spawn === ROM.mapLevel)
+	// 		{
+	// 			var e_x = enemies_ARR[enemyObj].buildData.x;
+	// 			var e_y = enemies_ARR[enemyObj].buildData.y;
+
+	// 			if(theBattle.playerStore.x_return == e_x && theBattle.playerStore.y_return == e_y)
+	// 			{
+	// 				graveOverlap = true;
+
+	// 				break;
+	// 			}
+
+	// 			else
+	// 			{
+	// 				graveOverlap = false;
+
+	// 				if(enemies_ARR[enemyObj].enemyType === "zombie")
+	// 				{
+	// 					count_zombie++;
+	// 				}
+
+	// 				else
+	// 				{
+	// 					count_zombie = 0;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+
+
+	// 	if(!graveOverlap)
+	// 	{
+	// 		new_zombie = 	{
+	// 							x		: theBattle.playerStore.x_return / 80,
+	// 							y		: theBattle.playerStore.y_return / 80,
+	// 							w		: 0.5,
+	// 							h		: 0.5,
+	// 							n		: "level" + ROM.mapLevel + "_zombie" + count_zombie,
+	// 							t		: "zombie",
+	// 							l		: 0, // DEFAULT EASY?
+	// 							known	: "an undead you",
+	// 							spawn	: ROM.mapLevel,
+	// 							head	: "GOAT"
+
+	// 						};
+
+	// 		html_lib_reuse();
+
+	// 		var nz = new enemy(new_zombie, ".enemy-area", enemies_ARR.length);
+
+	// 		nz.create();
+
+	// 		enemies_ARR.push(nz);
+
+	// 		html_lib_empty();
+
+	// 		// CREATE LATEST ON MAP
+	// 		if(enemies_ARR[(enemies_ARR.length - 1)].spawn == ROM.mapLevel)
+	// 		{
+	// 			if(enemies_ARR[(enemies_ARR.length - 1)].alive)
+	// 			{
+	// 				if(!enemies_ARR[(enemies_ARR.length - 1)].rendered)
+	// 				{
+	// 					enemies_ARR[(enemies_ARR.length - 1)].build();
+	// 				}
+
+	// 			}
+	// 		}
+	// 	}
+
+	// 	battleOver_prepareForReturn();
+	// }
+
+	// function battleOver_prepareForReturn()
+	// {
+	// 	var delay_returnWorld;
+
+	// 	battleOver_setControlsBasic();
+
+	// 	delay_returnWorld = setTimeout(battleOver_returnWorld, 0.1 * 1000);
+
+	// 	// battleOver_returnWorld();
+	// }
+
+	// function battleOver_setControlsBasic()
+	// {
+	// 	var edit_x;
+	// 	var edit_y;
+
+	// 	var player_css;
+
+	// 	if(CONTROL_SIGNAL.enableTouch)
+	// 	{
+	// 		// TOUCH UI DISPLAY FIX
+	// 		$("#touchPad").html("");
+	// 		$("#touchPad").html(CONTROL_SIGNAL.html.touchNav);
+
+	// 		// ENABLE TOUCH UI TO APPEAR AFTER TRANSITION OUT
+	// 		CONTROL_SIGNAL.firstTouch = true;
+	// 	}
+
+	// 	if(BATTLE_NAV.game.result === "WIN")
+	// 	{
+	// 		edit_x = theBattle.playerStore.x_return;
+	// 		edit_y = theBattle.playerStore.y_return;
+	// 	}
+
+	// 	if(BATTLE_NAV.game.result === "LOSE")
+	// 	{
+	// 		edit_x = MAP_PLAYER.storeEntryPos.x;
+	// 		edit_y = MAP_PLAYER.storeEntryPos.y;
+	// 	}
+
+
+
+	// 	player_css = 	{
+	// 						"-webkit-transform"	: "translate(" + edit_x + "px, " + edit_y + "px)",
+	// 						"transform"			: "translate(" + edit_x + "px, " + edit_y + "px)"
+	// 					};
+
+	// 	$("#" + MAP_PLAYER.playerMover).css(player_css);
+
+
+	// 	// RETURN ORIGINAL CONTROL POSITIONS
+	// 	MAP_PLAYER.pos_x = MAP_PLAYER.cur_x = edit_x;
+	// 	MAP_PLAYER.pos_y = MAP_PLAYER.cur_y = edit_y;
+	// }
+
+// 	function battleOver_returnWorld()
+// 	{
+// 		var css;
+
+// /*
+// 		css = 	{
+// 					"-webkit-transform" : "translateX(-100%)",
+// 					"transform" 		: "translateX(-100%)"
+// 				};
+// */
+
+// 		css = 	{
+// 					"-webkit-transform" : "translateY(100%)",
+// 					"transform" 		: "translateY(100%)"
+// 				};
+
+// 		// $(".tween-battleScreen")[0].addEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
+// 		// $(".tween-battleScreen")[0].addEventListener("transitionend", battleOver_returnWorldEnd, false);
+
+// 		// RETURN HOOK
+
+// 		$("#display_inner_info #battleScreen").css(css);
+
+
+// 		// ADD EVENT LISTENERS AND CLEAN FUNCTION
+
+// 		$(".tween-battleScreenFade")[0].addEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
+// 		$(".tween-battleScreenFade")[0].addEventListener("transitionend", battleOver_returnWorldEnd, false);
+
+// 		$("#display_inner_info #battleScreenFade").css("opacity", "0");
+
+
+// 		// RETURN HOOK
+// 	}
+
+	// function battleOver_returnWorldEnd(event)
+	// {
+	// 	// $(".tween-battleScreen")[0].removeEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
+	// 	// $(".tween-battleScreen")[0].removeEventListener("transitionend", battleOver_returnWorldEnd, false);
+
+	// 	$(".tween-battleScreenFade")[0].removeEventListener("webkitTransitionEnd", battleOver_returnWorldEnd, false);
+	// 	$(".tween-battleScreenFade")[0].removeEventListener("transitionend", battleOver_returnWorldEnd, false);
+
+	// 	battleOver_cleanUp();
+	// }
+
+	// function battleOver_cleanUp()
+	// {
+	// 	$("#display_inner_info #battleScreen").html("");
+	// 	$("#display_inner_info #battleScreen").removeAttr("style");
+
+	// 	$("#display_inner_info #battleScreenFade").removeAttr("style");
+	// 	$("#display_inner_info #battleScreenFade").removeAttr("class");
+
+	// 	// FLUSH OBJECT
+	// 	theBattle = {};
+
+	// 	// FLUSH OBJECT
+	// 	battleEnd_mountains = null;
+
+	// 	// REMOVE ALL TIMERS FROM THIS ANIMATION FLOW
+	// 	timerList_stopAll();
+	// 	timerList_destroy();
+
+	// 	moveStageTest();
+	// }
 
 	///////////////////////////////// --- BATTLE_OVER */
 

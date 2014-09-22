@@ -404,12 +404,6 @@
 	}
 */
 
-	.pixels_battleEnd
-	{
-		background-image: url(../_img/battleEnd_1x.png);
-		background-repeat: no-repeat;
-		background-size: 534px 600px;
-	}
 
 	.pixels_forestMassDark
 	{
@@ -753,10 +747,6 @@
 		}
 */
 
-		.pixels_battleEnd
-		{
-			background-image: url(../_img/battleEnd_1x.png);
-		}
 
 		.pixels_forestMassDark
 		{
@@ -1039,10 +1029,6 @@
 		}
 */
 
-		.pixels_battleEnd
-		{
-			background-image: url(../_img/battleEnd_2x.png);
-		}
 
 		.pixels_forestMassDark
 		{

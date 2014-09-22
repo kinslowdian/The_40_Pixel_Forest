@@ -169,5 +169,5 @@
 		portalScreen_init();
 
 		// NOT FINAL
-		sound_play("level_bg_forest");
+		// sound_play("level_bg_forest");
 	}
