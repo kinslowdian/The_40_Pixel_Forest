@@ -450,6 +450,37 @@
 		background-size: 400px 400px;
 	}
 
+	.pixels_waterBase
+	{
+		background-image: url(../_img/tile_river_2x.gif);
+		background-position: left top;
+		background-repeat: repeat;
+		background-size: 80px 80px;
+	}
+
+	.pixels_waterEdge
+	{
+		background-image: url(../_img/tile_waterEdge_1x.png);
+		background-position: left top;
+		background-repeat: repeat;
+		background-size: 40px 40px;
+	}
+
+	.pixels_waterCharacters
+	{
+		background-image: url(../_img/water_chars_1x.png);
+		background-repeat: no-repeat;
+		background-size: 40px 40px;
+	}
+
+	.pixels_keyboardHint
+	{
+		background-image: url(../_img/keyboardHint_1x.png);
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 240px 370px;
+	}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -777,6 +808,21 @@
 		{
 			background-image: url(../_img/levelClearing_1x.png);
 		}
+
+		.pixels_waterEdge
+		{
+			background-image: url(../_img/tile_waterEdge_1x.png);
+		}
+
+		.pixels_waterCharacters
+		{
+			background-image: url(../_img/water_chars_1x.png);
+		}
+
+		.pixels_keyboardHint
+		{
+			background-image: url(../_img/keyboardHint_1x.png);
+		}
 	}
 
 
@@ -1058,6 +1104,21 @@
 		.pixels_levelClearing
 		{
 			background-image: url(../_img/levelClearing_2x.png);
+		}
+
+		.pixels_waterEdge
+		{
+			background-image: url(../_img/tile_waterEdge_2x.png);
+		}
+
+		.pixels_waterCharacters
+		{
+			background-image: url(../_img/water_chars_2x.png);
+		}
+
+		.pixels_keyboardHint
+		{
+			background-image: url(../_img/keyboardHint_2x.png);
 		}
 	}
 

@@ -32,6 +32,8 @@
 
 /* LEVEL_COLORS */
 
+/* WATER */
+
 /* WEATHER */
 
 /* CLEARING */
@@ -56,7 +58,9 @@
 
 /* LEVEL_BATTLE */
 
-/*BATTLE_END*/
+/* BATTLE_END */
+
+/* KEYBOARD HINT */
 
 
 
@@ -1807,6 +1811,162 @@
 	}
 
 /* ----------------------------------------------------------------------- LEVEL_COLORS */
+
+
+
+
+/* ----------------------------------------------------------------------- WATER */
+
+	.waterBase
+	{
+		position: absolute;
+
+		z-index: 0;
+	}
+
+	.waterEdge
+	{
+		position: absolute;
+
+		z-index: 1;
+	}
+
+	.waterIsland
+	{
+		position: absolute;
+
+		z-index: 2;
+	}
+
+	.waterFish
+	{
+		width: 40px;
+		height: 40px;
+
+		position: absolute;
+
+		z-index: 2;
+	}
+
+	.waterFishSprite
+	{
+		width: inherit;
+		height: inherit;
+
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		background-position: 0 0;
+
+		opacity: 0.4;
+
+		position: relative;
+	}
+
+	.waterFishSprite > div
+	{
+		width: inherit;
+		height: inherit;
+
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		position: relative;
+	}
+
+	.tween-waterEdge
+	{
+		-webkit-animation: tweenWaterEdgeFrames 0.1s linear infinite;
+		animation: tweenWaterEdgeFrames 0.1s linear infinite;
+	}
+
+	@-webkit-keyframes tweenWaterEdgeFrames
+	{
+		0%		{opacity: 1;}
+		50%		{opacity: 0.4;}
+		100%	{opacity: 1;}
+	}
+
+	@keyframes tweenWaterEdgeFrames
+	{
+		0%		{opacity: 1;}
+		50%		{opacity: 0.4;}
+		100%	{opacity: 1;}
+	}
+
+	.tween-waterFishSpritePixels
+	{
+		-webkit-animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
+		animation: tweenWaterFishSpritePixelsFrames 0.6s ease-in-out infinite;
+	}
+
+	@-webkit-keyframes tweenWaterFishSpritePixelsFrames
+	{
+		0%			{-webkit-transform: translate(0px, 4px);}
+		50%			{-webkit-transform: translate(4px, 0px);}
+		100%		{-webkit-transform: translate(0px, 4px);}
+	}
+
+	@keyframes tweenWaterFishSpritePixelsFrames
+	{
+		0%			{transform: translate(0px, 4px);}
+		50%			{transform: translate(4px, 0px);}
+		100%		{transform: translate(0px, 4px);}
+	}
+
+	.tween-waterFishSpriteCCW
+	{
+		-webkit-animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
+		animation: tweenWaterFishSpriteCCWFrames 8s linear infinite;
+	}
+
+	@-webkit-keyframes tweenWaterFishSpriteCCWFrames
+	{
+		from	{-webkit-transform: rotate(0deg);}
+		to		{-webkit-transform: rotate(360deg);}
+	}
+
+	@keyframes tweenWaterFishSpriteCCWFrames
+	{
+		from	{transform: rotate(0deg);}
+		to		{transform: rotate(360deg);}
+	}
+
+	.tween-waterFishSpriteACW
+	{
+		-webkit-animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
+		animation: tweenWaterFishSpriteACWFrames 4s linear infinite;
+	}
+
+	@-webkit-keyframes tweenWaterFishSpriteACWFrames
+	{
+		from	{-webkit-transform: scaleY(-1) rotate(0deg);}
+		to		{-webkit-transform: scaleY(-1) rotate(360deg);}
+	}
+
+	@keyframes tweenWaterFishSpriteACWFrames
+	{
+		from	{transform: scaleY(-1) rotate(0deg);}
+		to		{transform: scaleY(-1) rotate(360deg);}
+	}
+
+
+	.water-area
+	{
+		width: inherit;
+		height: 2000px;
+
+		position: absolute;
+/* 		left:0; top:0; right:0; bottom:0; */
+
+		left: 0;
+		top: 0;
+
+
+		z-index: 1;
+	}
+
+/* ----------------------------------------------------------------------- WATER */
 
 
 
@@ -5661,3 +5821,257 @@
 
 /* ----------------------------------------------------------------------- BATTLE_END */
 
+
+
+
+/* ----------------------------------------------------------------------- KEYBOARD HINT */
+
+	.keyboardHint_wrapper
+	{
+		width: inherit;
+		height: inherit;
+
+		font-size: 20px;
+
+		opacity: 0;
+
+		position: absolute;
+
+		z-index: 100;
+
+		background: rgba(184, 224, 202, 0.9);
+	}
+
+	.tween-keyboardHint
+	{
+		-webkit-transition: opacity 0.8s linear;
+		transition: opacity 0.8s linear;
+	}
+
+	.keyboardHint_title
+	{
+		width: 300px;
+		height: 1em;
+
+		position: absolute;
+
+		top: 0; bottom: 0; left: 0; right: 0;
+
+		margin: 120px auto 0 auto;
+
+		z-index: 0
+	}
+
+	.keyboardHint_title h1
+	{
+		width: inherit;
+		height: inherit;
+
+		font-size: 1em;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		text-align: center;
+		color: #004752;
+	}
+
+	.keyboardHint_content
+	{
+		width: 240px;
+		height: 160px;
+
+		position: absolute;
+
+		top: 0; bottom: 0; left: 0; right: 0;
+
+		margin: auto auto 40px auto;
+
+		z-index: 0;
+	}
+
+	.keyboardHint_keys, .keyboardHint_press, .keyboardHint_arrows
+	{
+		width: inherit;
+		height: inherit;
+
+		position: absolute;
+
+		left: 0;
+		top: 0;
+	}
+
+	.keyboardHint_keys
+	{
+		background-position: 0 0;
+
+		z-index: 2; /*0*/
+	}
+
+	.keyboardHint_press
+	{
+		width: 50px;
+		height: 50px;
+
+		z-index: 1;
+	}
+
+	.keyboardHint_arrows
+	{
+		background-position: 0 -160px;
+
+		z-index: 0; /*2*/
+	}
+
+	.keyboardHint_pressBtn
+	{
+		width: 50px;
+		height: 50px;
+
+		/*opacity: 0;*/
+
+		position: absolute;
+
+		z-index: 0;
+	}
+
+	.keyboardHint_press_sprite
+	{
+		width: 50px;
+		height: 50px;
+
+		background-position: 0 -320px;
+
+		position: relative;
+
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	.keyboardHint_pressU
+	{
+		-webkit-transform	: translate(95px, 15px);
+		transform			: translate(95px, 15px);
+	}
+
+	.keyboardHint_pressD
+	{
+		-webkit-transform	: translate(95px, 95px);
+		transform			: translate(95px, 95px);
+	}
+
+	.keyboardHint_pressL
+	{
+		-webkit-transform	: translate(15px, 95px);
+		transform			: translate(15px, 95px);
+	}
+
+	.keyboardHint_pressR
+	{
+		-webkit-transform	: translate(175px, 95px);
+		transform			: translate(175px, 95px);
+	}
+
+	.tween-keyboardHint_pressDisplay
+	{
+/*		-webkit-animation	: tweenKeyboardHintPressDisplayFrames 0.3s linear infinite;
+		animation			: tweenKeyboardHintPressDisplayFrames 0.3s linear infinite;*/
+
+		-webkit-animation	: tweenKeyboardHintPressDisplayFrames 0.9s linear infinite;
+		animation			: tweenKeyboardHintPressDisplayFrames 0.9s linear infinite;
+	}
+
+	@-webkit-keyframes tweenKeyboardHintPressDisplayFrames
+	{
+		0%		{opacity: 0.4;}
+		20%		{opacity: 0.4;}
+		40%		{opacity: 1;}
+		60%		{opacity: 1;}
+		80%		{opacity: 0.4;}
+		100%	{opacity: 0.4;}
+	}
+
+	@keyframes tweenKeyboardHintPressDisplayFrames
+	{
+		0%		{opacity: 0.4;}
+		20%		{opacity: 0.4;}
+		40%		{opacity: 1;}
+		60%		{opacity: 1;}
+		80%		{opacity: 0.4;}
+		100%	{opacity: 0.4;}
+	}
+
+	.tween-keyboardHint_press_sprite
+	{
+		-webkit-animation: tweenKeyboardHintPressSpriteFrames 0.25s linear infinite;
+		animation: tweenKeyboardHintPressSpriteFrames 0.25s linear infinite;
+	}
+
+	@-webkit-keyframes tweenKeyboardHintPressSpriteFrames
+	{
+		0%		{-webkit-transform: rotate(45deg) scale(1);}
+		50%		{-webkit-transform: rotate(35deg) scale(0.8);}
+		100%	{-webkit-transform: rotate(45deg) scale(1);}
+	}
+
+	@keyframes tweenKeyboardHintPressSpriteFrames
+	{
+		0%		{transform: rotate(45deg) scale(1);}
+		50%		{transform: rotate(35deg) scale(0.8);}
+		100%	{transform: rotate(45deg) scale(1);}
+	}
+
+	.tween-keyboardHint_keys
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		-webkit-animation: tweenKeyboardHintKeysFrames 0.25s linear infinite;
+		animation: tweenKeyboardHintKeysFrames 0.25s linear infinite;
+	}
+
+	@-webkit-keyframes tweenKeyboardHintKeysFrames
+	{
+		0%		{-webkit-transform: rotate(-4deg) scale(0.8);}
+		50%		{-webkit-transform: rotate(0deg) scale(1);}
+		100%	{-webkit-transform: rotate(-4deg) scale(0.8);}
+	}
+
+	@keyframes tweenKeyboardHintKeysFrames
+	{
+		0%		{transform: rotate(-4deg) scale(0.8);}
+		50%		{transform: rotate(0deg) scale(1);}
+		100%	{transform: rotate(-4deg) scale(0.8);}
+	}
+
+	.tween-keyboardHint_arrows
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+
+		-webkit-animation: tweenKeyboardHintArrowsFrames 0.25s linear infinite;
+		animation: tweenKeyboardHintArrowsFrames 0.25s linear infinite;
+	}
+
+	@-webkit-keyframes tweenKeyboardHintArrowsFrames
+	{
+		0%		{-webkit-transform: rotate(0deg) scale(1);}
+		50%		{-webkit-transform: rotate(4deg) scale(0.8);}
+		100%	{-webkit-transform: rotate(0deg) scale(1);}
+	}
+
+	@keyframes tweenKeyboardHintArrowsFrames
+	{
+		0%		{transform: rotate(0deg) scale(1);}
+		50%		{transform: rotate(4deg) scale(0.8);}
+		100%	{transform: rotate(0deg) scale(1);}
+	}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- KEYBOARD HINT */

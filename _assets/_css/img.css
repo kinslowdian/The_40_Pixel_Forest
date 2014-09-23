@@ -8,7 +8,7 @@
 							url(../_img/touch-ui_cross.svg)
 							url(../_img/touch-ui_cross_min.svg)
 							url(../_img/clash_cloud.svg)
-							url(../_img/puchSmashShock.svg);
+							url(../_img/puchSmashShock.svg)
 
 		display:none;
 	}
@@ -61,7 +61,10 @@
 								url(../_img/tile_flowersLightDark_1x.png)
 								url(../_img/tile_flowersHeavyDark_1x.png)
 								url(../_img/battleCuteFull_1x.png)
-								url(../_img/levelClearing_1x.png);
+								url(../_img/levelClearing_1x.png)
+								url(../_img/tile_waterEdge_1x.png)
+								url(../_img/water_chars_1x.png)
+								url(../_img/keyboardHint_1x.png);
 
 			display:none;
 		}
@@ -115,7 +118,10 @@
 								url(../_img/tile_flowersLightDark_2x.png)
 								url(../_img/tile_flowersHeavyDark_2x.png)
 								url(../_img/battleCuteFull_2x.png)
-								url(../_img/levelClearing_2x.png);
+								url(../_img/levelClearing_2x.png)
+								url(../_img/tile_waterEdge_2x.png)
+								url(../_img/water_chars_2x.png)
+								url(../_img/keyboardHint_2x.png);
 
 			display:none;
 		}
