@@ -1555,7 +1555,7 @@
 		z-index: 4;
 	}
 
-	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area
+	.field-area, .enemy-area, .portal-area, .player-area, .fieldEdge, .match-area, .sound-area
 	{
 		width: 320px;
 		height: 2000px;

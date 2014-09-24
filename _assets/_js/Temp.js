@@ -336,5 +336,60 @@
 
 	///////////////// DISPLAY
 
+var soundLevelTriggers_ARR;
+
+
+var sound_level_trigger = function(settings, num, container)
+{
+		this.settings = settings;
+		this.container = container;
+		this.buildData = {};
+		this.num = num;
+};
+
+sound_level_trigger.prototype.create = function()
+{
+		this.soundPrefs = this.settings.sound_prefs;
+		this.instance_class = this.settings.instance_class;
+
+		this.buildData.block_x	= this.settings.x * 80;
+		this.buildData.block_y	= this.settings.y * 80;
+		this.buildData.block_w	= this.settings.w * 80;
+		this.buildData.block_h	= this.settings.h * 80;
+		this.buildData.id		= "level" + ROM.mapLevel + "_soundTrigger_" + this.num;
+
+		this.buildData.html 	= '<div id="' + this.buildData.id + '" class="sound_trigger collideCheck-field" data-npc="sound"></div>';
+
+
+		this.buildData.css		= 	{
+										"width"				: this.buildData.block_w + "px",
+										"height"			: this.buildData.block_h + "px",
+										"position"			: "absolute",
+										"-webkit-transform"	: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)",
+										"transform"			: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)"
+									};
+
+		$(this.container).append(this.buildData.html);
+		$(this.container + " #" + this.buildData.id).css(this.buildData.css);
+		$(this.container + " #" + this.buildData.id).addClass(this.instance_class);
+
+		delete this.settings;
+}
+
+function sound_level_trigger_event(sound_hit)
+{
+	for(var i in soundLevelTriggers_ARR)
+	{
+		var levelSoundItem = soundLevelTriggers_ARR[i]
+
+		if(sound_hit === levelSoundItem.buildData.id)
+		{
+			sound_play(levelSoundItem.soundPrefs.name);
+		}
+	}
+
+	trace("PLAY SOUND ???");
+}
+
 
 

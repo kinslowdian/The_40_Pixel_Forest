@@ -399,6 +399,21 @@
 					"spawn": 0,
 					"p": "pixels_portal"
 				}
+			],
+
+			"sound_trigger":
+			[
+				{
+					"x": 0,
+					"y": 22,
+					"w": 4,
+					"h": 2,
+					"instance_class": "sound_trigger_portalApproach",
+					"sound_prefs":
+					{
+						"name": "level_bg_forest"
+					}
+				}
 			]
 		},
 

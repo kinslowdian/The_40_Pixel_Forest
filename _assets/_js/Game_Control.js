@@ -774,6 +774,12 @@
 			$("." + MAP_PLAYER.playerTween)[0].addEventListener("transitionend", mapPlayer_move_end, false);
 
 			$("#" + MAP_PLAYER.playerMover).css(css);
+
+			// SEE temp.js
+			if(HIT_TEST.hit_sound)
+			{
+				sound_level_trigger_event(HIT_TEST.hit_sound_id);
+			}
 		}
 	}
 
@@ -1311,6 +1317,17 @@
 				HIT_TEST.hit_enemy_id = hit_id;
 
 				// alert("HIT! - EN #" + hit_id + " " + $(HIT_TEST.hits[0]).html());
+			}
+
+			HIT_TEST.hit_sound_id = "";
+
+			if($(HIT_TEST.hits[0]).attr("data-npc") === "sound")
+			{
+				HIT_TEST.hit_sound = true;
+
+				HIT_TEST.hit_sound_id = hit_id;
+
+				// alert("HIT! - SD #" + hit_id + " " + $(HIT_TEST.hits[0]).html());
 			}
 
 			// alert("HIT!");

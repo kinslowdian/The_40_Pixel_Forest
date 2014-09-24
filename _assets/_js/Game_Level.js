@@ -343,6 +343,21 @@
 				}
 			}
 
+			i = 0;
+
+			soundLevelTriggers_ARR = [];
+
+			for(var object_soundTrigger in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"])
+			{
+				var s = new sound_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"][object_soundTrigger], i, ".sound-area");
+
+				s.create();
+
+				soundLevelTriggers_ARR.push(s);
+
+				i++;
+			}
+
 		}
 
 
