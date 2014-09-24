@@ -2328,6 +2328,11 @@
 		z-index: 0;
 	}
 
+	.portal_level_warp
+	{
+		background: #004752 !important;
+	}
+
 	.tween-portalStars
 	{
 		-webkit-animation	: tweenPortalStarsFrames 1s linear infinite;

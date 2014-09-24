@@ -1058,6 +1058,12 @@
 
 		$(this.buildData.container + " #" + this.id + " .pixelPush").addClass(this.buildData.pixels);
 
+		// PORTAL CHANGE FOR LEVEL AND STAGE (LEVEL = BLACK SPACE, STAGE = PINK SPACE)
+		if(this.level != ROM.mapLevel)
+		{
+			$(this.buildData.container + " #" + this.id + " .portal_space").addClass("portal_level_warp");
+		}
+
 
 		$("#" + this.id).css(this.buildData.css);
 	}
