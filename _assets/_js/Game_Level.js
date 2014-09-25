@@ -407,6 +407,8 @@
 		}
 
 		html_lib_empty();
+
+		sound_level_background();
 	}
 
 	function digGrave(dead_obj)

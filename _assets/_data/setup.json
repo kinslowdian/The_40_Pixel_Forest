@@ -401,50 +401,150 @@
 				}
 			],
 
+			"sound_level":
+			[
+				{
+					"call_funct" : "sound_play",
+					"call_params": ["level_bg_sea"]
+				},
+
+				{
+					"call_funct" : "sound_fadeInit",
+					"call_params": ["level_bg_sea", "0.04"]
+				}
+			],
+
 			"sound_trigger":
 			[
 				{
 					"x": 0,
 					"y": 2,
 					"w": 4,
-					"h": 1,
-					"instance_class": "sound_trigger_waterLeaveTop",
+					"h": 0.5,
+					"instance_class": "sound_trigger_waterEscape0",
 					"sound_prefs":
-					{
-						"name": "level_bg_sea",
-						"action_0": "",
-						"action_1": "FADE_OUT"
-					}
+					[
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.04"]
+						}
+					]
 				},
 
 				{
 					"x": 0,
-					"y": 4,
+					"y": 2.5,
 					"w": 4,
-					"h": 3,
-					"instance_class": "sound_trigger_waterApproach",
+					"h": 1,
+					"instance_class": "sound_trigger_waterStep0",
 					"sound_prefs":
-					{
-						"name": "level_bg_sea",
-						"action_0": "PLAY",
-						"action_1": "FADE_IN"
-					}
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_sea"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.15"]
+						}
+					]
 				},
 
 				{
 					"x": 0,
-					"y": 8,
+					"y": 3.5,
 					"w": 4,
 					"h": 1,
-					"instance_class": "sound_trigger_waterLeaveBtm",
+					"instance_class": "sound_trigger_waterStep1",
 					"sound_prefs":
-					{
-						"name": "level_bg_sea",
-						"action_0": "",
-						"action_1": "FADE_OUT"
-					}
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_sea"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.3"]
+						}
+					]
 				},
 
+				{
+					"x": 0,
+					"y": 4.5,
+					"w": 4,
+					"h": 2,
+					"instance_class": "sound_trigger_waterArrive",
+					"sound_prefs":
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_sea"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.6"]
+						}
+					]
+				},
+
+				{
+					"x": 0,
+					"y": 6.5,
+					"w": 4,
+					"h": 1,
+					"instance_class": "sound_trigger_waterStep2",
+					"sound_prefs":
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_sea"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.3"]
+						}
+					]
+				},
+
+				{
+					"x": 0,
+					"y": 7.5,
+					"w": 4,
+					"h": 1,
+					"instance_class": "sound_trigger_waterStep3",
+					"sound_prefs":
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_sea"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.15"]
+						}
+					]
+				},
+
+				{
+					"x": 0,
+					"y": 8.5,
+					"w": 4,
+					"h": 0.5,
+					"instance_class": "sound_trigger_waterEscape1",
+					"sound_prefs":
+					[
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_sea", "0.04"]
+						}
+					]
+				},
 
 
 				{
@@ -454,11 +554,17 @@
 					"h": 2,
 					"instance_class": "sound_trigger_portalApproach",
 					"sound_prefs":
-					{
-						"name": "level_bg_forest",
-						"action_0": "PLAY",
-						"action_1": "FADE_IN"
-					}
+					[
+						{
+							"call_funct" : "sound_play",
+							"call_params": ["level_bg_forest"]
+						},
+
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_forest", "1"]
+						}
+					]
 				},
 
 				{
@@ -468,11 +574,12 @@
 					"h": 2,
 					"instance_class": "sound_trigger_portalLeave",
 					"sound_prefs":
-					{
-						"name": "level_bg_forest",
-						"action_0": "",
-						"action_1": "FADE_OUT"
-					}
+					[
+						{
+							"call_funct" : "sound_fadeInit",
+							"call_params": ["level_bg_forest", "0"]
+						}
+					]
 				}
 			]
 		},

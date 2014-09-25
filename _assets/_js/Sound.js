@@ -1,5 +1,7 @@
 	var soundEffects_pedal;
 
+	var soundLevelTriggers_ARR;
+
 	function sound_prep()
 	{
 			/////// HACK FOR iOS
@@ -78,6 +80,11 @@
 		soundEffects_pedal.main.enterFrame_in = null;
 		soundEffects_pedal.main.enterFrame_out = null;
 		soundEffects_pedal.main.fadeValue = 0.01;
+
+
+		soundEffects_pedal.main.fadeType = "";
+
+		soundEffects_pedal.soundListLevel = new Array();
 	}
 
 	function sound_loaded(event)
@@ -103,6 +110,43 @@
 			}
 		}
 	}
+
+var sound_level_trigger = function(settings, num, container)
+{
+		this.settings = settings;
+		this.container = container;
+		this.buildData = {};
+		this.num = num;
+};
+
+sound_level_trigger.prototype.create = function()
+{
+		this.soundPrefs = this.settings.sound_prefs;
+		this.instance_class = this.settings.instance_class;
+
+		this.buildData.block_x	= this.settings.x * 80;
+		this.buildData.block_y	= this.settings.y * 80;
+		this.buildData.block_w	= this.settings.w * 80;
+		this.buildData.block_h	= this.settings.h * 80;
+		this.buildData.id		= "level" + ROM.mapLevel + "_soundTrigger_" + this.num;
+
+		this.buildData.html 	= '<div id="' + this.buildData.id + '" class="sound_trigger collideCheck-field" data-npc="sound"></div>';
+
+
+		this.buildData.css		= 	{
+										"width"				: this.buildData.block_w + "px",
+										"height"			: this.buildData.block_h + "px",
+										"position"			: "absolute",
+										"-webkit-transform"	: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)",
+										"transform"			: "translate(" + this.buildData.block_x + "px, " + this.buildData.block_y + "px)"
+									};
+
+		$(this.container).append(this.buildData.html);
+		$(this.container + " #" + this.buildData.id).css(this.buildData.css);
+		$(this.container + " #" + this.buildData.id).addClass(this.instance_class);
+
+		delete this.settings;
+}
 
 	function sound_list(soundRef, soundSettings, soundOptions)
 	{
@@ -209,6 +253,14 @@
 
 		if(_SOUND != undefined)
 		{
+			for(var s in soundEffects_pedal.soundListLevel)
+			{
+				if(soundEffects_pedal.soundListLevel[s] !== soundRef)
+				{
+					soundEffects_pedal.soundListLevel.push(soundRef);
+				}
+			}
+
 			if(_SOUND.instance.playState === "playFinished" || !_SOUND.options.singleChannel && _SOUND.playCount < soundEffects_pedal.main.playCountMax)
 			{
 				_SOUND.instance = createjs.Sound.play(_SOUND.settings.id, createjs.Sound.INTERRUPT_NONE, 0, 0, _SOUND.settings.loop, _SOUND.settings.volume);
@@ -290,7 +342,7 @@
 		}
 	}
 
-	function sound_fadeInit(soundRef, volTarget, fadeType, onEnd)
+	function sound_fadeInit(soundRef, volTarget, onEnd)
 	{
 		var _SOUND = soundEffects_pedal.soundList[soundRef];
 
@@ -301,31 +353,65 @@
 			clearInterval(soundEffects_pedal.main.enterFrame_in);
 			clearInterval(soundEffects_pedal.main.enterFrame_out);
 
-			if(fadeType === "IN")
+			sound_defineFadeType(soundRef, volTarget);
+
+			if(soundEffects_pedal.main.fadeType === "IN") // fadeType
 			{
 				// sound_fadeInit("sound_name", 1, "IN", {call_funct: end_function, call_params: ["parameter0", 1, object2]});
 
-				soundEffects_pedal.main.enterFrame_in = setInterval(sound_fadeRun, 20, _SOUND.instance, volTarget, fadeType, soundRef, onEnd);
+				soundEffects_pedal.main.enterFrame_in = setInterval(sound_fadeRun, 20, _SOUND.instance, volTarget, soundRef, onEnd);
 			}
 
-			if(fadeType === "OUT")
+			if(soundEffects_pedal.main.fadeType === "OUT") // fadeType
 			{
 				// sound_fadeInit("sound_name", 0, "OUT", {call_funct: end_function});
 
-				soundEffects_pedal.main.enterFrame_out = setInterval(sound_fadeRun, 20, _SOUND.instance, volTarget, fadeType, soundRef, onEnd);
+				soundEffects_pedal.main.enterFrame_out = setInterval(sound_fadeRun, 20, _SOUND.instance, volTarget, soundRef, onEnd);
 			}
 		}
 	}
 
-	function sound_fadeRun(soundInstance, volTarget, fadeType, soundRef, onEnd)
+	function sound_defineFadeType(soundRef, volTarget)
+	{
+		var _SOUND = soundEffects_pedal.soundList[soundRef];
+		var vol = _SOUND.instance.getVolume();
+
+		soundEffects_pedal.main.fadeType = "";
+
+		if((volTarget * 100) > Math.round(vol * 100))
+		{
+			soundEffects_pedal.main.fadeType = "IN";
+		}
+
+		if((volTarget * 100) < Math.round(vol * 100))
+		{
+			soundEffects_pedal.main.fadeType = "OUT";
+		}
+	}
+
+
+
+	function sound_fadeRun(soundInstance, volTarget, soundRef, onEnd)
 	{
 		var vol = soundInstance.getVolume();
 
-		trace("start vol === " + vol + " || " + Math.round(vol * 100));
+		// var ft = "";
+
+		// if(volTarget > Math.round(vol * 100))
+		// {
+		// 	ft = "IN";
+		// }
+
+		// if(volTarget < Math.round(vol * 100))
+		// {
+		// 	ft = "OUT";
+		// }
+
+		// trace("start vol === " + vol + " || " + Math.round(vol * 100) + " autoFade == " + soundEffects_pedal.main.fadeType);
 
 		//// IN
 
-		if(fadeType === "IN")
+		if(soundEffects_pedal.main.fadeType === "IN") // fadeType
 		{
 			if(vol < volTarget)
 			{
@@ -358,7 +444,7 @@
 
 		//// OUT
 
-		if(fadeType === "OUT")
+		if(soundEffects_pedal.main.fadeType === "OUT") // fadeType
 		{
 
 			if(vol > volTarget)
@@ -393,6 +479,158 @@
 			}
 		}
 	}
+
+	function sound_fadeInitGlobal(volTarget, onEnd)
+	{
+		var vol = createjs.Sound.getVolume();
+
+		// RESET ACTIONS
+		clearInterval(soundEffects_pedal.main.enterFrame_in);
+		clearInterval(soundEffects_pedal.main.enterFrame_out);
+
+		soundEffects_pedal.main.fadeType = "";
+
+		if((volTarget * 100) > Math.round(vol * 100))
+		{
+			soundEffects_pedal.main.fadeType = "IN";
+		}
+
+		if((volTarget * 100) < Math.round(vol * 100))
+		{
+			soundEffects_pedal.main.fadeType = "OUT";
+		}
+
+		if(soundEffects_pedal.main.fadeType === "IN") // fadeType
+		{
+			soundEffects_pedal.main.enterFrame_in = setInterval(sound_fadeRunGlobal, 20, volTarget, onEnd);
+		}
+
+		if(soundEffects_pedal.main.fadeType === "OUT") // fadeType
+		{
+			soundEffects_pedal.main.enterFrame_out = setInterval(sound_fadeRunGlobal, 20, volTarget, onEnd);
+		}
+	}
+
+	function sound_fadeRunGlobal(volTarget, onEnd)
+	{
+		var vol = createjs.Sound.getVolume();
+
+		//// IN
+
+		if(soundEffects_pedal.main.fadeType === "IN") // fadeType
+		{
+			if(vol < volTarget)
+			{
+				createjs.Sound.setVolume(vol += soundEffects_pedal.main.fadeValue);
+			}
+
+			else
+			{
+				clearInterval(soundEffects_pedal.main.enterFrame_in);
+
+				createjs.Sound.setVolume(volTarget);
+
+				if(onEnd)
+				{
+					if(onEnd.call_params)
+					{
+						// .apply CONVERTS PARAMS IN OBJECT INTO A READABLE FUNCTION
+						onEnd.call_funct.apply(this, onEnd.call_params);
+					}
+
+					else
+					{
+						// BASIC FUNCTION
+						onEnd.call_funct();
+					}
+				}
+			}
+		}
+
+
+		//// OUT
+
+		if(soundEffects_pedal.main.fadeType === "OUT") // fadeType
+		{
+
+			if(vol > volTarget)
+			{
+				createjs.Sound.setVolume(vol -= soundEffects_pedal.main.fadeValue);
+			}
+
+			else
+			{
+				clearInterval(soundEffects_pedal.main.enterFrame_out);
+
+				createjs.Sound.setVolume(volTarget);
+
+				if(onEnd)
+				{
+					if(onEnd.call_params)
+					{
+						// .apply CONVERTS PARAMS IN OBJECT INTO A READABLE FUNCTION
+						onEnd.call_funct.apply(this, onEnd.call_params);
+					}
+
+					else
+					{
+						onEnd.call_funct();
+					}
+				}
+			}
+		}
+	}
+
+function sound_level_trigger_event(sound_hit)
+{
+	var levelSoundItem;
+
+	soundEffects_pedal.soundListLevel = new Array();
+
+	for(var i in soundLevelTriggers_ARR)
+	{
+		levelSoundItem = soundLevelTriggers_ARR[i];
+
+		if(sound_hit === levelSoundItem.buildData.id)
+		{
+
+			for(var rawSoundFunction in levelSoundItem.soundPrefs)
+			{
+				var levelSoundFunction = window[levelSoundItem.soundPrefs[rawSoundFunction].call_funct];
+				var levelSoundParameters = levelSoundItem.soundPrefs[rawSoundFunction].call_params;
+
+				levelSoundFunction.apply(this, levelSoundParameters);
+			}
+		}
+	}
+
+	trace("PLAY SOUND ??? " + sound_hit);
+}
+
+function sound_levelClear()
+{
+	for(var s in soundEffects_pedal.soundListLevel)
+	{
+		sound_stop(soundEffects_pedal.soundListLevel[s]);
+	}
+
+	// FLUSH LEVEL SOUNDS
+	soundEffects_pedal.soundListLevel = new Array();
+}
+
+
+function sound_level_background()
+{
+	for(var object_sound in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"])
+	{
+		var levelSoundItem = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"][object_sound];
+
+		var levelSoundFunction = window[levelSoundItem.call_funct];
+		var levelSoundParameters = levelSoundItem.call_params;
+
+		levelSoundFunction.apply(this, levelSoundParameters);
+	}
+}
 
 	function sound_purge()
 	{

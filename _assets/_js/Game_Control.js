@@ -1161,7 +1161,10 @@
 								// portalExit();
 
 								// NOT FINAL
-								sound_play("fx_trees");
+								// sound_play("fx_trees");
+
+								// NOT FINAL
+								sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
 
 								break;
 							}
