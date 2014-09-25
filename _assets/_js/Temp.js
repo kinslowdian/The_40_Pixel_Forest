@@ -384,11 +384,46 @@ function sound_level_trigger_event(sound_hit)
 
 		if(sound_hit === levelSoundItem.buildData.id)
 		{
-			sound_play(levelSoundItem.soundPrefs.name);
+			switch(levelSoundItem.soundPrefs.action_0)
+			{
+				case "PLAY":
+				{
+					sound_play(levelSoundItem.soundPrefs.name);
+
+					break;
+				}
+
+				default:
+				{
+
+				}
+			}
+
+			switch(levelSoundItem.soundPrefs.action_1)
+			{
+				case "FADE_IN":
+				{
+					sound_fadeInit(levelSoundItem.soundPrefs.name, 1, "IN");
+
+					break;
+				}
+
+				case "FADE_OUT":
+				{
+					sound_fadeInit(levelSoundItem.soundPrefs.name, 0.1, "OUT");
+
+					break;
+				}
+
+				default:
+				{
+
+				}
+			}
 		}
 	}
 
-	trace("PLAY SOUND ???");
+	trace("PLAY SOUND ??? " + sound_hit);
 }
 
 

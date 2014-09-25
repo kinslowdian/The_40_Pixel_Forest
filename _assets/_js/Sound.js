@@ -1,4 +1,4 @@
-
+	var soundEffects_pedal;
 
 	function sound_prep()
 	{
@@ -296,6 +296,11 @@
 
 		if(_SOUND.instance != null || _SOUND.instance != undefined)
 		{
+
+			// RESET ACTIONS
+			clearInterval(soundEffects_pedal.main.enterFrame_in);
+			clearInterval(soundEffects_pedal.main.enterFrame_out);
+
 			if(fadeType === "IN")
 			{
 				// sound_fadeInit("sound_name", 1, "IN", {call_funct: end_function, call_params: ["parameter0", 1, object2]});
@@ -315,6 +320,8 @@
 	function sound_fadeRun(soundInstance, volTarget, fadeType, soundRef, onEnd)
 	{
 		var vol = soundInstance.getVolume();
+
+		trace("start vol === " + vol + " || " + Math.round(vol * 100));
 
 		//// IN
 
@@ -365,7 +372,10 @@
 
 				soundInstance.setVolume(volTarget);
 
-				sound_stop(soundRef);
+				if(Math.round(vol * 100) <= 0)
+				{
+					sound_stop(soundRef);
+				}
 
 				if(onEnd)
 				{
@@ -392,6 +402,11 @@
 		}
 
 		sound_refreshList();
+	}
+
+	function sound_refreshList()
+	{
+
 	}
 
 

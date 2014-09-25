@@ -118,7 +118,7 @@
 
 		"soundList" :
 		[
-			{"name": "level_bg_forest", "id": "BGM_BG_FOREST", "loop": -1, "volume": 1, "paused": true, "storeInstance": true, "singleChannel": true},
+			{"name": "level_bg_forest", "id": "BGM_BG_FOREST", "loop": -1, "volume": 0, "paused": true, "storeInstance": true, "singleChannel": true},
 
 			{"name": "level_bg_sea", "id": "BGM_BG_SEA", "loop": -1, "volume": 0, "paused": true, "storeInstance": true, "singleChannel": true},
 
@@ -405,13 +405,73 @@
 			[
 				{
 					"x": 0,
+					"y": 2,
+					"w": 4,
+					"h": 1,
+					"instance_class": "sound_trigger_waterLeaveTop",
+					"sound_prefs":
+					{
+						"name": "level_bg_sea",
+						"action_0": "",
+						"action_1": "FADE_OUT"
+					}
+				},
+
+				{
+					"x": 0,
+					"y": 4,
+					"w": 4,
+					"h": 3,
+					"instance_class": "sound_trigger_waterApproach",
+					"sound_prefs":
+					{
+						"name": "level_bg_sea",
+						"action_0": "PLAY",
+						"action_1": "FADE_IN"
+					}
+				},
+
+				{
+					"x": 0,
+					"y": 8,
+					"w": 4,
+					"h": 1,
+					"instance_class": "sound_trigger_waterLeaveBtm",
+					"sound_prefs":
+					{
+						"name": "level_bg_sea",
+						"action_0": "",
+						"action_1": "FADE_OUT"
+					}
+				},
+
+
+
+				{
+					"x": 0,
 					"y": 22,
 					"w": 4,
 					"h": 2,
 					"instance_class": "sound_trigger_portalApproach",
 					"sound_prefs":
 					{
-						"name": "level_bg_forest"
+						"name": "level_bg_forest",
+						"action_0": "PLAY",
+						"action_1": "FADE_IN"
+					}
+				},
+
+				{
+					"x": 0,
+					"y": 20,
+					"w": 4,
+					"h": 2,
+					"instance_class": "sound_trigger_portalLeave",
+					"sound_prefs":
+					{
+						"name": "level_bg_forest",
+						"action_0": "",
+						"action_1": "FADE_OUT"
 					}
 				}
 			]
