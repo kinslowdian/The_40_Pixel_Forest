@@ -409,8 +409,13 @@
 				},
 
 				{
-					"call_funct" : "sound_fadeInit",
+					"call_funct" : "sound_volume",
 					"call_params": ["level_bg_sea", "0.04"]
+				},
+
+				{
+					"call_funct" : "sound_fadeInitGlobal",
+					"call_params" : [1]
 				}
 			],
 
@@ -873,6 +878,24 @@
 					"direction": "UP",
 					"spawn": 1,
 					"p": "pixels_portal"
+				}
+			],
+
+			"sound_level":
+			[
+				{
+					"call_funct" : "sound_play",
+					"call_params": ["level_bg_forest"]
+				},
+
+				{
+					"call_funct" : "sound_volume",
+					"call_params": ["level_bg_forest", "0.01"]
+				},
+
+				{
+					"call_funct" : "sound_fadeInitGlobal",
+					"call_params" : [1]
 				}
 			]
 		},

@@ -165,8 +165,16 @@
 
 		$("#preload-wrapper").remove();
 
+		// FLOW CHANGE
 		mapPlayer_entry();
 		portalScreen_init();
+		// FLOW CHANGE
+
+		if(soundEffects_pedal != null)
+		{
+			sound_level_background();
+		}
+
 
 		// NOT FINAL
 		// sound_play("level_bg_forest");

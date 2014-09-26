@@ -289,6 +289,27 @@
 			b.create();
 		}
 
+			i = 0;
+
+		// SOUND EVENT AREAS
+
+		if(soundEffects_pedal != null)
+		{
+			soundEffects_pedal.triggers = new Array();
+
+			for(var object_soundTrigger in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"])
+			{
+				var s = new sound_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"][object_soundTrigger], i, ".sound-area");
+
+				s.create();
+
+				soundEffects_pedal.triggers.push(s);
+
+				i++;
+			}
+		}
+
+
 		// EXTRAS
 
 		if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["water"])
@@ -342,22 +363,6 @@
 					// i++;
 				}
 			}
-
-			i = 0;
-
-			soundLevelTriggers_ARR = [];
-
-			for(var object_soundTrigger in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"])
-			{
-				var s = new sound_level_trigger(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_trigger"][object_soundTrigger], i, ".sound-area");
-
-				s.create();
-
-				soundLevelTriggers_ARR.push(s);
-
-				i++;
-			}
-
 		}
 
 
@@ -408,7 +413,11 @@
 
 		html_lib_empty();
 
-		sound_level_background();
+		// SHIFT TO PORTAL SCREEN
+		// if(soundEffects_pedal != null)
+		// {
+		// 	sound_level_background();
+		// }
 	}
 
 	function digGrave(dead_obj)

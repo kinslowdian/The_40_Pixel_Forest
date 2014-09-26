@@ -778,7 +778,10 @@
 			// SEE temp.js
 			if(HIT_TEST.hit_sound)
 			{
-				sound_level_trigger_event(HIT_TEST.hit_sound_id);
+				if(soundEffects_pedal != null)
+				{
+					sound_level_trigger_event(HIT_TEST.hit_sound_id);
+				}
 			}
 		}
 	}
@@ -997,6 +1000,13 @@
 
 		$(".tween-portalScreen_bleedFill")[0].addEventListener("webkitTransitionEnd", portalScreen_remove, false);
 		$(".tween-portalScreen_bleedFill")[0].addEventListener("transitionend", portalScreen_remove, false);
+
+		// BACKGROUND SOUND
+
+		if(soundEffects_pedal != null)
+		{
+			sound_level_background();
+		}
 	}
 
 	function portalScreen_remove(event)
@@ -1164,7 +1174,10 @@
 								// sound_play("fx_trees");
 
 								// NOT FINAL
-								sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+								if(soundEffects_pedal != null)
+								{
+									sound_fadeInitGlobal(0, {call_funct: sound_levelClear});
+								}
 
 								break;
 							}
@@ -1180,7 +1193,6 @@
 		trace("!----- portalExit(); === ");
 		trace(PORTAL_TRAVEL);
 
-
 		if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
 		{
 			mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false);
@@ -1190,6 +1202,17 @@
 		{
 			mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
 		}
+
+
+		// if(PORTAL_TRAVEL.direction === "LEFT" || PORTAL_TRAVEL.direction === "UP")
+		// {
+		// 	mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, false);
+		// }
+
+		// else
+		// {
+		// 	mapPlayer_spawn(PORTAL_TRAVEL.buildData.block_x, PORTAL_TRAVEL.buildData.block_y, PORTAL_TRAVEL.direction, true); // true;
+		// }
 
 	}
 
@@ -1283,9 +1306,11 @@
 		HIT_TEST.hit_edge = false;
 		HIT_TEST.hit_portal = false;
 		HIT_TEST.hit_enemy = false;
+		HIT_TEST.hit_sound = true;
 
 		HIT_TEST.hit_portal_id = "";
 		HIT_TEST.hit_enemy_id = "";
+		HIT_TEST.hit_sound_id = "";
 
 		if(HIT_TEST.hits[0] != undefined || HIT_TEST.hits[0] != null)
 		{
@@ -1321,8 +1346,6 @@
 
 				// alert("HIT! - EN #" + hit_id + " " + $(HIT_TEST.hits[0]).html());
 			}
-
-			HIT_TEST.hit_sound_id = "";
 
 			if($(HIT_TEST.hits[0]).attr("data-npc") === "sound")
 			{
