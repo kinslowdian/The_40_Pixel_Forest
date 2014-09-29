@@ -31,6 +31,8 @@
 
 			margin: auto;
 
+			font-size: 20px;
+
 			z-index: 2;
 		}
 
@@ -39,7 +41,56 @@
 			width: inherit;
 			height: inherit;
 
-			background: pink;
+			background: #ff0033;
+
+			position: relative;
+		}
+
+		#preload-wrapper .preloader-message-group
+		{
+			width: 240px;
+			height: 3em;
+
+			position: absolute;
+
+			left: 0; right: 0; top: 0; bottom: 0;
+
+			margin: auto;
+
+			opacity: 0;
+		}
+
+		#preload-wrapper .preloader-message
+		{
+			width: inherit;
+
+			height: 1em;
+
+			display: inline-block;
+
+			font-size: 1em;
+			line-height: 1;
+			text-align: center;
+			text-transform: uppercase;
+			color: #fff;
+
+			cursor: pointer;
+
+			background: rgba(255, 255, 255, 0);
+
+			position: absolute;
+		}
+
+		#preload-wrapper .preloader-message-sound
+		{
+			left: 0;
+			top: 0;
+		}
+
+		#preload-wrapper .preloader-message-silence
+		{
+			left: 0;
+			bottom: 0;
 		}
 
 		.tween-preload
@@ -126,7 +177,17 @@
 
 		<div id="preload-wrapper" class="tween-preload">
 
-			<div class="preloader"></div>
+			<div class="preloader">
+
+				<div class="preloader-message-group tween-preload">
+
+					<p class="preloader-message font-dosis preloader-message-sound">. start with sound .</p>
+
+					<p class="preloader-message font-dosis preloader-message-silence">. i love silence .</p>
+
+				</div>
+
+			</div>
 
 		</div>
 

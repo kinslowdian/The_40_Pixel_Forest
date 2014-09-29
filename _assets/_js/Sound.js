@@ -7,6 +7,11 @@
 			/////// HACK FOR iOS
 	}
 
+	function sound_dump()
+	{
+		soundEffects_pedal = null;
+	}
+
 
 	function sound_init_entry(callBack)
 	{
@@ -579,13 +584,18 @@
 
 		var useGlobalFade = false;
 
+		var bgSoundSetupNode = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"] || null;
+
 		trace("!!!!! ---- sound_level_background();");
 
 		// createjs.Sound.setVolume(0);
 
-		if(Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"].length > 0)
+		if(bgSoundSetupNode != null || bgSoundSetupNode != undefined)
 		{
-			useGlobalFade = true;
+			if(bgSoundSetupNode.length > 0)
+			{
+				useGlobalFade = true;
+			}
 		}
 
 		// TO FIX IF FADED OUT BETWEEN LEVELS
@@ -613,9 +623,9 @@
 			createjs.Sound.setVolume(0);
 		}
 
-		for(var object_sound in Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"])
+		for(var object_sound in bgSoundSetupNode)
 		{
-			var levelSoundItem = Logic.dat_ROM["_LEVELS"]["level" + ROM.mapLevel]["sound_level"][object_sound];
+			var levelSoundItem = bgSoundSetupNode[object_sound];
 
 			soundEffects_pedal.ambience.push(levelSoundItem);
 		}

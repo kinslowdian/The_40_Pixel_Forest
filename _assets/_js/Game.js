@@ -144,19 +144,57 @@
 
 		screenUpdateInit(true);
 
-		var temp = setTimeout(preloader_remove, 1000);
+		var temp = setTimeout(preloader_remove0, 1000);
 
 		// newLevel();
 	}
 
-	function preloader_remove()
+	// NOT FINAL
+
+	function preloader_remove0()
 	{
+		$("#preload-wrapper .preloader-message-group").css("opacity", "1");
+
+		$("#preload-wrapper .preloader-message-sound")[0].addEventListener("touchend", preloader_remove1, false);
+		$("#preload-wrapper .preloader-message-sound")[0].addEventListener("click", preloader_remove1, false);
+
+		$("#preload-wrapper .preloader-message-silence")[0].addEventListener("touchend", preload_removeNS, false);
+		$("#preload-wrapper .preloader-message-silence")[0].addEventListener("click", preload_removeNS, false);
+	}
+
+	function preload_removeNS(event)
+	{
+		$("#preload-wrapper .preloader-message-silence")[0].removeEventListener("touchend", preload_removeNS, false);
+		$("#preload-wrapper .preloader-message-silence")[0].removeEventListener("click", preload_removeNS, false);
+
+		sound_dump();
+
+		preloader_remove1(null);
+	}
+
+	function preloader_remove1(event)
+	{
+		// sound_prep();
+
+		if(soundEffects_pedal != null)
+		{
+			/////// HACK FOR iOS
+			createjs.WebAudioPlugin.playEmptySound();
+			/////// HACK FOR iOS
+		}
+
+
+		$("#preload-wrapper .preloader-message-sound")[0].removeEventListener("touchend", preloader_remove1, false);
+		$("#preload-wrapper .preloader-message-sound")[0].removeEventListener("click", preloader_remove1, false);
+
 		$("#preload-wrapper")[0].addEventListener("webkitTransitionEnd", start_mainGame, false);
 		$("#preload-wrapper")[0].addEventListener("transitionend", start_mainGame, false);
 
 		$("#preload-wrapper").css("opacity", "0");
 
 	}
+
+	// NOT FINAL
 
 	function start_mainGame(event)
 	{
