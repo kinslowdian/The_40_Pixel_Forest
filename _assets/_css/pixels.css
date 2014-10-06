@@ -15,19 +15,16 @@
 
 /* ----------------------------------------------------------------------- GFX-FIX */
 
-	.tweenFlickerFix div
+	div[class*='tween-']
 	{
 		-webkit-backface-visibility	: hidden;
 		backface-visibility			: hidden;
 	}
 
-	.animationHelper
+	.tweenFlickerFixManual
 	{
-		/* -webkit-transform: translateZ(0); */
-		/* transform: translateZ(0); */
-
-		-webkit-transform: translate3d(0,0,0);
-		transform: translate3d(0,0,0);
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;
 	}
 
 /* ----------------------------------------------------------------------- GFX-FIX */
@@ -481,6 +478,14 @@
 		background-size: 240px 370px;
 	}
 
+	.pixels_portalZombie
+	{
+		background-image: url(../_img/portalZombieSprite_1x.png);
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 80px 360px;
+	}
+
 /* ----------------------------------------------------------------------- GENERAL */
 
 
@@ -823,6 +828,11 @@
 		{
 			background-image: url(../_img/keyboardHint_1x.png);
 		}
+
+		.pixels_portalZombie
+		{
+			background-image: url(../_img/portalZombieSprite_1x.png);
+		}
 	}
 
 
@@ -1119,6 +1129,11 @@
 		.pixels_keyboardHint
 		{
 			background-image: url(../_img/keyboardHint_2x.png);
+		}
+
+		.pixels_portalZombie
+		{
+			background-image: url(../_img/portalZombieSprite_2x.png);
 		}
 	}
 

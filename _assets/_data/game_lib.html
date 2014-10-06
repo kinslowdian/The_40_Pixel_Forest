@@ -1,10 +1,10 @@
 <!-- PORTAL -->
 <div class="_portal">
-<div id="_portal" class="" data-npc="portal" data-static-class="portal collideCheck-field tweenFlickerFix">
+<div id="_portal" class="" data-npc="portal" data-static-class="portal collideCheck-field">
 
-	<div class="" data-static-class="portal_top pixelPush"></div> <!-- pixels_portal -->
+	<div class="" data-static-class="portal_top pixelPush tweenFlickerFixManual"></div> <!-- pixels_portal -->
 
-	<div class="" data-static-class="portal_space">
+	<div class="" data-static-class="portal_space tweenFlickerFixManual">
 
 		<div class="" data-static-class="portal_stars0 tween-portalStars pixelPush"></div> <!-- pixels_portal -->
 		<div class="" data-static-class="portal_stars1 tween-portalStars pixelPush"></div> <!-- pixels_portal -->
@@ -137,7 +137,7 @@
 
 <!-- RABBIT -->
 <div class="_enemy_rabbit">
-<div id="_enemy_rabbit" class="" data-npc="enemy" data-static-class="enemy_rabbit map-enemy_40x40 collideCheck-field tweenFlickerFix">
+<div id="_enemy_rabbit" class="" data-npc="enemy" data-static-class="enemy_rabbit map-enemy_40x40 collideCheck-field">
 
 	<div class="" data-static-class="map-enemy">
 
@@ -162,7 +162,7 @@
 
 <!-- CROW -->
 <div class="_enemy_crow">
-<div id="_enemy_crow" class="" data-npc="enemy" data-static-class="enemy_crow map-enemy_40x40 collideCheck-field tweenFlickerFix">
+<div id="_enemy_crow" class="" data-npc="enemy" data-static-class="enemy_crow map-enemy_40x40 collideCheck-field">
 
 	<div class="" data-static-class="map-enemy">
 
@@ -187,7 +187,7 @@
 
 <!-- ZOMBIE -->
 <div class="_enemy_zombie">
-<div id="_enemy_zombie" class="" data-npc="enemy" data-static-class="enemy_zombie map-enemy_40x40 collideCheck-field tweenFlickerFix">
+<div id="_enemy_zombie" class="" data-npc="enemy" data-static-class="enemy_zombie map-enemy_40x40 collideCheck-field">
 
 	<div class="" data-static-class="map-enemy">
 
@@ -259,7 +259,7 @@
 
 			<div class="" data-static-class="portalScreen_field">
 
-				<div class="" data-static-class="portalScreen_player tweenFlickerFix">
+				<div class="" data-static-class="portalScreen_player">
 
 					<div class="" data-static-class="portalScreen_map-goat">
 
@@ -280,7 +280,7 @@
 
 				</div>
 
-				<div class="" data-static-class="portalScreen_miniMoon tween-portalScreen_miniMoon animationHelper"></div>
+				<div class="" data-static-class="portalScreen_miniMoon tween-portalScreen_miniMoon"></div>
 
 			</div>
 
@@ -391,11 +391,11 @@
 
 					</div> <!-- .fieldEdge -->
 
-					<div class="" data-static-class="player-area animationHelper">
+					<div class="" data-static-class="player-area">
 
 						<div id="" class="" data-static-id="preHitTest" data-static-class="collideCheck-player"></div>
 
-						<div id="" class="" data-static-id="player-block" data-static-class="tweenFlickerFix">
+						<div id="" class="" data-static-id="player-block" data-static-class="">
 
 							<div class="" data-static-class="map-goat">
 
@@ -443,12 +443,12 @@
 					</div> <!-- .player-area -->
 
 
-					<div class="" data-static-class="enemy-area animationHelper">
+					<div class="" data-static-class="enemy-area">
 
 					</div> <!-- .enemy-area -->
 
 
-					<div class="" data-static-class="portal-area animationHelper">
+					<div class="" data-static-class="portal-area">
 
 					</div> <!-- .portal-area -->
 
@@ -458,7 +458,7 @@
 
 					</div> <!-- .field-area -->
 
-					<div class="" data-static-class="water-area tweenFlickerFix">
+					<div class="" data-static-class="water-area">
 
 					</div> <!-- .water-area -->
 
@@ -481,7 +481,7 @@
 
 				<div class="" data-static-class="woodland">
 
-					<div class="" data-static-class="woodland-bottom pixels_woodlandBottom"></div>
+					<div class="" data-static-class="woodland-bottom"></div> <!-- pixels_woodlandBottom -->
 
 				</div> <!-- .woodland -->
 
@@ -508,7 +508,7 @@
 
 	</div>
 
-	<div class="" data-static-class="preBattle_enemy animationHelper"></div>
+	<div class="" data-static-class="preBattle_enemy"></div>
 
 	<div class="" data-static-class="preBattle_title_player font-dosis tween-preBattle_title">
 
@@ -575,11 +575,11 @@
 
 		</div> <!-- battle-nav -->
 
-		<div id="" class="" data-static-id="battle-nav-fight" data-static-class="animationHelper"> <!-- class="battle-nav-hide" -->
+		<div id="" class="" data-static-id="battle-nav-fight"> <!-- class="battle-nav-hide" -->
 
 
 
-			<div id="" class="" data-static-id="battleNav-player1" data-static-class="battleNav-player tweenFlickerFix">
+			<div id="" class="" data-static-id="battleNav-player1" data-static-class="battleNav-player">
 
 				<div class="" data-static-class="battleNav-player-inner tween-battleNav-player-StartPos"> <!-- battleNav-player-StartPos -->
 
@@ -648,7 +648,7 @@
 			</div> <!-- #battleNav-player1 -->
 
 
-			<div id="" class="" data-static-id="battleNav-player2" data-static-class="battleNav-player tweenFlickerFix battleNav-player-StartPos tween-battleNav-player-StartPos">
+			<div id="" class="" data-static-id="battleNav-player2" data-static-class="battleNav-player battleNav-player-StartPos tween-battleNav-player-StartPos">
 
 				<div class="" data-static-class="battleNav-player-inner tween-battleNav-player-StartPos"> <!-- battleNav-player-StartPos -->
 
@@ -796,7 +796,7 @@
 
 		<div class="" data-static-class="microBattle_darkness_infoBlock">
 
-			<h1 class="" data-static-class="microBattle_darkness_info_text font-dosis">ABC-XYZ</h1>
+			<h1 class="" data-static-class="microBattle_darkness_info_text font-dosis tweenFlickerFixManual">ABC-XYZ</h1>
 
 		</div>
 
@@ -834,7 +834,7 @@
 
 			<div class="" data-static-class="field">
 
-				<div class="" data-static-class="match-area animationHelper">
+				<div class="" data-static-class="match-area">
 
 					<div id="" class="" data-static-id="player1" data-static-class="match-player">
 
@@ -896,11 +896,11 @@
 
 		<div class="" data-static-class="failScreen_portal">
 
-			<div class="" data-static-class="portal tweenFlickerFix">
+			<div class="" data-static-class="portal">
 
-				<div class="" data-static-class="portal_top pixels_portalZombie"></div>
+				<div class="" data-static-class="portal_top pixels_portalZombie tweenFlickerFixManual"></div>
 
-				<div class="" data-static-class="portal_space">
+				<div class="" data-static-class="portal_space tweenFlickerFixManual">
 
 					<div class="" data-static-class="portal_stars0 tween-portalStars pixels_portalZombie"></div>
 
@@ -916,7 +916,7 @@
 
 		<div class="" data-static-class="failScreen_zombie tween-failScreen_zombie">
 
-			<div class="" data-static-class="enemy_zombie map-enemy_40x40 tweenFlickerFix">
+			<div class="" data-static-class="enemy_zombie map-enemy_40x40">
 
 				<div class="" data-static-class="map-enemy">
 
@@ -961,7 +961,7 @@
 
 			<div class="" data-static-class="microBattle_fade_floor pixels_microBattleFloor">
 
-				<div class="" data-static-class="spaceSquids animationHelper">
+				<div class="" data-static-class="spaceSquids">
 
 					<div id="" class="" data-static-id="spaceSquid0" data-static-class="spaceSquidMain">
 
@@ -1055,7 +1055,7 @@
 
 						<div class="" data-static-class="bossCont">
 
-							<div class="" data-static-class="boss animationHelper">
+							<div class="" data-static-class="boss">
 
 								<div class="" data-static-class="boss-top tween-boss-top">
 
@@ -1067,11 +1067,11 @@
 
 									<div class="" data-static-class="boss-body pixels_boss">
 
-										<div class="" data-static-class="portal tweenFlickerFix">
+										<div class="" data-static-class="portal">
 
-											<div class="" data-static-class="portal_top pixels_portalBoss"></div>
+											<div class="" data-static-class="portal_top pixels_portalBoss tweenFlickerFixManual"></div>
 
-											<div class="" data-static-class="portal_space">
+											<div class="" data-static-class="portal_space tweenFlickerFixManual">
 
 												<div class="" data-static-class="portal_stars0 tween-portalStars pixels_portalBoss"></div>
 
@@ -1386,7 +1386,7 @@
 
 				</div class="" data-static-class="woodland">
 
-					<div class="" data-static-class="woodland-bottom pixels_woodlandBottom"></div>
+					<div class="" data-static-class="woodland-bottom"></div> <!-- pixels_woodlandBottom -->
 
 
 				<div> <!-- .woodland -->

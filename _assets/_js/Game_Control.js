@@ -1131,7 +1131,10 @@
 								portalExit();
 
 								// NOT FINAL
-								sound_play("fx_crow");
+								if(soundEffects_pedal != null)
+								{
+									sound_play("fx_crow");
+								}
 
 								break;
 							}
